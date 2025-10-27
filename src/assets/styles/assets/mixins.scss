@@ -47,6 +47,12 @@ $screen-height: 720;
   @return #{($lh/$fz)}em;
 }
 
+@mixin mobile() {
+  @media screen and (min-width: 425px) {
+    @content;
+  }
+}
+
 @mixin tablet() {
   @media screen and (min-width: 768px) {
     @content;
