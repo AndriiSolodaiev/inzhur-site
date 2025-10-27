@@ -1,0 +1,39 @@
+
+@font-face {
+  font-family: 'NAMU';
+  src: local('NAMU'), local('NAMU'),
+    url('../fonts/NAMU.ttf') format('ttf'),
+    url('../fonts/NAMU.woff') format('woff'),
+    url('../fonts/NAMU.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FixelDisplay';
+  src: local('FixelDisplay Medium'), local('FixelDisplay-Medium'),
+    url('../fonts/FixelDisplay-Medium.ttf') format('ttf'),
+    url('../fonts/FixelDisplay-Medium.woff') format('woff'),
+    url('../fonts/FixelDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FixelDisplay';
+  src: local('FixelDisplay SemiBold'), local('FixelDisplay-SemiBold'),
+    url('../fonts/FixelDisplay-SemiBold.ttf') format('ttf'),
+    url('../fonts/FixelDisplay-SemiBold.woff') format('woff'),
+    url('../fonts/FixelDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FixelDisplay';
+  src: local('FixelDisplay Bold'), local('FixelDisplay-Bold'),
+    url('../fonts/FixelDisplay-Bold.ttf') format('ttf'),
+    url('../fonts/FixelDisplay-Bold.woff') format('woff'),
+    url('../fonts/FixelDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
