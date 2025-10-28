@@ -1,244 +1,241 @@
 $default-font: 'FixelDisplay', sans-serif;
 $default-font-2: 'NAMU', sans-serif;
 
-
 $mc2: #ff554c;
 $mc3: #e5df06;
 $mc4: #4f90b6;
 $gray: #333;
 $text: #22223e;
-$wc: #ECE9E2;
+$wc: #ece9e2;
 $bc: #393028;
-$bc2: #1C1E2C;
+$bc2: #1c1e2c;
 
-$bg-color: #ECE9E2;
+$bg-color: #ece9e2;
 $accent-color: #393028;
-$accent-color-2: #B3BECD;
-$blue-color: #C2E1EF;
+$accent-color-2: #b3becd;
+$blue-color: #c2e1ef;
 $text-color: #393028;
-$text-color-2: #ECE9E2;
-$olive-color: #9F9E8A;
-$grey-color: #64686E;
-$dark-color: #1C1E2C;
-$cubic-btn: cubic-bezier(.12, .57, .41, 1);
+$text-color-2: #ece9e2;
+$olive-color: #9f9e8a;
+$grey-color: #64686e;
+$dark-color: #1c1e2c;
+$cubic-btn: cubic-bezier(0.12, 0.57, 0.41, 1);
 
-@mixin super-title () {
-	font-size: 66px;
-	font-family: $default-font;
-	font-weight: 700;
-	font-style: normal;
-	line-height: 80%;
-	text-decoration: none;
-	color: $text-color;
+@mixin super-title() {
+  font-size: 66px;
+  font-family: $default-font;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 80%;
+  text-decoration: none;
+  color: $text-color;
 
-	@include tablet {
-		font-size: 17vw;
-	}
+  @include tablet {
+    font-size: 17vw;
+  }
 
-	@include laptop {
-		font-size: 16.1vw;
-	}
+  @include laptop {
+    font-size: 16.1vw;
+  }
 }
 
+@mixin section-title() {
+  font-size: 42px;
+  font-family: $default-font-2;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 90%;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $text-color;
+  letter-spacing: -0.06em;
 
-@mixin section-title () {
-	font-size: 42px;
-	font-family: $default-font-2;
-	font-weight: 800;
-	font-style: normal;
-	line-height: 90%;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: $text-color;
-	letter-spacing: -0.08em;
+  @include tablet {
+    font-size: 11.9vw;
+    font-size: clamp(64px, calc(64px + (72 - 64) * ((100vw - 768px) / (1366 - 768))), 72px);
+  }
 
-	@include tablet {
-		font-size: 11.9vw;
-		font-size: clamp(64px,
-				calc(100px + (72 - 64) * ((100vw - 768px) / (1366 - 768))),
-				72px);
-	}
-
-	@include laptop {
-		font-size: 3.75vw;
-	}
+  @include laptop {
+    font-size: 3.75vw;
+  }
 }
 
 @mixin article-title() {
-	font-size: 32px;
-	font-weight: 500;
-	line-height: 120%;
-	letter-spacing: -0.06em;
-	color: $text-color;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.06em;
+  color: $text-color;
 
-	@include tablet {
-		font-size: clamp(42px, calc(42px + (48 - 42) * ((100vw - 768px) / (1366 - 768))), 48px);
-	}
+  @include tablet {
+    font-size: clamp(42px, calc(42px + (48 - 42) * ((100vw - 768px) / (1366 - 768))), 48px);
+  }
 
-	@include laptop {
-		font-size: 2.5vw;
-	}
+  @include laptop {
+    font-size: 2.5vw;
+  }
 }
 
 @mixin block-title() {
-	font-size: 28px;
-	font-weight: 600;
-	color: $text-color;
-	line-height: 120%;
-	letter-spacing: -0.06em;
+  font-size: 28px;
+  font-weight: 600;
+  color: $text-color;
+  line-height: 120%;
+  letter-spacing: -0.06em;
 
-	@include tablet {
-		font-size: clamp(32px, calc(32px + (36 - 32) * ((100vw - 768px) / (1366 - 768))), 36px);
-	}
+  @include tablet {
+    font-size: clamp(32px, calc(32px + (36 - 32) * ((100vw - 768px) / (1366 - 768))), 36px);
+  }
 
-	@include laptop {
-		font-size: 1.875vw;
-	}
+  @include laptop {
+    font-size: 1.875vw;
+  }
 }
 
 @mixin block-subtitle() {
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 120%;
-	letter-spacing: -0.06em;
-	color: $olive-color;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.06em;
+  color: $olive-color;
 
-	@include tablet {
-		font-size: 24px;
-	}
-
+  @include tablet {
+    font-size: 24px;
+  }
 }
 
-@mixin page-title () {
-	font-size: 42px;
-	font-family: $default-font;
-	font-weight: 500;
-	font-style: normal;
-	line-height: 90%;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: $text-color;
-	letter-spacing: -0.08em;
+@mixin page-title() {
+  font-size: 42px;
+  font-family: $default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 90%;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $text-color;
+  letter-spacing: -0.08em;
 
-	@include tablet {
-		font-size: clamp(64px,
-				calc(64px + (120 - 64) * ((100vw - 768px) / (1366 - 768))),
-				120px);
-	}
+  @include tablet {
+    font-size: clamp(64px, calc(64px + (120 - 64) * ((100vw - 768px) / (1366 - 768))), 120px);
+  }
 
-	@include laptop {
-		font-size: 6.25vw;
-	}
+  @include laptop {
+    font-size: 6.25vw;
+  }
 }
 
-@mixin page-subtitle () {
-	font-size: 36px;
-	font-family: $default-font;
-	font-weight: 500;
-	font-style: normal;
-	line-height: 130%;
-	text-decoration: none;
-	letter-spacing: -0.06em;
+@mixin page-subtitle() {
+  font-size: 36px;
+  font-family: $default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 130%;
+  text-decoration: none;
+  letter-spacing: -0.06em;
 
-	@include tablet {
-		font-size: clamp(48px,
-				calc(48px + (64 - 48) * ((100vw - 768px) / (1366 - 768))),
-				64px);
-	}
+  @include tablet {
+    font-size: clamp(48px, calc(48px + (64 - 48) * ((100vw - 768px) / (1366 - 768))), 64px);
+  }
 
-	@include laptop {
-		font-size: 3.33vw;
-	}
+  @include laptop {
+    font-size: 3.33vw;
+  }
 }
 
-@mixin text-32 () {
-	font-size: 32px;
-	font-family: $default-font;
-	font-weight: 500;
-	font-style: normal;
-	line-height: 100%;
-	text-decoration: none;
-	letter-spacing: -0.06em;
+@mixin text-32() {
+  font-size: 32px;
+  font-family: $default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+  text-decoration: none;
+  letter-spacing: -0.06em;
 
-	@include tablet {
-		font-size: 40px;
-	}
+  @include tablet {
+    font-size: 40px;
+  }
 
-	@include laptop {
-		font-size: 2.08vw;
-	}
+  @include laptop {
+    font-size: 2.08vw;
+  }
 }
 
-@mixin text-20 () {
-	font-size: 20px;
-	font-family: $default-font;
-	font-weight: 600;
-	font-style: normal;
-	line-height: 120%;
-	text-decoration: none;
-	letter-spacing: -0.06em;
+@mixin text-20() {
+  font-size: 20px;
+  font-family: $default-font;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  letter-spacing: -0.06em;
 
-	@include tablet {
-		font-size: 20px;
-	}
+  @include tablet {
+    font-size: 20px;
+  }
 
-	@include laptop {
-		font-size: 1.04vw;
-	}
+  @include laptop {
+    font-size: 1.04vw;
+  }
 }
-
-
 
 @mixin subtitle-text() {
-	font-size: 24px;
-	font-family: $default-font;
-	font-weight: 500;
-	font-style: normal;
-	color: $text-color;
-	line-height: 120%;
-	text-decoration: none;
-	text-transform: none;
-	letter-spacing: -0.06em;
+  font-size: 24px;
+  font-family: $default-font;
+  font-weight: 500;
+  font-style: normal;
+  color: $text-color;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: -0.06em;
 
-	@include tablet {
-		font-size: 42px;
-	}
+  @include tablet {
+    font-size: 42px;
+  }
 
-	@include laptop {
-		font-size: 2.5vw;
-	}
+  @include laptop {
+    font-size: 2.5vw;
+  }
 }
 
 @mixin general-text() {
-	font-size: 16px;
-	font-family: $default-font;
-	font-weight: 500;
-	font-style: normal;
-	line-height: 140%;
-	text-decoration: none;
-	text-transform: none;
-	letter-spacing: -0.06em;
+  font-size: 16px;
+  font-family: $default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 140%;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: -0.06em;
 
-	@include tablet {
-		font-size: 18px;
-	}
+  @include tablet {
+    font-size: 18px;
+  }
 
-	@include laptop {
-		font-size: 0.9375vw
-	}
+  @include laptop {
+    font-size: 0.9375vw;
+  }
 }
 
 @mixin tiny-text() {
-	font-size: 14px;
-	font-family: $default-font;
-	font-weight: 500;
-	font-style: normal;
-	line-height: 100%;
-	text-decoration: none;
+  font-size: 14px;
+  font-family: $default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 100%;
+  text-decoration: none;
 
-	letter-spacing: -0.06em;
+  letter-spacing: -0.06em;
 }
 
 @function vw($px) {
-	@return ($px / 1920) * 100vw;
+  @return ($px / 1920) * 100vw;
+}
+
+@mixin text-24 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.06em;
+  color: $olive-color;
 }
