@@ -20,7 +20,8 @@ const config = {
     commercial: './src/assets/scripts/gulp-modules/commercial.js',
     singleProgress: './src/assets/scripts/gulp-modules/single-progress.js',
     singlePromo: './src/assets/scripts/gulp-modules/single-promo.js',
-    property: './src/assets/scripts/gulp-modules/property.js'
+    property: './src/assets/scripts/gulp-modules/property.js',
+    developer: './src/assets/scripts/gulp-modules/developer.js',
   },
   output: {
     filename: '[name].bundle.js',

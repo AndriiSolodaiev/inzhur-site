@@ -1,12 +1,12 @@
 .section {
-  padding-top: 120px;
+  padding-top: 100px;
 
   &:last-child {
     padding-bottom: 120px;
   }
 
   @include tablet {
-    padding-top: 140px;
+    padding-top: 200px;
 
     &:last-child {
       padding-bottom: 140px;
@@ -14,7 +14,7 @@
   }
 
   @include laptop {
-    padding-top: 200px;
+    padding-top: 250px;
 
     &:last-child {
       padding-bottom: 200px;
@@ -115,11 +115,7 @@
   }
 }
 
-.hero .section-title,
-.hero .hero-slogan,
-.hero .section-descr {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 0, 0% 0%);
-}
+
 
 .hero {
   min-height: 100svh;
@@ -201,7 +197,16 @@
   }
 }
 
-.section-title {}
+.section-title {
+  @include section-title;
+  margin-bottom: 20px;
+  color: $accent-color;
+
+  @include tablet {
+    margin-bottom: 40px;
+
+  }
+}
 
 .hero-promo-wrap {
   position: absolute;
@@ -501,101 +506,65 @@
   position: relative;
   z-index: 2;
 
-  &-title {
-    margin-bottom: 120px;
+  @include laptop {
+    padding-left: 40px;
+    padding-right: 40px;
+
+  }
+
+  .about-project-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &-content {
     @include laptop {
       display: flex;
       align-items: center;
-      padding-left: 3.125vw;
-      padding-right: 1.82vw;
+
     }
   }
 
   &-text {
-    position: relative;
-    z-index: 2;
-    flex: 1;
-    padding: 3.9vw 7.2vw 3.9vw 5.2vw;
-
-    @include tablet {
-      width: 540px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     @include laptop {
-      width: auto;
-      margin-left: 0;
-      margin-right: 0;
-      padding: 3.9vw 7.2vw 3.9vw 5.2vw;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    &>svg {
-      position: absolute;
-      z-index: -1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -40%) rotate(5deg);
-      width: 150%;
-      height: 150%;
-
-      @include tablet {
-        width: 110%;
-        height: 130%;
-        transform: translate(-50%, -50%) rotate(5deg);
-      }
-
-      @include laptop {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        transform: none;
-        clip-path: polygon(0% 3%, 100% 0%, 100% 97%, 0% 100%);
-      }
-    }
-
-    h3 {
-      @include text-32;
-      color: $dark-color;
-      margin-bottom: 32px;
-
-      @include tablet {
-        margin-bottom: 48px;
-      }
+    h2 {
+      color: $accent-color;
     }
 
     p {
       @include general-text;
-      color: $text-color-2;
-      margin-bottom: 20px;
-
-      &:last-child {
-        margin-bottom: 32px;
-
-        @include tablet {
-          margin-bottom: 48px;
-        }
-      }
-    }
-
-    .general-btn {
-      background-color: $accent-color-2;
-      margin-top: 32px;
+      color: $accent-color;
+      margin-bottom: 28px;
 
       @include tablet {
-        margin-top: 48px;
+        margin-bottom: 60px;
       }
     }
+
+    .general-btn {}
   }
 
   &-video {
     position: relative;
     z-index: 3;
-    flex: 3;
+    flex: 2;
     padding: 5vw 0;
 
     &>svg {
@@ -619,11 +588,7 @@
       aspect-ratio: 1/0.6;
       position: relative;
 
-      @include laptop {
-        transform: translateX(-7%);
-
-        width: 95%;
-      }
+      @include laptop {}
 
       video {
         width: 100%;
@@ -639,22 +604,7 @@
         }
       }
 
-      .btn-description {
-        @include block-title;
-        color: $text-color;
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        pointer-events: none;
-        transition: all 0.4s ease;
 
-        &.hidden {
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
 
       .controls-wrap {
         position: absolute;
@@ -663,6 +613,9 @@
         cursor: pointer;
         transition: all 0.4s ease;
         z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &.hidden {
           opacity: 0;
