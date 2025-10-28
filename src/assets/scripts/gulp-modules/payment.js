@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   gsap.to('#decoration-ellipse', {
     rotation: 360,
-    duration: 5,
+    duration: 15,
     transformOrigin: '50% 50%',
     repeat: -1,
     ease: 'none',
