@@ -97,11 +97,11 @@
   }
 
   &__block-title {
-    @include section-title;
+    @include article-title;
   }
 
   &__block-subtitle {
-    @include section-subtitle;
+    @include block-subtitle;
 
     @include tablet {
       margin-top: 12px;
