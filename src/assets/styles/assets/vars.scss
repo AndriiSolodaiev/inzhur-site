@@ -40,27 +40,48 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 	}
 }
 
-@mixin section-title () {
-	font-size: 64px;
-	font-family: $default-font;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 90%;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: $text-color;
-	letter-spacing: -0.08em;
+@mixin article-title() {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.06em;
+  color: $text-color;
 
-	@include tablet {
-		font-size: 11.9vw;
-		font-size: clamp(100px,
-				calc(100px + (160 - 100) * ((100vw - 768px) / (1366 - 768))),
-				160px);
-	}
+  @include tablet {
+    font-size: clamp(42px, calc(42px + (48 - 42) * ((100vw - 768px) / (1366 - 768))), 48px);
+  }
 
-	@include laptop {
-		font-size: 8.33vw;
-	}
+  @include laptop {
+    font-size: 2.5vw;
+  }
+}
+
+@mixin block-title() {
+  font-size: 28px;
+  font-weight: 600;
+  color: $text-color;
+  line-height: 120%;
+  letter-spacing: -0.06em;
+
+  @include tablet {
+    font-size: clamp(32px, calc(32px + (36 - 32) * ((100vw - 768px) / (1366 - 768))), 36px);
+  }
+
+  @include laptop {
+    font-size: 1.875vw;
+  }
+}
+
+@mixin block-subtitle() {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.06em;
+  color: $olive-color;
+
+  @include tablet {
+    font-size: 24px;
+  }
 }
 
 @mixin page-title () {
@@ -159,25 +180,6 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 	}
 }
 
-@mixin block-title () {
-	font-size: 18px;
-	font-family: $default-font;
-	font-weight: 600;
-	font-style: normal;
-	line-height: 100%;
-	text-decoration: none;
-	text-transform: none;
-	letter-spacing: -0.06em;
-
-	@include tablet {
-		font-size: 20px;
-	}
-
-	@include laptop {
-		font-size: 2.083vw
-	}
-}
-
 @mixin subtitle-text() {
 	font-size: 24px;
 	font-family: $default-font;
@@ -225,7 +227,4 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 	text-decoration: none;
 	
 	letter-spacing: -0.06em;
-	// @include laptop {
-	// 	font-size: 0.93vw;
-	// }
 }

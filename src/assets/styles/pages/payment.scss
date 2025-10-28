@@ -1,0 +1,153 @@
+.payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 140px 0;
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  &__block {
+    position: relative;
+    width: 100%;
+    max-width: 1220px;
+    padding: 20px;
+    background-color: #faf6ee;
+    border-radius: 24px;
+
+    @include tablet {
+      padding: 40px;
+    }
+  }
+
+  &__decoration {
+    top: inherit;
+    right: -10px;
+    bottom: -10px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+
+    @include tablet {
+      top: inherit;
+      right: -10px;
+      bottom: -10px;
+      width: 162px;
+      height: 163px;
+    }
+
+    @include laptop {
+      top: -20px;
+      right: -20px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__subblock-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+
+    @include laptop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__subblock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: $wc;
+
+    @include tablet {
+      margin-top: 40px;
+      padding: 40px;
+    }
+  }
+
+  &__subblock-footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+    margin-top: 40px;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 80px;
+    }
+  }
+
+  &__subblock-title {
+    @include block-title;
+  }
+
+  &__block-title {
+    @include article-title;
+  }
+
+  &__block-subtitle {
+    @include block-subtitle;
+
+    @include tablet {
+      margin-top: 12px;
+    }
+  }
+
+  &__block-button {
+    .payment__block & {
+      margin-top: 40px;
+
+      @include tablet {
+        margin-top: 80px;
+      }
+
+      @include laptop {
+        margin-top: 120px;
+      }
+    }
+
+    .payment__subblock & {
+      margin-top: 40px;
+
+      @include tablet {
+        margin-top: 80px;
+      }
+    }
+
+    .payment__subblock-footer & {
+      margin-top: 0;
+    }
+  }
+}
+
+.diya-home,
+.diya-repair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diya-home {
+  width: 152px;
+  height: 27px;
+}
+
+.diya-repair {
+  width: 221px;
+  height: 27px;
+}
