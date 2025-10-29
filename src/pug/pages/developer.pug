@@ -32,7 +32,7 @@ block content
       li.specialization-list__item 
         h3.specialization-list__item--title Реалізували та здали в експлуатацію сучасний ЖК Оптимісто площею <span>86 986 м² —</span>
         p.specialization-list__item--text раніше заявлених термінів, незважаючи на пандемію та повномасштабну війну.
-        button.specialization-list__item--button(type='button' aria-label='Кнопка для переходу на сайт ЖК Оптимісто') Сайт жк Оптимісто
+        a.general-btn.specialization-list__item--button(href="#" target="_blank") <span>Сайт жк Оптимісто</span>
 
       li.specialization-list__item
         h3.specialization-list__item--title Побудували 40+ успішних комерційних обєктів нерухомості загальною площею більше <span>80 000 м² —</span>
@@ -57,6 +57,36 @@ block content
       li.completed-list__item
         h3.completed-list__item--title Створили та надали всім українцям і українкам унікальну можливість спільного інвестування у велику комерційну нерухомість (REIT):
         p.completed-list__item--text заробляємо для тисяч українців, в чиїх інтересах керуємо активами вже понад 4 млрд грн.
+
+  section.cycle-section.container
+    .cycle-section__house
+      img(src="/assets/images/developer/mob-house.jpg" alt="")
+      img.cycle-section__mask(src="/assets/images/developer/mob-house-oval.svg" alt="")
+      
+      .cycle-section__oval
+
+    .icon-inzhure-block
+      ul.cycle-icons-list
+        li.cycle-icons-list__item
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="cycle-icon">
+            <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
+        </svg>
+        li.cycle-icons-list__item
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="cycle-icon">
+            <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
+        </svg>
+        li.cycle-icons-list__item
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#ece9e2" class="cycle-icon">
+            <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
+        </svg>
+      p.inzhur Inzhur
+
+    h2.inzhur-title ЗАБЕЗПЕЧУЄ ДЕВЕЛОПМЕНТ ПОВНОГО ЦИКЛУ
+
+    .inzhure-text-link-block
+      p.inzure-text <span>Це дозволяє нам контролювати взагалі все: терміни будівництва,  підбір матеріалів і технологій, хід робіт в деталях.</span> Тому ми не просто обіцяємо виняткову якість і надійні умови — ми впевнені в них і контролюємо їх.
+
+      a.inzhure-link(href="#" target="_blank") <span>Сайт компанії</span>
   
   section.contact-links-section.container
     h2.visually-hidden Секція з посиланнями адреси та контактів
@@ -95,7 +125,7 @@ block content
 
         .contact-links-list__item--text-button-block 
           h3.contact-links-list__item--title Портфоліо Inzhur та більше про компанію на сайті
-          a.contact-links-list__item--button(href="#") Сайт Inzhur
+          a.general-btn.contact-links-list__item--button(href="#") <span>Сайт Inzhur</span>
 
 block footer
   include ../includes/footer.pug
