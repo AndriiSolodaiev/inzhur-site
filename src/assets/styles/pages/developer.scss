@@ -262,12 +262,13 @@
 .cycle-section {
   padding-top: 60px;
   padding-bottom: 62px;
-  background-color: #393028;
+  background-color: $bc;
   position: relative;
 
   @include tablet {
     padding-top: 140px;
     padding-bottom: 109px;
+    height: 1080px;
   }
 
   @include desktop {
@@ -277,11 +278,22 @@
 
 .cycle-section__house {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+
+  width: 335px;
+  height: 595px;
+  margin: 0 auto;
   z-index: 0;
+
+  @include tablet {
+    width: 768px;
+    height: 1080px;
+  }
+
+  @include desktop {
+    width: 1920px;
+    height: 1080px;
+  }
 
   img {
     width: 100%;
@@ -306,35 +318,15 @@
   z-index: 2;
 }
 
-.cycle-section__oval {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 375px;
-  height: 324px;
-  z-index: 3; // НАД МАСКОЮ І КОНТЕНТОМ
-  pointer-events: none;
-  background-image: url('/assets/images/developer/mob-oval.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-
-  @include tablet {
-    width: 623px;
-    height: 471px;
-    background-image: url('/assets/images/developer/tab-oval.svg');
-  }
-
-  @include desktop {
-    width: 795px;
-    height: 570px;
-  }
-}
-
 .icon-inzhure-block {
   display: flex;
   align-items: start;
   justify-content: space-between;
+
+  @include desktop {
+    justify-content: start;
+    gap: 300px;
+  }
 }
 
 .cycle-icons-list {
@@ -345,21 +337,36 @@
   margin: -3px;
 }
 
-.inzhur {
-  @include section-title;
-
-  color: #faeef0;
-  line-height: 100%;
-  font-size: 36px;
-}
-
+.inzhur,
 .inzhur-title {
   @include section-title;
 
-  color: #faf6ee;
-  line-height: 100%;
+  color: #faeef0;
   font-size: 36px;
+  line-height: 100%;
+
+  @include tablet {
+    font-size: 80px;
+    line-height: 90%;
+  }
+
+  @include desktop {
+    font-size: 100px;
+  }
+}
+
+.inzhur-title {
   margin-bottom: 147px;
+
+  @include tablet {
+    max-width: 728px;
+    margin-bottom: 261px;
+  }
+
+  @include desktop {
+    margin-bottom: 90px;
+    max-width: 910px;
+  }
 }
 
 .inzhure-text-link-block {
@@ -368,6 +375,10 @@
   gap: 20px;
   margin-left: auto;
   width: fit-content;
+
+  @include tablet {
+    gap: 40px;
+  }
 }
 
 .inzure-text {
@@ -378,15 +389,38 @@
   span {
     color: #faf6ee;
   }
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 120%;
+    max-width: 448px;
+  }
 }
 
 .inzhure-link {
   @include general-text;
 
   border-radius: 100px;
-  background-color: #ece9e2;
+  background-color: $bg-color;
   padding: 13px 24px;
   max-width: 153px;
+
+  span {
+    display: none;
+  }
+
+  @include tablet {
+    padding: 21.5px 32px;
+    max-width: 180px;
+  }
+
+  @include desktop {
+    max-width: 314px;
+
+    span {
+      display: inline;
+    }
+  }
 }
 
 // ======= Contact links section =======

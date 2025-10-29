@@ -60,10 +60,16 @@ block content
 
   section.cycle-section.container
     .cycle-section__house
-      img(src="/assets/images/developer/mob-house.jpg" alt="")
-      img.cycle-section__mask(src="/assets/images/developer/mob-house-oval.svg" alt="")
-      
-      .cycle-section__oval
+      picture.cycle-section__house
+        source(media="(min-width: 1920px)" srcset="/assets/images/developer/desk-house.jpg")
+        source(media="(min-width: 768px)" srcset="/assets/images/developer/tab-house.jpg")
+        img(src="/assets/images/developer/mob-house.jpg" alt="")
+
+      picture.cycle-section__mask
+        source(media="(min-width: 1920px)" srcset="/assets/images/developer/desk-house-oval.svg")
+        source(media="(min-width: 768px)" srcset="/assets/images/developer/tab-house-oval.svg")
+        img(src="/assets/images/developer/mob-house-oval.svg" alt="")
+
 
     .icon-inzhure-block
       ul.cycle-icons-list
@@ -86,7 +92,7 @@ block content
     .inzhure-text-link-block
       p.inzure-text <span>Це дозволяє нам контролювати взагалі все: терміни будівництва,  підбір матеріалів і технологій, хід робіт в деталях.</span> Тому ми не просто обіцяємо виняткову якість і надійні умови — ми впевнені в них і контролюємо їх.
 
-      a.inzhure-link(href="#" target="_blank") <span>Сайт компанії</span>
+      a.inzhure-link(href="#" target="_blank") Сайт <span>девелоперської</span> компанії
   
   section.contact-links-section.container
     h2.visually-hidden Секція з посиланнями адреси та контактів
