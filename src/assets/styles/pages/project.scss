@@ -11,6 +11,7 @@
 
 .project-content {
   opacity: 0;
+
   @include laptop {
     padding-left: 6.7vw;
     padding-right: 6.7vw;
@@ -20,7 +21,7 @@
 
   &__left {
     margin-bottom: 50px;
-    
+
     @include tablet {
       margin-bottom: 100px;
     }
@@ -30,28 +31,31 @@
       align-items: flex-start;
       margin-bottom: 0;
       justify-content: space-between;
+
       &>svg {
-        transform-origin:center top !important;
-        transform:  scale(1.2);
-       
+        transform-origin: center top !important;
+        transform: scale(1.2);
+
       }
     }
   }
 
   &__right {
-    
+
     @include tablet {
       &>svg {
-        transform:  translateX(-20px);
+        transform: translateX(-20px);
       }
     }
+
     @include laptop {
       display: flex;
       flex-direction: row-reverse;
       align-items: flex-end;
       justify-content: space-between;
+
       &>svg {
-        transform:  scale(1.2);
+        transform: scale(1.2);
       }
     }
   }
@@ -62,9 +66,10 @@
 
     &>svg {
       width: 100%;
-       height: auto;
+      height: auto;
+
       @include laptop {
-      width: 50%;
+        width: 50%;
       }
 
     }
@@ -812,56 +817,56 @@
 .swiper-btns-wrap {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 14px;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: $accent-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  cursor: pointer;
-@include laptop {
-   width: 64px;
-  height: 64px;
-}
-  &.swiper-button-disabled {
-    opacity: 0.2;
-    cursor: no-drop;
-    pointer-events: none;
-  }
+// .swiper-button-prev,
+// .swiper-button-next {
+//   width: 48px;
+//   height: 48px;
+//   border-radius: 50%;
+//   background-color: $accent-color;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//   overflow: hidden;
+//   transition: all 0.4s ease;
+//   cursor: pointer;
+// @include laptop {
+//    width: 64px;
+//   height: 64px;
+// }
+//   &.swiper-button-disabled {
+//     opacity: 0.2;
+//     cursor: no-drop;
+//     pointer-events: none;
+//   }
 
-  svg {
-    position: relative;
-    z-index: 2;
+//   svg {
+//     position: relative;
+//     z-index: 2;
 
-    path {
-      transition: all 0.4s ease-in-out;
-    }
-  }
+//     path {
+//       transition: all 0.4s ease-in-out;
+//     }
+//   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $blue-color;
-    transition: transform 0.4s ease;
-    border-radius: 50%;
-    transform: translateY(-100%);
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: $blue-color;
+//     transition: transform 0.4s ease;
+//     border-radius: 50%;
+//     transform: translateY(-100%);
 
-  }
+//   }
 
-}
+// }
 
 .desktop {
 
@@ -925,6 +930,7 @@
     @include general-text;
     color: $text-color-2;
     text-align: center;
+
     @include laptop {
       text-align: start;
     }
@@ -1145,9 +1151,11 @@
 
 .project-infra-card {
   position: relative;
+
   &>svg {
     height: auto;
   }
+
   &:nth-child(2n) {
 
 
@@ -1174,8 +1182,8 @@
 
   svg {
     width: 100%;
-    
-    
+
+
   }
 
   &__text-wrap {

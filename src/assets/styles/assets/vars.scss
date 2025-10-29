@@ -238,3 +238,7 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 
 	letter-spacing: -0.06em;
 }
+
+@function vw($px) {
+	@return ($px / 1920) * 100vw;
+}

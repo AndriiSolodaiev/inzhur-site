@@ -2,7 +2,26 @@ import Swiper, { Autoplay, EffectFade, Navigation } from 'swiper';
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 import '../modules/gallery/gallerySlider';
 import { animateTitleOnScroll } from '../modules/effects/animateTitle';
+import googleMap from '../modules/map/map';
+// import device from 'current-device';
+// if (device.iphone()) {
+//   document.querySelector('html').style.overscrollBehavior = 'none';
+// }
+googleMap();
+
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
+
+const swiper = new Swiper('.swiper-advantages', {
+  modules: [Navigation],
+  slidesPerView: 1,
+  speed: 800,
+  navigation: {
+    nextEl: '[data-advantages-button-next]',
+    prevEl: '[data-advantages-button-prev]',
+  },
+  slidesPerView: 1,
+  spaceBetween: 20,
+});
 
 const tlFiller = gsap.timeline({
   scrollTrigger: {
@@ -68,99 +87,113 @@ tlFillerContent
     '<',
   );
 
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.real-estate-homepage-list',
+      start: 'top bottom',
+      end: 'bottom top',
+      //  onLeave: self => self.kill(),
+    },
+  })
+  .fromTo(
+    '.real-estate-homepage-card',
+    {
+      yPercent: 10,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      stagger: 0.2,
+    },
+  )
+  .fromTo(
+    '.real-estate-description-wrap',
+    {
+      opacity: 0,
+      x: -10,
+      yPercent: 10,
+    },
+    {
+      yPercent: 0,
+      x: 0,
+      opacity: 1,
+    },
+    '>-=0.3',
+  );
 
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.real-estate-homepage-list',
-    start: 'top bottom',
-    end: 'bottom top',
-    //  onLeave: self => self.kill(),
-     
-  },
-}).fromTo(
-  ".real-estate-homepage-card",
-  {
-    yPercent:10,
-    opacity:0,
-   
-  }
-  ,{
-    yPercent:0,
-    opacity:1,
-     stagger:0.2
-    
-  }
-).fromTo(".real-estate-description-wrap", {
-  opacity:0,
-  x:-10,
-  yPercent:10,
-},{
-    yPercent:0,
-    x:0,
-    opacity:1,
-    
-  }, ">-=0.3")
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.progress-list',
+      start: 'top bottom',
+      end: 'bottom top',
+      //  onLeave: self => self.kill(),
+    },
+  })
+  .fromTo(
+    '.progress-card',
+    {
+      yPercent: 10,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      stagger: 0.2,
+    },
+  )
+  .fromTo(
+    '.progress-homepage-description-wrap',
+    {
+      opacity: 0,
+      x: -10,
+      yPercent: 10,
+    },
+    {
+      yPercent: 0,
+      x: 0,
+      opacity: 1,
+    },
+    '>-=0.3',
+  );
 
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.progress-list',
-    start: 'top bottom',
-    end: 'bottom top',
-    //  onLeave: self => self.kill(),
-  },
-}).fromTo(
-  ".progress-card",
-  {
-    yPercent:10,
-    opacity:0,
-    
-  }, {
-    yPercent:0,
-    opacity:1,
-    stagger:0.2
-  }
-).fromTo(".progress-homepage-description-wrap", {
-  opacity:0,
-  x:-10,
-  yPercent:10,
-}, {
-    yPercent:0,
-    x:0,
-    opacity:1,
-  }, ">-=0.3")
-
-
-gsap.timeline({
-  scrollTrigger: {
-    trigger: '.promo-list',
-    start: 'top bottom',
-    end: 'bottom top',
-    //  onLeave: self => self.kill(),
-  },
-}).fromTo(
-  ".promo-homepage-card",
-  {
-    yPercent:20,
-    opacity:0,
-    
-  },{
-    yPercent:0,
-    opacity:1,
-    stagger:0.2,
-   
-    
-  }
-).fromTo(".promo-homepage-description-wrap", {
-  opacity:0,
-  x:-10,
-  yPercent:10,
-},{
-  opacity:1,
-  x:0,
-  yPercent:0,
-}, ">-=0.3")
-
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.promo-list',
+      start: 'top bottom',
+      end: 'bottom top',
+      //  onLeave: self => self.kill(),
+    },
+  })
+  .fromTo(
+    '.promo-homepage-card',
+    {
+      yPercent: 20,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      stagger: 0.2,
+    },
+  )
+  .fromTo(
+    '.promo-homepage-description-wrap',
+    {
+      opacity: 0,
+      x: -10,
+      yPercent: 10,
+    },
+    {
+      opacity: 1,
+      x: 0,
+      yPercent: 0,
+    },
+    '>-=0.3',
+  );
 
 window.addEventListener('loaderLoaded', () => {
   gsap.fromTo(
@@ -189,34 +222,39 @@ ScrollTrigger.create({
   pin: true,
   pinSpacing: false, // <-- без відступу!
 });
-gsap.timeline({
-  scrollTrigger:{
-  trigger: '.hero-bg',
-  start: 'top top',
-  end: 'bottom top',
-  scrub:1,
- 
-   
-}}
-).to(".hero-bg", {
-  opacity:1, ease:"none"
-}).to(".hero .video-frame img", {
-  yPercent: -10,
-  ease:"none"
-}, "<")
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.hero-bg',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: 1,
+    },
+  })
+  .to('.hero-bg', {
+    opacity: 1,
+    ease: 'none',
+  })
+  .to(
+    '.hero .video-frame img',
+    {
+      yPercent: -10,
+      ease: 'none',
+    },
+    '<',
+  );
 document.addEventListener('DOMContentLoaded', function() {
   // Знаходимо всі блоки з відео
   const videoBlocks = document.querySelectorAll('.video-wrapper');
 
   videoBlocks.forEach(block => {
     const videoBtn = block.querySelector('.controls-wrap');
-    const btnDescription = block.querySelector('.btn-description');
+
     const video = block.querySelector('video');
 
     // Клік по кнопці
     videoBtn.addEventListener('click', function() {
       videoBtn.classList.add('hidden');
-      btnDescription.classList.add('hidden');
 
       video.classList.add('playing');
       video.play();
@@ -225,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Коли відео закінчиться — повернути кнопку й опис
     video.addEventListener('ended', function() {
       videoBtn.classList.remove('hidden');
-      btnDescription.classList.remove('hidden');
+
       video.classList.remove('playing');
     });
 
@@ -233,195 +271,52 @@ document.addEventListener('DOMContentLoaded', function() {
     video.addEventListener('pause', function() {
       if (video.currentTime < video.duration) {
         videoBtn.classList.remove('hidden');
-        btnDescription.classList.remove('hidden');
       }
     });
   });
 });
 
-
-// Використання:
-animateTitleOnScroll('.about-project', '.about-project-title');
-animateTitleOnScroll('.advantages', '.advantages-title');
-animateTitleOnScroll('.real-estate-homepage', '.real-estate-title');
-animateTitleOnScroll('.location', '.location-title');
-animateTitleOnScroll('.progress-homepage', '.progress-homepage-title');
-animateTitleOnScroll('.invest-homepage', '.invest-homepage-title');
-animateTitleOnScroll('.developer', '.developer-title');
-animateTitleOnScroll('.promo-homepage', '.promo-homepage-title');
-animateTitleOnScroll('.gallery-homepage', '.gallery-homepage-title');
-function initCardsAnimation() {
-  const cards = document.querySelectorAll('.advantages-card');
-
-  // Якщо десктоп — складна анімація
-  if (window.innerWidth >= 1366) {
-    gsap.set(cards, {
-      opacity: 0,
-      y: 150,
-      rotation: () => gsap.utils.random(-25, 25),
-      scale: 0.6,
-      filter: 'blur(8px)',
-      transformOrigin: 'center center',
-    });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.advantages-cards',
-        start: 'top-=20% bottom',
-        end: 'bottom bottom',
-        scrub: 1,
-        markers: false,
-      },
-    });
-
-    cards.forEach((card, index) => {
-      let finalRotation, finalX, finalY, zIndex;
-
-      switch (index + 1) {
-        case 1:
-          finalRotation = 3;
-          finalX = 0;
-          finalY = '30%';
-          zIndex = 2;
-          break;
-        case 2:
-          finalRotation = -3;
-          finalX = '-20%';
-          finalY = 0;
-          zIndex = 1;
-          break;
-        case 3:
-          finalRotation = 3;
-          finalX = '-40%';
-          finalY = '-40%';
-          zIndex = 2;
-          break;
-        case 4:
-          finalRotation = -3;
-          finalX = '10%';
-          finalY = '10%';
-          zIndex = 4;
-          break;
-        case 5:
-          finalRotation = 3;
-          finalX = '10%';
-          finalY = '-15%';
-          zIndex = 2;
-          break;
-        case 6:
-          finalRotation = -3;
-          finalX = '-5%';
-          finalY = '-55%';
-          zIndex = 2;
-          break;
-        case 7:
-          finalRotation = -3;
-          finalX = '-10%';
-          finalY = '-30%';
-          zIndex = 2;
-          break;
-        case 8:
-          finalRotation = 3;
-          finalX = '-20%';
-          finalY = '-50%';
-          zIndex = 2;
-          break;
-        default:
-          finalRotation = 0;
-          finalX = 0;
-          finalY = 0;
-          zIndex = 1;
-      }
-
-      tl.to(
-        card,
-        {
-          opacity: 1,
-          y: finalY,
-          x: finalX,
-          rotation: finalRotation,
-          scale: 1,
-          filter: 'blur(0px)',
-          zIndex: zIndex,
-          duration: 0.8,
-          ease: 'back.out(1.2)',
-          onStart: () => {
-            gsap.fromTo(
-              card,
-              { rotationX: -15, z: 50 },
-              { rotationX: 0, z: 0, duration: 0.6, ease: 'power2.out' },
-            );
-          },
-        },
-        index * 0.1,
-      );
-    });
-  }
-
-  // Якщо мобільна версія — спрощена анімація
-  else {
-    cards.forEach(card => {
-      gsap.set(card, {
-        opacity: 0,
-        y: 50,
-        filter: 'blur(6px)',
-      });
-
-      gsap.to(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-        },
-        opacity: 1,
-        y: 0,
-        filter: 'blur(0px)',
-        duration: 0.8,
-        ease: 'power2.out',
-      });
-    });
-  }
-}
-
 // Запуск після завантаження DOM
-document.addEventListener('DOMContentLoaded', initCardsAnimation);
 
-
-
-gsap.timeline({
-  scrollTrigger:{
-  trigger: '.developer-content',
-  start: 'top bottom',
-  // end: 'bottom top',
-  
- 
- 
-   
-}}
-).from(".developer-text__list p", {
-  opacity:0, y:20, stagger: 0.2
-}).from(".developer-site-bg svg .g-mask13", {
-  rotate: -180, duration:2,
-  transformOrigin:"center bottom"
-}, "<")
-
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.developer-content',
+      start: 'top bottom',
+      // end: 'bottom top',
+    },
+  })
+  .from('.developer-text__list p', {
+    opacity: 0,
+    y: 20,
+    stagger: 0.2,
+  })
+  .from(
+    '.developer-site-bg svg .g-mask13',
+    {
+      rotate: -180,
+      duration: 2,
+      transformOrigin: 'center bottom',
+    },
+    '<',
+  );
 
 function bigTitles() {
   // Працює тільки на мобільних
   if (window.innerWidth > 500) return;
 
-  document.querySelectorAll("[data-big-title]").forEach((el) => {
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: "top center",
-        end: "bottom top",
-        scrub: 1,
-      
-      },
-    })
-    .fromTo(el.querySelector("h2"), { xPercent: 10, ease:"power1" }, { xPercent: -10 })
-    .fromTo(el.querySelector("h3"), { xPercent: -10, ease:"power1" }, { xPercent: 10 }, "<");
+  document.querySelectorAll('[data-big-title]').forEach(el => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: el,
+          start: 'top center',
+          end: 'bottom top',
+          scrub: 1,
+        },
+      })
+      .fromTo(el.querySelector('h2'), { xPercent: 10, ease: 'power1' }, { xPercent: -10 })
+      .fromTo(el.querySelector('h3'), { xPercent: -10, ease: 'power1' }, { xPercent: 10 }, '<');
   });
 }
 
