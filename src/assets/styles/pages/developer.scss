@@ -265,6 +265,30 @@
   background-color: $bc;
   position: relative;
 
+  &::after {
+    position: absolute;
+    content: '';
+    background-image: url('/assets/images/developer/mob-oval.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 0;
+    bottom: 0;
+    width: 355px;
+    height: 324px;
+
+    @include tablet {
+      background-image: url('/assets/images/developer/tab-oval.svg');
+      width: 623px;
+      height: 471px;
+    }
+
+    @include desktop {
+      background-image: url('/assets/images/developer/desk-oval.svg');
+      width: 795px;
+      height: 570px;
+    }
+  }
+
   @include tablet {
     padding-top: 140px;
     padding-bottom: 109px;
@@ -379,6 +403,10 @@
   @include tablet {
     gap: 40px;
   }
+
+  @include desktop {
+    margin-right: 150px;
+  }
 }
 
 .inzure-text {
@@ -424,22 +452,27 @@
     max-width: 314px;
 
     span {
-      display: inline;
+      span {
+        display: inline;
+      }
     }
   }
 
   &.general-btn {
-    background-color: $olive-color;
+    background-color: $accent-color;
 
     span {
-      color: $accent-color;
+      color: $text-color;
     }
+
     &::before {
       background-color: $bg-color;
     }
 
     &:hover {
-      color: $text-color;
+      span {
+        color: $text-color-2;
+      }
     }
   }
 }
