@@ -97,7 +97,7 @@
   font-weight: 700;
 
   @include tablet {
-    padding: 21.5px 32px;
+    padding: 22px 32px;
   }
 }
 
@@ -234,7 +234,7 @@
   }
 
   @include desktop {
-    min-width: 910px;
+    max-width: 910px;
   }
 }
 
@@ -349,7 +349,7 @@
 
   @include desktop {
     justify-content: start;
-    gap: 300px;
+    gap: 248px;
   }
 }
 
@@ -412,6 +412,7 @@
 .inzure-text {
   @include general-text;
 
+  font-weight: 700;
   max-width: 246px;
 
   span {
@@ -419,6 +420,7 @@
   }
 
   @include tablet {
+    font-weight: 600;
     font-size: 24px;
     line-height: 120%;
     max-width: 448px;
@@ -428,6 +430,7 @@
 .inzhure-link {
   @include general-text;
 
+  font-weight: 700;
   border-radius: 100px;
   background-color: $bg-color;
   padding: 13px 24px;
@@ -444,7 +447,7 @@
   }
 
   @include tablet {
-    padding: 21.5px 32px;
+    padding: 22px 32px;
     max-width: 180px;
   }
 
@@ -500,7 +503,7 @@
   @include desktop {
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: space-between;
   }
 }
 
@@ -553,6 +556,7 @@
   @include desktop {
     min-width: 586px;
     min-height: 226px;
+    margin-bottom: 0;
   }
 }
 
@@ -574,9 +578,14 @@
 
   display: block;
   margin-bottom: 4px;
+  font-size: 24px;
 
-  @include tablet {
-    font-size: 24px;
+  &.tel {
+    font-size: 28px;
+
+    @include tablet {
+      font-size: 36px;
+    }
   }
 }
 
@@ -597,8 +606,10 @@
 .contact-links-list__item--title {
   @include block-title;
 
+  font-size: 24px;
+  max-width: 266px;
+
   @include tablet {
-    font-size: 24px;
     max-width: 382px;
   }
 }
@@ -620,7 +631,7 @@
   max-width: 132px;
 
   @include tablet {
-    padding: 21.5px 32px;
+    padding: 22px 32px;
     max-width: 158px;
   }
 }
