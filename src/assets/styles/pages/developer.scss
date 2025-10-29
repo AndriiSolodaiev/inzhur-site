@@ -10,7 +10,6 @@
   @include desktop {
     display: flex;
     justify-content: space-between;
-    gap: 8px;
 
     padding-top: 140px;
     padding-bottom: 140px;
@@ -40,6 +39,7 @@
 .specialization-list__item {
   background-color: #faf6ee;
   border-radius: 24px;
+  backdrop-filter: blur(17px);
   padding: 20px;
   margin-bottom: 20px;
 
@@ -139,4 +139,118 @@
   @include desktop {
     font-size: 72px;
   }
+}
+
+.completed-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-top: 102px;
+    padding-bottom: 100px;
+  }
+
+  @include desktop {
+    padding-top: 140px;
+    padding-bottom: 140px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.completed-logo-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 60px;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: start;
+    gap: 40px;
+  }
+
+  @include desktop {
+    flex-direction: column-reverse;
+    justify-content: start;
+    gap: 68px;
+    margin-bottom: 0;
+  }
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+
+  @include tablet {
+    width: 160px;
+    height: 160px;
+  }
+
+  @include desktop {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.completed-title {
+  @include section-title;
+
+  font-size: 36px;
+  text-align: center;
+  line-height: 100%;
+  text-transform: none;
+
+  @include tablet {
+    text-align: left;
+    font-size: 64px;
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    font-size: 72px;
+    max-width: 600px;
+  }
+}
+
+.completed-list__item {
+  border-radius: 24px;
+  background-color: #faf6ee;
+  backdrop-filter: blur(17px);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    padding: 40px;
+  }
+
+  @include desktop {
+    min-width: 910px;
+  }
+}
+
+.completed-list__item--title {
+  @include block-title;
+
+  font-size: 24px;
+  margin-bottom: 12px;
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+  @include desktop {
+    font-size: 36px;
+  }
+}
+
+.completed-list__item--text {
+  @include general-text;
 }
