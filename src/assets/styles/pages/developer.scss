@@ -387,7 +387,7 @@
   max-width: 246px;
 
   span {
-    color: #faf6ee;
+    color: #faeef2;
   }
 
   @include tablet {
@@ -405,8 +405,14 @@
   padding: 13px 24px;
   max-width: 153px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   span {
-    display: none;
+    span {
+      display: none;
+    }
   }
 
   @include tablet {
@@ -419,6 +425,21 @@
 
     span {
       display: inline;
+    }
+  }
+
+  &.general-btn {
+    background-color: $olive-color;
+
+    span {
+      color: $accent-color;
+    }
+    &::before {
+      background-color: $bg-color;
+    }
+
+    &:hover {
+      color: $text-color;
     }
   }
 }
