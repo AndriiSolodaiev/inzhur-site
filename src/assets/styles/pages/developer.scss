@@ -131,8 +131,8 @@
   line-height: 100%;
   font-weight: 800;
 
-  span {
-    color: #ece9e2;
+  .investments-link {
+    color: $text-color-2;
     text-decoration: underline;
   }
 
@@ -290,7 +290,7 @@
 
 .contact-list__item {
   border-radius: 24px;
-  background: #faf6ee;
+  background-color: #faf6ee;
   padding: 20px;
   margin-bottom: 20px;
   position: relative;
