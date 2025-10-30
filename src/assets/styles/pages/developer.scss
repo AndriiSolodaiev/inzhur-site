@@ -9,7 +9,7 @@
     padding-bottom: 103px;
   }
 
-  @include desktop {
+  @include laptop {
     display: flex;
     justify-content: space-between;
 
@@ -31,7 +31,7 @@
     margin-bottom: 60px;
   }
 
-  @include desktop {
+  @include laptop {
     font-size: 72px;
     margin-bottom: 0;
     max-width: 755px;
@@ -53,7 +53,7 @@
     padding: 40px;
   }
 
-  @include desktop {
+  @include laptop {
     max-width: 910px;
   }
 }
@@ -72,7 +72,7 @@
     font-size: 32px;
   }
 
-  @include desktop {
+  @include laptop {
     font-size: 36px;
   }
 }
@@ -113,7 +113,7 @@
     padding-bottom: 100px;
   }
 
-  @include desktop {
+  @include laptop {
     padding-top: 140px;
     padding-bottom: 140px;
   }
@@ -136,7 +136,7 @@
     font-size: 64px;
   }
 
-  @include desktop {
+  @include laptop {
     font-size: 72px;
   }
 }
@@ -152,7 +152,7 @@
     padding-bottom: 100px;
   }
 
-  @include desktop {
+  @include laptop {
     padding-top: 140px;
     padding-bottom: 140px;
 
@@ -174,7 +174,7 @@
     gap: 40px;
   }
 
-  @include desktop {
+  @include laptop {
     flex-direction: column-reverse;
     justify-content: start;
     gap: 68px;
@@ -192,7 +192,7 @@
     height: 160px;
   }
 
-  @include desktop {
+  @include laptop {
     width: 200px;
     height: 200px;
   }
@@ -212,7 +212,7 @@
     margin-bottom: 0;
   }
 
-  @include desktop {
+  @include laptop {
     font-size: 72px;
     max-width: 600px;
   }
@@ -233,7 +233,7 @@
     padding: 40px;
   }
 
-  @include desktop {
+  @include laptop {
     max-width: 910px;
   }
 }
@@ -248,7 +248,7 @@
     font-size: 32px;
   }
 
-  @include desktop {
+  @include laptop {
     font-size: 36px;
   }
 }
@@ -282,7 +282,7 @@
       height: 471px;
     }
 
-    @include desktop {
+    @include laptop {
       background-image: url('/assets/images/developer/desk-oval.svg');
       width: 795px;
       height: 570px;
@@ -295,7 +295,7 @@
     height: 1080px;
   }
 
-  @include desktop {
+  @include laptop {
     padding-bottom: 208px;
   }
 }
@@ -314,7 +314,7 @@
     height: 1080px;
   }
 
-  @include desktop {
+  @include laptop {
     width: 1920px;
     height: 1080px;
   }
@@ -347,7 +347,7 @@
   align-items: start;
   justify-content: space-between;
 
-  @include desktop {
+  @include laptop {
     justify-content: start;
     gap: 248px;
   }
@@ -374,7 +374,7 @@
     line-height: 90%;
   }
 
-  @include desktop {
+  @include laptop {
     font-size: 100px;
   }
 }
@@ -387,7 +387,7 @@
     margin-bottom: 261px;
   }
 
-  @include desktop {
+  @include laptop {
     margin-bottom: 90px;
     max-width: 910px;
   }
@@ -404,7 +404,7 @@
     gap: 40px;
   }
 
-  @include desktop {
+  @include laptop {
     margin-right: 150px;
   }
 }
@@ -451,7 +451,7 @@
     max-width: 180px;
   }
 
-  @include desktop {
+  @include laptop {
     max-width: 314px;
 
     span {
@@ -490,7 +490,7 @@
     padding-bottom: 100px;
   }
 
-  @include desktop {
+  @include laptop {
     padding-top: 140px;
     padding-bottom: 140px;
   }
@@ -500,7 +500,7 @@
   list-style: none;
   counter-reset: contacts-links-counter;
 
-  @include desktop {
+  @include laptop {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -553,7 +553,7 @@
     }
   }
 
-  @include desktop {
+  @include laptop {
     min-width: 586px;
     min-height: 226px;
     margin-bottom: 0;
@@ -598,7 +598,7 @@
     flex-direction: row;
   }
 
-  @include desktop {
+  @include laptop {
     flex-direction: column;
   }
 }
