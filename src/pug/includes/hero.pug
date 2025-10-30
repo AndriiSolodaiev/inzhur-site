@@ -1,0 +1,42 @@
+-
+  var title = 'ПРО ПРОЄКТ'
+  var subtitle = 'Гармонія цінностей: коли все, що треба — так, як треба'
+  var descriptionStrong = 'Ми задумали і створюємо ЖК Свідомі так, щоб він відповідав кожному уявленню про те, що таке дім.'
+  var descriptionNormal = 'Тут кожен мешканець відчує: це його простір, його правила, його свобода. Це нетривіальне завдання, тому наш головний принцип — гармонія'
+  var bgImg = {
+    src: "./assets/images/hero/bg.jpg",
+    alt: "building"
+  }
+  var anchor = '#'
+
+section.hero-page 
+  .left-side.container 
+    .left-side__breadcrumbs
+      include ../includes/breadcrumbs.pug
+    h1.left-side__title=title 
+    h4.left-side__subtitle=subtitle
+    p.left-side__text-block 
+      span=descriptionStrong
+      span=descriptionNormal
+    a.left-side__down-button(href=anchor)
+      <svg width="72" height="68" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1181_8584)">
+          <path d="M25.6726 68C18.4938 68 11.9169 65.7944 7.11755 61.2677C-4.74191 50.084 -1.43452 28.7455 14.4576 13.7203C21.9611 6.646 31.1593 1.92814 40.355 0.483446C50.1978 -1.07688 58.9125 1.16892 64.8826 6.79851C76.7423 17.9823 73.4338 39.3208 57.5426 54.3458C48.0624 63.2854 36.2004 68 25.6726 68Z" fill="#393028"/>
+          <path d="M36.8506 28L36.8506 38.3057L35.1481 38.3057L35.1481 28L36.8506 28Z" fill="#ECE9E2"/>
+          <path d="M41.8643 35.7371L41.8643 33.3488L36 37.7066L36 40.0003L41.8643 35.7371Z" fill="#ECE9E2"/>
+          <path d="M30.1357 35.7371L30.1357 33.3488L36 37.7066L36 40.0003L30.1357 35.7371Z" fill="#ECE9E2"/>
+        </g>
+      </svg>
+      span Гортайте
+    <svg class="left-side__overlap" viewBox="0 0 960 715" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_1224_8354)">
+        <path d="M117.701 373.79C38.4279 264.785 0.537078 137.984 0 0V715H960C581.897 706.532 278.072 594.382 117.701 373.79Z" fill="currentColor"/>
+      </g>
+    </svg>
+  .right-side
+    img.right-side__bg(src=bgImg.src, alt=bgImg.alt)
+    <svg class="right-side__overlap" viewBox="0 0 960 715" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_1224_8354)">
+        <path d="M117.701 373.79C38.4279 264.785 0.537078 137.984 0 0V715H960C581.897 706.532 278.072 594.382 117.701 373.79Z" fill="currentColor"/>
+      </g>
+    </svg>
