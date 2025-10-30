@@ -25,7 +25,7 @@ block scripts
   script(defer src='./assets/scripts/commercial.bundle.js')
 block content
   section.hero-screen 
-  h1.hero-title Commercial
+  h1.hero-title Commercial page
 
   section.features-section.container
     .section-content-wrapper
@@ -61,10 +61,44 @@ block content
 
     ul.advantages-list
       li.advantages-item 
+        .advantages-image-wrapper
+          img(src="/assets/images/commercial/adv-card-1.png", alt="").advantages-item__image
+
+        .advantages-content
+          h3.advantages-item__title Вигідна локація —
+          p.advantages-text в ближньому передмісті Києва, яке активно розвивається, забезпечуючи комфорт мешканців необхідною інфраструктурою.
+
       li.advantages-item 
+        .advantages-image-wrapper
+          img(src="/assets/images/commercial/adv-card-2.png", alt="").advantages-item__image
+          
+        .advantages-content 
+          h3.advantages-item__title Високий трафік —
+          p.advantages-text завдяки вигідному розташуванню, активній забудові та постійному приросту населення.
+
       li.advantages-item 
+        .advantages-image-wrapper
+          img(src="/assets/images/commercial/adv-card-3.png", alt="").advantages-item__image
+          
+        .advantages-content 
+          h3.advantages-item__title.competition Низька конкуренція 
+          p.advantages-text відкриває реальні перспективи для старту та масштабування вашого бізнесу.
+
       li.advantages-item 
+        .advantages-image-wrapper
+          img(src="/assets/images/commercial/adv-card-4.png", alt="").advantages-item__image
+          
+        .advantages-content 
+          h3.advantages-item__title Нові приміщення та сучасний дизайн —
+          p.advantages-text відповідають сучасним стандартам, мають гнучкі планування та можливість адаптації.
+
       li.advantages-item 
+        .advantages-image-wrapper
+          img(src="/assets/images/commercial/adv-card-5.png", alt="").advantages-item__image
+          
+        .advantages-content 
+          h3.advantages-item__title Перспективи розвитку —
+          p.advantages-text постійний зростаючий попит та збільшення потоку клієнтів для розширення бізнесу.
       
 block footer
   include ../includes/footer.pug
