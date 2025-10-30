@@ -1,6 +1,6 @@
-// ======= Common =======
+// ======= Features section =======
 
-.section {
+.features-section {
   padding-top: 60px;
   padding-bottom: 60px;
 
@@ -13,11 +13,6 @@
     padding-top: 140px;
     padding-bottom: 140px;
   }
-}
-
-// ======= Features section =======
-
-.features-section {
 }
 
 .section-content-wrapper {
@@ -57,9 +52,6 @@
     margin-bottom: 0;
     max-width: 480px;
   }
-}
-
-.features-list {
 }
 
 .features-list__item {
@@ -129,4 +121,41 @@
   }
 }
 
-// ======= Аdvantages section =======
+// ======= Advantages section =======
+
+.advantages-section {
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-bottom: 100px;
+  }
+
+  @include desktop {
+    padding-bottom: 140px;
+  }
+}
+
+.advantages-title {
+  @include section-title;
+
+  line-height: 100%;
+  margin-bottom: 60px;
+  text-transform: none;
+
+  @include tablet {
+    font-size: 64px;
+    margin-bottom: 40px;
+  }
+
+  @include desktop {
+    font-size: 72px;
+    margin-bottom: 0;
+    max-width: 600px;
+  }
+}
+
+.advantages-list {
+}
+
+.advantages-item {
+}
