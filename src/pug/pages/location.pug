@@ -29,14 +29,14 @@ block content
   section.infrastructure-section.container
     .infrastructure-section__house-wrapper
       picture.infrastructure-section__house
-        source(media="(min-width: 1024px)" srcset="/assets/images/location/desk-house.jpg")
-        source(media="(min-width: 768px)" srcset="/assets/images/location/tab-house.jpg")
-        img(src="/assets/images/location/mob-house.jpg" alt="")
+        source(media="(min-width: 1024px)" srcset="/assets/images/location/filler/desk-house.jpg")
+        source(media="(min-width: 768px)" srcset="/assets/images/location/filler/tab-house.jpg")
+        img(src="/assets/images/location/filler/mob-house.jpg" alt="")
 
       picture.infrastructure-section__mask
-        source(media="(min-width: 1024px)" srcset="/assets/images/location/desk-house-oval.svg")
-        source(media="(min-width: 768px)" srcset="/assets/images/location/tab-house-oval.svg")
-        img(src="/assets/images/location/mob-house-oval.svg" alt="")
+        source(media="(min-width: 1024px)" srcset="/assets/images/location/filler/desk-house-oval.svg")
+        source(media="(min-width: 768px)" srcset="/assets/images/location/filler/tab-house-oval.svg")
+        img(src="/assets/images/location/filler/mob-house-oval.svg" alt="")
 
     .icon-inzhure-block
       ul.infrastructure-icons-list
@@ -64,7 +64,7 @@ block content
 
     .area-image-content-wrapper
       .area-img-wrapper 
-        img(src="/assets/images/location/area-img.jpg", alt="").area-img
+        img(src="/assets/images/location/area/area-img.jpg", alt="").area-img
         p.area-img-text Перший поверх відведений під комерційні приміщення
 
       ul.area-list
@@ -110,7 +110,83 @@ block content
               p.area-sublist__item-text Спортзали
             li.area-sublist__item
               p.area-sublist__item-text Фітнес-центри
+
+
+  section.nearby-section.container 
+    h2.nearby-title Поряд знаходяться   
+
+    ul.nearby-list
+      li.nearby-item 
+        img(src="/assets/images/location/nearby/nearby-card-1.jpg", alt="").nearby-image
+
+        .nearby-text-content-wrapper
+          h3.nearby-item-title Дитсадки
+
+          ul.nearby-table-title-list
+            li.nearby-table-title-item 
+              h4.nearby-table-title Назва закладу
+            li.nearby-table-title-item 
+              h4.nearby-table-title На авто
+              h4.nearby-table-title Пішки
+          
+          .nearby-lists-wrapper
+            ul.establishment-name-list
+              li.establishment-name-item
+                p.establishment-name Ігринка
+              li.establishment-name-item
+                p.establishment-name ЯБЛУНЬКА
+              li.establishment-name-item
+                p.establishment-name Mamaya
+              li.establishment-name-item
+                p.establishment-name Світлячок
+              li.establishment-name-item
+                p.establishment-name Елмер і Лео
+              li.establishment-name-item
+                p.establishment-name SKILLS
+              li.establishment-name-item
+                p.establishment-name Мандаринка
+              li.establishment-name-item
+                p.establishment-name Барвінок
+
+            .time-lists-wrapper  
+              ul.time-by-car-list
+                li.time-by-car-item
+                  p.time-by-car 2 хв
+                li.time-by-car-item
+                  p.time-by-car 3 хв
+                li.time-by-car-item
+                  p.time-by-car 5 хв
+                li.time-by-car-item
+                  p.time-by-car 3 хв
+                li.time-by-car-item
+                  p.time-by-car 3 хв
+                li.time-by-car-item
+                  p.time-by-car 4 хв
+                li.time-by-car-item
+                  p.time-by-car 7 хв
+                li.time-by-car-item
+                  p.time-by-car 5 хв
+
+              ul.time-on-foot-list
+                li.time-on-foot-item
+                  p.time-on-foot 4 хв
+                li.time-on-foot-item
+                  p.time-on-foot 15 хв
+                li.time-on-foot-item
+                  p.time-on-foot 19 хв
+                li.time-on-foot-item
+                  p.time-on-foot 14 хв
+                li.time-on-foot-item
+                  p.time-on-foot 15 хв
+                li.time-on-foot-item
+                  p.time-on-foot 16 хв
+                li.time-on-foot-item
+                  p.time-on-foot7 29 хв
+                li.time-on-foot-item
+                  p.time-on-foot 17 хв
       
+      
+        
 block footer
   include ../includes/footer.pug
 

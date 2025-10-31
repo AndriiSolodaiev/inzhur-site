@@ -14,7 +14,7 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-image: url('/assets/images/location/mob-oval.svg');
+    background-image: url('/assets/images/location/filler/mob-oval.svg');
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
@@ -24,13 +24,13 @@
     height: auto;
 
     @include tablet {
-      background-image: url('/assets/images/location/tab-oval.svg');
+      background-image: url('/assets/images/location/filler/tab-oval.svg');
       width: clamp(400px, 100vw, 623px);
       aspect-ratio: 623 / 350;
     }
 
     @include laptop {
-      background-image: url('/assets/images/location/desk-oval.svg');
+      background-image: url('/assets/images/location/filler/desk-oval.svg');
       width: clamp(500px, 40vw, 795px);
       aspect-ratio: 795 / 570;
     }
@@ -405,5 +405,202 @@
 .area-sublist__item-text {
   @include general-text;
 }
+
 // ======== Nearby section ========
+
+.nearby-section {
+  padding-top: 30px;
+
+  @include tablet {
+    padding-top: 50px;
+  }
+
+  @include laptop {
+    padding-top: 100px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.nearby-title {
+  @include section-title;
+
+  font-size: 42px;
+  line-height: 100%;
+  margin-bottom: 40px;
+
+  @include tablet {
+    font-size: 72px;
+    margin-bottom: 60px;
+  }
+
+  @include laptop {
+    font-size: vw(72);
+    margin-bottom: 0;
+  }
+}
+
+.nearby-list {
+}
+
+.nearby-item {
+  border-radius: 28px;
+  background: #faf6ee;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+
+  @include laptop {
+    display: flex;
+  }
+}
+
+.nearby-image {
+  width: 100%;
+  aspect-ratio: 335 / 184;
+  object-fit: cover;
+
+  flex-basis: clamp(335px, 50vw, 600px);
+
+  @include tablet {
+    aspect-ratio: 728 / 400;
+  }
+
+  @include laptop {
+    width: 50%;
+    aspect-ratio: 600 / 520;
+  }
+}
+
+.nearby-item-title {
+  @include block-title;
+
+  margin-bottom: 12px;
+
+  @include tablet {
+    font-size: 32px;
+    margin-bottom: 28px;
+  }
+
+  @include laptop {
+    font-size: vw(36);
+  }
+}
+
+.nearby-text-content-wrapper {
+  padding: 20px 20px 28px;
+
+  @include tablet {
+    padding: 40px 40px 60px;
+  }
+
+  @include laptop {
+    width: 50%;
+  }
+}
+
+.nearby-table-title-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 16px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid rgba(179, 190, 205, 0.4);
+    opacity: 0.8;
+    backdrop-filter: blur(20px);
+    bottom: -8px;
+    width: 100%;
+
+    @include tablet {
+      bottom: -12px;
+    }
+  }
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+
+.nearby-table-title-item {
+  &:not(:first-child) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include tablet {
+      gap: 20px;
+    }
+  }
+}
+
+.nearby-table-title {
+  @include general-text;
+
+  font-weight: 700;
+  color: $olive-color;
+}
+
+.nearby-lists-wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.establishment-name-list {
+}
+
+.time-lists-wrapper {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+}
+
+.time-by-car-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 52px;
+
+  @include tablet {
+    min-width: 68px;
+  }
+}
+
+.time-on-foot-list {
+  min-width: 48px;
+  min-width: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+
+  @include tablet {
+    gap: 2px;
+  }
+}
+
+.establishment-name-item,
+.time-by-car-item,
+.time-on-foot-item {
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.establishment-name,
+.time-by-car,
+.time-on-foot {
+  @include general-text;
+}
+
+.establishment-name {
+  font-weight: 700;
+}
+
 // ======== Harmony section ========
