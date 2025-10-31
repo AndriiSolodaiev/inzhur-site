@@ -1,4 +1,4 @@
-.cycle-section {
+.infrastructure-section {
   margin-top: 120px;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -7,40 +7,63 @@
   overflow: hidden;
   height: 635px;
 
+  // &::after {
+  //   position: absolute;
+  //   content: '';
+  //   background-image: url('/assets/images/location/mob-oval.svg');
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+  //   right: 0;
+  //   bottom: 0;
+  //   width: 355px;
+  //   height: 190px;
+  //   z-index: 1;
+
+  //   @include tablet {
+  //     background-image: url('/assets/images/location/tab-oval.svg');
+  //     width: 623px;
+  //     height: 350px;
+  //   }
+
+  //   @include laptop {
+  //     background-image: url('/assets/images/location/desk-oval.svg');
+  //     width: 100%;
+  //     max-width: 623px;
+  //     height: auto;
+  //     aspect-ratio: 623 / 447;
+  //   }
+
+  //   @include desktop {
+  //     max-width: 795px;
+  //     height: 570px;
+  //     aspect-ratio: 795 / 570;
+  //   }
+  // }
+
   &::after {
-    position: absolute;
     content: '';
-    background-image: url('/assets/images/location/mob-oval.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
+    position: absolute;
     right: 0;
     bottom: 0;
-    width: 355px;
-    height: 190px;
     z-index: 1;
+    background-image: url('/assets/images/location/mob-oval.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+
+    width: clamp(355px, 28vw, 795px);
+    aspect-ratio: 355 / 190;
+    height: auto;
 
     @include tablet {
       background-image: url('/assets/images/location/tab-oval.svg');
-      width: 623px;
-      height: 350px;
+      width: clamp(400px, 100vw, 623px);
+      aspect-ratio: 623 / 350;
     }
 
     @include laptop {
       background-image: url('/assets/images/location/desk-oval.svg');
-
-      @media screen and (max-width: 1366px) {
-        width: 623px;
-      }
-
-      width: 100%;
-      max-width: 623px;
-      height: 447px;
-      aspect-ratio: 623 / 447;
-    }
-
-    @include desktop {
-      max-width: 795px;
-      height: 570px;
+      width: clamp(500px, 40vw, 795px);
       aspect-ratio: 795 / 570;
     }
   }
@@ -50,9 +73,17 @@
     padding-bottom: 109px;
     height: 1080px;
   }
+
+  @include laptop {
+    height: auto;
+  }
+
+  @include desktop {
+    height: 1080px;
+  }
 }
 
-.cycle-section__house-wrapper {
+.infrastructure-section__house-wrapper {
   position: absolute;
   overflow: hidden;
   inset: 0;
@@ -81,7 +112,7 @@
   }
 }
 
-.cycle-section__mask {
+.infrastructure-section__mask {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -119,11 +150,11 @@
   }
 }
 
-.cycle-icons-list {
+.infrastructure-icons-list {
   display: flex;
 }
 
-.cycle-icons-list__item {
+.infrastructure-icons-list__item {
   margin: -3px;
 }
 
@@ -155,8 +186,13 @@
   }
 
   @include laptop {
-    margin-bottom: 90px;
-    max-width: 828px;
+    margin-bottom: 220px;
+    max-width: 874px;
+
+    @media screen and (max-width: 1366px) {
+      margin-bottom: 90px;
+      max-width: 585px;
+    }
   }
 
   @include desktop {
@@ -175,8 +211,11 @@
     gap: 40px;
   }
 
+  @include laptop {
+    top: -60px;
+  }
+
   @include desktop {
-    top: -100px;
     margin-right: 150px;
   }
 }
@@ -193,9 +232,17 @@
 
   @include tablet {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 32px;
     line-height: 120%;
-    max-width: 448px;
+    max-width: 476px;
+  }
+
+  @include laptop {
+    font-size: vw(36);
+
+    @media screen and (max-width: 1366px) {
+      max-width: 392px;
+    }
   }
 }
 
