@@ -32,7 +32,7 @@
   }
 
   @include laptop {
-    font-size: 72px;
+    font-size: vw(72);
     margin-bottom: 0;
     max-width: 755px;
   }
@@ -73,7 +73,7 @@
   }
 
   @include laptop {
-    font-size: 36px;
+    font-size: vw(36);
   }
 }
 
@@ -137,7 +137,7 @@
   }
 
   @include laptop {
-    font-size: 72px;
+    font-size: vw(72);
   }
 }
 
@@ -213,7 +213,7 @@
   }
 
   @include laptop {
-    font-size: 72px;
+    font-size: vw(72);
     max-width: 600px;
   }
 }
@@ -249,7 +249,7 @@
   }
 
   @include laptop {
-    font-size: 36px;
+    font-size: vw(36);
   }
 }
 
@@ -264,6 +264,7 @@
   padding-bottom: 62px;
   background-color: $bc;
   position: relative;
+  overflow: hidden;
 
   &::after {
     position: absolute;
@@ -275,6 +276,7 @@
     bottom: 0;
     width: 355px;
     height: 324px;
+    z-index: 1;
 
     @include tablet {
       background-image: url('/assets/images/developer/tab-oval.svg');
@@ -284,8 +286,21 @@
 
     @include laptop {
       background-image: url('/assets/images/developer/desk-oval.svg');
-      width: 795px;
+
+      @media screen and (max-width: 1366px) {
+        width: 623px;
+      }
+
+      width: 100%;
+      max-width: 623px;
+      height: 447px;
+      aspect-ratio: 623 / 447;
+    }
+
+    @include desktop {
+      max-width: 795px;
       height: 570px;
+      aspect-ratio: 795 / 570;
     }
   }
 
@@ -296,12 +311,13 @@
   }
 
   @include laptop {
-    padding-bottom: 208px;
+    height: auto;
   }
 }
 
-.cycle-section__house {
+.cycle-section__house-wrapper {
   position: absolute;
+  overflow: hidden;
   inset: 0;
 
   width: 335px;
@@ -315,8 +331,10 @@
   }
 
   @include laptop {
-    width: 1920px;
-    height: 1080px;
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    aspect-ratio: 1920 / 1080;
   }
 
   img {
@@ -333,6 +351,12 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .icon-inzhure-block,
@@ -375,7 +399,7 @@
   }
 
   @include laptop {
-    font-size: 100px;
+    font-size: vw(100);
   }
 }
 
@@ -388,7 +412,15 @@
   }
 
   @include laptop {
+    max-width: 828px;
     margin-bottom: 90px;
+
+    @media screen and (max-width: 1366px) {
+      max-width: 644px;
+    }
+  }
+
+  @include desktop {
     max-width: 910px;
   }
 }
@@ -404,7 +436,8 @@
     gap: 40px;
   }
 
-  @include laptop {
+  @include desktop {
+    top: -100px;
     margin-right: 150px;
   }
 }
