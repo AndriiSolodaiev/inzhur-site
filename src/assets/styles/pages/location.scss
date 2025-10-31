@@ -2,7 +2,7 @@
 
 .infrastructure-section {
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   background-color: $bc;
   position: relative;
   overflow: hidden;
@@ -220,5 +220,190 @@
 }
 
 // ======== Area section ========
+
+.area-section {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  position: relative;
+
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  @include laptop {
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+}
+
+.area-title {
+  @include section-title;
+
+  font-size: 48px;
+  margin-bottom: 40px;
+
+  @include tablet {
+    font-size: 80px;
+    margin-bottom: 60px;
+    max-width: 640px;
+  }
+
+  @include laptop {
+    max-width: none;
+    font-size: vw(100);
+  }
+}
+
+.area-image-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  @include laptop {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.area-img-wrapper {
+  position: relative;
+  inset: 0;
+  aspect-ratio: 335 / 360;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 20px;
+
+  flex-basis: clamp(360px, 50vw, 910px);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 213px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(57, 48, 40, 0) 0%,
+      rgba(57, 48, 40, 0.6) 40.38%,
+      rgba(57, 48, 40, 0.9) 100%
+    );
+  }
+
+  @include tablet {
+    aspect-ratio: 728 / 520;
+    padding: 40px;
+  }
+
+  @include laptop {
+    aspect-ratio: 910 / 520;
+  }
+}
+
+.area-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.area-img-text {
+  @include block-title;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+
+  font-size: 24px;
+  color: #faf6ee;
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+  @include laptop {
+    font-size: vw(36);
+    max-width: 830px;
+  }
+}
+
+.area-list {
+  flex-basis: clamp(360px, 50vw, 910px);
+}
+
+.area-item {
+  border-radius: 16px;
+  background: var(--White, #faf6ee);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    padding: 40px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.area-item__icon-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.area-item__title {
+  @include block-title;
+
+  font-size: 24px;
+}
+
+.area-sublist {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.area-sublist__item {
+  position: relative;
+  padding-left: 20px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 8px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background-color: $text-color;
+    border-radius: 50%;
+  }
+
+  @include tablet {
+    min-width: 280px;
+  }
+}
+
+.area-sublist__item-text {
+  @include general-text;
+}
 // ======== Nearby section ========
 // ======== Harmony section ========
