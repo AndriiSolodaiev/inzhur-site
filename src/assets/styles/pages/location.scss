@@ -658,3 +658,137 @@
 }
 
 // ======== Harmony section ========
+
+.harmony-section {
+  padding-top: 235px;
+  position: relative;
+  overflow: hidden;
+  height: 971px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(0deg, rgba(236, 233, 226, 0) 0%, #ece9e2 100%);
+  }
+
+  @include tablet {
+    padding-top: 320px;
+    height: 1705px;
+
+    &::before {
+      height: 400px;
+    }
+  }
+
+  @include laptop {
+    padding-top: 400px;
+
+    @media screen and (min-width: 1366px) {
+      height: 1925px;
+    }
+  }
+}
+
+.harmony-logo {
+  display: block;
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: 478px;
+  }
+
+  @include laptop {
+    max-width: 770px;
+  }
+}
+
+.harmony-title {
+  @include block-title;
+
+  text-align: center;
+  margin-bottom: 20px;
+
+  @include tablet {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  @include laptop {
+    font-size: vw(36);
+  }
+}
+
+.harmony-link {
+  display: block;
+  margin: 0 auto;
+
+  &.general-btn {
+    background-color: $bc;
+
+    &::before {
+      background-color: $olive-color;
+    }
+
+    span {
+      color: $text-color;
+    }
+
+    &:hover {
+      span {
+        color: $olive-color;
+      }
+    }
+  }
+}
+
+.harmony-sky-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  z-index: -2;
+
+  aspect-ratio: 375 / 745;
+
+  @include tablet {
+    aspect-ratio: 768 / 1254;
+  }
+
+  @include desktop {
+    aspect-ratio: 1920 / 1474;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.harmony-house-wrapper {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+
+  aspect-ratio: 375 / 581;
+
+  @include tablet {
+    aspect-ratio: 768 / 1133;
+    bottom: -120px;
+  }
+
+  @include laptop {
+    aspect-ratio: 1920 / 1133;
+    bottom: -68px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
