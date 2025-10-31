@@ -442,15 +442,16 @@
   }
 }
 
-.nearby-list {
-}
-
 .nearby-item {
   border-radius: 28px;
   background: #faf6ee;
   position: relative;
   overflow: hidden;
   margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include laptop {
     display: flex;
@@ -550,55 +551,21 @@
   justify-content: space-between;
 }
 
-.establishment-name-list,
-.time-by-car-list,
-.time-on-foot-list {
+.establishment-name-list {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 100%;
 
   @include tablet {
     gap: 12px;
   }
 }
 
-.time-lists-wrapper {
+.establishment-name-item {
   display: flex;
   align-items: start;
-  gap: 12px;
-
-  @media screen and (min-width: 1366px) {
-    gap: 30px;
-  }
-
-  @include desktop {
-    gap: 48px;
-  }
-}
-
-.time-by-car-list {
-  min-width: 52px;
-
-  @include tablet {
-    min-width: 68px;
-  }
-
-  @include laptop {
-    min-width: 38px;
-  }
-}
-
-.time-on-foot-list {
-  min-width: 48px;
-
-  @include laptop {
-    min-width: 28px;
-  }
-}
-
-.establishment-name-item,
-.time-by-car-item,
-.time-on-foot-item {
+  justify-content: space-between;
 }
 
 .establishment-name,
@@ -609,6 +576,53 @@
 
 .establishment-name {
   font-weight: 700;
+  max-width: 150px;
+
+  @include tablet {
+    max-width: 100%;
+  }
+
+  @include laptop {
+    max-width: 320px;
+  }
+}
+
+.establishment-time {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 110px;
+
+  @include tablet {
+    width: 126px;
+  }
+
+  @include laptop {
+    width: 76px;
+  }
+
+  @include desktop {
+    width: 128px;
+  }
+}
+
+.time-by-car {
+  min-width: 64px;
+
+  @include tablet {
+    min-width: 80px;
+  }
+
+  @include laptop {
+    min-width: 52px;
+  }
+  @include desktop {
+    min-width: 80px;
+  }
+}
+
+.time-on-foot {
+  min-width: 44px;
 }
 
 // ======== Harmony section ========
