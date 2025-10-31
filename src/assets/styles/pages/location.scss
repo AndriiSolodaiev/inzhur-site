@@ -442,12 +442,40 @@
   }
 }
 
+.nearby-list {
+  counter-reset: nearby;
+}
+
 .nearby-item {
+  counter-increment: nearby;
+
   border-radius: 28px;
   background: #faf6ee;
   position: relative;
   overflow: hidden;
   margin-bottom: 40px;
+
+  &::before {
+    @include general-text;
+
+    content: counter(nearby);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 100px;
+    background: $bg-color;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
 
   &:last-child {
     margin-bottom: 0;
