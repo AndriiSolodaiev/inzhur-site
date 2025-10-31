@@ -1,0 +1,253 @@
+.cycle-section {
+  margin-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $bc;
+  position: relative;
+  overflow: hidden;
+  height: 635px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background-image: url('/assets/images/location/mob-oval.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 0;
+    bottom: 0;
+    width: 355px;
+    height: 190px;
+    z-index: 1;
+
+    @include tablet {
+      background-image: url('/assets/images/location/tab-oval.svg');
+      width: 623px;
+      height: 350px;
+    }
+
+    @include laptop {
+      background-image: url('/assets/images/location/desk-oval.svg');
+
+      @media screen and (max-width: 1366px) {
+        width: 623px;
+      }
+
+      width: 100%;
+      max-width: 623px;
+      height: 447px;
+      aspect-ratio: 623 / 447;
+    }
+
+    @include desktop {
+      max-width: 795px;
+      height: 570px;
+      aspect-ratio: 795 / 570;
+    }
+  }
+
+  @include tablet {
+    padding-top: 140px;
+    padding-bottom: 109px;
+    height: 1080px;
+  }
+}
+
+.cycle-section__house-wrapper {
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+
+  width: 335px;
+  height: 634px;
+  margin: 0 auto;
+  z-index: 0;
+
+  @include tablet {
+    width: 768px;
+    height: 1080px;
+  }
+
+  @include laptop {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    aspect-ratio: 1920 / 1080;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cycle-section__mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.icon-inzhure-block,
+.inzhur-title,
+.inzhure-text-link-block {
+  position: relative;
+  z-index: 2;
+}
+
+.icon-inzhure-block {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  @include laptop {
+    justify-content: start;
+
+    @media screen and (max-width: 1366px) {
+      gap: 200px;
+    }
+
+    gap: 298px;
+  }
+}
+
+.cycle-icons-list {
+  display: flex;
+}
+
+.cycle-icons-list__item {
+  margin: -3px;
+}
+
+.inzhur,
+.inzhur-title {
+  @include section-title;
+
+  color: #faeef0;
+  font-size: 36px;
+  line-height: 100%;
+
+  @include tablet {
+    font-size: 80px;
+    line-height: 90%;
+  }
+
+  @include laptop {
+    font-size: vw(100);
+  }
+}
+
+.inzhur-title {
+  margin-bottom: 317px;
+  max-width: 515px;
+
+  @include tablet {
+    max-width: 728px;
+    margin-bottom: 454px;
+  }
+
+  @include laptop {
+    margin-bottom: 90px;
+    max-width: 828px;
+  }
+
+  @include desktop {
+    max-width: 1064px;
+  }
+}
+
+.inzhure-text-link-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: auto;
+  width: fit-content;
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  @include desktop {
+    top: -100px;
+    margin-right: 150px;
+  }
+}
+
+.inzure-text {
+  @include general-text;
+
+  font-weight: 700;
+  max-width: 246px;
+
+  span {
+    color: #faeef2;
+  }
+
+  @include tablet {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    max-width: 448px;
+  }
+}
+
+.inzhure-link {
+  @include general-text;
+
+  font-weight: 700;
+  border-radius: 100px;
+  background-color: $bg-color;
+  padding: 13px 24px;
+  max-width: 153px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    span {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding: 22px 32px;
+    max-width: 180px;
+  }
+
+  @include laptop {
+    max-width: 314px;
+
+    span {
+      span {
+        display: inline;
+      }
+    }
+  }
+
+  &.general-btn {
+    background-color: $accent-color;
+
+    span {
+      color: $text-color;
+    }
+
+    &::before {
+      background-color: $bg-color;
+    }
+
+    &:hover {
+      span {
+        color: $text-color-2;
+      }
+    }
+  }
+}
