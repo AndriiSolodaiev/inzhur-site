@@ -1,44 +1,12 @@
+// ======== Infrastructure section ========
+
 .infrastructure-section {
-  margin-top: 120px;
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: $bc;
   position: relative;
   overflow: hidden;
   height: 635px;
-
-  // &::after {
-  //   position: absolute;
-  //   content: '';
-  //   background-image: url('/assets/images/location/mob-oval.svg');
-  //   background-repeat: no-repeat;
-  //   background-size: contain;
-  //   right: 0;
-  //   bottom: 0;
-  //   width: 355px;
-  //   height: 190px;
-  //   z-index: 1;
-
-  //   @include tablet {
-  //     background-image: url('/assets/images/location/tab-oval.svg');
-  //     width: 623px;
-  //     height: 350px;
-  //   }
-
-  //   @include laptop {
-  //     background-image: url('/assets/images/location/desk-oval.svg');
-  //     width: 100%;
-  //     max-width: 623px;
-  //     height: auto;
-  //     aspect-ratio: 623 / 447;
-  //   }
-
-  //   @include desktop {
-  //     max-width: 795px;
-  //     height: 570px;
-  //     aspect-ratio: 795 / 570;
-  //   }
-  // }
 
   &::after {
     content: '';
@@ -129,7 +97,7 @@
 
 .icon-inzhure-block,
 .inzhur-title,
-.inzhure-text-link-block {
+.inzhure-text-block {
   position: relative;
   z-index: 2;
 }
@@ -200,7 +168,7 @@
   }
 }
 
-.inzhure-text-link-block {
+.inzhure-text-block {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -216,7 +184,8 @@
   }
 
   @include desktop {
-    margin-right: 150px;
+    top: 0;
+    margin-right: 110px;
   }
 }
 
@@ -244,57 +213,12 @@
       max-width: 392px;
     }
   }
-}
 
-.inzhure-link {
-  @include general-text;
-
-  font-weight: 700;
-  border-radius: 100px;
-  background-color: $bg-color;
-  padding: 13px 24px;
-  max-width: 153px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  span {
-    span {
-      display: none;
-    }
-  }
-
-  @include tablet {
-    padding: 22px 32px;
-    max-width: 180px;
-  }
-
-  @include laptop {
-    max-width: 314px;
-
-    span {
-      span {
-        display: inline;
-      }
-    }
-  }
-
-  &.general-btn {
-    background-color: $accent-color;
-
-    span {
-      color: $text-color;
-    }
-
-    &::before {
-      background-color: $bg-color;
-    }
-
-    &:hover {
-      span {
-        color: $text-color-2;
-      }
-    }
+  @include desktop {
+    max-width: 520px;
   }
 }
+
+// ======== Area section ========
+// ======== Nearby section ========
+// ======== Harmony section ========
