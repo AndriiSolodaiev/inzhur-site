@@ -694,10 +694,11 @@
 
 .harmony-logo {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 13px;
 
   @include tablet {
     max-width: 478px;
+    margin-bottom: 20px;
   }
 
   @include laptop {
@@ -724,6 +725,11 @@
 .harmony-link {
   display: block;
   margin: 0 auto;
+  height: 46px;
+
+  @include tablet {
+    height: 68px;
+  }
 
   &.general-btn {
     background-color: $bc;
