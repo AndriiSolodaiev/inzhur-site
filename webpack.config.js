@@ -23,6 +23,7 @@ const config = {
     property: './src/assets/scripts/gulp-modules/property.js',
     developer: './src/assets/scripts/gulp-modules/developer.js',
     payment: './src/assets/scripts/gulp-modules/payment.js',
+    about: './src/assets/scripts/gulp-modules/about.js',
   },
   output: {
     filename: '[name].bundle.js',
