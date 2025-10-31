@@ -462,8 +462,6 @@
   aspect-ratio: 335 / 184;
   object-fit: cover;
 
-  flex-basis: clamp(335px, 50vw, 600px);
-
   @include tablet {
     aspect-ratio: 728 / 400;
   }
@@ -552,45 +550,55 @@
   justify-content: space-between;
 }
 
-.establishment-name-list {
+.establishment-name-list,
+.time-by-car-list,
+.time-on-foot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include tablet {
+    gap: 12px;
+  }
 }
 
 .time-lists-wrapper {
   display: flex;
   align-items: start;
   gap: 12px;
+
+  @media screen and (min-width: 1366px) {
+    gap: 30px;
+  }
+
+  @include desktop {
+    gap: 48px;
+  }
 }
 
 .time-by-car-list {
-  display: flex;
-  flex-direction: column;
   min-width: 52px;
 
   @include tablet {
     min-width: 68px;
   }
+
+  @include laptop {
+    min-width: 38px;
+  }
 }
 
 .time-on-foot-list {
   min-width: 48px;
-  min-width: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
 
-  @include tablet {
-    gap: 2px;
+  @include laptop {
+    min-width: 28px;
   }
 }
 
 .establishment-name-item,
 .time-by-car-item,
 .time-on-foot-item {
-  margin-bottom: 4px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .establishment-name,
