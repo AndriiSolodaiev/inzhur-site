@@ -329,6 +329,7 @@
 .footer__bottom-block {
   padding-top: 40px;
   border-top: 1px solid rgba(57, 48, 40, 0.20);
+  padding-bottom: 20px;
 
   .footer__license-wrap {
     display: flex;
@@ -341,7 +342,7 @@
     color: #64686E;
 
     span {
-      margin-top: 8px;
+
       display: block;
 
       @include tablet {
@@ -356,6 +357,8 @@
 }
 
 .dev-logo {
+  transform: translateY(20px);
+
   .dev-logo-bg {
     transition: fill 0.4s ease;
   }
