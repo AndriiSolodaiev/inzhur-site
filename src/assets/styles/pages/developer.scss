@@ -1,0 +1,686 @@
+// ======= Specialization Section =======
+
+.specialization-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 103px;
+  }
+
+  @include laptop {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+
+.specialization-title {
+  @include section-title;
+
+  font-size: 36px;
+  line-height: 100%;
+  text-transform: none;
+  margin-bottom: 40px;
+
+  @include tablet {
+    font-size: 64px;
+    margin-bottom: 60px;
+  }
+
+  @include laptop {
+    font-size: vw(72);
+    margin-bottom: 0;
+    max-width: 755px;
+  }
+}
+
+.specialization-list__item {
+  background-color: #faf6ee;
+  border-radius: 24px;
+  backdrop-filter: blur(17px);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    padding: 40px;
+  }
+
+  @include laptop {
+    max-width: 910px;
+  }
+}
+
+.specialization-list__item--title {
+  @include block-title;
+
+  font-size: 24px;
+  margin-bottom: 12px;
+
+  span {
+    color: $olive-color;
+  }
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+  @include laptop {
+    font-size: vw(36);
+  }
+}
+
+.specialization-list__item--text {
+  @include general-text;
+
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+
+.specialization-list__item--button {
+  @include general-text;
+
+  font-weight: 700;
+
+  @include tablet {
+    padding: 22px 32px;
+  }
+}
+
+// ======= Investments Section =======
+
+.investments-section {
+  background-color: $accent-color-2;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include laptop {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+
+.investments-title {
+  @include block-title;
+
+  font-family: $default-font-2;
+  font-size: 36px;
+  line-height: 100%;
+  font-weight: 800;
+
+  .investments-link {
+    color: $text-color-2;
+    text-decoration: underline;
+  }
+
+  @include tablet {
+    font-size: 64px;
+  }
+
+  @include laptop {
+    font-size: vw(72);
+  }
+}
+
+// ======= Completed Section =======
+
+.completed-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-top: 102px;
+    padding-bottom: 100px;
+  }
+
+  @include laptop {
+    padding-top: 140px;
+    padding-bottom: 140px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.completed-logo-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 60px;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: start;
+    gap: 40px;
+  }
+
+  @include laptop {
+    flex-direction: column-reverse;
+    justify-content: start;
+    gap: 68px;
+    margin-bottom: 0;
+  }
+}
+
+.completed-logo {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+
+  @include tablet {
+    width: 160px;
+    height: 160px;
+  }
+
+  @include laptop {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.completed-title {
+  @include section-title;
+
+  font-size: 36px;
+  text-align: center;
+  line-height: 100%;
+  text-transform: none;
+
+  @include tablet {
+    text-align: left;
+    font-size: 64px;
+    margin-bottom: 0;
+  }
+
+  @include laptop {
+    font-size: vw(72);
+    max-width: 600px;
+  }
+}
+
+.completed-list__item {
+  border-radius: 24px;
+  background-color: #faf6ee;
+  backdrop-filter: blur(17px);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include tablet {
+    padding: 40px;
+  }
+
+  @include laptop {
+    max-width: 910px;
+  }
+}
+
+.completed-list__item--title {
+  @include block-title;
+
+  font-size: 24px;
+  margin-bottom: 12px;
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+  @include laptop {
+    font-size: vw(36);
+  }
+}
+
+.completed-list__item--text {
+  @include general-text;
+}
+
+// ======= Cycle section =======
+
+.cycle-section {
+  padding-top: 60px;
+  padding-bottom: 62px;
+  background-color: $bc;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background-image: url('/assets/images/developer/mob-oval.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 0;
+    bottom: 0;
+    width: 355px;
+    height: 324px;
+    z-index: 1;
+
+    @include tablet {
+      background-image: url('/assets/images/developer/tab-oval.svg');
+      width: 623px;
+      height: 471px;
+    }
+
+    @include laptop {
+      background-image: url('/assets/images/developer/desk-oval.svg');
+
+      @media screen and (max-width: 1366px) {
+        width: 623px;
+      }
+
+      width: 100%;
+      max-width: 623px;
+      height: 447px;
+      aspect-ratio: 623 / 447;
+    }
+
+    @include desktop {
+      max-width: 795px;
+      height: 570px;
+      aspect-ratio: 795 / 570;
+    }
+  }
+
+  @include tablet {
+    padding-top: 140px;
+    padding-bottom: 109px;
+    height: 1080px;
+  }
+
+  @include laptop {
+    height: auto;
+  }
+}
+
+.cycle-section__house-wrapper {
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+
+  width: 335px;
+  height: 595px;
+  margin: 0 auto;
+  z-index: 0;
+
+  @include tablet {
+    width: 768px;
+    height: 1080px;
+  }
+
+  @include laptop {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    aspect-ratio: 1920 / 1080;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cycle-section__mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.icon-inzhure-block,
+.inzhur-title,
+.inzhure-text-link-block {
+  position: relative;
+  z-index: 2;
+}
+
+.icon-inzhure-block {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+
+  @include laptop {
+    justify-content: start;
+    gap: 248px;
+  }
+}
+
+.cycle-icons-list {
+  display: flex;
+}
+
+.cycle-icons-list__item {
+  margin: -3px;
+}
+
+.inzhur,
+.inzhur-title {
+  @include section-title;
+
+  color: #faeef0;
+  font-size: 36px;
+  line-height: 100%;
+
+  @include tablet {
+    font-size: 80px;
+    line-height: 90%;
+  }
+
+  @include laptop {
+    font-size: vw(100);
+  }
+}
+
+.inzhur-title {
+  margin-bottom: 147px;
+
+  @include tablet {
+    max-width: 728px;
+    margin-bottom: 261px;
+  }
+
+  @include laptop {
+    max-width: 828px;
+    margin-bottom: 90px;
+
+    @media screen and (max-width: 1366px) {
+      max-width: 644px;
+    }
+  }
+
+  @include desktop {
+    max-width: 910px;
+  }
+}
+
+.inzhure-text-link-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: auto;
+  width: fit-content;
+
+  @include tablet {
+    gap: 40px;
+  }
+
+  @include desktop {
+    top: -100px;
+    margin-right: 150px;
+  }
+}
+
+.inzure-text {
+  @include general-text;
+
+  font-weight: 700;
+  max-width: 246px;
+
+  span {
+    color: #faeef2;
+  }
+
+  @include tablet {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    max-width: 448px;
+  }
+}
+
+.inzhure-link {
+  @include general-text;
+
+  font-weight: 700;
+  border-radius: 100px;
+  background-color: $bg-color;
+  padding: 13px 24px;
+  max-width: 153px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    span {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    padding: 22px 32px;
+    max-width: 180px;
+  }
+
+  @include laptop {
+    max-width: 314px;
+
+    span {
+      span {
+        display: inline;
+      }
+    }
+  }
+
+  &.general-btn {
+    background-color: $accent-color;
+
+    span {
+      color: $text-color;
+    }
+
+    &::before {
+      background-color: $bg-color;
+    }
+
+    &:hover {
+      span {
+        color: $text-color-2;
+      }
+    }
+  }
+}
+
+// ======= Contact links section =======
+
+.contact-links-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include laptop {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+
+.contact-list {
+  list-style: none;
+  counter-reset: contacts-links-counter;
+
+  @include laptop {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(486px, 1fr));
+    gap: 40px;
+  }
+}
+
+.contact-list__item {
+  border-radius: 24px;
+  background-color: #faf6ee;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  counter-increment: contacts-links-counter;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: counter(contacts-links-counter);
+    @include tiny-text;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    font-size: 12px;
+    line-height: 100%;
+    border: 1px solid $text-color;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include tablet {
+    padding: 40px;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+
+    &::after {
+      font-size: 14px;
+      top: auto;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+
+  @include laptop {
+    min-height: 226px;
+    margin-bottom: 0;
+  }
+}
+
+.contact-list__item--icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+
+  @include tablet {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 0;
+  }
+}
+
+.contact-links-list__item--link {
+  @include block-title;
+
+  display: block;
+  margin-bottom: 4px;
+  font-size: 24px;
+
+  &.tel {
+    font-size: 28px;
+
+    @include tablet {
+      font-size: 36px;
+    }
+  }
+}
+
+.contact-links-list__item--text-button-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include laptop {
+    flex-direction: column;
+  }
+}
+
+.contact-links-list__item--title {
+  @include block-title;
+
+  font-size: 24px;
+  max-width: 266px;
+
+  @include tablet {
+    max-width: 382px;
+  }
+}
+
+.contact-links-list__item--text {
+  @include general-text;
+}
+
+.contact-links-list__item--button {
+  @include general-text;
+
+  font-weight: 700;
+  color: $text-color-2;
+  background-color: $bc;
+  border-radius: 100px;
+  padding: 13px 24px;
+  display: block;
+  text-align: center;
+  max-width: 132px;
+
+  @include tablet {
+    padding: 22px 32px;
+    max-width: 158px;
+  }
+}
+
+// ======= Visually hidden CSS pattern =======
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

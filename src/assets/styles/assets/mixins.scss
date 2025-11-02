@@ -64,6 +64,12 @@ $screen-height: 720;
   }
 }
 
+@mixin laptop-header() {
+  @media screen and (min-width: 1500px) {
+    @content;
+  }
+}
+
 @mixin desktop() {
   @media screen and (min-width: 1920px) {
     @content;
