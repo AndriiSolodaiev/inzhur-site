@@ -5,13 +5,16 @@ export default class SexyInput {
   constructor(setting) {
     this.selected = false;
     this.$field = setting.$field;
-    this.$input = setting.$input || setting.$field.querySelector('input');
+    this.$input = setting.$input || setting.$field?.querySelector('input');
     this.typeInput = setting.typeInput || 'text';
     this.animation = setting.animation || 'none';
-    this.$message = setting.$message || setting.$field.querySelector('[data-input-message]');
+    this.$message = setting.$message || setting.$field?.querySelector('[data-input-message]');
 
     this.$body = document.querySelector('body');
-
+    if (!this.$input) {
+      console.warn('SexyInput: input not found → skip initialization', setting);
+      return;
+    }
     this.init();
   }
 
@@ -74,11 +77,17 @@ export default class SexyInput {
   }
 
   writeMessage(text) {
-    this.$message.innerHTML = text;
+    if (this.$message) this.$message.innerHTML = text;
   }
   /*  */
 
   changeStatus(fieldBlock, status) {
+    if (!fieldBlock) {
+      console.warn(
+        `SexyInput.changeStatus: fieldBlock is ${fieldBlock} — skipping status change (${status})`,
+      );
+      return;
+    }
     switch (status) {
       case 'default':
         fieldBlock.classList.remove('selected');
@@ -177,10 +186,10 @@ export default class SexyInput {
 
   prepareMarkup() {
     if (this.animation === 'focus') {
-      this.$field.setAttribute('data-animation', 'focus');
+      this.$field?.setAttribute('data-animation', 'focus');
     }
     if (this.animation === 'none') {
-      this.$field.setAttribute('data-animation', 'none');
+      this.$field?.setAttribute('data-animation', 'none');
     }
   }
 

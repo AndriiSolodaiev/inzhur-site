@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(28, 30, 44, 0.8);
+  background-color: rgba(100, 104, 110, 0.8);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 1000;
@@ -27,59 +27,36 @@
   transform: translate(-50%, -50%);
   width: calc(100% - 32px);
   // background: $bg-color;
-  border: none;
+  border-radius: 24px;
+  border: 1px solid rgba(236, 233, 226, 0.20);
+  background-color: rgba(100, 104, 110, 0.60);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   transition: transform 0.3s ease-in-out 0.3s, opacity 0.3s ease 0.3s;
   opacity: 1;
-  padding: 80px 20px;
-
+  padding: 40px 20px;
 
   @include tablet {
-    padding: 90px 100px;
+    padding: 60px 40px;
     width: 560px;
 
   }
 
   @include laptop {
-    width: 47%;
+    padding: vw(60) vw(40);
+    width: 600px;
   }
 
   .hidden & {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 0;
 
-    &>svg {
-      transform: rotate(-3deg) translate(-50%, -50%);
-    }
 
-    @include laptop {
-      transform: rotate(-3deg);
-    }
+
+
   }
 
-  &>svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 150%;
-    height: 100%;
-    clip-path: polygon(0% 0%, 100% 3%, 100% 100%, 0% 97%);
-    transition: transform 0.7s ease-in-out 0.5s;
 
-    @include tablet {
-      width: 100%;
-      height: 100%;
-    }
-
-    @include laptop {
-      transform: none;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
 
 
 }
@@ -118,57 +95,58 @@
 
 .close-btn {
   position: absolute;
-  // border-radius: 50%;
-  // background-color: $light-color;
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-  top: 40px;
-  right: 20px;
-  width: 24px;
-  height: 24px;
+  top: 0;
+  right: 0;
+  transform: translate(20%, -20%) rotate(50deg);
   cursor: pointer;
 
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
   @include tablet {
-    top: 90px;
-    right: 50px;
-
+    transform: translate(50%, -50%) rotate(50deg);
   }
 
-  @include laptop {
-    top: 20px;
-    right: 20px;
+  svg {
+    transition: all 0.4s ease-in-out;
   }
 
-  // @include desktop {
-  //   top: 50px;
-  //   right: 50px;
-  // }
+  &:hover {
+    svg {
+      transform: rotate(130deg)
+    }
+  }
+}
+
+.form-wrapper {
+  width: 100%;
 }
 
 .form-title {
   @include article-title;
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: $dark-color;
+  margin-bottom: 4px;
+  color: $wc;
   line-height: 100%;
+  text-align: center;
+}
+
+.form-descr {
+  @include general-text;
+  margin-bottom: 40px;
+  color: $accent-color-2;
+  line-height: 120%;
+  text-align: center;
 
   @include tablet {
-    font-size: 48px;
-
+    font-size: 24px;
+    margin-bottom: 60px;
   }
 
   @include laptop {
-    font-size: 3.33vw;
-
+    margin-bottom: vw(60);
+    font-size: clamp(18px, calc(18px + (24 - 18) * ((100vw - 1024px) / (1920 - 1024))), 24px);
   }
+
 }
 
 .tablet.landscape {
@@ -185,9 +163,12 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 60px;
+  gap: 20px;
   width: 100%;
 
+  @include tablet {
+    gap: 28px;
+  }
 
 
 
@@ -195,18 +176,18 @@
 
 .input-title {
   @include text-20;
-  
+
   color: $dark-color;
   position: absolute;
   z-index: 2;
-  top:50%;
-  left:0;
-  padding:19px 0 ;
+  top: 50%;
+  left: 0;
+  padding: 19px 0;
   padding-right: 23px;
   background-color: $wc;
   transform: translateY(-50%);
-    transition: all 0.4s ease-in-out;
-    pointer-events: none;
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
 }
 
 
@@ -214,19 +195,20 @@
   position: relative;
   width: 100%;
 
-  &[data-field-name],
-  &[data-field-phone] {
-    position: relative;
+  // &[data-field-name],
+  // &[data-field-phone] {
+  //   position: relative;
 
-    &::after {
-      content: "*";
-      color: $dark-color;
-      position: absolute;
-      z-index: 2;
-      top: 27px;
-      right: 7px;
-    }
-  }
+  //   &::after {
+  //     content: "*";
+  //     color: $dark-color;
+  //     position: absolute;
+  //     z-index: 2;
+  //     top: 27px;
+  //     right: 7px;
+  //   }
+  // }
+
   &.is-focused {
     .input-title {
       transform: translateY(-200%);
@@ -238,27 +220,41 @@
 .input-message {
   position: absolute;
   bottom: -24px;
-  // left: 50%;
-  // transform: translateX(-50%);
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
   z-index: 2;
   color: rgb(255, 131, 131);
 }
 
 .form-field__input {
-  @include text-20;
+  @include text-18;
+  font-size: 18px;
   width: 100%;
-  padding: 23px 0px;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  color: $dark-color;
-  border: none;
-  border-bottom: 1px solid rgba(10, 15, 19, 0.20);
-  background-color: transparent;
+  padding: 12px;
+  line-height: 1em;
+  color: $accent-color;
+  background-color: $wc;
+  border-radius: 100px;
+  // border-bottom: 1px solid rgba(236, 233, 226, 0.40);
+  text-align: center;
+
+  @include tablet {
+    padding: 22px;
+    font-size: 18px;
+  }
+
+
+
+  &[name="phone"] {
+
+    padding-left: 0 !important;
+  }
 
   &::placeholder {
-    @include general-text;
-    opacity: 0.5;
-    color: $dark-color;
+    @include text-18;
+    opacity: 1;
+    color: $accent-color;
 
   }
 
@@ -287,7 +283,16 @@
 
 
 .form__button-wrapper {
-  margin-top: 80px;
+  margin-top: 20px;
+
+  @include tablet {
+    margin-top: 28px;
+  }
+
+  .general-btn {
+    width: 100%;
+  }
+
 }
 
 
@@ -310,32 +315,34 @@
 
 }
 
-.footer .iti--allow-dropdown input {
-  padding-left: 56px;
-  padding-right: 20px;
-
-  @include laptop {
-    padding-left: 56px;
-    padding-right: 20px;
-  }
+.iti__flag-container {
+  left: 22px !important;
 }
+
+
+
+
 
 .iti__country-list {
   bottom: 0;
   left: 0;
   width: auto;
   height: auto;
-  background: rgba(242, 239, 233, 0.05);
+  background: rgba(100, 104, 110, 0.7);
   backdrop-filter: blur(75px);
   -webkit-backdrop-filter: blur(75px);
   border-radius: 12px;
   border-color: transparent;
   z-index: 10;
-  color: $dark-color;
+  color: $accent-color;
+
+  .iti__dial-code {
+    color: $wc;
+  }
 }
 
 .iti__arrow {
-  border-top: 4px solid $text-color-2;
+  border-top: 3px solid #64686E;
 }
 
 

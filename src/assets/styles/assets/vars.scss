@@ -72,7 +72,7 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 	color: $text-color;
 
 	@include tablet {
-		font-size: clamp(42px, calc(42px + (48 - 42) * ((100vw - 768px) / (1366 - 768))), 48px);
+		font-size: clamp(42px, calc(42px + (48 - 42) * ((100vw - 768px) / (1024 - 768))), 48px);
 	}
 
 	@include laptop {
@@ -169,6 +169,18 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 	}
 }
 
+@mixin text-24 () {
+	font-size: 24px;
+	font-family: $default-font;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 120%;
+	text-decoration: none;
+	letter-spacing: -0.06em;
+
+
+}
+
 @mixin text-20 () {
 	font-size: 20px;
 	font-family: $default-font;
@@ -185,6 +197,20 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 	@include laptop {
 		font-size: 1.04vw;
 	}
+}
+
+@mixin text-18 () {
+	font-size: 18px;
+	font-family: $default-font;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 120%;
+	text-decoration: none;
+	letter-spacing: -0.06em;
+
+
+
+
 }
 
 
@@ -224,7 +250,10 @@ $cubic-btn: cubic-bezier(.12, .57, .41, 1);
 	}
 
 	@include laptop {
-		font-size: 0.9375vw
+		font-size: 0.9375vw;
+		font-size: clamp(12px,
+				calc(12px + (18 - 12) * ((100vw - 1024px) / (1920 - 1024))),
+				18px);
 	}
 }
 
