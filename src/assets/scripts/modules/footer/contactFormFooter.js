@@ -16,20 +16,6 @@ export const contactFormFooter = (formRef, onSuccess) => {
         onSuccess && onSuccess();
       },
       fields: {
-        name: {
-          inputWrapper: new SexyInput({
-            animation: 'none',
-            $field: formRef.querySelector('[data-field-name]'),
-            typeInput: 'name',
-          }),
-          rule: yup
-            .string()
-            .required(i18next.t('required'))
-            .trim(),
-          defaultMessage: i18next.t('name'),
-          valid: false,
-          error: [],
-        },
         phone: {
           inputWrapper: new SexyInput({
             animation: 'none',

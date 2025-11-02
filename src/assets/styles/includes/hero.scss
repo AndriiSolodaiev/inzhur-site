@@ -1,0 +1,214 @@
+.hero-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  margin-top: 72px;
+  min-height: calc(100svh - 72px);
+  background-color: #faf6ee;
+  gap: 0;
+
+  @include tablet {
+    min-height: calc(100svh - 108px);
+    margin-top: 108px;
+  }
+
+  @include laptop {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: calc(100svh - 150px);
+    min-height: 850px;
+    margin-top: 150px;
+  }
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  order: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 479px;
+  padding-bottom: 78px;
+
+  @include tablet {
+    padding-bottom: 108px;
+  }
+
+  @include laptop {
+    order: 0;
+    min-height: inherit;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+
+    .breadcrumbs {
+      margin: 20px 0;
+    }
+
+    @include tablet {
+      .breadcrumbs {
+        margin: 40px 0 20px;
+      }
+    }
+
+    @include laptop {
+      .breadcrumbs {
+        margin: 40px 0;
+      }
+    }
+  }
+
+  &__title {
+    @include section-title;
+    position: relative;
+    z-index: 2;
+    font-size: 48px;
+
+    @include tablet {
+      font-size: 80px;
+    }
+
+    @include laptop {
+      font-size: 100px;
+    }
+    max-width: 775px;
+  }
+
+  &__subtitle {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+    @include block-title;
+    color: $olive-color;
+
+    @include laptop {
+      max-width: 600px;
+      margin-top: 40px;
+    }
+  }
+
+  &__text-block {
+    @include general-text;
+    position: relative;
+    z-index: 2;
+    max-width: 479px;
+    margin: 20px 0 0;
+    @include tablet {
+      margin: 40px 0 0 auto;
+    }
+
+    @include laptop {
+      max-width: 445px;
+      margin: 84px 0 0 35%;
+    }
+
+    :first-child {
+      font-weight: 700;
+    }
+  }
+
+  &__down-button {
+    z-index: 2;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    @include tablet {
+      bottom: 40px;
+      gap: 20px;
+    }
+
+    @include laptop {
+      left: 40px;
+    }
+
+    svg {
+      width: 50px;
+      height: 48px;
+    }
+
+    @include tablet {
+      svg {
+        width: 72px;
+        height: 68px;
+      }
+    }
+
+    span {
+      @include general-text;
+      font-weight: 700;
+    }
+  }
+
+  &__overlap {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(-1);
+    width: 100%;
+    max-width: 266px;
+    height: auto;
+    color: $bg-color;
+
+    @include tablet {
+      max-width: 374px;
+    }
+
+    @include laptop {
+      left: 0;
+      transform: none;
+      max-width: 960px;
+    }
+  }
+}
+
+.right-side {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 120px;
+
+  @include tablet {
+    max-height: 280px;
+  }
+
+  @include laptop {
+    height: 100%;
+    max-height: inherit;
+  }
+
+  &__bg {
+    position: relative;
+    left: 1px;
+    bottom: 1px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlap {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: 266px;
+    color: #faf6ee;
+
+    @include tablet {
+      max-width: 374px;
+    }
+
+    @include laptop {
+      max-width: 960px;
+    }
+  }
+}

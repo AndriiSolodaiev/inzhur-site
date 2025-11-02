@@ -72,6 +72,8 @@
     background-color: $wc;
 
     @include tablet {
+      height: 100%;
+      min-height: 341px;
       margin-top: 40px;
       padding: 40px;
     }
@@ -88,7 +90,7 @@
     @include tablet {
       flex-direction: row;
       align-items: center;
-      margin-top: 80px;
+      margin-top: auto;
     }
   }
 
@@ -145,9 +147,17 @@
 .diya-home {
   width: 152px;
   height: 27px;
+
+  @include laptop {
+    width: 32%;
+  }
 }
 
 .diya-repair {
   width: 221px;
   height: 27px;
+
+  @include laptop {
+    width: 47%;
+  }
 }
