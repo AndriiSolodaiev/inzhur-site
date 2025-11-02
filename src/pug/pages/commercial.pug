@@ -12,7 +12,19 @@ block variable
         link: pagesLink[0].about
       }
     ]
-  
+    var title = 'Комерційна нерухомість'
+    var subtitle = 'Комерційні приміщення в ЖК Свідомі'
+    var descriptionStrong = ''
+    var descriptionNormal = ''
+    var bgImg = {
+      src: "./assets/images/commercial/commercial-hero-bg.jpg",
+      alt: "building"
+    }
+    var heroClasses = {
+      title: "",
+      subtitle: "with-padding"
+    }
+    var anchor = '#payment'
 block meta
   title= title_page
   meta(name='description', content='')
@@ -23,10 +35,9 @@ block scripts
   script(defer src='./assets/scripts/header.bundle.js')
   script(defer src='./assets/scripts/footer.bundle.js')
   script(defer src='./assets/scripts/commercial.bundle.js')
+  
 block content
-  section.hero-screen 
-  h1.hero-title Commercial page
-
+  include ../includes/hero.pug
   section.features-section.container
     .section-content-wrapper
       h2.features-title Обирайте найкраще під свої потреби

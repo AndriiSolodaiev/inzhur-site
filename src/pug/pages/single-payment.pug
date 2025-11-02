@@ -12,7 +12,19 @@ block variable
         link: pagesLink[0].about
       }
     ]
-  
+    var title = 'ЗНИЖКА 3% ПРИ РОЗТЕРМІНУВАННІ ПІД 0%'
+    var subtitle = 'З першим внеском 50% та терміном до 3х років від забудовника'
+    var descriptionStrong = ''
+    var descriptionNormal = ''
+    var bgImg = {
+      src: "./assets/images/payment/payment-hero-bg.jpg",
+      alt: "building"
+    }
+    var heroClasses = {
+      title: "small-title",
+      subtitle: "with-padding"
+    }
+    var anchor = '#payment' 
 block meta
   title= title_page
   meta(name='description', content='')
@@ -24,6 +36,7 @@ block scripts
   script(defer src='./assets/scripts/footer.bundle.js')
   script(defer src='./assets/scripts/singlePayment.bundle.js')
 block content
+  include ../includes/hero.pug
   div.content
     section.offer
       div.container

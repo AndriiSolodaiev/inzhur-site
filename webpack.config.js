@@ -22,6 +22,7 @@ const config = {
     singlePayment: './src/assets/scripts/gulp-modules/single-payment.js',
     developer: './src/assets/scripts/gulp-modules/developer.js',
     payment: './src/assets/scripts/gulp-modules/payment.js',
+    location: './src/assets/scripts/gulp-modules/location.js',
   },
   output: {
     filename: '[name].bundle.js',

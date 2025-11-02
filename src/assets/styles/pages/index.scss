@@ -963,6 +963,46 @@
 
 }
 
+.gm-style-iw.gm-style-iw-c {
+  padding: 20px 40px 20px 20px !important;
+}
+
+.map-wrapper .gm-style-iw.gm-style-iw-c {
+  padding: 20px 40px 20px 20px !important;
+}
+
+.map-wrapper .gm-style-iw-d {
+  font-family: $default-font;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: $accent-color;
+}
+
+.map-wrapper .gm-style-iw-chr {
+  position: absolute;
+  top: 0;
+  right: 0
+}
+
+.map-wrapper .gm-ui-hover-effect {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.map-wrapper .gm-ui-hover-effect span {
+  margin: 0 !important
+}
+
+
+
 .advantages {
   .section-title {
     margin-bottom: 20px;
