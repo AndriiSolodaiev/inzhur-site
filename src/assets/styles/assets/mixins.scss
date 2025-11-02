@@ -5,9 +5,8 @@
     font-style: '#{$style}';
 
     src: url('#{$url}.eot');
-    src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
-    url('#{$url}.woff') format('woff'),
-    url('#{$url}.ttf') format('truetype');
+    src: url('#{$url}.eot?#iefix') format('embedded-opentype'), url('#{$url}.woff') format('woff'),
+      url('#{$url}.ttf') format('truetype');
   }
 }
 
@@ -55,6 +54,12 @@ $screen-height: 720;
 
 @mixin laptop() {
   @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop-header() {
+  @media screen and (min-width: 1500px) {
     @content;
   }
 }

@@ -19,6 +19,7 @@ const config = {
     commercial: './src/assets/scripts/gulp-modules/commercial.js',
     singlePromo: './src/assets/scripts/gulp-modules/single-promo.js',
     property: './src/assets/scripts/gulp-modules/property.js',
+    singlePayment: './src/assets/scripts/gulp-modules/single-payment.js',
     developer: './src/assets/scripts/gulp-modules/developer.js',
     payment: './src/assets/scripts/gulp-modules/payment.js',
   },

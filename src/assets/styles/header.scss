@@ -5,13 +5,47 @@
   width: 100%;
   z-index: 100;
   transform: translateY(-100%);
-transition: transform 0.4s ease;
-&.visible{
-  transform: translateY(0);
+  transition: transform 0.4s ease;
+
+  &.visible {
+    transform: translateY(0);
+  }
+
+  &.hide {
+    .header-bg {
+      transform: translateY(-100%);
+    }
+  }
 }
- &.hide {
-  transform: translateY(-100%);
-}
+
+.nav-link {
+  overflow: hidden;
+  position: relative;
+
+  .fake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-105%);
+    transition: all 0.4s ease-in-out;
+    color: $olive-color;
+  }
+
+  .real {
+    display: block;
+    transition: all 0.4s ease-in-out;
+    transform: translateY(0%);
+  }
+
+  &:hover {
+    .fake {
+      transform: translateY(0%);
+    }
+
+    .real {
+      transform: translateY(105%);
+    }
+  }
 }
 
 .header-bg {
@@ -24,12 +58,14 @@ transition: transform 0.4s ease;
   background-color: $accent-color;
   position: relative;
   transition: all 0.4s ease;
+
+
   @include tablet {
     height: 108px;
 
   }
 
-  @include laptop {
+  @include laptop-header {
     height: 150px;
     justify-content: space-between;
 
@@ -37,63 +73,71 @@ transition: transform 0.4s ease;
 
   &.menu-is-open {
     height: 60px;
+
     @include tablet {
-    height: 88px;
+      height: 88px;
 
-  }
+    }
 
-  @include laptop {
-    height: 120px;
+    @include laptop {
+      height: 120px;
 
-  }
+    }
   }
 
   &.scroll-down {
-     height: 60px;
+    height: 60px;
+
     @include tablet {
-    height: 88px;
+      height: 88px;
 
-  }
+    }
 
-  @include laptop {
-    height: 120px;
+    @include laptop {
+      height: 120px;
 
-  }
+    }
 
- 
+
   }
 
   .general-btn {
-    
+
     background-color: $olive-color;
+
     span {
       color: $accent-color;
     }
-    &::before{
-        background-color: $wc;
-      }
+
+    &::before {
+      background-color: $wc;
+    }
+
     &:hover {
       color: $wc;
-      
+
     }
   }
 
-   .socials-list {
+  .socials-list {
     display: none;
+
     @include tablet {
       display: flex;
     }
   }
 }
-.header-left-toolkit{
+
+.header-left-toolkit {
   display: flex;
-  gap:28px;
+  gap: 28px;
   align-items: center;
 }
+
 .logo-wrap {
   position: absolute;
   top: 50%;
-  left:20px;
+  left: 20px;
   transform: translateY(-50%);
   width: 134px;
   height: 40px;
@@ -101,19 +145,23 @@ transition: transform 0.4s ease;
   display: flex;
   align-items: center;
   height: 100%;
+
   @include tablet {
     width: 207px;
-height: 63px;
+    height: 63px;
   }
-  svg{
-    width:100%;
+
+  svg {
+    width: 100%;
     height: 100%;
   }
+
   .rotate-hover {
     transition: all 0.5s ease-in-out;
     transform-origin: center center;
     transform-box: fill-box;
   }
+
   &:hover {
     .rotate-hover {
       transform: rotateY(360deg);
@@ -121,15 +169,15 @@ height: 63px;
   }
 
 
-  
 
-  @include laptop {
+
+  @include laptop-header {
     top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     transition: all 0.4s ease;
 
-   
+
   }
 
 }
@@ -142,31 +190,33 @@ height: 63px;
 
   @include tablet {
     padding-left: 20px;
-     gap: 16px;
+    gap: 16px;
   }
 
-  @include laptop {
-    gap:28px;
+  @include laptop-header {
+    gap: 28px;
 
   }
 }
 
 
-.ellipse-btn{
+.ellipse-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  transform:  rotate(50deg);
+  transform: rotate(50deg);
   background-color: $olive-color;
-  width:41px;
-  height:55px;
+  width: 41px;
+  height: 55px;
   transform-origin: center center;
   border-radius: 50%/50%;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
 
-   &::before {
+  &::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -174,13 +224,14 @@ height: 63px;
     border-radius: 50%/50%;
     top: 0;
     left: 0%;
-    
+
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
     background-color: $wc;
-    
+
   }
+
   &:hover {
-    
+
 
     &::before {
       transform: translate3d(100%, 30%, 0);
@@ -190,16 +241,19 @@ height: 63px;
     //   background: var(--green-light);
     // }
   }
+
   @include tablet {
-     width:59px;
-  height:78px;
+    width: 59px;
+    height: 78px;
   }
+
   svg {
     width: 16px;
     height: 16px;
     position: relative;
     z-index: 2;
     transform: rotate(-50deg);
+
     @include tablet {
       width: 24px;
       height: 24px;
@@ -212,7 +266,7 @@ height: 63px;
   align-items: center;
   gap: 12px;
 
-  @include laptop {
+  @include laptop-header {
     display: none;
   }
 
@@ -245,23 +299,27 @@ height: 63px;
 
 .header-link {
   display: none;
-  &.header-call-back{
-    svg{
+
+  &.header-call-back {
+    svg {
       clip-path: polygon(30% 0%, 100% 0, 100% 100%, 30% 100%);
       overflow: hidden;
       transition: all 0.4s linear;
       transform: translateX(-29%);
       transform-origin: left
     }
-    &:hover,
-  &:focus {
-     svg {
-      clip-path: polygon(1% 0%, 100% 0%, 100% 100%, 1% 100%);
-      transform: translateX(0%);
 
+    &:hover,
+    &:focus {
+      svg {
+        clip-path: polygon(1% 0%, 100% 0%, 100% 100%, 1% 100%);
+        transform: translateX(0%);
+
+      }
     }
-  }}
-  @include laptop {
+  }
+
+  @include laptop-header {
     display: flex;
     // align-items: baseline;
     gap: 12px;
@@ -273,134 +331,139 @@ height: 63px;
       font-style: normal;
       font-weight: 600;
       font-family: $default-font;
-      line-height: 1em;
+      line-height: 140%;
       text-transform: uppercase;
       letter-spacing: -0.06em;
-      
+
     }
-    
+
     svg path {
       transition: all 0.5s ease;
-      
+
     }
   }
 
   &.laptop-mode {
     display: none;
 
-    @include laptop {
+    @include laptop-header {
       display: flex;
     }
   }
 }
+
 @media (hover: hover) {
-    .header-link svg {
-        -webkit-transform-origin:50% 50%;
-        -ms-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        transform-box: fill-box
-    }
+  .header-link svg {
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    transform-box: fill-box
+  }
 
-    .header-link span {
-        position: relative
-    }
+  .header-link span {
+    position: relative
+  }
 
-    .header-link span:after {
-        content: "";
-        position: absolute;
-        top: calc(100% + 2px);
-        left: 0;
-        -webkit-transform-origin: left;
-        -ms-transform-origin: left;
-        transform-origin: left;
-        -webkit-transition: .25s ease-in-out;
-        transition: .25s ease-in-out;
-        width: 100%;
-        height: 2px;
-        background-color: currentColor;
-        -webkit-transform: scaleX(0);
-        -ms-transform: scaleX(0);
-        transform: scaleX(0)
-    }
+  .header-link span:after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+    -webkit-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0)
+  }
 
-    .header-link:hover svg {
-        -webkit-animation: wobble 1s ease infinite;
-        animation: wobble 1s ease infinite
-    }
+  .header-link:hover svg {
+    -webkit-animation: wobble 1s ease infinite;
+    animation: wobble 1s ease infinite
+  }
 
-    .header-link:hover span:after {
-        -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-        transform: scaleX(1)
-    }
+  .header-link:hover span:after {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1)
+  }
 }
 
 @-webkit-keyframes wobble {
-    0%,100% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%
-    }
 
-    15% {
-        -webkit-transform: translateX(-2px) rotate(-5deg);
-        transform: translateX(-2px) rotate(-5deg)
-    }
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%
+  }
 
-    30% {
-        -webkit-transform: translateX(1px) rotate(5deg);
-        transform: translateX(1px) rotate(5deg)
-    }
+  15% {
+    -webkit-transform: translateX(-2px) rotate(-5deg);
+    transform: translateX(-2px) rotate(-5deg)
+  }
 
-    45% {
-        -webkit-transform: translateX(-1px) rotate(-2.7777777778deg);
-        transform: translateX(-1px) rotate(-2.7777777778deg)
-    }
+  30% {
+    -webkit-transform: translateX(1px) rotate(5deg);
+    transform: translateX(1px) rotate(5deg)
+  }
 
-    60% {
-        -webkit-transform: translateX(.6060606061px) rotate(1.6666666667deg);
-        transform: translateX(.6060606061px) rotate(1.6666666667deg)
-    }
+  45% {
+    -webkit-transform: translateX(-1px) rotate(-2.7777777778deg);
+    transform: translateX(-1px) rotate(-2.7777777778deg)
+  }
 
-    75% {
-        -webkit-transform: translateX(-.3636363636px) rotate(-1deg);
-        transform: translateX(-.3636363636px) rotate(-1deg)
-    }
+  60% {
+    -webkit-transform: translateX(.6060606061px) rotate(1.6666666667deg);
+    transform: translateX(.6060606061px) rotate(1.6666666667deg)
+  }
+
+  75% {
+    -webkit-transform: translateX(-.3636363636px) rotate(-1deg);
+    transform: translateX(-.3636363636px) rotate(-1deg)
+  }
 }
 
 @keyframes wobble {
-    0%,100% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%
-    }
 
-    15% {
-        -webkit-transform: translateX(-2px) rotate(-5deg);
-        transform: translateX(-2px) rotate(-5deg)
-    }
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%
+  }
 
-    30% {
-        -webkit-transform: translateX(1px) rotate(5deg);
-        transform: translateX(1px) rotate(5deg)
-    }
+  15% {
+    -webkit-transform: translateX(-2px) rotate(-5deg);
+    transform: translateX(-2px) rotate(-5deg)
+  }
 
-    45% {
-        -webkit-transform: translateX(-1px) rotate(-2.7777777778deg);
-        transform: translateX(-1px) rotate(-2.7777777778deg)
-    }
+  30% {
+    -webkit-transform: translateX(1px) rotate(5deg);
+    transform: translateX(1px) rotate(5deg)
+  }
 
-    60% {
-        -webkit-transform: translateX(.6060606061px) rotate(1.6666666667deg);
-        transform: translateX(.6060606061px) rotate(1.6666666667deg)
-    }
+  45% {
+    -webkit-transform: translateX(-1px) rotate(-2.7777777778deg);
+    transform: translateX(-1px) rotate(-2.7777777778deg)
+  }
 
-    75% {
-        -webkit-transform: translateX(-.3636363636px) rotate(-1deg);
-        transform: translateX(-.3636363636px) rotate(-1deg)
-    }
+  60% {
+    -webkit-transform: translateX(.6060606061px) rotate(1.6666666667deg);
+    transform: translateX(.6060606061px) rotate(1.6666666667deg)
+  }
+
+  75% {
+    -webkit-transform: translateX(-.3636363636px) rotate(-1deg);
+    transform: translateX(-.3636363636px) rotate(-1deg)
+  }
 }
 
 
@@ -408,39 +471,45 @@ height: 63px;
 .socials-list {
   display: flex;
   align-items: center;
-  gap:4px;
+  gap: 4px;
+
   .social-link {
     padding: 12px;
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
     width: 48px;
-    height:48px;
-    .social-svg{
+    height: 48px;
+
+    .social-svg {
       width: 24px;
-      height:24px;
+      height: 24px;
       transition: all 0.4s ease-in-out;
     }
-    .social-hover-svg{
+
+    .social-hover-svg {
       position: absolute;
       width: 24px;
-      height:24px;
+      height: 24px;
       transition: all 0.4s ease-in-out;
       transform: translate(-50%, 150%);
-      top:50%;
-      left:50%;
-      path{
+      top: 50%;
+      left: 50%;
+
+      path {
         fill: $olive-color;
       }
-      
+
     }
+
     &:hover {
-.social-svg{
-  transform: translateY(-200%);
-}
-.social-hover-svg{
-  transform: translate(-50%,-50%);
-}
+      .social-svg {
+        transform: translateY(-200%);
+      }
+
+      .social-hover-svg {
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
@@ -448,26 +517,28 @@ height: 63px;
 }
 
 
-.flats-mob-btn{
-  @include  laptop {
+.flats-mob-btn {
+  @include laptop-header {
     display: none;
   }
 }
 
-.general-btn.laptop-mode{
-  
-    margin-right: 12px;
-  
+.general-btn.laptop-mode {
+
+  margin-right: 12px;
+
 }
+
 .menu-burger {
   transform: rotate(-50deg);
   display: flex;
   flex-direction: column;
-gap: 2px;
-  
+  gap: 2px;
+
   @include tablet {
-      gap: 4px;
-    }
+    gap: 4px;
+  }
+
   span {
     position: relative;
     z-index: 3;
@@ -482,27 +553,31 @@ gap: 2px;
       height: 3px;
     }
 
-    
+
   }
 
 }
 
 .header.menu-is-open {
   background-color: transparent;
+
   .menu-burger {
     .over {
       transform: rotate(45deg) translate(2px, 1px);
+
       @include tablet {
-      transform: rotate(45deg) translate(3px, 2px);
+        transform: rotate(45deg) translate(3px, 2px);
+      }
     }
-    }
+
     .under {
-       transform: rotate(-45deg) translate(2px, -1px);
+      transform: rotate(-45deg) translate(2px, -1px);
+
       @include tablet {
-      transform: rotate(-45deg) translate(4px, -2px);
+        transform: rotate(-45deg) translate(4px, -2px);
+      }
     }
-    }
-    
+
   }
 }
 
@@ -558,7 +633,7 @@ gap: 2px;
   padding-top: 60px;
   display: flex;
   flex-direction: column;
-  
+
   justify-content: center;
 
   width: 100%;
@@ -875,6 +950,15 @@ gap: 2px;
     gap: 12px;
     padding: 22px 28px;
 
+    span {
+      @include general-text;
+      font-weight: 700;
+    }
+
+    svg path {
+      transition: all 0.3s ease;
+    }
+
     &[data-mob-call-close] {
       background-color: transparent;
 
@@ -884,5 +968,3 @@ gap: 2px;
     }
   }
 }
-
-
