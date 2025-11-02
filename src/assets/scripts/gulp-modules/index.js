@@ -1,6 +1,6 @@
 import Swiper, { Autoplay, EffectFade, Navigation } from 'swiper';
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
-import '../modules/gallery/gallerySlider';
+
 import { animateTitleOnScroll } from '../modules/effects/animateTitle';
 import googleMap from '../modules/map/map';
 // import device from 'current-device';
@@ -22,7 +22,44 @@ const swiper = new Swiper('.swiper-advantages', {
   slidesPerView: 1,
   spaceBetween: 20,
 });
+if (window.innerWidth < 768) {
+  const swiperTechMob = new Swiper('.swiper-tech-mobile', {
+    modules: [Navigation],
+    slidesPerView: 1,
+    speed: 800,
+    navigation: {
+      nextEl: '[data-tech-button-next]',
+      prevEl: '[data-tech-button-prev]',
+    },
+    slidesPerView: 1,
+  });
+} else {
+  const swiperTech = new Swiper('.swiper-tech-tablet', {
+    modules: [Navigation],
+    slidesPerView: 1,
+    speed: 800,
+    navigation: {
+      nextEl: '[data-tech-button-next]',
+      prevEl: '[data-tech-button-prev]',
+    },
+    slidesPerView: 1,
+  });
+}
 
+const swiperProgress = new Swiper('.swiper-progress', {
+  slidesPerView: 1,
+  speed: 800,
+
+  slidesPerView: 1,
+  spaceBetween: 10,
+  breakpoints: {
+    768: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    1024: { slidesPerView: 3 },
+  },
+});
 const tlFiller = gsap.timeline({
   scrollTrigger: {
     trigger: '.filler',

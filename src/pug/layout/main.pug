@@ -58,15 +58,12 @@ html(lang="en" data-status="local")
     .page__inner(data-scroll-container data-barba="container" data-barba-namespace="home" )
       .page__content
         block content
-    block scripts
+    
 
 
     block footer
       // END FOOTER
+    
     block modal
       include ../includes/thank-you-popup.pug
-
-    <div class="reloader">
-      <div class="loader"></div>
-    </div>
-//- include ./barba.html
+    block scripts
