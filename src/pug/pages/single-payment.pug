@@ -1,0 +1,166 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'single-payment'
+    var id_page = 'id-page-single-payment'
+    var class_page = 'class-page-single-payment'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var title = 'ЗНИЖКА 3% ПРИ РОЗТЕРМІНУВАННІ ПІД 0%'
+    var subtitle = 'З першим внеском 50% та терміном до 3х років від забудовника'
+    var descriptionStrong = ''
+    var descriptionNormal = ''
+    var bgImg = {
+      src: "./assets/images/payment/payment-hero-bg.jpg",
+      alt: "building"
+    }
+    var heroClasses = {
+      title: "small-title",
+      subtitle: "with-padding"
+    }
+    var anchor = '#payment' 
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/singlePayment.bundle.js')
+block content
+  include ../includes/hero.pug
+  div.content
+    section.offer
+      div.container
+        div.offer__body
+          div.offer__main
+            h3.offer__title Унікальна пропозиція
+            h5.offer__description Не витрачайте час на оренду — купіть квартиру мрії вже зараз!
+          div.block
+            h4.block__title Перший платіж від 30%
+            h5.block__subtitle вартості квартири
+          div.block
+            h4.block__title 0% переплат для сплати залишку
+            h5.block__subtitle терміном до 3х років
+          div.block
+            h4.block__title Просте оформлення
+            h5.block__subtitle без банків та фін. установ, потрібен лише паспорт та ІПН 
+    section.harmony
+      div.container
+        div.harmony__body
+          div.harmony__main
+            h3.harmony__title ЖК Свідомі: гармонія цінностей
+          div.harmony__swiper-container
+            div.swiper.swiper__body
+              div.swiper-wrapper
+                div.swiper-slide.swiper__slide
+                  img(src="./assets/images/single-payment/swiper-1.jpg" alt="our building")
+                div.swiper-slide.swiper__slide
+                  img(src="./assets/images/single-payment/swiper-2.jpg" alt="our building")
+                div.swiper-slide.swiper__slide
+                  img(src="./assets/images/single-payment/swiper-3.jpg" alt="our building")
+              .swiper-button-prev.ellipse-btn.swiper__button-prev(data-advantages-button-prev)
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M22 10.582H4.82434V13.4195H22V10.582Z" fill="#393028"/>
+                  <path d="M9.10511 2.22646H13.0854L5.82264 12H1.99994L9.10511 2.22646Z" fill="#393028"/>
+                  <path d="M9.10511 21.7735H13.0854L5.82264 12H1.99994L9.10511 21.7735Z" fill="#393028"/>
+                </svg>
+              .swiper-button-next.ellipse-btn.swiper__button-next(data-advantages-button-next)
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+                  <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+                  <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+                </svg>
+            div.swiper__counter
+    section.conditions
+      div.container
+        div.conditions__body 
+          div.conditions__main
+            h3.conditions__title Умови купівлі житла
+          div.block
+            h4.block__title до 3 років
+            h5.block__subtitle Термін розтермінування
+          div.block
+            h4.block__title від 30%
+            h5.block__subtitle Перший внесок
+          div.block
+            h4.block__title ₴ (UAH)
+            h5.block__subtitle Валюта 1-го внеску
+          div.block
+            h4.block__title $ (USD)
+            h5.block__subtitle Валюта розтермінування
+    section.requirements
+      div.requirements__background-sky   
+        img(src="./assets/images/single-payment/requirements-sky.jpg")
+      div.requirements__background-building   
+        img(src="./assets/images/single-payment/requirements-building.png")
+      div.container
+        h2.requirements__title Що потрібно
+        div.require-documents
+          div.require-documents__item
+            h4.require-documents__title Документи
+            div.require-documents__decoration-el
+              svg
+                use(xlink:href="#icon-document-verify")
+            ul.require-documents__list  
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Паспорт покупця
+                span.require-documents__type оригінал
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Ідентифікаційний код покупця
+                span.require-documents__type оригінал
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Свідоцтво про шлюб
+                span.require-documents__type оригінал
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Паспорт чоловіка/дружини
+                span.require-documents__type оригінал
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Ідентифікаційний код чоловіка/дружини
+                span.require-documents__type оригінал
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Якщо чоловік (дружина) не можуть бути присутніми на підписанні договору — нотаріально завірена згода на підписання договору від чоловіка (дружини).
+          div.require-documents__item
+            h4.require-documents__title Угода
+            div.require-documents__decoration-el
+              svg
+                use(xlink:href="#icon-document-signing")
+            ul.require-documents__list  
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Надати копії документів менеджеру відділу продажу
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Узгодити зручну дату та час угоди — починаючи з наступного робочого дня після подачі
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Приїхати в головний офіс компанії в зазначений час з оригіналами документів — на підписання нотаріальної угоди купівлі-продажу
+              li.require-documents__list-item 
+                span.require-documents__dot
+                span.require-documents__text Підписання договору — 1 година. Після — є 3 робочі банківські дні на оплату першого внеску
+      div.plan
+        div.container
+          img.plan__logo(src="./assets/images/home/title.svg", alt="logo")
+          h4.plan__subtitle Гармонія цінностей
+          button.plan__button.general-btn
+            span Переглянути генплан
+    
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

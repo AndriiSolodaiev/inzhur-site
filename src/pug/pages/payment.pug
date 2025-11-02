@@ -12,6 +12,19 @@ block variable
         link: pagesLink[0].about
       }
     ]
+    var title = 'ЖК Свідомі: варіанти придбання'
+    var subtitle = ''
+    var descriptionStrong = ''
+    var descriptionNormal = ''
+    var bgImg = {
+      src: "./assets/images/payment/payment-hero-bg.jpg",
+      alt: "building"
+    }
+    var heroClasses = {
+      title: "",
+      subtitle: ""
+    }
+    var anchor = '#payment' 
   
 block meta
   title= title_page
@@ -24,7 +37,8 @@ block scripts
   script(defer src='./assets/scripts/footer.bundle.js')
   script(defer src='./assets/scripts/payment.bundle.js')
 block content
-  section.payment.container 
+  include ../includes/hero.pug
+  section.payment.container(id="payment") 
     div.payment__block
       div.payment__decoration 
         <svg width="162" height="163" viewBox="0 0 162 163" fill="none" xmlns="http://www.w3.org/2000/svg">

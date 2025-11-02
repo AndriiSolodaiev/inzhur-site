@@ -3,29 +3,63 @@
   gap: 12px;
   align-items: center;
   justify-content: center;
- margin-bottom: 40px;
- 
+  margin-bottom: 40px;
 
- @include tablet {
-  margin-bottom: 50px;
- }
- @include desktop {
-  margin-bottom: 60px;
- }
+
+  @include tablet {
+    margin-bottom: 50px;
+    gap: 20px;
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+  }
 }
-.breadcrumbs-item{
+
+.breadcrumbs-item {
   @include general-text;
-  
-white-space: nowrap;
-&:last-child{
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  &:last-child {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
   a {
     margin-right: 12px;
+    position: relative;
+    overflow: hidden;
+
+    @include tablet {
+      margin-right: 20px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      width: 100%;
+      background-color: $accent-color;
+      height: 1px;
+      transform: translateX(-100%);
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateX(0%);
+      }
+    }
   }
+
+  &>svg {}
+
   // &__current--color {
-    
+
   // }
 }
