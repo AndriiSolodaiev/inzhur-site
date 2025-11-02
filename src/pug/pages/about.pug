@@ -1,0 +1,187 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'about'
+    var id_page = 'id-page-about'
+    var class_page = 'class-page-about'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/about.bundle.js')
+block content
+  section.phrase
+    .container.phrase__text 
+      span Поза метушнею великого міста — але близько до всіх його можливостей. 
+      span Без компромісів щодо якості — але з гнучким підходом до можливостей особистих і громадських просторів. Без штучних переваг тільки заради картинки — але виключно на основі передових архітектурних, технологічних, екологічних рішень і досягнень.
+    .phrase__bg-container
+      img(src='./assets/images/about/parallax-house-1.png')
+    .phrase__sky-container 
+      img(src='./assets/images/about/parallax-sky-1.jpg')
+  section.choice.container
+    .choice__left 
+      img.choice__circles(src="./assets/images/about/choice-circles.svg")
+      h2.choice__first-row Нас
+      h2.choice__second-row Обирають
+      h2.choice__third-row Свідомі
+      img.choice__img-card(src="./assets/images/about/choice-woman.jpg")
+      p.choice__text Ми створюємо улюблений дім, де кожен мешканець відчуватиме свою силу, ідентичність та можливість впливати на навколишній світ.
+      button.general-btn.choice__button 
+        span Переглянути планування
+    .choice__right 
+      img.choice__img-bg(src="./assets/images/about/choice-bg.jpg")
+      .choice__ellipse-container
+        <svg width="910" height="850" viewBox="0 0 910 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M910 850H0V0H679.622C568.929 1.79812 432.64 53.2298 303.272 151.398C66.5665 331.019 -57.3349 599.088 26.5303 750.148C110.396 901.208 370.27 878.056 606.976 698.436C843.682 518.815 967.584 250.746 883.719 99.6855C847.345 34.1683 777.862 1.42277 691.521 0H910V850Z" fill="#ECE9E2"/>
+        </svg>
+  section.container.sticky-section.about-architecture 
+    .sticky-section__title-container 
+      h2.sticky-section__title Продумана архітектура
+    .sticky-section__list 
+      .sticky-section__block
+        .sticky-section__block-img
+          span ➊
+          img(src="./assets/images/about/architecture-building-1.jpg")
+        .sticky-section__block-content
+          .sticky-section__block-title Напіввідкрита квартальна забудова
+          ul.sticky-section__block-list 
+            li.sticky-section__block-list-item
+              span ➀
+              span Із акцентними вставками у вигляді низько поверхових секцій формує динамічний образ комплексу
+            li.sticky-section__block-list-item
+              span ➁
+              span Каскадна поверховість будинків забезпечує двори максимумом денного світла
+            li.sticky-section__block-list-item
+              span ➂
+              span Внутрішні простори не ізольовані бетонною стіною та візуально “дихають”, зберігаючи захищений мікроклімат всередині коплексу
+      .sticky-section__block
+        .sticky-section__block-img
+          span ➋
+          img(src="./assets/images/about/architecture-building-2.jpg")
+        .sticky-section__block-content
+          .sticky-section__block-title Єдиний стилобат для всіх будинків
+          ul.sticky-section__block-list 
+            li.sticky-section__block-list-item
+              span ➀
+              span Вміщує критий паркінг, медичний центр, комерційні приміщення та укриття для всіх мешканців 
+            li.sticky-section__block-list-item
+              span ➁
+              span Підтяння житлових дворів на рівень першого поверху — ізолює їх від вуличного руху, шуму та створює відчуття затишку
+  section.container.sticky-section.sticky-section--reverse.about-projecting
+    .sticky-section__title-container 
+      h2.sticky-section__title Усвідомлене проєктування
+    .sticky-section__list 
+      .sticky-section__block
+        .sticky-section__block-img
+          span ➊
+          img(src="./assets/images/about/projecting-building-1.png")
+        .sticky-section__block-content
+          .sticky-section__block-title Зонування простору
+          ul.sticky-section__block-list 
+            li.sticky-section__block-list-item
+              span ➀
+              span 4 дитячі майданчики з індивідуальним дизайном — для дітей різного віку
+            li.sticky-section__block-list-item
+              span ➁
+              span Футбольне та баскетбольне поля, спортивний майданчик з турніками, велосипедні доріжки
+            li.sticky-section__block-list-item
+              span ➂
+              span Прогулянкові та зони відпочинку — з альтанками, лавочками, гамаками 
+            li.sticky-section__block-list-item
+              span ➃
+              span Озеленення території — займає 31% площі, а біля 1-ї черги будівництва облаштовується дощовий сад
+      .sticky-section__block
+        .sticky-section__block-img
+          span ➋
+          img(src="./assets/images/about/projecting-building-2.jpg")
+        .sticky-section__block-content
+          .sticky-section__block-title Продумані планування
+          ul.sticky-section__block-list 
+            li.sticky-section__block-list-item
+              span ➀
+              span Різноманітні функціональні планування планування квартир площею від 35 м² до 92 м², наявність квартир з терасами, лоджіями та французьким балконом
+            li.sticky-section__block-list-item
+              span ➁
+              span Будуємо за монолітно-каркасною технологією, а планування квартир за потреби піддається змінам
+            li.sticky-section__block-list-item
+              span ➂
+              span В під'їздах передбачені колясочні, місця для велосипедів і ніші під поштомати
+      .sticky-section__block
+        .sticky-section__block-img
+          span ➌
+          img(src="./assets/images/about/projecting-building-3.png")
+        .sticky-section__block-content
+          .sticky-section__block-title Безпека та приватність
+          ul.sticky-section__block-list 
+            li.sticky-section__block-list-item
+              span ➀
+              span Надійне укриття обладнане відповідно до всіх норм — з водопостачанням, санвузлами, електроенергією, опаленням та вентиляцією
+            li.sticky-section__block-list-item
+              span ➁
+              span Безбар'єрність та інклюзивність — це не просто про дотримання будівельних норм, а фундаментальний аспект безпечного та комфортного середовища для життя
+            li.sticky-section__block-list-item
+              span ➂
+              span Закрита територія житлового комплексу, внутрішні двори без авто та відеоспостереження 24/7
+  section.container.sticky-section.about-topicality
+    .sticky-section__title-container 
+      h2.sticky-section__title Виважена актуальність
+    .sticky-section__list 
+      .sticky-section__block
+        .sticky-section__block-img
+          span ➊
+          img(src="./assets/images/about/topicality-building-1.png")
+        .sticky-section__block-content
+          .sticky-section__block-title Енергоефективність
+          ul.sticky-section__block-list 
+            li.sticky-section__block-list-item
+              span ➀
+              span Застосовуємо енергозберігаючі технології: утеплення мінеральною ватою, двокамерні склопакети, датчики руху під'їздах
+            li.sticky-section__block-list-item
+              span ➁
+              span Газове опалення від двох власних газових котелень
+            li.sticky-section__block-list-item
+              span ➂
+              span Газифікація кухонних плит у всіх будинках аж до 15-го поверху
+      .sticky-section__block
+        .sticky-section__block-img
+          span ➋
+          img(src="./assets/images/about/topicality-building-2.jpg")
+        .sticky-section__block-content
+          .sticky-section__block-title Найвищий рівень енергонезалежності
+          ul.sticky-section__block-list 
+            li.sticky-section__block-list-item
+              span ➀
+              span Резервне живлення — 2 газові генератори: у разі перебоїв з електропостачанням забезпечать роботу ліфтів, інтернету та домофонів, аварійне освітлення під'їздів, систем протипожежного захисту, всіх систем життєзабезпечення в укритті, насосної станції для житлових приміщень, газових котелень та свердловини.
+            li.sticky-section__block-list-item
+              span ➂
+              span Власна свердловина глибиною 140 метрів — для незалежності від можливих проблем центрального водопостачання: забезпечить мешканців водою
+  section.plan
+    .plan__block
+      img.plan__logo(src="./assets/images/about/logo.svg")
+      h4.plan__subtitle Гармонія цінностей
+      button.general-btn.plan__button
+        span Переглянути генплан
+    .plan__sky-container 
+      img(src='./assets/images/about/parallax-sky-2.jpg')
+    .plan__bg-container
+      img(src='./assets/images/about/parallax-house-2.png')
+
+//- block footer
+//-   include ../includes/footer.pug
+
+//- block header
+//-   include ../includes/header.pug
