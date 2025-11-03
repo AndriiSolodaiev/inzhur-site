@@ -1,0 +1,69 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'showroom'
+    var id_page = 'id-page-showroom'
+    var class_page = 'class-page-showroom'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/showroom.bundle.js')
+block content
+  section.showroom.container 
+    <svg class="page-svg" xmlns="http://www.w3.org/2000/svg" width="265" height="219" viewBox="0 0 265 219" fill="none">
+      <path d="M339.534 -177.04C400.735 -155.157 382.439 -49.8358 298.67 58.2024C214.901 166.241 97.3804 236.084 36.1801 214.201C-25.0202 192.319 -6.72468 86.9974 77.0443 -21.0408C160.813 -129.079 278.334 -198.922 339.534 -177.04Z" fill="#B3BECD"/>
+    </svg>
+    .page-title__wrap 
+      include ../includes/breadcrumbs.pug
+      h1 Документи
+    .showroom__content 
+      .showroom__block 
+        p.showroom__description Простора кухня-вітальня – 13,5 м² має вихід на лоджію – 3 м² з двокамерними панорамними вікнами REHAU. Є можливість об'єднання лоджії з кухнею, що дозволить створити ще більше простору – до 16 м². Світла кімната – 14 м² з великим вікном від підлоги до стелі, висота якої – 2,7 м.
+        .showroom__description Сучасна система опалення, радіатори під кожним вікном та розводка від двоконтурного газового котла BOSCH. Вже встановлені лічильники, виконана чистова стяжка підлоги, якісні вхідні двері, корзини під кондиціонери, заведено електричний кабель, інтернет-провайдери та кабель домофону.
+        .showroom__block-list
+          .showroom__list-title У квартирі, що підготовлена до купівлі: 
+          ul.showroom__list
+            li.showroom__list-item
+              span 
+              span Виконана чистова стяжка на підлозі
+            li.showroom__list-item
+              span 
+              span Підключені радіатори 
+            li.showroom__list-item
+              span 
+              span Встановлені газові лічильники для плити та лічильники для гарячої і холодної води
+            li.showroom__list-item
+              span 
+              span Зроблена проводка для домофона/ТБ/інтернету
+            li.showroom__list-item
+              span 
+              span Встановлено дизайнерські кошики під кондиціонери 
+            li.showroom__list-item
+              span 
+              span Встановлено якісні вхідні двері
+            li.showroom__list-item
+              span 
+              span Встановлено двокамерні енергоефективні склопакети 
+      .showroom__3d
+        <iframe src="https://apartment-tours.smartorange.com.ua/inzhurbud/?scene=4"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
