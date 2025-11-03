@@ -1,100 +1,172 @@
-.notFound {
-    
-    position: relative;
-    padding-top: 80px;
-    padding-bottom: 120px;
+.not-found-section {
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 100px;
+  }
+
+  @include laptop {
+    margin-bottom: 140px;
+  }
+}
+
+.class-page-404 {
+  & .left-side {
+    padding-bottom: 0;
+    min-height: 0;
+
+    @include tablet {
+      min-height: 512px;
+    }
+  }
+
+  & .right-side {
     overflow: hidden;
+    margin-bottom: 20px;
+
     @include tablet {
-        padding-top: 180px;
-        padding-bottom: 180px;
+      margin-bottom: 40px;
     }
+
     @include laptop {
-        padding-top: 230px;
-        padding-bottom: 0px;
+      margin-bottom: 0;
     }
-    .page-title__wrap {
-        opacity: 1;
-        margin-bottom: 72px;
-        @include tablet {
-            margin-bottom: 150px;
-        }
-        @include laptop {
-            margin-bottom: 116px;
-        }
-        h1{
-            font-size: 64px;
-            @include tablet {
-                 font-size: 100px;
-            }
-            @include laptop {
-                font-size: 160px;
-            }
-        }
-        &>svg{
-            bottom:-52px;
-        }
+  }
+
+  & .left-side__title {
+    font-size: 42px;
+    line-height: 100%;
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 80px;
+      line-height: 90%;
     }
-    
-}
-.notFound-content{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
+
     @include laptop {
-        padding-left: 24vw;
-        padding-right: 24vw;
+      font-size: vw(100);
+      margin-bottom: 40px;
     }
-    p{
-        @include page-subtitle;
-        color:$dark-color;
-        text-align: center;
-        @include tablet {
-            margin-bottom: 20px;
-        }
-    }
-}
-.notFound-img__wrap{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-   .cat{
-        overflow: hidden;
-        border-radius: 50%;
-        width:140px;
-        height: auto;
-        @include tablet {
-            width: 200px;
-        }
+  }
 
-   }
-   .dialog-claude {
-        width: 200px;
+  & .left-side__subtitle {
+    margin-top: 0;
+  }
+
+  & .hero-page {
+    min-height: calc(100svh - 120px);
+
     @include tablet {
-        position: absolute;
-        left: 100%;
-        top: -20px;
+      min-height: calc(100svh - 108px);
     }
-   }
 
+    @include laptop {
+      min-height: calc(100svh - 150px);
+    }
+  }
 }
 
-.notFound__btn-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:8px;
-    @include tablet {
-           flex-direction: row;
-        }
-    .general-btn  {
-        width: 100%;
-        @include tablet {
-            width:fit-content;
-        }
+.icon-text-block {
+  position: absolute;
+  top: 0;
+  right: 34px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include tablet {
+    top: 76px;
+    right: 74px;
+  }
+
+  @include laptop {
+    flex-direction: column-reverse;
+    gap: 60px;
+    @media screen and (min-width: 1366px) {
+      top: 255px;
+      right: 248px;
     }
+  }
 }
 
+.icon-404 {
+  width: 120px;
+  height: 120px;
+
+  @include laptop {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.text-404 {
+  @include section-title;
+
+  font-size: 80px;
+  color: $text-color-2;
+
+  @include tablet {
+    font-size: 160px;
+  }
+
+  @include tablet {
+    font-size: vw(260);
+  }
+}
+
+.nav-block {
+  border-radius: 24px;
+  border: 1px solid $accent-color-2;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  max-width: 479px;
+  margin: 20px 0 0;
+
+  @include tablet {
+    margin: 40px 0 0 auto;
+  }
+
+  @include laptop {
+    max-width: 445px;
+    margin: 40px 0 0 35%;
+  }
+}
+
+.nav-block-text {
+  @include general-text;
+
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+
+.nav-block-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.back-link {
+  &.general-btn {
+    background-color: $bc;
+
+    span {
+      color: $text-color;
+    }
+
+    &::before {
+      background-color: $olive-color;
+    }
+
+    &:hover {
+      span {
+        color: $text-color-2;
+      }
+    }
+  }
+}
