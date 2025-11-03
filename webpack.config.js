@@ -24,7 +24,9 @@ const config = {
     payment: './src/assets/scripts/gulp-modules/payment.js',
     about: './src/assets/scripts/gulp-modules/about.js',
     location: './src/assets/scripts/gulp-modules/location.js',
+    company: './src/assets/scripts/gulp-modules/company.js',
     showroom: './src/assets/scripts/gulp-modules/showroom.js',
+
   },
   output: {
     filename: '[name].bundle.js',

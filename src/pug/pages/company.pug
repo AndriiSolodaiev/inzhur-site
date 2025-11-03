@@ -1,0 +1,77 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'company'
+    var id_page = 'id-page-company'
+    var class_page = 'class-page-company'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var title = 'Управляюча компанія'
+    var subtitle = ''
+    var descriptionStrong = 'Забезпечує повний спектр послуг, що охоплюють період заселення та подальшу експлуатацію житла.'
+    var descriptionNormal = 'Це включає організацію ремонтних робіт, надання комунальних послуг та обслуговування території. Компанія гарантує високий рівень сервісного обслуговування для всіх мешканців.'
+    var bgImg = {
+      src: "./assets/images/company/company-hero-bg.jpg",
+      alt: "building"
+    }
+    var heroClasses = {
+      title: "",
+      subtitle: ""
+    }
+    var anchor = '#payment' 
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/company.bundle.js')
+block content 
+  include ../includes/hero.pug 
+  section.container.company
+    .company__title-container
+      h2.company__title Переваги власної керуючої компанії жк Свідомі
+    .company__list
+      .company-block 
+        .company-block__title 
+          img(src="./assets/images/company/handshake.svg" alt="handshake")
+          h4 Індивідуальний підхід:
+        .company-block__text Власна управляюча компанія досконало знає всі інженерні системи, особливості конструкції, слабкі та сильні сторони саме вашого ЖК. Це дозволяє ефективніше усувати проблеми, проводити профілактику та планувати роботи.
+      .company-block 
+        .company-block__title 
+          img(src="./assets/images/company/clock.svg" alt="clock")
+          h4 Швидкість реагування:
+        .company-block__text Оскільки всі ресурси та персонал зосереджені на одному або кількох конкретних об'єктах — реагування запити мешканців та аварійні ситуації відбувається значно швидше.
+      .company-block 
+        .company-block__title 
+          img(src="./assets/images/company/phone.svg" alt="phone")
+          h4 Прямий зв'язок:
+        .company-block__text Мешканці мають прямий вплив на роботу власної керуючої компанії. Це забезпечує вищий рівень контролю за якістю наданих послуг — від прибирання території до ремонту ліфтів.
+      .company-block 
+        .company-block__title 
+          img(src="./assets/images/company/biceps-flexed.svg" alt="biceps-flexed")
+          h4 Гармонійний розвиток:
+        .company-block__text Керуюча компанія може активно брати участь у плануванні подальшого розвитку території ЖК, її озеленення, покращення зон відпочинку, враховуючи побажання мешканців.
+      .company-block 
+        .company-block__title 
+          img(src="./assets/images/company/shield.svg" alt="shield")
+          h4 Відповідальність:
+        .company-block__text Власна керуюча компанія більш зацікавлена у підтримці репутації ЖК, що стимулює її надавати якісні послуги.
+
+
+        
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
