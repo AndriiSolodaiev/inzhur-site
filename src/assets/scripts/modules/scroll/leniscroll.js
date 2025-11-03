@@ -27,21 +27,23 @@ export const initSmoothScrolling = () => {
   });
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
 
-    const targetId = this.getAttribute('href')
-    const target = document.querySelector(targetId)
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
 
-    if (target) {
-      setTimeout(() => {
-      lenis.scrollTo(target, {
-        offset: -100,
-        duration: 1, // в секундах
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // easeOutExpo
-      })}, 10)
-    }
-  })})
+      if (target) {
+        setTimeout(() => {
+          lenis.scrollTo(target, {
+            offset: -10,
+            duration: 1, // в секундах
+            easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+          });
+        }, 10);
+      }
+    });
+  });
   // Define a function to run at each animation frame
   const scrollFn = time => {
     lenis.raf(time); // Run Lenis' requestAnimationFrame method

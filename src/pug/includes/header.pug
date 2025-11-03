@@ -84,49 +84,64 @@ header(class="header ")
       +form
   
   .menu-overlay.hidden(data-menu)
-    .menu-left-part 
-    .menu-right-part
     .menu-container
-      a(href="/").menu-item.menu-item-1
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/1.jpg", alt="menu item home") 
-          span Головна
-      a(href="/project.html").menu-item.menu-item-2
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/2.jpg", alt="menu item project") 
-          span Про проєкт
-      a(href="/property.html").menu-item.menu-item-3
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/3.jpg", alt="menu item property") 
-          span Нерухомість
-      a(href="/invest.html").menu-item.menu-item-4
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/4.jpg", alt="menu item investors") 
-          span Для інвесторів
-      a(href="/progress.html").menu-item.menu-item-5
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/5.jpg", alt="menu item progress") 
-          span Хід робіт та новини
-      a(href="/terms.html").menu-item.menu-item-6
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/6.jpg", alt="menu item terms") 
-          span Умови придбання
-      a(href="/present.html").menu-item.menu-item-7
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/7.jpg", alt="menu item presentations") 
-          span Презентації
-      a(href="/promo.html").menu-item.menu-item-8
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/8.jpg", alt="menu item propose") 
-          span Вигідні пропозиції
-      a(href="/documents.html").menu-item.menu-item-9
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/9.jpg", alt="menu item documents") 
-          span Документи
-      a(href="#contacts").menu-item.menu-item-10
-        .menu-item-double-wrap
-          img(src="./assets/images/menu/10.jpg", alt="menu item contacts") 
-          span Контакти
+      .cycle-section.container
+        .cycle-section__house-wrapper
+          picture.cycle-section__house
+            source(media="(min-width: 1024px)" srcset="./assets/images/developer/desk-house.jpg")
+            source(media="(min-width: 768px)" srcset="./assets/images/developer/tab-house.jpg")
+            img(src="./assets/images/developer/mob-house.jpg" alt="")
+
+          picture.cycle-section__mask
+            source(media="(min-width: 1024px)" srcset="./assets/images/developer/desk-house-oval.svg")
+            source(media="(min-width: 768px)" srcset="./assets/images/developer/tab-house-oval.svg")
+            img(src="./assets/images/developer/mob-house-oval.svg" alt="")
+
+        .menu-nav-list 
+          a(href="").nav-link.menu-main-link
+            span.real Головна
+            span.fake Головна
+          a(href="").nav-link.menu-main-link
+            span.real Про проєкт
+            span.fake Про проєкт
+          a(href="").nav-link.menu-main-link
+            span.real Обрати квартиру
+            span.fake Обрати квартиру
+          a(href="").nav-link.menu-main-link
+            span.real Умови Купівлі
+            span.fake Умови Купівлі
+          //- Розкоиментувати коли скаже замовник
+          //- a(href="").nav-link.menu-main-link
+          //-   span.real КОМЕРЦІЯ
+          //-   span.fake КОМЕРЦІЯ
+          a(href="").nav-link.menu-main-link
+            span.real КОНТАКТИ
+            span.fake КОНТАКТИ
+        
+        .menu-subnav-list 
+          a(href="").nav-link.menu-link
+            span.real Хто будує
+            span.fake Хто будує
+          a(href="").nav-link.menu-link
+            span.real Локація
+            span.fake Локація
+          a(href="").nav-link.menu-link
+            span.real 3D шоурум
+            span.fake 3D шоурум
+          a(href="").nav-link.menu-link
+            span.real Управляюча компанія
+            span.fake Управляюча компанія
+          a(href="").nav-link.menu-link
+            span.real Презентації
+            span.fake Презентації
+          a(href="").nav-link.menu-link
+            span.real Документи
+            span.fake Документи
+          a(href="").nav-link.menu-link
+            span.real Новини та хід робіт
+            span.fake Новини та хід робіт
+    
+      
   .overflow(data-mob-call__overflow).container.hidden
     a.general-btn(href="tel:+380777077040") 
       span Виклик +38 (077) 707 70 40

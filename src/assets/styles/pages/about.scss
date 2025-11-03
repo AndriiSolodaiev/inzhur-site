@@ -59,6 +59,7 @@
     position: absolute;
     top: 0;
     width: 330%;
+
     @include tablet {
       width: 250%;
     }
@@ -150,6 +151,7 @@
       width: 64px;
       height: 24px;
     }
+
     @include laptop {
       top: 2%;
     }
@@ -159,16 +161,20 @@
     @include section-title;
     position: relative;
     grid-area: us;
+
     margin: 0 16.5% 0 auto;
     font-size: 48px;
 
     @include tablet {
-      margin-right: 0;
+      grid-column: 2;
+      justify-self: start;
+      margin: 0;
       font-size: clamp(80px, calc(80px + (100 - 80) * ((100vw - 768px) / (1366 - 768))), 100px);
     }
 
     @include laptop {
       font-size: 5.2vw;
+
     }
   }
 
@@ -193,12 +199,16 @@
     font-size: 48px;
 
     @include tablet {
+
+      grid-column: 2;
+      justify-self: start;
       margin: 0;
       font-size: clamp(80px, calc(80px + (100 - 80) * ((100vw - 768px) / (1366 - 768))), 100px);
     }
 
     @include laptop {
       font-size: 5.2vw;
+
     }
   }
 
@@ -225,8 +235,8 @@
     }
 
     @include laptop {
-      max-width: 445px;
-      margin: 60px 0 80px;
+      max-width: vw(445);
+      margin: vw(60) 0 vw(80);
     }
   }
 
@@ -235,10 +245,20 @@
     justify-content: center;
     width: 100%;
     margin: 40px 0 0;
+    background-color: $accent-color-2;
+
+    span {
+      color: $accent-color;
+    }
+
+    &::before {
+      background-color: $olive-color;
+    }
 
     @include tablet {
       width: 100%;
       margin: 0 0 13px 0;
+      width: fit-content;
     }
 
     @include laptop {
@@ -342,6 +362,7 @@
     grid-template-columns: 1fr 2fr;
     gap: 40px;
     margin-top: 200px;
+
   }
 
   &--reverse {
@@ -360,7 +381,9 @@
     }
 
     @include laptop {
-      gap: 120px;
+      gap: vw(120);
+      align-items: stretch;
+
     }
   }
 
@@ -374,19 +397,26 @@
     position: relative;
     overflow: hidden;
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 186px auto;
+    grid-template-rows: auto auto;
     border-radius: 24px;
     background: $bg-color;
 
     @include tablet {
-      grid-template-rows: 400px auto;
-      min-height: 560px;
+      grid-template-rows: auto auto;
+      // min-height: 560px;
     }
 
     @include laptop {
-      grid-template-columns: 0.568fr 0.432fr;
-      grid-template-rows: inherit;
+      // grid-template-columns: 3fr 2fr;
+      // grid-template-rows: inherit;
+      // height: 100%;
+      display: flex;
+      align-items: stretch;
+      // height: 100%;
+      flex: 1 1 auto;
+      min-height: vw(560);
     }
   }
 
@@ -395,7 +425,7 @@
       grid-template-columns: 1fr;
 
       @include laptop {
-        grid-template-columns: 0.432fr 0.568fr;
+        // grid-template-columns: 2fr 3fr;
       }
     }
   }
@@ -403,7 +433,17 @@
   &__block-img {
     position: relative;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 335/ 184;
+
+    @include tablet {
+      aspect-ratio: 728/ 400;
+    }
+
+    @include laptop {
+      aspect-ratio: auto;
+      flex: 3;
+    }
+
 
     img {
       width: 100%;
@@ -433,6 +473,7 @@
   &--reverse {
     .sticky-section__block-img {
       order: 0;
+
       @include laptop {
         order: 1;
       }
@@ -445,11 +486,16 @@
     @include tablet {
       padding: 40px 40px 60px;
     }
+
+    @include laptop {
+      flex: 2;
+    }
   }
 
   &--reverse {
     .sticky-section__block-content {
       order: 1;
+
       @include laptop {
         order: 0;
       }
@@ -504,11 +550,16 @@
     letter-spacing: -0.06em;
     text-transform: none;
     position: sticky;
-    top: 0;
+
 
     @include tablet {
       font-size: clamp(64px, calc(64px + (72 - 64) * ((100vw - 768px) / (1366 - 768))), 72px);
       line-height: 110%;
+    }
+
+    @include laptop {
+      top: 170px;
+      padding-bottom: vw(200);
     }
   }
 }
@@ -608,7 +659,14 @@
       margin-top: 40px;
     }
   }
+
   &__subtitle {
     @include block-title;
+  }
+}
+
+.project-haromny.harmony-section {
+  &::before {
+    background: linear-gradient(0deg, rgba(236, 233, 226, 0) 0%, #FAF6EE 100%);
   }
 }

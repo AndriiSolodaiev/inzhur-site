@@ -3,56 +3,19 @@
   padding-bottom: 120px;
   overflow: hidden;
   max-width: 100vw;
+
   @include laptop {
     padding-top: 220px;
   }
 }
 
-.page-title__wrap {
-  position: relative;
-  margin-bottom: 124px;
-  opacity:0;
-  @include tablet {
-    margin-bottom: 182px;
-  }
 
-  @include laptop {
-    margin-bottom: 242px;
-  }
-
-  h1 {
-    @include page-title;
-    color: $dark-color;
-    text-align: center;
-  }
-
-  &>svg {
-    position: absolute;
-    bottom: -64px;
-    width: 80%;
-    height: auto;
-    z-index: -1;
-    left: 50%;
-    transform: translateX(-50%);
-    transform-origin: top;
-
-    @include tablet {
-      bottom: -82px;
-      width: 50%;
-    }
-
-    @include laptop {
-      bottom: -82px;
-      width: 30%;
-    }
-  }
-}
 
 .progress-page__content {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
+
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;

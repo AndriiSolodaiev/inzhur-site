@@ -33,136 +33,16 @@ const menuTimeline = gsap.timeline({
   paused: true,
   defaults: { ease: 'power3.out', duration: 1 },
 });
-const menu = document.querySelector('.menu-container');
-menuTimeline
-  .from(
-    menu.querySelector('.menu-left-part'),
-    {
-      xPercent: -100,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    0,
-  )
-  .from(
-    menu.querySelector('.menu-right-part'),
-    {
-      xPercent: 100,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-1',
-    {
-      y: -1000,
-      x: -400,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<+=0.2',
-  )
-  .from(
-    '.menu-item-2',
-    {
-      y: -1200,
-      x: -200,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-3',
-    {
-      y: -1400,
 
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-4',
-    {
-      y: -1200,
-      x: 200,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-5',
-    {
-      y: -1000,
-      x: 400,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-6',
-    {
-      y: 1000,
-      x: -400,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-7',
-    {
-      y: 1200,
-      x: -200,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-8',
-    {
-      y: 1400,
-
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-9',
-    {
-      y: 1200,
-      x: 200,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  )
-  .from(
-    '.menu-item-10',
-    {
-      y: 1000,
-      x: 400,
-      rotate: 0,
-      duration: 1,
-      ease: 'power3.out',
-    },
-    '<',
-  );
+menuTimeline.from(
+  '.menu-right-part',
+  {
+    xPercent: 100,
+    duration: 1,
+    ease: 'power3.out',
+  },
+  '<',
+);
 
 document.body.addEventListener('click', function(evt) {
   const close = evt.target.closest('[data-call-us-modal-close]');

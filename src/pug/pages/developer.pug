@@ -24,7 +24,7 @@ block variable
       title: "",
       subtitle: ""
     }
-    var anchor = '#payment' 
+    var anchor = '#specialization-section' 
 block meta
   title= title_page
   meta(name='description', content='')
@@ -48,14 +48,12 @@ block content
           span=descriptionStrong
           span=descriptionNormal
       a.left-side__down-button(href=anchor)
-        <svg width="72" height="68" viewBox="0 0 72 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_1181_8584)">
-            <path d="M25.6726 68C18.4938 68 11.9169 65.7944 7.11755 61.2677C-4.74191 50.084 -1.43452 28.7455 14.4576 13.7203C21.9611 6.646 31.1593 1.92814 40.355 0.483446C50.1978 -1.07688 58.9125 1.16892 64.8826 6.79851C76.7423 17.9823 73.4338 39.3208 57.5426 54.3458C48.0624 63.2854 36.2004 68 25.6726 68Z" fill="#393028"/>
-            <path d="M36.8506 28L36.8506 38.3057L35.1481 38.3057L35.1481 28L36.8506 28Z" fill="#ECE9E2"/>
-            <path d="M41.8643 35.7371L41.8643 33.3488L36 37.7066L36 40.0003L41.8643 35.7371Z" fill="#ECE9E2"/>
-            <path d="M30.1357 35.7371L30.1357 33.3488L36 37.7066L36 40.0003L30.1357 35.7371Z" fill="#ECE9E2"/>
-          </g>
-        </svg>
+        .ellipse-btn 
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12.8506 6L12.8506 16.3057L11.1481 16.3057L11.1481 6L12.8506 6Z" fill="#ECE9E2"/>
+            <path d="M17.8643 13.7371L17.8643 11.3488L12 15.7066L12 18.0003L17.8643 13.7371Z" fill="#ECE9E2"/>
+            <path d="M6.13573 13.7371L6.13573 11.3488L12 15.7066L12 18.0003L6.13573 13.7371Z" fill="#ECE9E2"/>
+          </svg>
         span Гортайте
       <svg class="left-side__overlap" viewBox="0 0 960 715" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1224_8354)">
@@ -69,7 +67,7 @@ block content
           <path d="M117.701 373.79C38.4279 264.785 0.537078 137.984 0 0V715H960C581.897 706.532 278.072 594.382 117.701 373.79Z" fill="currentColor"/>
         </g>
       </svg>
-  section.specialization-section.container
+  section.specialization-section.container#specialization-section
     h2.specialization-title Inzhur спеціалізується на комерційній та житловій нерухомості всіх рівнів складності:
 
     ul.specialization-list 
@@ -134,7 +132,6 @@ block content
 
     .inzhure-text-link-block
       p.inzure-text <span>Це дозволяє нам контролювати взагалі все: терміни будівництва,  підбір матеріалів і технологій, хід робіт в деталях.</span> Тому ми не просто обіцяємо виняткову якість і надійні умови — ми впевнені в них і контролюємо їх.
-
       a.inzhure-link.general-btn(href="#" target="_blank") <span>Сайт <span>девелоперської</span> компанії</span>
   
   section.contact-links-section.container

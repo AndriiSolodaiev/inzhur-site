@@ -32,13 +32,13 @@
     height: auto;
 
     @include tablet {
-      background-image: url('/assets/images/location/filler/tab-oval.svg');
+      background-image: url('../images/location/filler/tab-oval.svg');
       width: clamp(400px, 100vw, 623px);
       aspect-ratio: 623 / 350;
     }
 
     @include laptop {
-      background-image: url('/assets/images/location/filler/desk-oval.svg');
+      background-image: url('../images/location/filler/desk-oval.svg');
       width: clamp(500px, 40vw, 795px);
       aspect-ratio: 795 / 570;
     }
@@ -197,7 +197,7 @@
   }
 }
 
-.inzure-text {
+.infrastructure-section .inzure-text {
   @include general-text;
 
   font-weight: 700;
@@ -217,9 +217,11 @@
   @include laptop {
     font-size: vw(36);
 
-    @media screen and (max-width: 1366px) {
-      max-width: 392px;
-    }
+
+  }
+
+  @media screen and (max-width: 1366px) {
+    max-width: 392px;
   }
 
   @include desktop {
@@ -682,7 +684,7 @@
   padding-top: 235px;
   position: relative;
   overflow: hidden;
-  height: 971px;
+  height: 150vh;
 
   &::before {
     position: absolute;
@@ -695,7 +697,7 @@
 
   @include tablet {
     padding-top: 320px;
-    height: 1705px;
+    // height: 1705px;
 
     &::before {
       height: 400px;
@@ -703,11 +705,9 @@
   }
 
   @include laptop {
-    padding-top: 400px;
+    padding-top: vw(400);
+    height: 180vh;
 
-    @media screen and (min-width: 1366px) {
-      height: 1925px;
-    }
   }
 }
 

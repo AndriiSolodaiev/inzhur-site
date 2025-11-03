@@ -8,11 +8,23 @@ block variable
     var headerCustomClass = 'type1' 
     var breadcrumbsSubitem = [
       {
-        label: 'About',
+        label: 'ПРО ПРОЄКТ',
         link: pagesLink[0].about
       }
     ]
-  
+    var title = 'ПРО ПРОЄКТ'
+    var subtitle = 'Гармонія цінностей: коли все, що треба — так, як треба'
+    var descriptionStrong = 'Ми задумали і створюємо ЖК Свідомі так, щоб він відповідав кожному уявленню про те, що таке дім.'
+    var descriptionNormal = ' Тут кожен мешканець відчує: це його простір, його правила, його свобода. Це нетривіальне завдання, тому наш головний принцип — гармонія'
+    var bgImg = {
+      src: "./assets/images/about/about-hero-bg.jpg",
+      alt: "building"
+    }
+    var heroClasses = {
+      title: "",
+      subtitle: ""
+    }
+    var anchor = '#map-section'
 block meta
   title= title_page
   meta(name='description', content='')
@@ -24,6 +36,7 @@ block scripts
   script(defer src='./assets/scripts/footer.bundle.js')
   script(defer src='./assets/scripts/about.bundle.js')
 block content
+  include ../includes/hero.pug
   section.phrase
     .container.phrase__text 
       span Поза метушнею великого міста — але близько до всіх його можливостей. 
@@ -169,19 +182,20 @@ block content
             li.sticky-section__block-list-item
               span ➂
               span Власна свердловина глибиною 140 метрів — для незалежності від можливих проблем центрального водопостачання: забезпечить мешканців водою
-  section.plan
-    .plan__block
-      img.plan__logo(src="./assets/images/about/logo.svg")
-      h4.plan__subtitle Гармонія цінностей
-      button.general-btn.plan__button
-        span Переглянути генплан
-    .plan__sky-container 
-      img(src='./assets/images/about/parallax-sky-2.jpg')
-    .plan__bg-container
-      img(src='./assets/images/about/parallax-house-2.png')
+  section.harmony-section.container.project-haromny
+    .harmony-text-content-wrapper
+      img(src="/assets/images/location/harmony/logo.svg", alt="").harmony-logo   
+      h2.harmony-title Гармонія цінностей
+      a(href="#" target="_blank").general-btn.harmony-link <span>Переглянути генплан</span>
 
-//- block footer
-//-   include ../includes/footer.pug
+    .harmony-sky-wrapper
+      img(src="/assets/images/location/harmony/harmony-sky.png", alt="").harmony-sky-img
 
-//- block header
-//-   include ../includes/header.pug
+    .harmony-house-wrapper 
+      img(src="/assets/images/about/parallax-house-2.png", alt="")
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

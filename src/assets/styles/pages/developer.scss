@@ -265,43 +265,35 @@
   background-color: $bc;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
 
   &::after {
     position: absolute;
     content: '';
     background-image: url('/assets/images/developer/mob-oval.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     right: 0;
     bottom: 0;
-    width: 355px;
-    height: 324px;
+    width: calc(100% - 20px);
+    height: 80vw;
     z-index: 1;
 
     @include tablet {
       background-image: url('/assets/images/developer/tab-oval.svg');
-      width: 623px;
-      height: 471px;
+      width: 81vw;
+      height: 45vw;
     }
 
     @include laptop {
       background-image: url('/assets/images/developer/desk-oval.svg');
-
-      @media screen and (max-width: 1366px) {
-        width: 623px;
-      }
-
-      width: 100%;
-      max-width: 623px;
-      height: 447px;
+      width: vw(795);
+      // max-width: 623px;
+      height: vw(570);
       aspect-ratio: 623 / 447;
     }
 
-    @include desktop {
-      max-width: 795px;
-      height: 570px;
-      aspect-ratio: 795 / 570;
-    }
+
   }
 
   @include tablet {
@@ -320,19 +312,19 @@
   overflow: hidden;
   inset: 0;
 
-  width: 335px;
-  height: 595px;
+  width: calc(100% - 40px);
+  aspect-ratio: 335 / 595;
   margin: 0 auto;
   z-index: 0;
 
   @include tablet {
-    width: 768px;
-    height: 1080px;
+    width: 100%;
+    height: 100%;
   }
 
   @include laptop {
     width: 100%;
-    max-width: 1920px;
+    // max-width: 1920px;
     height: auto;
     aspect-ratio: 1920 / 1080;
   }
@@ -431,14 +423,24 @@
   gap: 20px;
   margin-left: auto;
   width: fit-content;
+  position: absolute;
+  bottom: 40px;
+  left: 30vw;
 
   @include tablet {
     gap: 40px;
+    bottom: 80px;
+    left: 50vw;
   }
 
-  @include desktop {
-    top: -100px;
-    margin-right: 150px;
+  @include laptop {
+    bottom: vw(104);
+    left: vw(1280);
+
+  }
+
+  @include laptop-header {
+    bottom: vw(208);
   }
 }
 
@@ -457,6 +459,15 @@
     font-size: 24px;
     line-height: 120%;
     max-width: 448px;
+  }
+
+  @include laptop {
+    max-width: vw(548);
+    font-size: clamp(18px, calc(18px + (24 - 18) * ((100vw - 1024px) / (1920 - 1024))), 24px);
+  }
+
+  @include laptop-header {
+    max-width: vw(448);
   }
 }
 
