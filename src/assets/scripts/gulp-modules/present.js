@@ -1,44 +1,18 @@
-
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
 
+gsap.set('.present-content .present-card ', { y: 100, opacity: 0, filter: 'blur(10px)' });
 
+window.addEventListener('loaderLoaded', () => {
+  gsap.timeline().to(
+    '.present-content .present-card ',
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  gsap.timeline().fromTo(".page-title__wrap", {
-    y:-150,
-    opacity:0
-  }, {
-    y:0,
-    opacity:1
-  }).fromTo(".present-card ", {
-    y:150,
-    opacity:0
-  }, {
-    y:0,
-    opacity:1,
-    stagger:0.2
-  }, "<")
-
-})
-
-const projectLocation = gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.terms-filler',
-        start: "top bottom",
-        end: 'bottom top',
-        scrub: true,
-        
-      },
-    })
-  
-    projectLocation.fromTo('.terms-filler img', {
-      yPercent: -10,
-     scale:1.1,
-     ease:"none"
-    },{
-      yPercent: 10,
-     scale:1.1, ease:"none"
-    })
+    {
+      y: 0,
+      opacity: 1,
+      stagger: 0.2,
+      filter: 'blur(0px)',
+    },
+    '<',
+  );
+});

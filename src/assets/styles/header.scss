@@ -6,6 +6,7 @@
   z-index: 100;
   transform: translateY(-100%);
   transition: transform 0.4s ease;
+  pointer-events: none;
 
   &.visible {
     transform: translateY(0);
@@ -75,7 +76,7 @@
   background-color: $accent-color;
   position: relative;
   transition: all 0.4s ease;
-
+  pointer-events: all;
 
   @include tablet {
     height: 108px;
@@ -608,7 +609,9 @@
   background-color: $accent-color;
   pointer-events: all;
   display: flex;
-
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 
   @include laptop {
     align-items: center;
@@ -617,9 +620,9 @@
 
 
   &.hidden {
-    visibility: hidden;
+    // visibility: hidden;
     pointer-events: none;
-    opacity: 0;
+    // opacity: 0;
   }
 
 }
@@ -627,6 +630,11 @@
 .menu-container {
   width: 100%;
   height: 100svh;
+
+  // visibility: hidden;
+  .cycle-section__house-wrapper {
+    overflow: visible;
+  }
 
   .cycle-section {
     height: 100%;

@@ -1,33 +1,17 @@
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
+gsap.set('.documents-page-list', { y: 150, opacity: 0 });
+window.addEventListener('loaderLoaded', () => {
+  gsap.timeline().to(
+    '.documents-page-list',
 
-document.addEventListener('DOMContentLoaded', function() {
-  gsap
-    .timeline()
-    .fromTo(
-      '.page-title__wrap',
-      {
-        y: -150,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-      },
-    )
-    .fromTo(
-      '.documents-page-list',
-      {
-        y: 150,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.2,
-      },
-      '<',
-    );
+    {
+      y: 0,
+      opacity: 1,
+      stagger: 0.2,
+    },
+    '<',
+  );
 });
 
 const listWrapper = document.querySelectorAll('.documents-page-card-content-inner');

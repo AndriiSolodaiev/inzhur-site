@@ -269,6 +269,7 @@
   &__right {
     position: relative;
     margin: 0 -20px;
+    overflow: hidden;
 
     @include laptop {
       margin: 0;

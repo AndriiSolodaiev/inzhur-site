@@ -34,8 +34,15 @@ const menuTimeline = gsap.timeline({
   paused: true,
   defaults: { ease: 'power3.out', duration: 1 },
 });
+
 const cycleSection = CSSRulePlugin.getRule('.menu-container .cycle-section::after');
 menuTimeline
+  .to('.menu-overlay', {
+    visibility: 'visible',
+    pointerEvents: 'all',
+    opacity: 1,
+    duration: 0.3,
+  })
   .from(
     '.cycle-section__mask',
     {
@@ -46,10 +53,19 @@ menuTimeline
     '<',
   )
   .from(
+    '.cycle-section__house img',
+    {
+      scale: 1.5,
+      duration: 1.5,
+      ease: 'power3.out',
+    },
+    '<',
+  )
+  .from(
     '.menu-nav-list .menu-main-link',
     {
       yPercent: -50,
-      stagger: 0.2,
+      stagger: 0.15,
       duration: 0.8,
       opacity: 0,
       ease: 'power3.out',
@@ -72,7 +88,10 @@ menuTimeline
     {
       yPercent: 50,
       filter: 'blur(10px)',
-      stagger: 0.2,
+      stagger: {
+        each: 0.15, // інтервал між елементами
+        from: 'end', // почати з останнього
+      },
       opacity: 0,
       duration: 0.8,
       ease: 'power3.out',
@@ -320,8 +339,10 @@ animateOnScroll('.footer-contacts-section>* ', {
 });
 
 // gsap.set('.page-title__wrap', { y: -150, opacity: 0 });
-gsap.set('.page-svg', { yPercent: -40, opacity: 0, rotate: -20 });
-
+const pageTitle = document.querySelector('.page-title__wrap');
+if (pageTitle) {
+  gsap.set('.page-svg', { yPercent: -40, opacity: 0, rotate: -20 });
+}
 // Анімація запускається після завершення лоадера
 window.addEventListener('loaderLoaded', () => {
   gsap.set('.page-title__wrap', { y: -150, opacity: 0 });
@@ -347,16 +368,18 @@ window.addEventListener('loaderLoaded', () => {
     '<+=0.4',
   );
 });
-
-gsap.set('.breadcrumbs>*', { x: -150, opacity: 0, stagger: 0.2 });
-gsap.set('.left-side__subtitle', { yPercent: 20, opacity: 0 });
-gsap.set('.left-side__text-block ', { yPercent: 20, opacity: 0 });
-gsap.set('.left-side__title ', { opacity: 0 });
-gsap.set('.right-side__bg ', { scale: 1.2 });
-gsap.set('.right-side .right-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
-// gsap.set('.left-side .left-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
-gsap.set('.left-side__down-button', { yPercent: 20, opacity: 0 });
-function animateTextByLetters(selector) {
+const heroTitle = document.querySelector('.hero-page ');
+if (heroTitle) {
+  gsap.set('.breadcrumbs>*', { x: -150, opacity: 0, stagger: 0.2 });
+  gsap.set('.left-side__subtitle', { yPercent: 20, opacity: 0 });
+  gsap.set('.left-side__text-block ', { yPercent: 20, opacity: 0 });
+  gsap.set('.left-side__title ', { opacity: 0 });
+  gsap.set('.right-side__bg ', { scale: 1.2 });
+  gsap.set('.right-side .right-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
+  // gsap.set('.left-side .left-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
+  gsap.set('.left-side__down-button', { yPercent: 20, opacity: 0 });
+}
+export function animateTextByLetters(selector) {
   const el = document.querySelector(selector);
   if (!el) return;
 
