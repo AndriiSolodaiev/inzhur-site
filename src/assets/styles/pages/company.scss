@@ -1,0 +1,93 @@
+.company {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    gap: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include laptop {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  &__title-container {
+    height: 100%;
+  }
+
+  &__title {
+    @include section-title;
+    position: sticky;
+    max-width: 775px;
+    font-size: 36px;
+    line-height: 100%;
+    text-transform: none;
+
+    @include tablet {
+      font-size: 11.9vw;
+      font-size: clamp(64px, calc(64px + (72 - 64) * ((100vw - 768px) / (1366 - 768))), 72px);
+    }
+
+    @include laptop {
+      top: 150px;
+      font-size: 3.75vw;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include laptop {
+      gap: 40px;
+    }
+  }
+}
+
+.company-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 20px;
+  background-color: #faf6ee;
+  border-radius: 24px;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 40px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include laptop {
+      flex-direction: row;
+      align-items: center;
+      gap: 10%;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    h4 {
+      @include block-title;
+    }
+  }
+
+  &__text {
+    @include general-text;
+  }
+}
