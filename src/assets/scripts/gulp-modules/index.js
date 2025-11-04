@@ -1,7 +1,5 @@
 import Swiper, { Autoplay, EffectFade, Navigation } from 'swiper';
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
-
-import { animateTitleOnScroll } from '../modules/effects/animateTitle';
 import googleMap from '../modules/map/map';
 // import device from 'current-device';
 // if (device.iphone()) {
@@ -60,195 +58,88 @@ const swiperProgress = new Swiper('.swiper-progress', {
     1024: { slidesPerView: 3 },
   },
 });
-const tlFiller = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.filler',
-    start: 'top bottom',
-    end: 'bottom top',
-    scrub: 1,
-  },
-});
 
-// Плавне розсунення псевдоелементів
-tlFiller.fromTo(
-  '.filler-img-wrap>img',
-  {
-    scale: 1.1,
-    yPercent: -10,
-    ease: 'none',
-  },
-  {
-    duration: 1,
-    scale: 1.1,
-    yPercent: 10,
-    ease: 'none',
-  },
-);
-let tlFillerContent = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.filler',
-    start: 'top center', // коли з’являється секція
-    toggleActions: 'play none none none',
-  },
-});
+// gsap
+//   .timeline({
+//     scrollTrigger: {
+//       trigger: '.progress-list',
+//       start: 'top bottom',
+//       end: 'bottom top',
+//       //  onLeave: self => self.kill(),
+//     },
+//   })
+//   .fromTo(
+//     '.progress-card',
+//     {
+//       yPercent: 10,
+//       opacity: 0,
+//     },
+//     {
+//       yPercent: 0,
+//       opacity: 1,
+//       stagger: 0.2,
+//     },
+//   )
+//   .fromTo(
+//     '.progress-homepage-description-wrap',
+//     {
+//       opacity: 0,
+//       x: -10,
+//       yPercent: 10,
+//     },
+//     {
+//       yPercent: 0,
+//       x: 0,
+//       opacity: 1,
+//     },
+//     '>-=0.3',
+//   );
 
-// 1. Ліва картинка
-tlFillerContent
-  .fromTo(
-    '.filler .filler-img--left',
-    { x: -100, opacity: 0, scale: 0.9, filter: 'blur(10px)' },
-    { x: 0, opacity: 1, scale: 1, filter: 'blur(0px)', duration: 1.2, ease: 'power3.out' },
-  )
-  .fromTo(
-    '.filler .filler-img--right',
-    { x: 100, opacity: 0, scale: 0.9, filter: 'blur(10px)' },
-    { x: 0, opacity: 1, scale: 1, filter: 'blur(0px)', duration: 1.2, ease: 'power3.out' },
-    '<', // почати трохи раніше за попередній
-  )
-  .fromTo(
-    '.filler .filler-title',
-    { y: 50, opacity: 0, scale: 0.95 },
-    { y: 0, opacity: 1, scale: 1, duration: 1, ease: 'back.out(1.7)' },
-    '<',
-  )
-  .fromTo(
-    '.filler .hero-slogan',
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
-    '<+=0.2', // трошки раніше, щоб був перекритий ефект
-  )
-  .fromTo(
-    '.filler .general-btn',
-    { y: 20, opacity: 0, scale: 0.9 },
-    { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: 'elastic.out(1, 0.5)' },
-    '<',
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.real-estate-homepage-list',
-      start: 'top bottom',
-      end: 'bottom top',
-      //  onLeave: self => self.kill(),
-    },
-  })
-  .fromTo(
-    '.real-estate-homepage-card',
-    {
-      yPercent: 10,
-      opacity: 0,
-    },
-    {
-      yPercent: 0,
-      opacity: 1,
-      stagger: 0.2,
-    },
-  )
-  .fromTo(
-    '.real-estate-description-wrap',
-    {
-      opacity: 0,
-      x: -10,
-      yPercent: 10,
-    },
-    {
-      yPercent: 0,
-      x: 0,
-      opacity: 1,
-    },
-    '>-=0.3',
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.progress-list',
-      start: 'top bottom',
-      end: 'bottom top',
-      //  onLeave: self => self.kill(),
-    },
-  })
-  .fromTo(
-    '.progress-card',
-    {
-      yPercent: 10,
-      opacity: 0,
-    },
-    {
-      yPercent: 0,
-      opacity: 1,
-      stagger: 0.2,
-    },
-  )
-  .fromTo(
-    '.progress-homepage-description-wrap',
-    {
-      opacity: 0,
-      x: -10,
-      yPercent: 10,
-    },
-    {
-      yPercent: 0,
-      x: 0,
-      opacity: 1,
-    },
-    '>-=0.3',
-  );
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.promo-list',
-      start: 'top bottom',
-      end: 'bottom top',
-      //  onLeave: self => self.kill(),
-    },
-  })
-  .fromTo(
-    '.promo-homepage-card',
-    {
-      yPercent: 20,
-      opacity: 0,
-    },
-    {
-      yPercent: 0,
-      opacity: 1,
-      stagger: 0.2,
-    },
-  )
-  .fromTo(
-    '.promo-homepage-description-wrap',
-    {
-      opacity: 0,
-      x: -10,
-      yPercent: 10,
-    },
-    {
-      opacity: 1,
-      x: 0,
-      yPercent: 0,
-    },
-    '>-=0.3',
-  );
+//hero animation
+gsap.set('.video-frame img', { scale: 1.2 });
+gsap.set('.hero-promo-wrap .hero-promo-item', { xPercent: -100 });
+gsap.set('.hero-bottom-items .hero-bottom-item', { yPercent: 100 });
+gsap.set('.hero-bottom-block img', { yPercent: 100 });
 
 window.addEventListener('loaderLoaded', () => {
-  gsap.fromTo(
-    '.hero .section-title, .hero .hero-slogan, .hero .section-descr, .hero .video-frame img',
-    {
-      y: 80,
-      stagger: 0.2,
-      scale: 0.8,
-      duration: 1.5,
-      ease: 'power3.out',
-      clipPath: 'polygon(0% 0%, 100% 0%, 100% 0, 0% 0%)',
-    },
-    {
-      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-      y: 0,
-      scale: 1,
-    },
-  );
+  gsap
+    .timeline()
+    .to(
+      '.video-frame img',
+      {
+        scale: 1,
+        duration: 1.2,
+      },
+      '<',
+    )
+    .to(
+      '.hero-bottom-items .hero-bottom-item',
+      {
+        yPercent: 0,
+        stagger: 0.2,
+        duration: 1,
+      },
+
+      '<',
+    )
+    .to(
+      '.hero-promo-wrap .hero-promo-item',
+      {
+        xPercent: 0,
+        stagger: 0.2,
+        duration: 1,
+      },
+      '<',
+    )
+    .to(
+      '.hero-bottom-block img',
+      {
+        yPercent: 0,
+
+        duration: 1,
+      },
+      '<',
+    );
 });
 
 // 2. Hero піниться (але друга секція налізає)
@@ -280,6 +171,160 @@ gsap
     },
     '<',
   );
+
+// about-project-animation
+
+const aboutTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.about-project',
+    start: 'top bottom',
+    end: 'bottom top',
+    //  onLeave: self => self.kill(),
+    scrub: 1,
+  },
+});
+
+aboutTl
+  .fromTo(
+    '.about-project .sky',
+    { scale: 1.05, yPercent: -10 },
+    { scale: 1.05, yPercent: 5, ease: 'none' },
+    '<',
+  )
+  .fromTo('.about-project .about-project-img img', { scale: 1 }, { scale: 1.1, ease: 'none' }, '<');
+
+export function animateOnScroll(selector, options = {}) {
+  const {
+    y = 60,
+    x = 0,
+    blur = 10,
+    delay = 0,
+    stagger = 0,
+    duration = 0.6,
+    ease = 'power2.out',
+    start = 'top 80%',
+    markers = false,
+    scale = 1,
+  } = options;
+
+  gsap.fromTo(
+    selector,
+    {
+      y,
+      scale,
+      x,
+      opacity: 0,
+      filter: `blur(${blur}px)`,
+    },
+    {
+      y: 0,
+      x: 0,
+      opacity: 1,
+      filter: 'blur(0px)',
+      duration,
+      ease,
+      delay,
+      stagger,
+      scale: 1,
+      scrollTrigger: {
+        trigger: selector,
+        start,
+        once: true,
+        markers,
+      },
+    },
+  );
+}
+animateOnScroll('.about-project-text', { y: 20, duration: 0.6 });
+animateOnScroll('.about-project-video', { y: 20, duration: 0.6, delay: 0.2 });
+
+animateOnScroll('.location-homepage .location-homepage__content .section-title', { y: -60 });
+animateOnScroll('.location-homepage .location-homepage__text-wrap', { y: -40, delay: 0.2 });
+animateOnScroll('.location-homepage .location-homepage .general-btn', { y: -30, delay: 0.4 });
+animateOnScroll('.map-main-wrap', { scale: 0.95, blur: 10, duration: 0.6, delay: 0.6 });
+
+// 🔹 Використання для різних елементів
+animateOnScroll('.section.advantages .section-title', { y: -40 });
+animateOnScroll('.swiper-advantages', { y: 80, delay: 0.1 });
+animateOnScroll('.swiper-btns-wrap', { y: 30, delay: 0.2 });
+
+animateOnScroll('.tech-params .section-title', { y: -40, duration: 0.6 });
+animateOnScroll('.tech-params .swipers-tech-wrap', { y: 80, duration: 0.6 });
+// 🔹 Приклад для множинних елементів (з затримкою між ними)
+const developerTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.developer-homepage',
+    start: 'top bottom',
+    end: 'bottom top',
+    //  onLeave: self => self.kill(),
+    scrub: 1,
+  },
+});
+
+developerTl.fromTo(
+  '.developer-homepage__bg img',
+  { scale: 1.05, yPercent: -5 },
+  { scale: 1.15, yPercent: 5, ease: 'none' },
+  '<',
+);
+
+animateOnScroll('.developer-homepage__title-wrap', { y: -40, duration: 0.6 });
+animateOnScroll('.developer-homepage .developer-color-block', { y: 40, duration: 0.6 });
+animateOnScroll('.developer-homepage .developer-descr-block h3', {
+  y: 50,
+  duration: 0.6,
+  delay: 0.2,
+});
+animateOnScroll('.developer-homepage .developer-descr-block__text-wrap p', {
+  y: 30,
+  duration: 0.6,
+  delay: 0.2,
+  stagger: 0.2,
+});
+animateOnScroll('.terms-homepage .terms-homepage__title-wrap', { y: -40, duration: 0.6 });
+
+animateOnScroll('.terms-homepage .terms-img-block', {
+  y: 60,
+});
+animateOnScroll('.terms-homepage .terms-banner-block', {
+  x: 40,
+  duration: 0.6,
+  delay: 0.2,
+  stagger: 0.2,
+});
+
+const fillerTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.filler-3d',
+    start: 'top bottom',
+    end: 'bottom top',
+    //  onLeave: self => self.kill(),
+    scrub: 1,
+  },
+});
+
+fillerTl.fromTo(
+  '.filler-3d .filler-3d__bg',
+  { scale: 1.05, yPercent: -10 },
+  { scale: 1.05, yPercent: 10, ease: 'none' },
+  '<',
+);
+animateOnScroll('.filler-3d__content ', { y: -20, duration: 0.8, scale: 1.1 });
+
+animateOnScroll('.filler-3d__content .terms-img-block', {
+  y: 60,
+});
+animateOnScroll('.filler-3d__content .terms-banner-block', {
+  x: 40,
+  duration: 0.6,
+  delay: 0.2,
+  stagger: 0.2,
+});
+animateOnScroll('.progress-homepage .location-homepage__content .section-title', { y: -60 });
+animateOnScroll('.progress-homepage .location-homepage__text-wrap', { y: -40, delay: 0.2 });
+animateOnScroll('.progress-homepage .location-homepage .general-btn', { y: -30, delay: 0.4 });
+animateOnScroll('.progress-homepage .swiper-progress  .progress-card', { y: 60, stagger: 0.2 });
+
 document.addEventListener('DOMContentLoaded', function() {
   // Знаходимо всі блоки з відео
   const videoBlocks = document.querySelectorAll('.video-wrapper');
@@ -315,46 +360,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Запуск після завантаження DOM
 
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.developer-content',
-      start: 'top bottom',
-      // end: 'bottom top',
-    },
-  })
-  .from('.developer-text__list p', {
-    opacity: 0,
-    y: 20,
-    stagger: 0.2,
-  })
-  .from(
-    '.developer-site-bg svg .g-mask13',
-    {
-      rotate: -180,
-      duration: 2,
-      transformOrigin: 'center bottom',
-    },
-    '<',
-  );
+// function bigTitles() {
+//   // Працює тільки на мобільних
+//   if (window.innerWidth > 500) return;
 
-function bigTitles() {
-  // Працює тільки на мобільних
-  if (window.innerWidth > 500) return;
+//   document.querySelectorAll('[data-big-title]').forEach(el => {
+//     gsap
+//       .timeline({
+//         scrollTrigger: {
+//           trigger: el,
+//           start: 'top center',
+//           end: 'bottom top',
+//           scrub: 1,
+//         },
+//       })
+//       .fromTo(el.querySelector('h2'), { xPercent: 10, ease: 'power1' }, { xPercent: -10 })
+//       .fromTo(el.querySelector('h3'), { xPercent: -10, ease: 'power1' }, { xPercent: 10 }, '<');
+//   });
+// }
 
-  document.querySelectorAll('[data-big-title]').forEach(el => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: 'top center',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      })
-      .fromTo(el.querySelector('h2'), { xPercent: 10, ease: 'power1' }, { xPercent: -10 })
-      .fromTo(el.querySelector('h3'), { xPercent: -10, ease: 'power1' }, { xPercent: 10 }, '<');
-  });
-}
-
-bigTitles();
+// bigTitles();

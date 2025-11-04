@@ -1,27 +1,34 @@
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
-  gsap.timeline().fromTo(".page-title__wrap", {
-    y:-150,
-    opacity:0
-  }, {
-    y:0,
-    opacity:1
-  }).fromTo(".documents-page-list", {
-    y:150,
-    opacity:0
-  }, {
-    y:0,
-    opacity:1,
-    stagger:0.2
-  }, "<")
-
-})
-
+  gsap
+    .timeline()
+    .fromTo(
+      '.page-title__wrap',
+      {
+        y: -150,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+      },
+    )
+    .fromTo(
+      '.documents-page-list',
+      {
+        y: 150,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+      },
+      '<',
+    );
+});
 
 const listWrapper = document.querySelectorAll('.documents-page-card-content-inner');
 listWrapper.forEach(wrapper => {
@@ -93,4 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.documents-page-card');
 
+  cards.forEach(card => {
+    const titleWrap = card.querySelector('.documents-page-card-title-wrap');
+    const content = card.querySelector('.documents-page-card-content');
+
+    titleWrap.addEventListener('click', () => {
+      // Toggle the 'active' class on the card to expand or collapse
+      card.classList.toggle('active');
+
+      // Toggle the max-height of content for smooth expand/collapse
+      if (card.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = null;
+      }
+    });
+  });
+});

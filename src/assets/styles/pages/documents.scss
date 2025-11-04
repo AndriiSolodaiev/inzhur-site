@@ -1,9 +1,15 @@
 .documents {
   padding-top: 92px;
-  padding-bottom: 120px;
+  padding-bottom: 60px;
+
+  @include tablet {
+    padding-top: 148px;
+    padding-bottom: 100px;
+  }
 
   @include laptop {
-    padding-top: 220px;
+    padding-top: 190px;
+    padding-bottom: vw(140);
   }
 }
 
@@ -11,6 +17,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  z-index: -1;
 
   @include tablet {
     width: 420px;
@@ -45,7 +52,7 @@
     }
 
     @include laptop {
-      font-size: 100px;
+      font-size: vw(100)
     }
   }
 }
@@ -82,9 +89,6 @@
     gap: 20px;
     width: 100%;
 
-    @include laptop {
-      width: calc((100% - 20px) / 2);
-    }
   }
 
   &-card {
@@ -96,11 +100,11 @@
     align-items: flex-end;
     transition: all 0.3s ease;
     border-radius: 24px;
-    background-color: #FAF6EE;
+    background-color: $white-color-light;
     backdrop-filter: blur(17px);
 
     @include tablet {
-      padding: 24px 24px 48px;
+      padding: 40px;
     }
 
     &.active {
@@ -110,7 +114,7 @@
       .documents-page-card-content {
         transition: all 0.3s ease;
         margin-top: 40px;
-        max-height: 100vh;
+        max-height: 120vh;
 
         /* Set based on the content size, adjust as needed */
         @include tablet {
@@ -119,7 +123,7 @@
       }
 
       .documents-page-card-arrow {
-        transform: translateY(-50%) rotate(180deg);
+        transform: translateY(-50%) rotate(0deg);
         /* Rotate arrow when active */
         transition: transform 0.3s ease;
       }
@@ -144,7 +148,7 @@
   &-card-content-title {
     @include block-title;
     font-size: 32px;
-    color: $dark-color;
+    color: $accent-color;
     cursor: pointer;
 
     @include tablet {
@@ -160,7 +164,7 @@
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(180deg);
 
     width: 5vw;
     height: 5vw;
@@ -213,9 +217,7 @@
     margin-top: 0;
     transition: all 0.3s ease;
 
-    @include laptop {
-      width: calc(100% - 48px - 20px);
-    }
+
   }
 
 
@@ -228,7 +230,8 @@
   &-card-content-btn-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    width: 100%;
 
     @include tablet {
       gap: 0;
@@ -239,28 +242,35 @@
 
 
   &-card-content-btn {
-    @include tiny-text;
-    font-weight: 500;
+    @include general-text;
+    font-weight: 700;
+    line-height: 140%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 16px;
-    border-radius: 16px;
-    background-color: $wc;
-    border: 1px solid $grey-color;
+    padding: 14px 16px;
+    border-radius: 100px;
+    background-color: $white-color-light;
+    border: 1px solid $accent-color;
     width: 100%;
-    text-transform: uppercase;
+
     transition: background-color 0.4s ease-in-out;
 
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+
+    }
+
     @include tablet {
-      width: auto;
+      flex: 1;
+      padding: 22px 20px;
 
       &:first-child {
-        border-radius: 16px 0 0 16px;
+        border-radius: 100px 0 0 100px;
       }
 
       &:nth-child(2) {
-        border-radius: 0 16px 16px 0;
+        border-radius: 0 100px 100px 0;
         border-left: none;
       }
     }
@@ -270,18 +280,37 @@
     }
 
     &.active {
-      background: $blue-color;
+      background-color: $accent-color;
+      color: $wc;
+
+
       pointer-events: none;
     }
   }
 
   &-card-content-list {
     display: flex;
-    gap: 40px;
+    gap: 8px;
     flex-direction: column;
 
+    &>p {
+      @include general-text;
+      color: $accent-color;
+      flex: 1;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+
+      }
+
+      span {
+        font-weight: 700;
+        color: $dark-color;
+      }
+    }
+
     &.gap-20px {
-      gap: 20px;
+      gap: 12px;
     }
   }
 
@@ -290,12 +319,17 @@
     position: relative;
     display: flex;
     flex-direction: column;
-
-    gap: 20px;
+    border-radius: 12px;
+    background-color: #ECE9E2;
+    padding: 20px;
+    gap: 12px;
 
     @include tablet {
       flex-direction: row;
       align-items: center;
+      padding: 4px;
+      padding-left: 28px;
+      border-radius: 100px;
     }
 
     @include laptop {
@@ -304,8 +338,13 @@
 
     &>p {
       @include general-text;
-      color: $text-color-2;
+      color: $accent-color;
       flex: 1;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+
+      }
 
       span {
         font-weight: 700;
@@ -313,11 +352,25 @@
       }
     }
 
+    &>.general-btn {
+      &::before {
+        background-color: $accent-color-2;
+
+      }
+
+      span {
+        color: $accent-color;
+
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+
+        }
+      }
+    }
+
     svg {
       width: 48px;
       height: 48px;
-
-
     }
 
     &--li {
@@ -327,7 +380,7 @@
         content: '•'; // Custom bullet point
         position: absolute;
         left: 0;
-        color: var(--color-text-gray); // Set bullet color
+        color: $accent-color-2; // Set bullet color
       }
     }
 
@@ -336,6 +389,52 @@
         color: var(--color-pantone-2);
       }
     }
+  }
+
+  &-card-content-list-card--two-links {
+    border-radius: 12px;
+    flex-wrap: wrap;
+
+    p {
+      flex: 0 0 100%;
+    }
+
+    @include tablet {
+      padding: 12px 4px 12px 28px
+    }
+
+    @include laptop {
+      gap: 8px;
+      border-radius: 100px;
+      padding: 4px 4px 4px 28px;
+
+      p {
+        flex: 1;
+      }
+    }
+
+    & .general-btn.olive-btn {
+      &::before {
+        background-color: $olive-color;
+
+      }
+
+      background-color: $white-color-light;
+
+      span {
+        color: $accent-color;
+
+        @media screen and (max-width: 768px) {
+          font-size: 14px;
+
+        }
+      }
+    }
+
+  }
+
+  &-card-content-list--title {
+    background-color: $white-color-light;
   }
 
   &-card-content-list-card-link {

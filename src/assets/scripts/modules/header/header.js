@@ -1,10 +1,11 @@
 import { initSmoothScrolling } from '../scroll/leniscroll';
 import device from 'current-device';
-
-import { gsap, ScrollTrigger } from 'gsap/all';
 import { animateTitleOnScroll } from '../../modules/effects/animateTitle';
+import { animateOnScroll } from '../../gulp-modules';
+import { gsap, ScrollTrigger } from 'gsap/all';
+import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 
 initSmoothScrolling();
 
@@ -33,31 +34,62 @@ const menuTimeline = gsap.timeline({
   paused: true,
   defaults: { ease: 'power3.out', duration: 1 },
 });
-
-menuTimeline.from(
-  '.menu-right-part',
-  {
-    xPercent: 100,
-    duration: 1,
-    ease: 'power3.out',
-  },
-  '<',
-);
+const cycleSection = CSSRulePlugin.getRule('.menu-container .cycle-section::after');
+menuTimeline
+  .from(
+    '.cycle-section__mask',
+    {
+      scale: 3,
+      duration: 1.5,
+      ease: 'power3.out',
+    },
+    '<',
+  )
+  .from(
+    '.menu-nav-list .menu-main-link',
+    {
+      yPercent: -50,
+      stagger: 0.2,
+      duration: 0.8,
+      opacity: 0,
+      ease: 'power3.out',
+      filter: 'blur(10px)',
+    },
+    '<+=0.5',
+  )
+  .from(
+    cycleSection,
+    {
+      yPercent: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+    },
+    '<',
+  )
+  .from(
+    '.menu-subnav-list .menu-link',
+    {
+      yPercent: 50,
+      filter: 'blur(10px)',
+      stagger: 0.2,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+    },
+    '<',
+  );
 
 document.body.addEventListener('click', function(evt) {
   const close = evt.target.closest('[data-call-us-modal-close]');
   const form = evt.target.closest('[data-call-us-modal]');
   const btn = evt.target.closest('[data-call-us-btn]');
   const overflow = document.querySelector('[data-call-us__overflow]');
-
   const btnMob = evt.target.closest('[data-mob-call-btn]');
   const overflowMob = document.querySelector('[data-mob-call__overflow]');
   const closeMob = evt.target.closest('[data-mob-call-close]');
-
   const countryList = evt.target.closest('.iti__country-list');
-
   const btnUp = evt.target.closest('[data-btn-up]');
-
   const btnMenuTarget = evt.target.closest('[data-menu-button]');
   const btnMenu = document.querySelector('[data-menu]');
   const menu = document.querySelector('[data-menu]');
@@ -148,12 +180,307 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.querySelector('.header').classList.add('visible');
-
 // gsap.to('.page-title__wrap svg', {
 //   rotate: 0,
 //   duration: 1,
 // });
+
+// if (window.location.pathname === '/') {
+//   document.querySelector('.loader-wrap').style.display = 'flex';
+// }
+document.addEventListener('DOMContentLoaded', () => {
+  const loader = document.querySelector('.loader-wrap');
+  const percentText = document.querySelector('.loader__percent');
+  const lineFill = document.querySelector('.loader__line-fill');
+
+  let percent = 0;
+  const speed = 30;
+
+  // Етап 1: Імітація завантаження
+  const simulateLoading = setInterval(() => {
+    percent += Math.random() * 5;
+    if (percent > 90) percent = 90;
+    percentText.textContent = `${Math.floor(percent)}%`;
+    lineFill.style.width = `${percent}%`;
+  }, speed);
+
+  // Етап 2: Коли сторінка реально завантажилась
+  window.addEventListener('load', () => {
+    clearInterval(simulateLoading);
+
+    let finalProgress = percent;
+
+    const increase = setInterval(() => {
+      finalProgress += 2;
+      if (finalProgress >= 100) {
+        finalProgress = 100;
+        clearInterval(increase);
+
+        percentText.textContent = `100%`;
+        lineFill.style.width = `100%`;
+
+        // невелика затримка перед стартом основної анімації
+        setTimeout(() => startExitAnimation(), 200);
+      } else {
+        percentText.textContent = `${Math.floor(finalProgress)}%`;
+        lineFill.style.width = `${finalProgress}%`;
+      }
+    }, 30);
+  });
+
+  // Етап 3: Основна анімація виходу прелоадера
+  function startExitAnimation() {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        loader.classList.add('loaded');
+      },
+    });
+
+    tl.to('.loader__percent', {
+      y: 40,
+      opacity: 0,
+      duration: 0.5,
+      ease: 'power2.out',
+    })
+      .to(
+        '.loader__line',
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+        },
+        '<',
+      )
+      .to(
+        '.loader-svg-decor',
+        {
+          yPercent: -100,
+          // opacity: 0,
+          duration: 1,
+          ease: 'none',
+        },
+        '<',
+      )
+      .to(
+        '.loader-logo',
+        {
+          y: '-55vh',
+          // opacity: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'none',
+        },
+        '<',
+      )
+      .to(
+        '.loader-left-part',
+        {
+          xPercent: -100,
+          duration: 1.5,
+          ease: 'power4.out',
+        },
+        '<+=0.2',
+      )
+      .to(
+        '.loader-right-part',
+        {
+          xPercent: 100,
+          duration: 1.5,
+          ease: 'power4.out',
+        },
+        '<',
+      )
+      .call(
+        () => {
+          window.dispatchEvent(new Event('loaderLoaded'));
+          document.querySelector('.header').classList.add('visible');
+        },
+        null,
+        '-=1.2',
+      );
+  }
+});
+
+//Global-animations
+
+window.addEventListener('orientationchange', () => {
+  // трохи почекати, поки браузер перерахує розміри
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 500);
+});
+
+animateOnScroll('.footer-form-section__blocks-wrap .footer-form-section__block', {
+  y: 60,
+  stagger: 0.2,
+});
+animateOnScroll('.footer-contacts-section>* ', {
+  y: 20,
+  stagger: 0.2,
+});
+
+// gsap.set('.page-title__wrap', { y: -150, opacity: 0 });
+gsap.set('.page-svg', { yPercent: -40, opacity: 0, rotate: -20 });
+
+// Анімація запускається після завершення лоадера
+window.addEventListener('loaderLoaded', () => {
+  gsap.set('.page-title__wrap', { y: -150, opacity: 0 });
+  const pageTitle = document.querySelector('.page-title__wrap');
+  if (!pageTitle) return;
+
+  const tl = gsap.timeline();
+
+  tl.to('.page-title__wrap', {
+    y: 0,
+    opacity: 1,
+    duration: 0.8,
+    ease: 'power2.out',
+  }).to(
+    '.page-svg',
+    {
+      yPercent: 0,
+      rotate: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power2.out',
+    },
+    '<+=0.4',
+  );
+});
+
+gsap.set('.breadcrumbs>*', { x: -150, opacity: 0, stagger: 0.2 });
+gsap.set('.left-side__subtitle', { yPercent: 20, opacity: 0 });
+gsap.set('.left-side__text-block ', { yPercent: 20, opacity: 0 });
+gsap.set('.left-side__title ', { opacity: 0 });
+gsap.set('.right-side__bg ', { scale: 1.2 });
+gsap.set('.right-side .right-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
+// gsap.set('.left-side .left-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
+gsap.set('.left-side__down-button', { yPercent: 20, opacity: 0 });
+function animateTextByLetters(selector) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+
+  // Зберігаємо перенос рядків
+  const htmlWithLetters = el.innerHTML
+    .split(/(<br\s*\/?>)/gi)
+    .map(part => {
+      if (part.match(/<br\s*\/?>/i)) return part;
+      return part
+        .split('')
+        .map(char => {
+          if (char === ' ') return ' ';
+          return `<span class="char">${char}</span>`;
+        })
+        .join('');
+    })
+    .join('');
+
+  el.innerHTML = htmlWithLetters;
+
+  gsap.fromTo(
+    `${selector} .char`,
+    { opacity: 0, y: 40, filter: 'blur(10px)' },
+    {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      stagger: 0.03,
+      duration: 0.6,
+      ease: 'power3.out',
+    },
+  );
+}
+// Анімація запускається після завершення лоадера
+window.addEventListener('loaderLoaded', () => {
+  const heroTitle = document.querySelector('.hero-page ');
+  if (!heroTitle) return;
+
+  const tl = gsap.timeline();
+
+  tl.to('.breadcrumbs>*', {
+    x: 0,
+    opacity: 1,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power2.out',
+  })
+    .to(
+      '.left-side__title',
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.6,
+
+        ease: 'power2.out',
+      },
+      '<',
+    )
+    .to(
+      '.right-side__bg',
+      {
+        scale: 1,
+
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+      '<',
+    )
+    .add(() => {
+      animateTextByLetters('.left-side__title');
+    }, '<')
+    .to(
+      '.left-side__subtitle',
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.8,
+
+        ease: 'power2.out',
+      },
+      '<',
+    )
+    .to(
+      '.right-side .right-side__overlap',
+      {
+        scale: 1,
+        duration: 1.2,
+        ease: 'power2.out',
+      },
+      '<',
+    )
+    // .to(
+    //   '.left-side .left-side__overlap',
+    //   {
+    //     scale: 1,
+    //     duration: 1.2,
+    //     ease: 'power2.out',
+    //   },
+    //   '<',
+    // )
+    .to(
+      '.left-side__down-button',
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.8,
+
+        ease: 'back.out(1.7)',
+      },
+      '<',
+    )
+    .to(
+      '.left-side__text-block',
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.8,
+        delay: 0.2,
+        ease: 'power2.out',
+      },
+      '<',
+    );
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const startPod = window.innerWidth > 768 ? '-100px top' : '0px top';
   const svgHeight = window.innerWidth > 768 ? -40 : -20;
@@ -196,130 +523,4 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       '<',
     );
-});
-
-console.log(window.location.pathname);
-if (window.location.pathname === '/') {
-  document.querySelector('.loader-wrap').style.display = 'flex';
-}
-document.addEventListener('DOMContentLoaded', () => {
-  const loader = document.querySelector('.loader-wrap');
-  const percentText = document.querySelector('.loader__percent');
-  const lineFill = document.querySelector('.loader__line-fill');
-
-  let percent = 0;
-  const speed = 30;
-
-  const simulateLoading = setInterval(() => {
-    // приріст відсотків під час завантаження
-    percent += Math.random() * 5;
-    if (percent > 90) percent = 90;
-    percentText.textContent = `${Math.floor(percent)}%`;
-    lineFill.style.width = `${percent}%`;
-  }, speed);
-
-  // коли вся сторінка справді завантажена
-  window.addEventListener('load', () => {
-    clearInterval(simulateLoading);
-
-    let finalProgress = percent;
-    const increase = setInterval(() => {
-      finalProgress += 2;
-      if (finalProgress >= 100) {
-        finalProgress = 100;
-        clearInterval(increase);
-        gsap.to('.loader__line ', {
-          opacity: 0,
-          duration: 0.1,
-          ease: 'power3.out',
-        });
-        gsap.to('.loader-bottom-part ', {
-          yPercent: 100,
-          duration: 1.22,
-          ease: 'power3.out',
-        });
-        gsap.to('.loader-top-part ', {
-          yPercent: -100,
-          duration: 1.2,
-          ease: 'power3.out',
-        });
-        // невелика затримка перед “роз’їздом”
-        window.dispatchEvent(new Event('loaderLoaded'));
-        setTimeout(() => {
-          loader.classList.add('loaded');
-        }, 500);
-      }
-
-      percentText.textContent = `${Math.floor(finalProgress)}%`;
-      lineFill.style.width = `${finalProgress}%`;
-    }, 30);
-  });
-});
-
-//Global animation
-
-function initSvgScrollAnimation() {
-  // Всі елементи з data-svg-anim-left
-  document.querySelectorAll('[data-svg-anim-left]').forEach(el => {
-    gsap.fromTo(
-      el,
-      { rotate: 3, transformOrigin: 'center bottom' },
-      {
-        rotate: -3,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top bottom', // коли елемент входить у в'юпорт
-          end: 'bottom top', // коли виходить
-          scrub: true, // плавно реагує на скрол
-        },
-      },
-    );
-  });
-
-  // Всі елементи з data-svg-anim-right
-  document.querySelectorAll('[data-svg-anim-right]').forEach(el => {
-    gsap.fromTo(
-      el,
-      { rotate: -3, transformOrigin: 'center bottom' },
-      {
-        rotate: 3,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        },
-      },
-    );
-  });
-}
-
-// Викликати після завантаження DOM
-window.addEventListener('DOMContentLoaded', initSvgScrollAnimation);
-
-animateTitleOnScroll('.footer', '.footer-title');
-
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: '.footer-form',
-      start: 'top bottom',
-      // end: 'bottom top',
-    },
-  })
-  .from('.footer-form', {
-    opacity: 0,
-    yPercent: 20,
-  })
-  .from('.footer-form>svg', {
-    rotate: -3,
-  });
-
-window.addEventListener('orientationchange', () => {
-  // трохи почекати, поки браузер перерахує розміри
-  setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 500);
 });

@@ -16,87 +16,116 @@
   //     pointer-events: all;
   //   }
   // }
-
-
-  .th-you-img-wrap {
-    width: 100%;
-    padding-top: 105px;
-    padding-bottom: 105px;
-
-    @include tablet {
-      padding-top: 150px;
-      padding-bottom: 150px;
-    }
-  }
-
-  &__text {
-    width: 90%;
-    padding: 32px 20px;
-    background-color: $bg-color;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    @include tablet {
-      padding: 60px 120px;
-      width: fit-content;
-    }
-
-
-
-    svg {
-      align-self: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 20px;
-    }
-
-
-
-    @include laptop {
-
+  .modal-form {
+    .th-decor {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-bottom-left-radius: 24px;
+      overflow: hidden;
+      width: 60%;
+      aspect-ratio: 202 /150;
 
       svg {
-        width: 70px;
-        height: 70px;
+        width: 100%;
+        height: 100%;
       }
     }
   }
 
-  & .thank-you-popup__title {
-    @include article-title;
-    margin-bottom: 20px;
+  .form-title {
+    margin-bottom: 12px;
+  }
+
+  .form-descr {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 90px;
+    }
+
+    @include laptop {
+      margin-bottom: vw(124);
+    }
+  }
+
+  .form-title,
+  .form-descr {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 
-  & .thank-you-popup__descr {
-    @include general-text;
-    text-align: center;
-    width: 100%;
-    opacity: 0.5;
+  .th-you-img-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+
+    .th-check {
+      width: 48px;
+      height: 48px;
+
+      @include tablet {
+        width: 68px;
+        height: 68px;
+      }
+    }
+
+    .th-logo {
+      width: 155px;
+      height: 48px;
+
+      @include tablet {
+        width: 243px;
+        height: 74px;
+      }
+    }
   }
 
-  & .thank-you-popup__btn {
-    // position: absolute;
-    // top: 20px;
-    // right: 20px;
+  // &__text {
+  //   width: 90%;
+  //   padding: 32px 20px;
+  //   background-color: $bg-color;
+  //   border-radius: 20px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
 
-    // svg {
-    //   width: 16px;
-    //   height: 16px;
+  //   @include tablet {
+  //     padding: 60px 120px;
+  //     width: fit-content;
+  //   }
 
-    //   path {
-    //     stroke: $text-color;
-    //   }
 
-    // }
-  }
+
+  //   svg {
+  //     align-self: center;
+  //     width: 48px;
+  //     height: 48px;
+  //     margin-bottom: 20px;
+  //   }
+
+
+
+  //   @include laptop {
+
+
+  //     svg {
+  //       width: 70px;
+  //       height: 70px;
+  //     }
+  //   }
+  // }
+
+
+  & .thank-you-popup__btn {}
 }
 
 .overlay {
