@@ -1,0 +1,331 @@
+.single-news {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 40px;
+  padding-top: 124px;
+  padding-bottom: 100px;
+
+  @include tablet {
+    gap: 100px;
+    padding-top: 148px;
+  }
+
+  @include laptop {
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    gap: 20px;
+    padding-top: 190px;
+    padding-bottom: 200px;
+  }
+
+  &__svg {
+    z-index: -1;
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__left-container {
+    height: 100%;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 40px;
+  }
+
+  &__back-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .ellipse-btn {
+      rotate: 180deg;
+      background-color: $accent-color-2;
+
+      &::before {
+        background-color: $olive-color;
+      }
+
+      &:hover {
+        &::before {
+          transform: translate3d(-100%, -30%, 0);
+        }
+      }
+    }
+
+    span {
+      @include text-24;
+      color: $text-color;
+    }
+  }
+
+  &__title {
+    @include section-title;
+    margin-top: 20px;
+    max-width: 755px;
+    font-size: 36px;
+
+    @include tablet {
+      font-size: 11.9vw;
+      font-size: clamp(64px, calc(64px + (72 - 64) * ((100vw - 768px) / (1366 - 768))), 72px);
+    }
+
+    @include tablet {
+      margin-top: 12px;
+    }
+  }
+
+  .news {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &__date {
+      @include general-text;
+
+      padding: 6px 12px;
+      border-radius: 100px;
+      background-color: $olive-color;
+    }
+
+    &__title {
+      @include block-title;
+      margin-top: 20px;
+
+      @include tablet {
+        margin-top: 40px;
+      }
+    }
+
+    &__list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+
+      @include tablet {
+        margin-top: 40px;
+      }
+    }
+
+    &__list-title {
+      @include text-24;
+      color: $text-color;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &__list-item {
+      @include general-text;
+      display: flex;
+      gap: 12px;
+    }
+
+    &__text-first,
+    &__text-second {
+      @include general-text;
+    }
+
+    &__text-first {
+      margin-top: 20px;
+
+      @include tablet {
+        margin-top: 40px;
+      }
+    }
+
+    &__text-second {
+      margin-top: 40px;
+    }
+
+    &__swiper-container {
+      position: relative;
+      aspect-ratio: 174 / 100;
+      width: 100%;
+      margin-top: 40px;
+
+      @include laptop {
+        aspect-ratio: 171 / 100;
+      }
+    }
+
+    &__swiper-body {
+      overflow: hidden;
+      border-radius: 24px;
+      height: 100%;
+    }
+
+    &__swiper-slide {
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__swiper-img {
+      width: auto;
+    }
+
+    &__swiper-button-next,
+    &__swiper-button-prev {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(50deg);
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+
+    &__swiper-button-prev {
+      left: 20px;
+
+      @include laptop {
+        left: 40px;
+      }
+    }
+
+    &__swiper-button-next {
+      right: 20px;
+
+      @include laptop {
+        right: 40px;
+      }
+    }
+
+    &__swiper-counter {
+      z-index: 100;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(50%);
+      display: flex;
+      gap: 8px;
+      padding: 3px 12px;
+      background-color: $wc;
+      border-radius: 12px;
+      @include general-text;
+      line-height: 140%;
+
+      @include tablet {
+        padding: 7.5px 20px;
+      }
+
+      span:first-child {
+        color: $text-color;
+      }
+
+      span:not(:first-child) {
+        color: $grey-color;
+      }
+    }
+
+    &__single-img-container {
+      overflow: hidden;
+      aspect-ratio: 179 / 100;
+      margin-top: 40px;
+      border-radius: 24px;
+
+      @include laptop {
+        aspect-ratio: 171 / 100;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__video {
+      overflow: hidden;
+      aspect-ratio: 173 / 100;
+      width: 100%;
+      margin-top: 40px;
+      border-radius: 24px;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__button {
+      margin-top: 40px;
+
+      @include tablet {
+        margin-top: 35px;
+      }
+
+      @include laptop {
+        margin-top: 38px;
+      }
+    }
+  }
+}
+
+.more-news {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #faf6ee;
+
+  @include tablet {
+    gap: 60px;
+  }
+
+  @include laptop {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  &__title {
+    @include section-title;
+
+    @include tablet {
+      font-size: 72px;
+    }
+
+    @include laptop {
+      font-size: 3.75vw;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include tablet {
+      gap: 60px;
+    }
+
+    @include laptop {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .progress-card {
+      aspect-ratio: 93 / 100;
+
+      @include tablet {
+        aspect-ratio: 112 / 100;
+      }
+
+      @include laptop {
+        flex: 1 1 100%;
+        aspect-ratio: 92 / 100;
+      }
+    }
+  }
+}
