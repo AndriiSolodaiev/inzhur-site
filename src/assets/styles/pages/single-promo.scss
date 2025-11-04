@@ -61,6 +61,8 @@
 
   &__title {
     @include section-title;
+
+
     margin-top: 20px;
     max-width: 755px;
     font-size: 36px;
@@ -70,8 +72,17 @@
       font-size: clamp(64px, calc(64px + (72 - 64) * ((100vw - 768px) / (1366 - 768))), 72px);
     }
 
-    @include tablet {
+    @include laptop {
+      position: sticky;
+      top: 128px;
+      font-size: clamp(48px, calc(48px + (72 - 48) * ((100vw - 1024px) / (1920 - 1024))), 72px);
       margin-top: 12px;
+      padding-bottom: vw(200);
+    }
+
+    @include laptop-header {
+      top: 170px;
+
     }
   }
 
@@ -79,6 +90,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    overflow: hidden;
 
     &__date {
       @include general-text;
@@ -180,6 +192,11 @@
       transform: translateY(-50%) rotate(50deg);
       display: none;
 
+      &.swiper-button-disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+
       @include tablet {
         display: flex;
       }
@@ -279,6 +296,7 @@
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: #faf6ee;
+  overflow: hidden;
 
   @include tablet {
     gap: 60px;

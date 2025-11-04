@@ -21,6 +21,7 @@ const config = {
     contacts: './src/assets/scripts/gulp-modules/contacts.js',
     company: './src/assets/scripts/gulp-modules/company.js',
     showroom: './src/assets/scripts/gulp-modules/showroom.js',
+    singlePromo: './src/assets/scripts/gulp-modules/single-promo.js',
   },
   output: {
     filename: '[name].bundle.js',

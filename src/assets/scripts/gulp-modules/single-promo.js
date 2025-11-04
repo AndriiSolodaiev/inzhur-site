@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Autoplay } from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 import { gsap, ScrollTrigger } from 'gsap/all';
 
 function formatNumber(number) {
@@ -23,14 +23,11 @@ function updateCounter(swiper) {
 }
 
 new Swiper('.swiper', {
-  modules: [Navigation, Autoplay],
+  modules: [Navigation],
   loop: true,
   allowTouchMove: true,
   speed: 1000,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+
   navigation: {
     prevEl: '.news__swiper-button-prev',
     nextEl: '.news__swiper-button-next',

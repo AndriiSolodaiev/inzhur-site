@@ -3,6 +3,7 @@
   display: flex;
   position: relative;
   aspect-ratio: 43 / 100;
+  overflow: hidden;
 
   @include tablet {
     aspect-ratio: 65 / 100;
@@ -81,6 +82,7 @@
   grid-template-columns: 1fr;
   gap: 60px;
   margin-top: 60px;
+  overflow: hidden;
 
   @include tablet {
     gap: 100px;

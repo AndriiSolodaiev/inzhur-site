@@ -182,19 +182,42 @@
   gap: 20px;
   margin-left: auto;
   width: fit-content;
+  position: absolute;
+  bottom: 40px;
+  left: 30vw;
+
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+    left: 50vw;
+  }
 
   @include tablet {
     gap: 40px;
+    bottom: 80px;
+    left: 50vw;
   }
 
   @include laptop {
-    top: -60px;
+    bottom: vw(104);
+    left: vw(1280);
+
   }
 
-  @include desktop {
-    top: 0;
-    margin-right: 110px;
+  @include laptop-header {
+    bottom: vw(158);
   }
+
+  // @include tablet {
+  //   gap: 40px;
+  // }
+
+  // @include laptop {
+  //   top: -60px;
+  // }
+
+  // @include desktop {
+  //   top: 0;
+  //   margin-right: 110px;
+  // }
 }
 
 .infrastructure-section .inzure-text {

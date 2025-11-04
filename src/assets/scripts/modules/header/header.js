@@ -44,7 +44,7 @@ menuTimeline
     duration: 0.3,
   })
   .from(
-    '.cycle-section__mask',
+    '.menu-overlay .cycle-section__mask',
     {
       scale: 3,
       duration: 1.5,
@@ -53,7 +53,7 @@ menuTimeline
     '<',
   )
   .from(
-    '.cycle-section__house img',
+    '.menu-overlay .cycle-section__house img',
     {
       scale: 1.5,
       duration: 1.5,
@@ -374,7 +374,7 @@ if (heroTitle) {
   gsap.set('.left-side__subtitle', { yPercent: 20, opacity: 0 });
   gsap.set('.left-side__text-block ', { yPercent: 20, opacity: 0 });
   gsap.set('.left-side__title ', { opacity: 0 });
-  gsap.set('.right-side__bg ', { scale: 1.2 });
+  gsap.set('.right-side__bg ', { scale: 1.3 });
   gsap.set('.right-side .right-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
   // gsap.set('.left-side .left-side__overlap', { scale: 0.5, transformOrigin: '0% 100%' });
   gsap.set('.left-side__down-button', { yPercent: 20, opacity: 0 });
