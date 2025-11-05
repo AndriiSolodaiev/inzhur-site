@@ -27,6 +27,12 @@
 
   &__left-container {
     height: 100%;
+
+    @include laptop {
+      position: sticky;
+      top: 128px;
+      height: fit-content;
+    }
   }
 
   .breadcrumbs {
@@ -74,8 +80,8 @@
     }
 
     @include laptop {
-      position: sticky;
-      top: 128px;
+      // position: sticky;
+      // top: 128px;
       font-size: clamp(48px, calc(48px + (72 - 48) * ((100vw - 1024px) / (1920 - 1024))), 72px);
       margin-top: 12px;
       padding-bottom: vw(200);
