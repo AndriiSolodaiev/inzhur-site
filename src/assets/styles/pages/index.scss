@@ -684,8 +684,8 @@
         }
 
         @include tablet {
-          width: 140px;
-          height: 185px;
+          max-width: 140px;
+          max-height: 185px;
 
           & > svg {
             width: 48px;

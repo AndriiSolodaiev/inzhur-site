@@ -34,9 +34,11 @@
   }
 
   &__back-btn {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
 
     .ellipse-btn {
       rotate: 180deg;
@@ -56,7 +58,6 @@
     span {
       @include text-24;
       color: $text-color;
-      cursor: pointer;
     }
   }
 
