@@ -126,6 +126,7 @@
         transform: translateY(-50%) rotate(0deg);
         /* Rotate arrow when active */
         transition: transform 0.3s ease;
+
       }
     }
   }
@@ -165,7 +166,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%) rotate(180deg);
-
+    cursor: pointer;
     width: 5vw;
     height: 5vw;
     display: flex;
@@ -403,7 +404,7 @@
       padding: 12px 4px 12px 28px
     }
 
-    @include laptop {
+    @include laptop-header {
       gap: 8px;
       border-radius: 100px;
       padding: 4px 4px 4px 28px;

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  overflow: hidden;
 
   @include tablet {
     gap: 60px;
@@ -59,7 +60,7 @@
 
   &__input {
     display: flex;
-    padding: 12px 28px;
+    padding: 4px 28px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -67,7 +68,7 @@
     color: $wc;
     border-radius: 100px;
     background: $accent-color;
-    @include tiny-text;
+    @include general-text;
     width: 86px;
     pointer-events: none;
   }
@@ -78,8 +79,8 @@
   }
 
   &__span {
-    @include tiny-text;
-    color: $dark-color;
+    @include general-text;
+    color: $accent-color;
     text-transform: uppercase;
 
     @include to(600px) {
@@ -154,7 +155,7 @@
       }
 
       &:hover svg path {
-        stroke: $wc
+        fill: $wc
       }
     }
   }
@@ -173,14 +174,14 @@
   --animation-primary: cubic-bezier(0.83, 0, 0.17, 1);
   width: max-content;
   color: $wc;
-  padding-bottom: 5px;
+  // padding-bottom: 5px;
 
   &.hidden {
     display: none;
   }
 
   &__title {
-    @include tiny-text;
+    @include general-text;
     position: relative;
     overflow: hidden;
     display: block;

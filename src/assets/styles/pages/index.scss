@@ -1,5 +1,6 @@
 .section {
   padding-top: 100px;
+  overflow: hidden;
 
   &:last-child {
     padding-bottom: 100px;
@@ -1486,7 +1487,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 2;
+    z-index: -1;
 
   }
 

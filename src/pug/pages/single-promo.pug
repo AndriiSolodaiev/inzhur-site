@@ -1,0 +1,144 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'single-promo'
+    var id_page = 'id-single-promo'
+    var class_page = 'class-page-single-promo'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+    
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/singlePromo.bundle.js')
+
+block content
+  section.container.single-news
+    <svg class="page-svg single-news__svg" xmlns="http://www.w3.org/2000/svg" width="265" height="219" viewBox="0 0 265 219" fill="none">
+      <path d="M339.534 -177.04C400.735 -155.157 382.439 -49.8358 298.67 58.2024C214.901 166.241 97.3804 236.084 36.1801 214.201C-25.0202 192.319 -6.72468 86.9974 77.0443 -21.0408C160.813 -129.079 278.334 -198.922 339.534 -177.04Z" fill="#B3BECD"/>
+    </svg>
+    .single-news__left-container 
+      include ../includes/breadcrumbs.pug
+      .single-news__back-btn 
+        button.swiper-button-next.ellipse-btn
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+            <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+            <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+          </svg>
+        span Назад
+      h2.single-news__title Знижка 3% при розтермінуванні під 0%  
+    .news
+      .news__date 06.08.2025
+      .news__title На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки апарт-готелю.
+      .news__list-container
+        .news__list-title Зараз тривають роботи над зведенням третього будинку:
+        ul.news__list
+          li.news__list-item 
+            span •
+            span Монолітний каркас вже залили на 80 відсотків.
+          li.news__list-item 
+            span • 
+            span Зовнішні стіни виконали на 50%.
+          li.news__list-item 
+            span •
+            span Внутрішні стіни та перегородки влаштували на 15%
+          li.news__list-item 
+            span •
+            span Сходові марші та майданчики залиті до рівня восьмого поверху.
+          li.news__list-item 
+            span •
+            span В будинку розпочали влаштування металопластикових вікон.
+      p.news__text-first Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+      div.news__swiper-container
+        div.swiper.news__swiper-body
+          div.swiper-wrapper
+            div.swiper-slide.news__swiper-slide
+              img(src="./assets/images/single-payment/swiper-1.jpg" alt="our building")
+            div.swiper-slide.news__swiper-slide
+              img(src="./assets/images/single-payment/swiper-2.jpg" alt="our building")
+            div.swiper-slide.news__swiper-slide
+              img(src="./assets/images/single-payment/swiper-3.jpg" alt="our building")
+          .swiper-button-prev.ellipse-btn.news__swiper-button-prev
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M22 10.582H4.82434V13.4195H22V10.582Z" fill="#393028"/>
+              <path d="M9.10511 2.22646H13.0854L5.82264 12H1.99994L9.10511 2.22646Z" fill="#393028"/>
+              <path d="M9.10511 21.7735H13.0854L5.82264 12H1.99994L9.10511 21.7735Z" fill="#393028"/>
+            </svg>
+          .swiper-button-next.ellipse-btn.news__swiper-button-next
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+        div.news__swiper-counter
+      p.news__text-second На усіх етапах, від будівництва до заселення гостів, забудовник та керуюча компанія беруть на себе всі питання — це супровід під ключ, коли інвестор отримує свої дивіденди та задоволення від співпраці. В залежності від заповненості готелю, дохід власників номерів може скласти до 12% річних. Девелопер MBT Group подбав про те, аби апарт-готель був дуже комфортним, а його гості отримали задоволення та спогади на все життя від неперевершеного відпочинку в горах.
+      .news__single-img-container 
+        img(src="./assets/images/single-promo/single-building-photo.jpg", alt="building photo")
+      .news__video 
+        iframe(src="https://www.youtube.com/embed/xvFZjo5PgG0", frameborder="0") 
+      button.general-btn.news__button
+        span Переглянути генплан
+  section.container.more-news 
+    h2.more-news__title БІЛЬШЕ НОВИН
+    .more-news__list
+      a(href="#").progress-card
+        img(src="./assets/images/home/progress1.jpg", alt="progress")
+        .progress-card__bg
+        .progress-card__date-wrap 
+          p 06.08.2025
+        .progress-card__text-wrap
+          h3  Знижка 3% на розтермінування під 0% від забудовника
+          .ellipse-btn 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+      a(href="#").progress-card
+        img(src="./assets/images/home/progress2.jpg", alt="progress")
+        .progress-card__bg
+        .progress-card__date-wrap 
+          p 06.09.2025
+        .progress-card__text-wrap
+          h3  Квартира з розтермінуванням під 0% та знижкою 7%
+          .ellipse-btn  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+      a(href="#").progress-card
+        img(src="./assets/images/home/progress3.jpg", alt="progress")
+        .progress-card__bg
+        .progress-card__date-wrap 
+          p 25.10.2025
+        .progress-card__text-wrap
+          h3  Знижка 7% на купівлю квартири при повній оплаті
+          .ellipse-btn 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
