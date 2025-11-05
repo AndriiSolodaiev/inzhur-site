@@ -1,5 +1,6 @@
 import Swiper, { Navigation, Autoplay } from 'swiper';
 import { gsap, ScrollTrigger } from 'gsap/all';
+import { animateOnScroll } from '../modules/effects/animateOnsScroll';
 
 function formatNumber(number) {
   let result;
@@ -102,10 +103,28 @@ document.addEventListener('DOMContentLoaded', function() {
   );
 });
 
-ScrollTrigger.create({
-  trigger: '.conditions',
-  pin: true,
-  start: 'top top',
-  end: () => '+=' + document.querySelector('.requirements').offsetHeight,
-  pinSpacing: false,
+// ScrollTrigger.create({
+//   trigger: '.conditions',
+//   pin: true,
+//   start: 'top top',
+//   end: () => '+=' + document.querySelector('.requirements').offsetHeight,
+//   pinSpacing: false,
+// });
+const fillerTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.requirements',
+    start: 'top bottom',
+    end: 'bottom top',
+    //  onLeave: self => self.kill(),
+    scrub: 1,
+  },
 });
+
+fillerTl.fromTo(
+  '.requirements__background-sky',
+  { scale: 1.05, yPercent: -10 },
+  { scale: 1.05, yPercent: 10, ease: 'none' },
+  '<',
+);
+
+animateOnScroll('.sp-plan ', { y: -20, duration: 0.8, scale: 1.1 });
