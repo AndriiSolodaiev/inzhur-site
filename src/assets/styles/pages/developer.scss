@@ -135,9 +135,8 @@
   line-height: 100%;
   font-weight: 800;
 
-  .investments-link {
-    color: $text-color-2;
-    text-decoration: underline;
+  & .header-link {
+    display: inline-flex;
   }
 
   @include tablet {
@@ -146,6 +145,26 @@
 
   @include laptop {
     font-size: vw(72);
+  }
+
+  & .investments-link {
+    color: $text-color-2;
+    font-size: 36px;
+    line-height: 100%;
+    font-weight: 800;
+    transition: color 0.4s ease-in-out;
+
+    &:hover {
+      color: $olive-color;
+    }
+
+    @include tablet {
+      font-size: 64px;
+    }
+
+    @include laptop {
+      font-size: vw(72);
+    }
   }
 }
 
@@ -300,8 +319,6 @@
       height: vw(570);
       aspect-ratio: 623 / 447;
     }
-
-
   }
 
   @include tablet {
@@ -444,7 +461,6 @@
   @include laptop {
     bottom: vw(104);
     left: vw(1280);
-
   }
 
   @include laptop-header {
