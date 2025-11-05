@@ -18,7 +18,6 @@
     grid-template-rows: 1fr;
     min-height: calc(100svh - 108px);
     // min-height: 850px;
-
   }
 
   @include laptop-header {
@@ -48,7 +47,6 @@
 
   @include laptop-header {
     max-height: calc(100svh - 150px);
-
   }
 
   &__breadcrumbs {
@@ -82,7 +80,7 @@
     }
 
     @include laptop {
-      font-size: vw(100)
+      font-size: vw(100);
     }
 
     max-width: 775px;
@@ -159,7 +157,7 @@
 
     @include laptop {
       flex-direction: column-reverse;
-      gap: 40px
+      gap: 40px;
     }
 
     .left-side__text-block {
@@ -184,9 +182,7 @@
       @include laptop {
         margin-left: 35%;
       }
-
     }
-
   }
 
   &__down-button {
@@ -208,13 +204,36 @@
       left: 40px;
     }
 
+    .ellipse-svg-block {
+      transform: rotate(-50deg);
+    }
+
+    svg {
+      animation: runRightArrow 2s ease-out infinite;
+
+      @keyframes runRightArrow {
+        0% {
+          transform: translateY(-60px);
+        }
+        40% {
+          transform: translateY(0px);
+        }
+        60% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(60px);
+        }
+      }
+    }
+
     .ellipse-btn {
+      overflow: hidden;
       background-color: $olive-color;
 
       &::before {
         background-color: $accent-color;
       }
-
     }
 
     &:hover {
@@ -275,7 +294,6 @@
   }
 
   @include laptop-header {
-
     max-height: calc(100vh - 150px);
   }
 
