@@ -246,7 +246,6 @@ animateOnScroll('.map-main-wrap', { scale: 0.95, blur: 10, duration: 0.6, delay:
 // 🔹 Використання для різних елементів
 animateOnScroll('.section.advantages .section-title', { y: -40 });
 animateOnScroll('.swiper-advantages', { y: 80, delay: 0.1 });
-animateOnScroll('.swiper-btns-wrap', { y: 30, delay: 0.2 });
 
 animateOnScroll('.tech-params .section-title', { y: -40, duration: 0.6 });
 animateOnScroll('.tech-params .swipers-tech-wrap', { y: 80, duration: 0.6 });
@@ -333,13 +332,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const videoBtn = block.querySelector('.controls-wrap');
 
     const video = block.querySelector('video');
+    videoBtn.classList.add('hidden');
+    video.play();
+    video.classList.add('playing');
 
     // Клік по кнопці
     videoBtn.addEventListener('click', function() {
       videoBtn.classList.add('hidden');
-
-      video.classList.add('playing');
       video.play();
+      video.classList.add('playing');
     });
 
     // Коли відео закінчиться — повернути кнопку й опис
@@ -353,6 +354,13 @@ document.addEventListener('DOMContentLoaded', function() {
     video.addEventListener('pause', function() {
       if (video.currentTime < video.duration) {
         videoBtn.classList.remove('hidden');
+      }
+    });
+
+    //При перемотці по шкалі, приховувати кнопку після відтворення відео
+    video.addEventListener('seeked', function() {
+      if (!video.paused) {
+        videoBtn.classList.add('hidden');
       }
     });
   });

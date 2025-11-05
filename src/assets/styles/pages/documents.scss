@@ -52,7 +52,7 @@
     }
 
     @include laptop {
-      font-size: vw(100)
+      font-size: vw(100);
     }
   }
 }
@@ -83,17 +83,14 @@
   }
 
   &-list {
-
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
-
   }
 
   &-card {
     padding: 20px;
-
 
     display: flex;
     flex-direction: column;
@@ -126,7 +123,6 @@
         transform: translateY(-50%) rotate(0deg);
         /* Rotate arrow when active */
         transition: transform 0.3s ease;
-
       }
     }
   }
@@ -157,7 +153,7 @@
     }
 
     @include laptop {
-      font-size: 2.083vw
+      font-size: 2.083vw;
     }
   }
 
@@ -199,8 +195,6 @@
     width: 48px;
     height: 48px;
 
-
-
     svg {
       width: 100%;
       height: 100%;
@@ -217,15 +211,16 @@
     overflow: hidden;
     margin-top: 0;
     transition: all 0.3s ease;
-
-
   }
-
 
   &-card-content-inner {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+
+    @include tablet {
+      gap: 40px;
+    }
   }
 
   &-card-content-btn-list {
@@ -239,8 +234,6 @@
       flex-wrap: nowrap;
     }
   }
-
-
 
   &-card-content-btn {
     @include general-text;
@@ -259,7 +252,6 @@
 
     @media screen and (max-width: 768px) {
       font-size: 14px;
-
     }
 
     @include tablet {
@@ -284,7 +276,6 @@
       background-color: $accent-color;
       color: $wc;
 
-
       pointer-events: none;
     }
   }
@@ -294,14 +285,13 @@
     gap: 8px;
     flex-direction: column;
 
-    &>p {
+    & > p {
       @include general-text;
       color: $accent-color;
       flex: 1;
 
       @media screen and (max-width: 768px) {
         font-size: 14px;
-
       }
 
       span {
@@ -321,7 +311,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 12px;
-    background-color: #ECE9E2;
+    background-color: #ece9e2;
     padding: 20px;
     gap: 12px;
 
@@ -331,20 +321,20 @@
       padding: 4px;
       padding-left: 28px;
       border-radius: 100px;
+      gap: 52px;
     }
 
     @include laptop {
       gap: 40px;
     }
 
-    &>p {
+    & > p {
       @include general-text;
       color: $accent-color;
       flex: 1;
 
       @media screen and (max-width: 768px) {
         font-size: 14px;
-
       }
 
       span {
@@ -353,18 +343,22 @@
       }
     }
 
-    &>.general-btn {
+    & > .general-btn {
       &::before {
-        background-color: $accent-color-2;
-
+        background-color: $olive-color;
       }
-
+      background-color: $bc;
       span {
         color: $accent-color;
 
         @media screen and (max-width: 768px) {
           font-size: 14px;
+        }
+      }
 
+      &:hover {
+        span {
+          color: $white-color-light;
         }
       }
     }
@@ -401,7 +395,7 @@
     }
 
     @include tablet {
-      padding: 12px 4px 12px 28px
+      padding: 12px 4px 12px 28px;
     }
 
     @include laptop-header {
@@ -417,21 +411,24 @@
     & .general-btn.olive-btn {
       &::before {
         background-color: $olive-color;
-
       }
 
-      background-color: $white-color-light;
+      background-color: $bc;
 
       span {
         color: $accent-color;
 
         @media screen and (max-width: 768px) {
           font-size: 14px;
+        }
+      }
 
+      &:hover {
+        span {
+          color: $white-color-light;
         }
       }
     }
-
   }
 
   &-card-content-list--title {
@@ -452,5 +449,55 @@
       height: 1px;
       background: var(--color-pantone-2);
     }
+  }
+}
+
+.warning-block {
+  @include tablet {
+    padding: 20px;
+    border-radius: 38px;
+    gap: 52px;
+    align-items: start;
+  }
+}
+
+.warning-img-title-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.warning-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.warning-title {
+  @include block-title;
+  font-size: 24px;
+}
+
+.warning-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.warning-text {
+  @include general-text;
+
+  font-size: 14px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include laptop {
+    // font-size: vw(18);
+    font-size: clamp(12px, 12px + 6 * (100vw - 1024px) / 896, 18px);
   }
 }

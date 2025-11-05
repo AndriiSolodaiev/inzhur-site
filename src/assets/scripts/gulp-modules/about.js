@@ -36,12 +36,12 @@ const choiceTL = gsap.timeline({
   },
 });
 
-choiceTL.fromTo(
-  '.choice__right img',
-  { scale: 1.05, yPercent: -10 },
-  { scale: 1.05, yPercent: 10, ease: 'none' },
-  '<',
-);
+// choiceTL.fromTo(
+//   '.choice__right img',
+//   { scale: 1.05, yPercent: -10 },
+//   { scale: 1.05, yPercent: 10, ease: 'none' },
+//   '<',
+// );
 
 animateOnScroll('.choice__left>*', {
   x: 40,

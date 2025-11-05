@@ -56,12 +56,12 @@
     span {
       @include text-24;
       color: $text-color;
+      cursor: pointer;
     }
   }
 
   &__title {
     @include section-title;
-
 
     margin-top: 20px;
     max-width: 755px;
@@ -82,7 +82,6 @@
 
     @include laptop-header {
       top: 170px;
-
     }
   }
 

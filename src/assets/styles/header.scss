@@ -80,35 +80,26 @@
 
   @include tablet {
     height: 108px;
-
   }
 
   @include laptop-header {
     height: 150px;
     justify-content: space-between;
-
   }
-
-
 
   &.scroll-down {
     height: 60px;
 
     @include tablet {
       height: 88px;
-
     }
 
     @include laptop {
       height: 120px;
-
     }
-
-
   }
 
   .general-btn {
-
     background-color: $olive-color;
 
     span {
@@ -121,7 +112,6 @@
 
     &:hover {
       color: $wc;
-
     }
   }
 
@@ -174,25 +164,18 @@
     }
   }
 
-
-
-
   @include laptop-header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.4s ease;
-
-
   }
-
 }
 
 .header-tools__wrapper {
   display: flex;
   align-items: center;
   gap: 14px;
-
 
   @include tablet {
     padding-left: 20px;
@@ -201,10 +184,8 @@
 
   @include laptop-header {
     gap: 28px;
-
   }
 }
-
 
 .ellipse-btn {
   display: flex;
@@ -233,12 +214,9 @@
 
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
     background-color: $wc;
-
   }
 
   &:hover {
-
-
     &::before {
       transform: translate3d(100%, 30%, 0);
     }
@@ -316,7 +294,7 @@
       overflow: hidden;
       transition: all 0.4s linear;
       transform: translateX(-29%);
-      transform-origin: left
+      transform-origin: left;
     }
 
     &:hover,
@@ -324,7 +302,6 @@
       svg {
         clip-path: polygon(1% 0%, 100% 0%, 100% 100%, 1% 100%);
         transform: translateX(0%);
-
       }
     }
   }
@@ -344,12 +321,10 @@
       line-height: 140%;
       text-transform: uppercase;
       letter-spacing: -0.06em;
-
     }
 
     svg path {
       transition: all 0.5s ease;
-
     }
   }
 
@@ -367,116 +342,112 @@
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    transform-box: fill-box
+    transform-box: fill-box;
   }
 
   .header-link span {
-    position: relative
+    position: relative;
   }
 
   .header-link span:after {
-    content: "";
+    content: '';
     position: absolute;
     top: calc(100% + 2px);
     left: 0;
     -webkit-transform-origin: left;
     -ms-transform-origin: left;
     transform-origin: left;
-    -webkit-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
+    -webkit-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
     width: 100%;
     height: 2px;
     background-color: currentColor;
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
-    transform: scaleX(0)
+    transform: scaleX(0);
   }
 
   .header-link:hover svg {
     -webkit-animation: wobble 1s ease infinite;
-    animation: wobble 1s ease infinite
+    animation: wobble 1s ease infinite;
   }
 
   .header-link:hover span:after {
     -webkit-transform: scaleX(1);
     -ms-transform: scaleX(1);
-    transform: scaleX(1)
+    transform: scaleX(1);
   }
 }
 
 @-webkit-keyframes wobble {
-
   0%,
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%
+    transform-origin: 50% 50%;
   }
 
   15% {
     -webkit-transform: translateX(-2px) rotate(-5deg);
-    transform: translateX(-2px) rotate(-5deg)
+    transform: translateX(-2px) rotate(-5deg);
   }
 
   30% {
     -webkit-transform: translateX(1px) rotate(5deg);
-    transform: translateX(1px) rotate(5deg)
+    transform: translateX(1px) rotate(5deg);
   }
 
   45% {
     -webkit-transform: translateX(-1px) rotate(-2.7777777778deg);
-    transform: translateX(-1px) rotate(-2.7777777778deg)
+    transform: translateX(-1px) rotate(-2.7777777778deg);
   }
 
   60% {
-    -webkit-transform: translateX(.6060606061px) rotate(1.6666666667deg);
-    transform: translateX(.6060606061px) rotate(1.6666666667deg)
+    -webkit-transform: translateX(0.6060606061px) rotate(1.6666666667deg);
+    transform: translateX(0.6060606061px) rotate(1.6666666667deg);
   }
 
   75% {
-    -webkit-transform: translateX(-.3636363636px) rotate(-1deg);
-    transform: translateX(-.3636363636px) rotate(-1deg)
+    -webkit-transform: translateX(-0.3636363636px) rotate(-1deg);
+    transform: translateX(-0.3636363636px) rotate(-1deg);
   }
 }
 
 @keyframes wobble {
-
   0%,
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%
+    transform-origin: 50% 50%;
   }
 
   15% {
     -webkit-transform: translateX(-2px) rotate(-5deg);
-    transform: translateX(-2px) rotate(-5deg)
+    transform: translateX(-2px) rotate(-5deg);
   }
 
   30% {
     -webkit-transform: translateX(1px) rotate(5deg);
-    transform: translateX(1px) rotate(5deg)
+    transform: translateX(1px) rotate(5deg);
   }
 
   45% {
     -webkit-transform: translateX(-1px) rotate(-2.7777777778deg);
-    transform: translateX(-1px) rotate(-2.7777777778deg)
+    transform: translateX(-1px) rotate(-2.7777777778deg);
   }
 
   60% {
-    -webkit-transform: translateX(.6060606061px) rotate(1.6666666667deg);
-    transform: translateX(.6060606061px) rotate(1.6666666667deg)
+    -webkit-transform: translateX(0.6060606061px) rotate(1.6666666667deg);
+    transform: translateX(0.6060606061px) rotate(1.6666666667deg);
   }
 
   75% {
-    -webkit-transform: translateX(-.3636363636px) rotate(-1deg);
-    transform: translateX(-.3636363636px) rotate(-1deg)
+    -webkit-transform: translateX(-0.3636363636px) rotate(-1deg);
+    transform: translateX(-0.3636363636px) rotate(-1deg);
   }
 }
-
-
 
 .socials-list {
   display: flex;
@@ -509,7 +480,6 @@
       path {
         fill: $olive-color;
       }
-
     }
 
     &:hover {
@@ -522,10 +492,7 @@
       }
     }
   }
-
-
 }
-
 
 .flats-mob-btn {
   @include laptop-header {
@@ -534,9 +501,7 @@
 }
 
 .general-btn.laptop-mode {
-
   margin-right: 12px;
-
 }
 
 .menu-burger {
@@ -556,16 +521,14 @@
     height: 2px;
     border-radius: 4px;
     background-color: $text-color;
-    transition: all 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.4s ease-in-out, background-color 0.4s ease;
+    transition: all 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.4s ease-in-out,
+      background-color 0.4s ease;
 
     @include tablet {
       width: 24px;
       height: 3px;
     }
-
-
   }
-
 }
 
 .header.menu-is-open {
@@ -587,16 +550,8 @@
         transform: rotate(-45deg) translate(4px, -2px);
       }
     }
-
   }
 }
-
-
-
-
-
-
-
 
 .menu-overlay {
   position: fixed;
@@ -617,14 +572,11 @@
     align-items: center;
   }
 
-
-
   &.hidden {
     // visibility: hidden;
     pointer-events: none;
     // opacity: 0;
   }
-
 }
 
 .menu-container {
@@ -649,8 +601,6 @@
     }
 
     &::after {
-
-
       @include tablet {
         width: 65vw;
         height: 45vw;
@@ -662,7 +612,6 @@
       }
     }
   }
-
 
   .menu-nav-list {
     display: flex;
@@ -747,15 +696,11 @@
       }
 
       &.fake {
-        color: $grey-color;
+        color: $text-color-2;
       }
     }
-
   }
 }
-
-
-
 
 .accent-color {
   color: $accent-color;
