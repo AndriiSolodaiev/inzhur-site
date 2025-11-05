@@ -137,6 +137,32 @@
 
   & .header-link {
     display: inline-flex;
+
+    span {
+      font-family: $default-font-2;
+      font-size: 36px;
+      line-height: 100%;
+      font-weight: 800;
+      text-transform: none;
+
+      @include tablet {
+        font-size: 64px;
+      }
+
+      @include laptop {
+        font-size: vw(72);
+      }
+    }
+  }
+
+  & .investments-link {
+    color: $text-color-2;
+
+    transition: color 0.4s ease-in-out;
+
+    &:hover {
+      color: $olive-color;
+    }
   }
 
   @include tablet {
@@ -145,26 +171,6 @@
 
   @include laptop {
     font-size: vw(72);
-  }
-
-  & .investments-link {
-    color: $text-color-2;
-    font-size: 36px;
-    line-height: 100%;
-    font-weight: 800;
-    transition: color 0.4s ease-in-out;
-
-    &:hover {
-      color: $olive-color;
-    }
-
-    @include tablet {
-      font-size: 64px;
-    }
-
-    @include laptop {
-      font-size: vw(72);
-    }
   }
 }
 
@@ -653,6 +659,12 @@
 
     @include tablet {
       font-size: 36px;
+    }
+  }
+
+  &.header-link {
+    span {
+      color: $text-color;
     }
   }
 }
