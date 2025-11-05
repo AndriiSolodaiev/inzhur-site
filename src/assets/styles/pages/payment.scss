@@ -31,6 +31,10 @@
     width: 100px;
     height: 100px;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @include tablet {
       top: inherit;
       right: -10px;
