@@ -216,7 +216,11 @@
   &-card-content-inner {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+
+    @include tablet {
+      gap: 40px;
+    }
   }
 
   &-card-content-btn-list {
@@ -317,6 +321,7 @@
       padding: 4px;
       padding-left: 28px;
       border-radius: 100px;
+      gap: 52px;
     }
 
     @include laptop {
@@ -444,5 +449,55 @@
       height: 1px;
       background: var(--color-pantone-2);
     }
+  }
+}
+
+.warning-block {
+  @include tablet {
+    padding: 20px;
+    border-radius: 38px;
+    gap: 52px;
+    align-items: start;
+  }
+}
+
+.warning-img-title-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.warning-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.warning-title {
+  @include block-title;
+  font-size: 24px;
+}
+
+.warning-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.warning-text {
+  @include general-text;
+
+  font-size: 14px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include laptop {
+    // font-size: vw(18);
+    font-size: clamp(12px, 12px + 6 * (100vw - 1024px) / 896, 18px);
   }
 }
