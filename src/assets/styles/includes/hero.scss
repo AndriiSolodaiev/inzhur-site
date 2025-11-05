@@ -213,16 +213,16 @@
 
       @keyframes runRightArrow {
         0% {
-          transform: translateY(-60px);
+          transform: translateY(-60px) translateX(-60px) rotate(-50deg);
         }
         40% {
-          transform: translateY(0px);
+          transform: translateY(0px) rotate(-50deg);
         }
         60% {
-          transform: translateY(0px);
+          transform: translateY(0px) rotate(-50deg);
         }
         100% {
-          transform: translateY(60px);
+          transform: translateY(60px) translateX(60px) rotate(-50deg);
         }
       }
     }
