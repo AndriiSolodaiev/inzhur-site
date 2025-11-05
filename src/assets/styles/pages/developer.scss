@@ -315,7 +315,7 @@
     @include tablet {
       background-image: url('/assets/images/developer/tab-oval.svg');
       width: 81vw;
-      height: 45vw;
+      height: 54vw;
     }
 
     @include laptop {
@@ -467,6 +467,12 @@
   @include laptop {
     bottom: vw(104);
     left: vw(1280);
+
+    @media screen and (max-width: 1280px) {
+      gap: 20px;
+    }
+
+    gap: 40px;
   }
 
   @include laptop-header {
