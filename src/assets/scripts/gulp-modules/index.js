@@ -333,13 +333,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const videoBtn = block.querySelector('.controls-wrap');
 
     const video = block.querySelector('video');
+    videoBtn.classList.add('hidden');
+    video.play();
+    video.classList.add('playing');
 
     // Клік по кнопці
     videoBtn.addEventListener('click', function() {
       videoBtn.classList.add('hidden');
-
-      video.classList.add('playing');
       video.play();
+      video.classList.add('playing');
     });
 
     // Коли відео закінчиться — повернути кнопку й опис
@@ -353,6 +355,13 @@ document.addEventListener('DOMContentLoaded', function() {
     video.addEventListener('pause', function() {
       if (video.currentTime < video.duration) {
         videoBtn.classList.remove('hidden');
+      }
+    });
+
+    //При перемотці по шкалі, приховувати кнопку після відтворення відео
+    video.addEventListener('seeked', function() {
+      if (!video.paused) {
+        videoBtn.classList.add('hidden');
       }
     });
   });
