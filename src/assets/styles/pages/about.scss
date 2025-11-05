@@ -127,7 +127,7 @@
     }
 
     @include laptop {
-      grid-template-columns: 30% 66%;
+      grid-template-columns: 38% 66%;
       grid-template-rows: auto auto 5% auto auto auto 1fr;
       grid-template-areas:
         '_ us'
@@ -176,7 +176,6 @@
 
     @include laptop {
       font-size: 5.2vw;
-
     }
   }
 
@@ -201,7 +200,6 @@
     font-size: 48px;
 
     @include tablet {
-
       grid-column: 2;
       justify-self: start;
       margin: 0;
@@ -210,7 +208,6 @@
 
     @include laptop {
       font-size: 5.2vw;
-
     }
   }
 
@@ -220,6 +217,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 24px;
+    object-position: 64%;
   }
 
   &__text {
@@ -365,7 +363,6 @@
     grid-template-columns: 1fr 2fr;
     gap: 40px;
     margin-top: 200px;
-
   }
 
   &--reverse {
@@ -386,7 +383,6 @@
     @include laptop {
       gap: vw(120);
       align-items: stretch;
-
     }
   }
 
@@ -446,7 +442,6 @@
       aspect-ratio: auto;
       flex: 3;
     }
-
 
     img {
       width: 100%;
@@ -553,7 +548,6 @@
     letter-spacing: -0.06em;
     text-transform: none;
     position: sticky;
-
 
     @include tablet {
       font-size: clamp(64px, calc(64px + (72 - 64) * ((100vw - 768px) / (1366 - 768))), 72px);
@@ -670,6 +664,6 @@
 
 .project-haromny.harmony-section {
   &::before {
-    background: linear-gradient(0deg, rgba(236, 233, 226, 0) 0%, #FAF6EE 100%);
+    background: linear-gradient(0deg, rgba(236, 233, 226, 0) 0%, #faf6ee 100%);
   }
 }
