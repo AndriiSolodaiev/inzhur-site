@@ -246,7 +246,6 @@ animateOnScroll('.map-main-wrap', { scale: 0.95, blur: 10, duration: 0.6, delay:
 // 🔹 Використання для різних елементів
 animateOnScroll('.section.advantages .section-title', { y: -40 });
 animateOnScroll('.swiper-advantages', { y: 80, delay: 0.1 });
-animateOnScroll('.swiper-btns-wrap', { y: 30, delay: 0.2 });
 
 animateOnScroll('.tech-params .section-title', { y: -40, duration: 0.6 });
 animateOnScroll('.tech-params .swipers-tech-wrap', { y: 80, duration: 0.6 });
