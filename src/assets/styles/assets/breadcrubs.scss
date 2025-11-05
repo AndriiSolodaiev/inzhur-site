@@ -5,7 +5,6 @@
   // justify-content: center;
   margin-bottom: 40px;
 
-
   @include tablet {
     margin-bottom: 50px;
     gap: 20px;
@@ -43,25 +42,26 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 1px;
       left: 0;
       width: 100%;
       background-color: $accent-color;
       height: 1px;
-      transform: translateX(-100%);
+      transform: translateX(0%);
       transition: all 0.4s ease-in-out;
     }
 
-    &:hover {
-      &::after {
-        transform: translateX(0%);
-      }
-    }
+    // &:hover {
+    //   &::after {
+    //     transform: translateX(0%);
+    //   }
+    // }
   }
 
-  &>svg {}
+  & > svg {
+  }
 
   // &__current--color {
 
