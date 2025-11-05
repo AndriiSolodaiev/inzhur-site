@@ -324,6 +324,11 @@
       // max-width: 623px;
       height: vw(570);
       aspect-ratio: 623 / 447;
+
+      @media screen and (max-width: 1366px) {
+        width: vw(840);
+        height: vw(640);
+      }
     }
   }
 
@@ -583,7 +588,7 @@
 
   @include laptop {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(486px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
   }
 }
