@@ -1,6 +1,7 @@
 import Swiper, { Autoplay, EffectFade, Navigation } from 'swiper';
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 import googleMap from '../modules/map/map';
+import { animateOnScroll } from '../modules/effects/animateOnsScroll';
 // import device from 'current-device';
 // if (device.iphone()) {
 //   document.querySelector('html').style.overscrollBehavior = 'none';
@@ -8,7 +9,6 @@ import googleMap from '../modules/map/map';
 googleMap();
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
-
 const swiper = new Swiper('.swiper-advantages', {
   modules: [Navigation],
   slidesPerView: 1,
@@ -193,48 +193,7 @@ aboutTl
   )
   .fromTo('.about-project .about-project-img img', { scale: 1 }, { scale: 1.1, ease: 'none' }, '<');
 
-export function animateOnScroll(selector, options = {}) {
-  const {
-    y = 60,
-    x = 0,
-    blur = 10,
-    delay = 0,
-    stagger = 0,
-    duration = 0.6,
-    ease = 'power2.out',
-    start = 'top 80%',
-    markers = false,
-    scale = 1,
-  } = options;
 
-  gsap.fromTo(
-    selector,
-    {
-      y,
-      scale,
-      x,
-      opacity: 0,
-      filter: `blur(${blur}px)`,
-    },
-    {
-      y: 0,
-      x: 0,
-      opacity: 1,
-      filter: 'blur(0px)',
-      duration,
-      ease,
-      delay,
-      stagger,
-      scale: 1,
-      scrollTrigger: {
-        trigger: selector,
-        start,
-        once: true,
-        markers,
-      },
-    },
-  );
-}
 animateOnScroll('.about-project-text', { y: 20, duration: 0.6 });
 animateOnScroll('.about-project-video', { y: 20, duration: 0.6, delay: 0.2 });
 

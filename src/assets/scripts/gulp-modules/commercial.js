@@ -3,7 +3,6 @@ import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
   gsap.timeline().fromTo(".page-title__wrap", {
     y:-150,

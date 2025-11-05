@@ -1,7 +1,6 @@
 import { initSmoothScrolling } from '../scroll/leniscroll';
 import device from 'current-device';
-import { animateTitleOnScroll } from '../../modules/effects/animateTitle';
-import { animateOnScroll } from '../../gulp-modules';
+import { animateOnScroll } from '../../modules/effects/animateOnsScroll';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 
