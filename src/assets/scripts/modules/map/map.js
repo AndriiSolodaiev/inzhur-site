@@ -112,15 +112,14 @@ function initMap() {
     pet: `${baseFolder}pet.svg`,
     novaPoshta: `${baseFolder}novaPoshta.svg`,
     beautyParlor: `${baseFolder}beautyParlor.svg`,
-    gasStation: `${baseFolder}gasStation.svg`,
     ATM: `${baseFolder}ATM.svg`,
   };
   const markersData = [
     {
       type: 'main',
       icon: { url: markersAdresses.main, scaledSize: buildLogoSize },
-      position: { lat: 49.2281991, lng: 28.3926229 },
-      text: 'ЖК Twins м. Вінниця, вул. Келецька, 123-А',
+      position: { lat: 50.3829603860473, lng: 30.39004610421891 },
+      text: 'ЖК Свідомі - Крюківщина, Київська область',
     },
     // supermarket
     {
@@ -431,25 +430,6 @@ function initMap() {
       icon: { url: markersAdresses.beautyParlor, scaledSize: defaultMarkerSize },
       position: { lat: 50.37958004556171, lng: 30.38097520462645 },
       text: 'Барбершоп THE BOYS 2 - вулиця Київська, 37, Крюківщина, Київська область, 08136',
-    },
-    // gasStation
-    {
-      type: 'gasStation',
-      icon: { url: markersAdresses.gasStation, scaledSize: defaultMarkerSize },
-      position: { lat: 50.38826308369288, lng: 30.39227627940784 },
-      text: `КЛО - вулиця В'ячеслава Чорновола, 54, Вишневе, Київська область, 08132`,
-    },
-    {
-      type: 'gasStation',
-      icon: { url: markersAdresses.gasStation, scaledSize: defaultMarkerSize },
-      position: { lat: 50.392104612430145, lng: 30.404836510694775 },
-      text: 'OKKO - вулиця Асканія, 2А, Крюківщина, Київська область, 08136',
-    },
-    {
-      type: 'gasStation',
-      icon: { url: markersAdresses.gasStation, scaledSize: defaultMarkerSize },
-      position: { lat: 50.39172563668005, lng: 30.36323005966701 },
-      text: 'КЛО - вулиця Київська, 2 Г, Вишневе, Київська область, 07000',
     },
     // ATM
     {
