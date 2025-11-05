@@ -132,54 +132,46 @@ block content
               <path d="M9 3.94922C8.99971 3.7748 8.97341 3.64663 8.94531 3.55273C8.89717 3.40093 8.65272 3.26336 8.38086 3.23242C8.37565 3.23178 8.37045 3.23095 8.36523 3.23047C8.28857 3.22339 8.19951 3.21625 8.0957 3.21094C8.00713 3.20627 7.90733 3.20278 7.7959 3.20117C7.75043 3.20053 4.54953 3.2002 4.5 3.2002C4.44446 3.2002 1.24982 3.20053 1.2041 3.20117C1.09267 3.20294 0.992873 3.20643 0.904297 3.21094C0.800488 3.21641 0.711427 3.22339 0.634766 3.23047C0.629552 3.23095 0.624065 3.23178 0.619141 3.23242C0.347279 3.26352 0.102832 3.40109 0.0546876 3.55273C0.0265933 3.64663 0.000290028 3.7748 1.08523e-07 3.94922L1.085e-07 3.95117C0.000293838 4.12529 0.0266448 4.25284 0.0546876 4.34668C0.102762 4.49853 0.347204 4.63703 0.619141 4.66797C0.624354 4.66861 0.629552 4.66944 0.634766 4.66992C0.711424 4.677 0.800495 4.68414 0.904297 4.68945C0.992875 4.69412 1.09267 4.69761 1.2041 4.69922C1.24957 4.69986 4.45047 4.7002 4.5 4.7002C4.55554 4.70019 7.75018 4.69986 7.7959 4.69922C7.90733 4.69745 8.00713 4.69396 8.0957 4.68945C8.1995 4.68398 8.28858 4.677 8.36523 4.66992C8.37045 4.66944 8.37594 4.66861 8.38086 4.66797C8.65261 4.63705 8.89672 4.49923 8.94531 4.34766C8.97341 4.25377 8.99971 4.12559 9 3.95117L9 3.94922ZM4.9502 10.7998C4.95006 9.55736 3.94264 8.54994 2.7002 8.5498C1.45764 8.5498 0.450328 9.55728 0.450195 10.7998C0.450195 12.0424 1.45755 13.0498 2.7002 13.0498C3.94272 13.0497 4.9502 12.0424 4.9502 10.7998ZM16 10.749C15.9997 10.5746 15.9734 10.4464 15.9453 10.3525C15.897 10.2008 15.6526 10.0632 15.3809 10.0322C15.3756 10.0316 15.3704 10.0308 15.3652 10.0303C15.2886 10.0232 15.1995 10.0161 15.0957 10.0107C15.0071 10.0061 14.9073 10.0026 14.7959 10.001C14.7504 10.0003 10.5495 10 10.5 10C10.4462 10 8.24982 10.0003 8.2041 10.001C8.09267 10.0027 7.99287 10.0062 7.9043 10.0107C7.80049 10.0162 7.71142 10.0232 7.63477 10.0303C7.62955 10.0308 7.62406 10.0316 7.61914 10.0322C7.34738 10.0633 7.10297 10.201 7.05469 10.3525C7.02659 10.4464 7.00029 10.5746 7 10.749L7 10.751C7.00029 10.9254 7.02659 11.0536 7.05469 11.1475C7.10297 11.2992 7.34738 11.4368 7.61914 11.4678C7.62435 11.4684 7.62955 11.4692 7.63477 11.4697C7.71142 11.4768 7.80049 11.4839 7.9043 11.4893C7.99287 11.4939 8.09267 11.4974 8.2041 11.499C8.24957 11.4997 10.4505 11.5 10.5 11.5C10.5572 11.5 14.7502 11.4997 14.7959 11.499C14.9073 11.4973 15.0071 11.4938 15.0957 11.4893C15.1995 11.4838 15.2886 11.4768 15.3652 11.4697C15.3704 11.4692 15.3759 11.4684 15.3809 11.4678C15.6527 11.4368 15.8969 11.2991 15.9453 11.1475C15.9734 11.0536 15.9997 10.9254 16 10.751L16 10.749ZM15.1504 3.5C15.1504 2.25749 14.1429 1.25021 12.9004 1.25C11.6578 1.25 10.6504 2.25736 10.6504 3.5C10.6504 4.74264 11.6577 5.75 12.9004 5.75C14.1429 5.74979 15.1504 4.74251 15.1504 3.5Z" fill="#ECE9E2"/>
             </svg>
         ul.map-navigation__main
-          //- li(data-marker data-type="supermarket" data-category="supermarket").map-navigation__button
-          //-   +svg('supermarket')
-          //-   span Супермаркети
           li(data-marker data-type="mall" data-category="mall").map-navigation__button
             +svg('mall')
             span Торгівельні центри
-          //- li(data-marker data-type="kindergarden" data-category="kindergarden").map-navigation__button
-          //-   +svg('kindergarden')
-          //-   span Дитячі садочки
           li(data-marker data-type="school" data-category="school").map-navigation__button
             +svg('school')
             span Школи і дитячі садочки
-          //- li(data-marker data-type="university" data-category="university").map-navigation__button
-          //-   +svg('university')
-          //-   span Вищі навчальні заклади
           li(data-marker data-type="restaurant" data-category="restaurant").map-navigation__button
             +svg('restaurant')
             span Ресторани та кав’ярні
           li(data-marker data-type="pharmacy" data-category="pharmacy").map-navigation__button
             +svg('pharmacy')
             span Медицина
-          //- li(data-marker data-type="park" data-category="park").map-navigation__button
-          //-   +svg('park')
-          //-   span Місця для відпочинку
           li(data-marker data-type="sport" data-category="sport").map-navigation__button
             +svg('sport')
             span Спорт та культура
           li(data-marker data-type="supermarket" data-category="supermarket").map-navigation__button
             +svg('supermarket')
             span Супермаркет
-          li(data-marker data-type="drivingSchool" data-category="drivingSchool").map-navigation__button
-            +svg('driving-school')
-            span Автошкола
-          li(data-marker data-type="post" data-category="post").map-navigation__button
+          //- li(data-marker data-type="drivingSchool" data-category="drivingSchool").map-navigation__button
+          //-   +svg('driving-school')
+          //-   span Автошкола
+          li(data-marker data-type="novaPoshta" data-category="novaPoshta").map-navigation__button
             +svg('post')
             span Нова Пошта
-          li(data-marker data-type="aquapark" data-category="aquapark").map-navigation__button
-            +svg('aquapark')
-            span Аквапарк
           li(data-marker data-type="petrolStation" data-category="petrolStation").map-navigation__button
-            +svg('petrol-station')
+            +svg('ATM')
             span АЗС
           li(data-marker data-type="busStop" data-category="busStop").map-navigation__button
             +svg('bus-stop')
             span Автовокзал
-          li(data-marker data-type="carWashing" data-category="carWashing").map-navigation__button
-            +svg('car-washing')
-            span Автомийка 
+          li(data-marker data-type="beautyParlor" data-category="beautyParlor").map-navigation__button
+            +svg('beautyParlor')
+            span Заклади барбершопу
+          li(data-marker data-type="park" data-category="park").map-navigation__button
+            +svg('park')
+            span Місця для відпочинку
+          li(data-marker data-type="pet" data-category="pet").map-navigation__button
+            +svg('pet')
+            span Для тварин
+
   section.section.advantages.container
     h2.section-title ЧОМУ ОБИРАЮТЬ СВІДОМІ?
     .swiper-advantages 

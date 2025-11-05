@@ -24,7 +24,7 @@ block variable
       title: "",
       subtitle: ""
     }
-    var anchor = '#map-section'
+    var anchor = '#phrase'
 block meta
   title= title_page
   meta(name='description', content='')
@@ -37,7 +37,7 @@ block scripts
   script(defer src='./assets/scripts/about.bundle.js')
 block content
   include ../includes/hero.pug
-  section.phrase
+  section.phrase#phrase
     .container.phrase__text 
       span Поза метушнею великого міста — але близько до всіх його можливостей. 
       span Без компромісів щодо якості — але з гнучким підходом до можливостей особистих і громадських просторів. Без штучних переваг тільки заради картинки — але виключно на основі передових архітектурних, технологічних, екологічних рішень і досягнень.

@@ -1,10 +1,14 @@
-const filterBtn = document.querySelector('#filter-button');
 const filterNav = document.querySelector('.map-navigation');
-if (filterBtn) {
-  filterBtn.addEventListener('click', function() {
-    filterNav.classList.toggle('oppened');
-  });
-}
+document.body.addEventListener('click', (evt) => {    const target = evt.target.closest('#filter-button');
+    if (!target) return;
+   
+    evt.preventDefault();
+    evt.stopPropagation();           // ← ДОДАЙ
+    evt.stopImmediatePropagation();  // ← ДОДАЙ
+      filterNav.classList.toggle('oppened');
+    
+})
+
 export default function googleMap() {
   global.initMap = initMap;
 }
@@ -48,15 +52,15 @@ function initMap() {
   //   lng: 28.3925433,
   // };
   const center = {
-    lat: 49.2330266,
-    lng: 28.3977645,
+    lat: 50.382970841274535,
+    lng: 30.39003054233024,
   };
 
   const choosedCategories = new Set();
   choosedCategories.add('main');
   const filterItems = document.querySelectorAll('[data-marker]');
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
+    zoom: 16,
     center,
     scrollwheel: false,
     navigationControl: false,
@@ -70,8 +74,9 @@ function initMap() {
   const filterMarkers = function(category, categoriesArray) {
     gmarkers1.forEach(el => {
       if (categoriesArray.has(el.category) || categoriesArray.size === 1) {
+        
         el.setMap(map);
-        el.setAnimation(google.maps.Animation.DROP);
+        // el.setAnimation(google.maps.Animation.DROP);
       } else {
         el.setMap(null);
       }
@@ -89,7 +94,7 @@ function initMap() {
       filterMarkers('main', choosedCategories);
     });
   });
-  const baseFolder = window.location.href.match(/localhost/)
+  const baseFolder = window.location.href.match(/localhost/) || window.location.href.match(/inzhur-bud-verstka/)
     ? './assets/images/map/'
     : '/wp-content/themes/3d/assets/images/map/';
 
@@ -523,10 +528,10 @@ function initMap() {
     const mapMarker = new google.maps.Marker({
       map,
       category,
-      animation: google.maps.Animation.DROP,
+      // animation: google.maps.Animation.DROP,
       zIndex: marker.zIndex || 1,
       icon: marker.icon,
-      cursor: 'grap', // курсор при наведении на макркер жк
+      cursor: 'pointer', // курсор при наведении на макркер жк
       position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
     });
 
