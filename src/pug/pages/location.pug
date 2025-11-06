@@ -101,38 +101,40 @@ block content
           li(data-marker data-type="carWashing" data-category="carWashing").map-navigation__button
             +svg('car-washing')
             span Автомийка 
-  section.infrastructure-section.container
-    .infrastructure-section__house-wrapper
+
+  section.infrastructure-section.cycle-section.container
+    .cycle-section__house-wrapper
       picture.infrastructure-section__house
         source(media="(min-width: 1024px)" srcset="/assets/images/location/filler/desk-house.jpg")
         source(media="(min-width: 768px)" srcset="/assets/images/location/filler/tab-house.jpg")
         img(src="/assets/images/location/filler/mob-house.jpg" alt="")
 
-      picture.infrastructure-section__mask
-        source(media="(min-width: 1024px)" srcset="/assets/images/location/filler/desk-house-oval.svg")
-        source(media="(min-width: 768px)" srcset="/assets/images/location/filler/tab-house-oval.svg")
-        img(src="/assets/images/location/filler/mob-house-oval.svg" alt="")
+      picture.cycle-section__mask
+        source(media="(min-width: 1024px)" srcset="/assets/images/developer/desk-house-oval.svg")
+        source(media="(min-width: 768px)" srcset="/assets/images/developer/tab-house-oval.svg")
+        img(src="/assets/images/developer/mob-house-oval.svg" alt="")
 
     .icon-inzhure-block
-      ul.infrastructure-icons-list
-        li.infrastructure-icons-list__item
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="infrastructure-icon">
-            <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
-          </svg>
-        li.infrastructure-icons-list__item
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="infrastructure-icon">
-            <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
-          </svg>
-        li.infrastructure-icons-list__item
-          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#ece9e2" class="infrastructure-icon">
+      ul.cycle-icons-list
+        li.cycle-icons-list__item
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="cycle-icon">
             <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
         </svg>
-      p.inzhur ЖК СВІДОМІ —
+        li.cycle-icons-list__item
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" class="cycle-icon">
+            <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
+        </svg>
+        li.cycle-icons-list__item
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#ece9e2" class="cycle-icon">
+            <path d="M8.55754 24C6.16459 24 3.9723 23.2216 2.37252 21.6239C-1.58064 17.6767 -0.478174 10.1455 4.81919 4.84245C7.32038 2.34565 10.3864 0.680519 13.4517 0.170628C16.7326 -0.380077 19.6375 0.412559 21.6275 2.39947C25.5808 6.34669 24.4779 13.8779 19.1809 19.1809C16.0208 22.336 12.0668 24 8.55754 24Z" fill="#ECE9E2"/>
+        </svg>
+      p.inzhur Жк Свідомі —
 
-    h2.inzhur-title ЦЕ ВСЕ НЕОБХІДНЕ ДЛЯ ЖИТТЯ 
+    h2.inzhur-title це все необхідне для життя
 
-    .inzhure-text-block
-      p.inzure-text <span>У максимальній доступності від вашого дому: </span>магазини, медичні заклади, школи та дитячі садочки, тренажерні зали, парки тощо.
+    .inzhure-text-link-block
+      p.inzure-text <span>У максимальній доступності від вашого дому:</span> магазини, медичні заклади, школи та дитячі садочки, тренажерні зали, парки тощо.
+
 
   section.area-section.container
     h2.area-title На території ЖК Свідомі
