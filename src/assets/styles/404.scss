@@ -58,14 +58,18 @@
   }
 
   & .hero-page {
-    min-height: calc(100svh - 90px);
+    min-height: calc(100dvh - 72px);
 
     @include tablet {
-      min-height: calc(100svh - 108px);
+      min-height: calc(100dvh - 108px);
     }
 
     @include laptop {
-      min-height: calc(100svh - 150px);
+      min-height: calc(100dvh - 6px);
+    }
+
+    @media screen and (min-width: 1500px) {
+      min-height: calc(100dvh - 46px);
     }
   }
 }
