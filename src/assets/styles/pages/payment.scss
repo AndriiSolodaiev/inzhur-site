@@ -100,10 +100,20 @@
 
   &__subblock-title {
     @include block-title;
+    margin-bottom: 12px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
   }
 
   &__block-title {
     @include article-title;
+    margin-bottom: 8px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
   }
 
   &__block-subtitle {

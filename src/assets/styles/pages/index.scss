@@ -221,6 +221,7 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
+  hyphens: manual;
 
   @include tablet {
     margin-bottom: 40px;
@@ -683,6 +684,11 @@
           background-color: $accent-color-2;
         }
 
+        &.ellipse-btn {
+          width: 62px;
+          height: 88px;
+        }
+
         @include tablet {
           max-width: 140px;
           max-height: 185px;
@@ -691,6 +697,10 @@
             width: 48px;
             height: 48px;
           }
+        }
+
+        &.ellipse-btn {
+          transform: rotate(50deg);
         }
 
         // @include laptop {
@@ -1258,7 +1268,13 @@
   }
 
   .swiper-button-disabled {
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: #ece9e2;
+    opacity: 1;
+
+    svg {
+      opacity: 0.4;
+    }
   }
 }
 

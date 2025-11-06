@@ -303,32 +303,29 @@
   &::after {
     position: absolute;
     content: '';
-    background-image: url('/assets/images/developer/mob-oval.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
     right: 0;
     bottom: 0;
-    width: calc(100% - 20px);
-    height: 80vw;
+    background-image: url('/assets/images/developer/mob-oval.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+
+    width: clamp(355px, 28vw, 795px);
+    aspect-ratio: 355 / 324;
+
+    height: auto;
     z-index: 1;
 
     @include tablet {
       background-image: url('/assets/images/developer/tab-oval.svg');
-      width: 81vw;
-      height: 54vw;
+      width: clamp(400px, 100vw, 850px);
+      aspect-ratio: 623 / 350;
     }
 
     @include laptop {
       background-image: url('/assets/images/developer/desk-oval.svg');
-      width: vw(795);
-      // max-width: 623px;
-      height: vw(570);
-      aspect-ratio: 623 / 447;
-
-      @media screen and (max-width: 1366px) {
-        width: vw(840);
-        height: vw(640);
-      }
+      width: clamp(500px, 42vw, 795px);
+      aspect-ratio: 795 / 570;
     }
   }
 
@@ -462,6 +459,7 @@
   position: absolute;
   bottom: 40px;
   left: 30vw;
+  right: 2vw;
 
   @include tablet {
     gap: 40px;
@@ -470,8 +468,13 @@
   }
 
   @include laptop {
-    bottom: vw(104);
+    bottom: vw(140);
     left: vw(1280);
+    right: 6vw;
+
+    @media screen and (min-width: 1280px) {
+      bottom: vw(100);
+    }
 
     @media screen and (max-width: 1280px) {
       gap: 20px;

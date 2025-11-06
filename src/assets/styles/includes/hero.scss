@@ -205,11 +205,11 @@
     }
 
     .ellipse-svg-block {
-      transform: rotate(-50deg);
+      transform: rotate(0deg);
     }
 
     svg {
-      animation: runRightArrow 2s ease-out infinite;
+      animation: runRightArrow 1.5s ease-out infinite;
 
       @keyframes runRightArrow {
         0% {
