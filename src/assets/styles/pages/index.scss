@@ -1268,7 +1268,13 @@
   }
 
   .swiper-button-disabled {
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: #ece9e2;
+    opacity: 1;
+
+    svg {
+      opacity: 0.4;
+    }
   }
 }
 
