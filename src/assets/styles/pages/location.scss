@@ -604,10 +604,10 @@
 // ======== Harmony section ========
 
 .harmony-section {
-  padding-top: 235px;
+  padding-top: 150px;
   position: relative;
   overflow: hidden;
-  height: 150vh;
+  height: 140vh;
 
   &::before {
     position: absolute;
@@ -620,7 +620,7 @@
 
   @include tablet {
     padding-top: 320px;
-    // height: 1705px;
+    height: 240vh;
 
     &::before {
       height: 400px;
@@ -720,7 +720,7 @@
 
 .harmony-house-wrapper {
   position: absolute;
-  bottom: -80px;
+  bottom: 0;
   left: 0;
   width: 100%;
   z-index: -1;
@@ -741,5 +741,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 60%;
   }
 }
