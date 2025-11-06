@@ -178,7 +178,8 @@
     position: relative;
     overflow: hidden;
     display: block;
-    color: $dark-color;
+    // color: $dark-color;
+    color: transparent;
 
     &:before {
       content: attr(data-title);
