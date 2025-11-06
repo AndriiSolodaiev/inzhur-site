@@ -578,127 +578,49 @@ function initMap() {
 function getMapTheme() {
   return [
     {
-      featureType: 'all',
-      elementType: 'labels.text.fill',
-      stylers: [
-        {
-          color: '#ffffff',
-        },
-      ],
+        "featureType": "administrative",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
     },
     {
-      featureType: 'all',
-      elementType: 'labels.text.stroke',
-      stylers: [
-        {
-          visibility: 'on',
-        },
-        {
-          color: '#424b5b',
-        },
-        {
-          weight: 2,
-        },
-        {
-          gamma: '1',
-        },
-      ],
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
     },
     {
-      featureType: 'all',
-      elementType: 'labels.icon',
-      stylers: [
-        {
-          visibility: 'off',
-        },
-      ],
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
     },
     {
-      featureType: 'administrative',
-      elementType: 'geometry',
-      stylers: [
-        {
-          weight: 0.6,
-        },
-        {
-          color: '#545b6b',
-        },
-        {
-          gamma: '0',
-        },
-      ],
+        "featureType": "transit",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
     },
     {
-      featureType: 'landscape',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#545b6b',
-        },
-        {
-          gamma: '1',
-        },
-        {
-          weight: '10',
-        },
-      ],
-    },
-    {
-      featureType: 'landscape.man_made',
-      elementType: 'geometry.stroke',
-      stylers: [
-        {
-          color: '#000117',
-        },
-      ],
-    },
-    {
-      featureType: 'poi',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#666c7b',
-        },
-      ],
-    },
-    {
-      featureType: 'poi.park',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#545b6b',
-        },
-      ],
-    },
-    {
-      featureType: 'road',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#424a5b',
-        },
-        {
-          lightness: '0',
-        },
-      ],
-    },
-    {
-      featureType: 'transit',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#666c7b',
-        },
-      ],
-    },
-    {
-      featureType: 'water',
-      elementType: 'geometry',
-      stylers: [
-        {
-          color: '#2e3546',
-        },
-      ],
-    },
-  ];
+        "featureType": "transit.station",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+];
 }
