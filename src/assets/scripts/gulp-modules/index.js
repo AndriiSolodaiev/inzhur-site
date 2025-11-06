@@ -200,7 +200,7 @@ animateOnScroll('.about-project-video', { y: 20, duration: 0.6, delay: 0.2 });
 animateOnScroll('.location-homepage .location-homepage__content .section-title', { y: -60 });
 animateOnScroll('.location-homepage .location-homepage__text-wrap', { y: -40, delay: 0.2 });
 animateOnScroll('.location-homepage .location-homepage .general-btn', { y: -30, delay: 0.4 });
-animateOnScroll('.map-main-wrap', { scale: 0.95, blur: 10, duration: 0.6, delay: 0.6 });
+animateOnScroll('.map-main-wrap', { scale: 0.95, blur: 10, duration: 0.6 });
 
 // 🔹 Використання для різних елементів
 animateOnScroll('.section.advantages .section-title', { y: -40 });
