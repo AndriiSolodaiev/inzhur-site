@@ -18,6 +18,10 @@
     @include tablet {
       min-height: 512px;
     }
+
+    @include laptop {
+      top: 105px;
+    }
   }
 
   & .right-side {
@@ -54,7 +58,7 @@
   }
 
   & .hero-page {
-    min-height: calc(100svh - 120px);
+    min-height: calc(100svh - 90px);
 
     @include tablet {
       min-height: calc(100svh - 108px);
@@ -85,7 +89,7 @@
     flex-direction: column-reverse;
     gap: 60px;
     @media screen and (min-width: 1366px) {
-      top: 255px;
+      top: 105px;
       right: 248px;
     }
   }
