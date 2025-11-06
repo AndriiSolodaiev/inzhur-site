@@ -1,7 +1,9 @@
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
-import { animateOnScroll } from './index';
+// import { animateOnScroll } from './index';
+import { animateOnScroll } from '../modules/effects/animateOnsScroll';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
+
 const phraseTL = gsap.timeline({
   scrollTrigger: {
     trigger: '.phrase',
@@ -68,3 +70,7 @@ harmonyTL.fromTo(
 );
 
 animateOnScroll('.harmony-text-content-wrapper ', { y: 60, duration: 1.2, scale: 1.1 });
+
+animateOnScroll('.about-architecture');
+animateOnScroll('.about-projecting');
+animateOnScroll('.about-topicality');

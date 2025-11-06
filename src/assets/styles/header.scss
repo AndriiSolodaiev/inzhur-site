@@ -687,6 +687,18 @@
     bottom: 40px;
     // left: 30px;
 
+    & .fake {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover {
+      & .fake {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
     @media screen and (max-width: 480px) {
       left: 40vw;
     }
