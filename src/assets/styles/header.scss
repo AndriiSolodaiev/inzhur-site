@@ -581,8 +581,7 @@
 
 .menu-container {
   width: 100%;
-  height: 100svh;
-  overflow: hidden;
+  height: 100dvh;
 
   // visibility: hidden;
   .cycle-section__house-wrapper {
@@ -604,7 +603,6 @@
     &.menu-section {
       position: relative;
       height: 100dvh;
-      min-height: 100dvh;
 
       &::after {
         content: '';
