@@ -40,6 +40,8 @@
     z-index: 2;
     bottom: 0;
     width: 200%;
+    left: 25%;
+    transform: translateX(-25%);
 
     @include tablet {
       width: 140%;
@@ -665,5 +667,27 @@
 .project-haromny.harmony-section {
   &::before {
     background: linear-gradient(0deg, rgba(236, 233, 226, 0) 0%, #faf6ee 100%);
+  }
+
+  & .harmony-sky-wrapper {
+    height: 120vh;
+
+    @include tablet {
+      height: 180vh;
+    }
+  }
+
+  & .harmony-house-wrapper {
+    img {
+      object-position: 78%;
+    }
+  }
+
+  @include tablet {
+    height: 240vh;
+  }
+
+  @include laptop {
+    height: 160vh;
   }
 }
