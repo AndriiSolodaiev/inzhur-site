@@ -614,7 +614,7 @@
         background-position: right bottom;
         background-size: contain;
 
-        width: clamp(365px, 28vw, 795px);
+        width: clamp(370px, 28vw, 795px);
         aspect-ratio: 355 / 255;
         height: auto;
 
@@ -683,7 +683,7 @@
     flex-direction: column;
     position: absolute;
     z-index: 3;
-    bottom: 40px;
+    bottom: 75px;
     // left: 30px;
 
     & .fake {
