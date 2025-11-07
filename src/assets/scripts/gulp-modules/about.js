@@ -1,7 +1,9 @@
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
-import { animateOnScroll } from './index';
+// import { animateOnScroll } from './index';
+import { animateOnScroll } from '../modules/effects/animateOnsScroll';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
+
 const phraseTL = gsap.timeline({
   scrollTrigger: {
     trigger: '.phrase',
@@ -68,3 +70,26 @@ harmonyTL.fromTo(
 );
 
 animateOnScroll('.harmony-text-content-wrapper ', { y: 60, duration: 1.2, scale: 1.1 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  document
+    .querySelectorAll(
+      '.sticky-section__title, .sticky-section__block, .sticky-section__title, .sticky-section__block, .sticky-section__title, .sticky-section__block',
+    )
+    .forEach(block => {
+      gsap.fromTo(
+        block,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        },
+      );
+    });
+});

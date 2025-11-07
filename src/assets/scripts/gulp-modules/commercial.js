@@ -1,45 +1,51 @@
 import Swiper, { Autoplay, EffectFade, Navigation } from 'swiper';
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
+import { animateOnScroll } from '../modules/effects/animateOnsScroll';
+
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
 
-
 document.addEventListener('DOMContentLoaded', function() {
-  gsap.timeline().fromTo(".page-title__wrap", {
-    y:-150,
-    opacity:0
-  }, {
-    y:0,
-    opacity:1
-  }).fromTo(".project-content ", {
-    y:150,
-    opacity:0
-  }, {
-    y:0,
-    opacity:1
-  }, "<")
-
-})
-
-
-gsap.fromTo(".project-content__right>svg",
-      { rotate: 3,
-        transformOrigin:"center bottom"
-       },
+  gsap
+    .timeline()
+    .fromTo(
+      '.page-title__wrap',
       {
-        rotate: 8,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".project-content__right>svg",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        }
-      }
+        y: -150,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+      },
+    )
+    .fromTo(
+      '.project-content ',
+      {
+        y: 150,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+      },
+      '<',
     );
+});
 
-
-
-
+gsap.fromTo(
+  '.project-content__right>svg',
+  { rotate: 3, transformOrigin: 'center bottom' },
+  {
+    rotate: 8,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.project-content__right>svg',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+    },
+  },
+);
 
 const tlFiller = gsap.timeline({
   scrollTrigger: {
@@ -111,25 +117,45 @@ tlFillerContent
     '<',
   );
 
-    gsap.timeline({
-  scrollTrigger: {
-    trigger: '.real-estate-homepage-list',
-    start: 'top bottom',
-    end: 'bottom top',
-    //  onLeave: self => self.kill(),
-     
-  },
-}).fromTo(
-  ".real-estate-homepage-card",
-  {
-    yPercent:10,
-    opacity:0,
-   
-  }
-  ,{
-    yPercent:0,
-    opacity:1,
-     stagger:0.2
-    
-  }
-)
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: '.real-estate-homepage-list',
+      start: 'top bottom',
+      end: 'bottom top',
+      //  onLeave: self => self.kill(),
+    },
+  })
+  .fromTo(
+    '.real-estate-homepage-card',
+    {
+      yPercent: 10,
+      opacity: 0,
+    },
+    {
+      yPercent: 0,
+      opacity: 1,
+      stagger: 0.2,
+    },
+  );
+
+document.addEventListener('DOMContentLoaded', function() {
+  document
+    .querySelectorAll('.advantages-title, .features-title, .features-list__item, .advantages-item')
+    .forEach(block => {
+      gsap.fromTo(
+        block,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        },
+      );
+    });
+});

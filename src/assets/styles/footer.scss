@@ -4,23 +4,21 @@
   overflow: hidden;
   max-width: 100vw;
 
-  @include tablet {}
-
-
+  @include tablet {
+  }
 
   &.monotone {
     .footer-form-section {
       background-color: $accent-color-2;
     }
   }
-
-
 }
 
 .footer-form-section {
   padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
+  background-color: $accent-color-2;
 
   @include tablet {
     padding-top: 200px;
@@ -36,7 +34,7 @@
     padding-right: vw(195);
   }
 
-  &>picture {
+  & > picture {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -74,7 +72,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 24px;
-    background-color: rgba(100, 104, 110, 0.60);
+    background-color: rgba(100, 104, 110, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 28px 20px;
@@ -141,7 +139,6 @@
         @include laptop {
           font-size: clamp(32px, calc(32px + (36 - 32) * ((100vw - 1024px) / (1920 - 1024))), 36px);
         }
-
       }
 
       @include tablet {
@@ -154,7 +151,6 @@
       width: 100%;
     }
   }
-
 }
 
 .footer-contacts-section {
@@ -174,12 +170,11 @@
   @include laptop {
     gap: 20px;
     flex-wrap: nowrap;
-
   }
 
   .footer-contacts-section__label {
     @include general-text;
-    color: #64686E;
+    color: #64686e;
     margin-bottom: 8px;
     display: block;
 
@@ -197,7 +192,6 @@
       @include block-title;
       color: $accent-color;
     }
-
   }
 
   .footer-contacts-section__nav-menu,
@@ -250,8 +244,6 @@
         height: 16px;
       }
     }
-
-
   }
 
   .address-wrap {
@@ -262,13 +254,18 @@
       overflow: hidden;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          transparent 100%
+        );
         transform: skewX(-20deg);
         transition: left 0.5s ease;
       }
@@ -278,7 +275,6 @@
       }
     }
   }
-
 }
 
 .btn-up {
@@ -294,7 +290,7 @@
 
   @include laptop {
     margin-top: 0;
-    margin-bottom: auto
+    margin-bottom: auto;
   }
 
   span {
@@ -312,7 +308,6 @@
     svg path {
       transition: all 0.4s ease-in-out;
     }
-
   }
 
   &:hover {
@@ -328,21 +323,19 @@
 
 .footer__bottom-block {
   padding-top: 40px;
-  border-top: 1px solid rgba(57, 48, 40, 0.20);
+  border-top: 1px solid rgba(57, 48, 40, 0.2);
   padding-bottom: 20px;
 
   .footer__license-wrap {
     display: flex;
     justify-content: space-between;
-
   }
 
   .footer__license {
     @include general-text;
-    color: #64686E;
+    color: #64686e;
 
     span {
-
       display: block;
 
       @include tablet {
@@ -352,8 +345,6 @@
       }
     }
   }
-
-
 }
 
 .dev-logo {
@@ -367,6 +358,5 @@
     .dev-logo-bg {
       fill: $olive-color;
     }
-
   }
 }
