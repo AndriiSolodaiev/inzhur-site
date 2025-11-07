@@ -81,9 +81,12 @@
   @include tablet {
     height: 108px;
   }
-
+  @include laptop {
+    height: vw(150);
+    justify-content: space-between;
+  }
   @include laptop-header {
-    height: 150px;
+    
     justify-content: space-between;
   }
 
@@ -164,11 +167,17 @@
     }
   }
 
-  @include laptop-header {
+  @include laptop {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.4s ease;
+    width: vw(207);
+    height: vw(63);
+  }
+   @include laptop-header {
+    width: 207px;
+    height: 63px;
   }
 }
 
@@ -230,7 +239,14 @@
     width: 59px;
     height: 78px;
   }
-
+  @include laptop {
+    width: vw(59);
+    height: vw(78);
+  }
+  @include laptop-header {
+    width: 59px;
+    height: 78px;
+  }
   svg {
     width: 16px;
     height: 16px;
@@ -242,6 +258,14 @@
       width: 24px;
       height: 24px;
     }
+    @include laptop{
+       width:vw(24);
+      height: vw(24);
+    }
+    @include laptop-header {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
@@ -250,7 +274,7 @@
   align-items: center;
   gap: 12px;
 
-  @include laptop-header {
+  @include laptop {
     display: none;
   }
 
@@ -305,8 +329,8 @@
       }
     }
   }
-
-  @include laptop-header {
+  
+  @include laptop {
     display: flex;
     // align-items: baseline;
     gap: 12px;
@@ -331,7 +355,7 @@
   &.laptop-mode {
     display: none;
 
-    @include laptop-header {
+    @include laptop {
       display: flex;
     }
   }
@@ -495,7 +519,7 @@
 }
 
 .flats-mob-btn {
-  @include laptop-header {
+  @include laptop {
     display: none;
   }
 }
@@ -513,6 +537,12 @@
   @include tablet {
     gap: 4px;
   }
+  @include laptop{
+    gap: 3px;
+  }
+  @include laptop-header {
+    gap: 4px;
+  }
 
   span {
     position: relative;
@@ -528,6 +558,15 @@
       width: 24px;
       height: 3px;
     }
+    @include laptop {
+      width: 20px;
+     height: 2px;
+    }
+    @include laptop-header {
+      width: 24px;
+      height: 3px;
+    
+    }
   }
 }
 
@@ -541,6 +580,12 @@
       @include tablet {
         transform: rotate(45deg) translate(3px, 2px);
       }
+      @include laptop {
+        transform: rotate(45deg) translate(2px, 1.6px);
+      }
+      @include laptop-header {
+        transform: rotate(45deg) translate(3px, 2px);
+      }
     }
 
     .under {
@@ -548,6 +593,12 @@
 
       @include tablet {
         transform: rotate(-45deg) translate(4px, -2px);
+      }
+      @include laptop {
+       transform: rotate(-45deg) translate(2.5px, -1.5px);
+      }
+      @include laptop-header {
+         transform: rotate(-45deg) translate(4px, -2px);
       }
     }
   }
@@ -581,8 +632,9 @@
 
 .menu-container {
   width: 100%;
-  height: 100svh;
+  height: 100svh; 
 
+  
   // visibility: hidden;
   .cycle-section__house-wrapper {
     overflow: visible;
@@ -602,9 +654,10 @@
 
     &.menu-section {
       position: relative;
-
       &::after {
-        content: '';
+    content: none;
+  }
+      .menu-section-decor {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -637,7 +690,9 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-
+    position: relative;
+    z-index: 4;
+    width: fit-content;
     @include tablet {
       gap: 0;
     }
@@ -658,7 +713,7 @@
       font-size: 36px;
 
       @include tablet {
-        font-size: 88px;
+        font-size: 80px;
       }
 
       @include laptop {

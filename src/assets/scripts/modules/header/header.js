@@ -73,7 +73,7 @@ menuTimeline
     '<+=0.5',
   )
   .from(
-    cycleSection,
+    ".menu-section-decor",
     {
       yPercent: 50,
       opacity: 0,
