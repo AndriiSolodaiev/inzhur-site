@@ -685,8 +685,13 @@
         }
 
         &.ellipse-btn {
-          width: 62px;
-          height: 88px;
+          width: 72px;
+          height: 106px;
+        }
+
+        & > svg {
+          width: 46px;
+          height: 46px;
         }
 
         @include tablet {
@@ -701,6 +706,7 @@
 
         &.ellipse-btn {
           transform: rotate(50deg);
+          top: -13px;
         }
 
         // @include laptop {
