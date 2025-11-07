@@ -346,3 +346,35 @@ document.addEventListener('DOMContentLoaded', function() {
 // }
 
 // bigTitles();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('video');
+
+  videos.forEach(video => {
+    // гарантовано вимикаємо звук (бо autoplay у Safari інакше не працює)
+    video.muted = true;
+
+    ScrollTrigger.create({
+      trigger: video,
+      start: "top 80%",  // коли верх відео входить у 80% висоти viewport
+      end: "bottom 20%", // коли ниж відео виходить
+      onEnter: () => {
+        console.log("play")
+        video.play().catch(() => {});
+      },
+      onEnterBack: () => {
+        console.log("play")
+        video.play().catch(() => {});
+      },
+      onLeave: () => {
+        console.log("pause")
+        video.pause();
+      },
+      onLeaveBack: () => {
+        console.log("pause")
+        video.pause();
+      },
+    });
+  });
+});

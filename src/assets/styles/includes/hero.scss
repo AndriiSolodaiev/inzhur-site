@@ -209,16 +209,16 @@
     }
 
     svg {
-      animation: runRightArrow 1.5s ease-out infinite;
+      animation: runRightArrow 3s ease-out infinite;
 
       @keyframes runRightArrow {
         0% {
           transform: translateY(-60px) translateX(-60px) rotate(-50deg);
         }
-        40% {
+        30% {
           transform: translateY(0px) rotate(-50deg);
         }
-        60% {
+        70% {
           transform: translateY(0px) rotate(-50deg);
         }
         100% {
