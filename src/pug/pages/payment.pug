@@ -6,6 +6,7 @@ block variable
     var id_page = 'id-page-payment'
     var class_page = 'class-page-payment'
     var headerCustomClass = 'type1' 
+    var footerCustomClass = ''
     var breadcrumbsSubitem = [
       {
         label: 'About',
@@ -66,7 +67,7 @@ block content
         </svg>
       h3.payment__block-title Знижка 7% на купівлю 
       h5.payment__block-subtitle при повній оплаті
-      button.general-btn.payment__block-button 
+      a(href="/single-payment.html").general-btn.payment__block-button 
         span Детальніше
     div.payment__block
       h3.payment__block-title Знижка на розтермінування під 0% на 5 років
@@ -74,17 +75,17 @@ block content
         div.payment__subblock
           h4.payment__subblock-title 5%
           h5.payment__block-subtitle з першим внеском 30%
-          button.general-btn.payment__block-button 
+          a(href="/single-payment.html").general-btn.payment__block-button 
             span Детальніше
         div.payment__subblock
           h4.payment__subblock-title 10%
           h5.payment__block-subtitle з першим внеском 50%
-          button.general-btn.payment__block-button 
+          a(href="/single-payment.html").general-btn.payment__block-button 
             span Детальніше
     div.payment__block
       h3.payment__block-title Знижка 3% при розтермінуванні під 0% на введені секції
       h5.payment__block-subtitle Зробіть перший внесок 50%, а решту сплачуйте протягом 3х років
-      button.general-btn.payment__block-button 
+      a(href="/single-payment.html").general-btn.payment__block-button 
         span Детальніше
     div.payment__block
       h3.payment__block-title Державні програми
@@ -93,7 +94,7 @@ block content
           h4.payment__subblock-title єОселя
           h5.payment__block-subtitle Доступна іпотечна програма з вигідною ставкою
           div.payment__subblock-footer 
-            button.general-btn.payment__block-button 
+            a(href="/single-payment.html").general-btn.payment__block-button 
               span Детальніше
             svg.diya-home
               use(xlink:href="#icon-diya-home")
@@ -101,7 +102,7 @@ block content
           h4.payment__subblock-title єВідновлення
           h5.payment__block-subtitle Програма для придбання житла особами, які постраждали внаслідок війни
           div.payment__subblock-footer 
-            button.general-btn.payment__block-button 
+            a(href="/single-payment.html").general-btn.payment__block-button 
               span Детальніше
             svg.diya-repair
               use(xlink:href="#icon-diya-repair")

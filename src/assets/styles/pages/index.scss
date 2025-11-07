@@ -51,8 +51,8 @@
     height: fit-content;
   }
   @include laptop-header {
-    padding: 22px 32px;
-    height: 68px;
+    padding: vw(22) vw(32);
+    // height: 68px;
   }
   &::before {
     content: '';
@@ -134,7 +134,7 @@
       font-size: 14px;
     }
     @include laptop-header {
-      font-size: 18px;
+      font-size: vw(18);
     }
   }
 
@@ -526,7 +526,7 @@
       font-size: 16px;
       color: $wc;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 140%;
       letter-spacing: -0.06em;
       white-space: nowrap;
@@ -1072,6 +1072,7 @@
 
     @include laptop {
       left: calc(vw(1220) + 20px);
+      bottom: calc(vw(40) + 20px)
     }
   }
 
@@ -1110,6 +1111,9 @@
     }
 
     .advantages-card__content {
+      @include  laptop {
+        padding-top: vw(40)
+      }
       h3 {
         @include block-title;
         color: $accent-color;

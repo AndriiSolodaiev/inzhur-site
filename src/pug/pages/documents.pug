@@ -6,6 +6,7 @@ block variable
     var id_page = 'id-page-documents'
     var class_page = 'class-page-documents'
     var headerCustomClass = 'type1' 
+    var footerCustomClass = ''
     var breadcrumbsSubitem = [
       {
         label: 'About',
@@ -49,8 +50,12 @@ block content
                               span.text-tiny.text-white Кадастровий номер земельної ділянки
                       .documents-page-card-content-list(data-id="1")
                           .documents-page-card-content-list-card 
-                              p Витяг з Державного реєстру речових прав №419962629 від 27.03.25
-                              a(href="").general-btn
+                              p Витяг з Державного реєстру речових прав №441707887 від 01.09.2025
+                              a(href="../assets/docs/Wytiag-441704869.pdf" target="_blank").general-btn
+                                span  Дивитися  документ
+                          .documents-page-card-content-list-card 
+                              p Витяг з Державного реєстру речових прав №441704869 від 01.09.2025
+                              a(href="../assets/docs/Wytiag-441707887.pdf"  target="_blank").general-btn
                                 span  Дивитися  документ
                           //- .documents-page-card-content-list-card
                           //-     p.text-body.text-gray-text Витяг з Державного реєстру речових прав на нерухоме майно про реєстрацію права власності (і.н.в. 147128072 від 28.11.2018)
@@ -64,20 +69,19 @@ block content
 
                           .documents-page-card-content-list-card.warning-block
                               .warning-img-title-block
-                                img(src="../../assets/images/documents/warning.svg", alt="").warning-icon
+                                img(src="./assets/images/documents/warning.svg", alt="").warning-icon
                                 h4.warning-title Важливо: 
 
                               .warning-text-block
                                 p.warning-text з міркувань безпеки, починаючи з 24.02.2022, усі посилання на Кадастрову карту України деактивовані, сервіс тимчасово недоступний для перегляду.
-                                p.warning-text 3222484001:01:024:5547
-                                p.warning-text 3222484001:01:024:5560
+                                
 
                           .documents-page-card-content-list-card
-                              p.text-body.text-gray-text <a class="text-pantone2" href=""> 4610160300:04:002:0104 </a> (02.03 Для будівництва і обслуговування багатоквартирного житлового будинку будівництво кварталу багатоповерхової житлової забудови)
+                              p.text-body.text-gray-text <span class="text-pantone2"> 3222484001:01:024:5547 </span> (02.03 Для будівництва і обслуговування багатоквартирного житлового будинку будівництво кварталу багатоповерхової житлової забудови)
                           .documents-page-card-content-list-card
-                              p.text-body.text-gray-text <a class="text-pantone2" href=""> 4610160300:04:002:0104 </a> (02.03 Для будівництва і обслуговування багатоквартирного житлового будинку будівництво кварталу багатоповерхової житлової забудови)
-                          .documents-page-card-content-list-card
-                              p.text-body.text-gray-text <a class="text-pantone2" href=""> 4610160300:04:002:0104 </a> (02.03 Для будівництва і обслуговування багатоквартирного житлового будинку будівництво кварталу багатоповерхової житлової забудови)
+                              p.text-body.text-gray-text <span class="text-pantone2"> 3222484001:01:024:5560 </span> (02.03 Для будівництва і обслуговування багатоквартирного житлового будинку будівництво кварталу багатоповерхової житлової забудови)
+                          //- .documents-page-card-content-list-card
+                          //-     p.text-body.text-gray-text <span class="text-pantone2"> 4610160300:04:002:0104 </span> (02.03 Для будівництва і обслуговування багатоквартирного житлового будинку будівництво кварталу багатоповерхової житлової забудови)
           .documents-page-card.active
               .documents-page-card-title-wrap
                   
@@ -97,22 +101,63 @@ block content
                           //-     span.text-tiny.text-white Клас наслідків
                       ul.documents-page-card-content-list(data-id="1")
                           .documents-page-card-content-list-card.documents-page-card-content-list-card--two-links
-                              
-                              p Дозвіл на виконання будівельних робіт №00000000000 від 00.00.0000
-                              a(href="").general-btn.olive-btn
+                              p Дозвіл на виконання будівельних робіт № ІУ 000000000000 від 10.00.2025 (1 черга)
+                              a(href="https://e-construction.gov.ua/document_detail/doc_id=3347514600395376543/optype=100" target="_blank").general-btn.olive-btn
                                 span  Сайт ДІАМ
-                              a(href="").general-btn
+                              a(href="../assets/docs/Dozvil-2-cherha-Svidomi.pdf" target="_blank").general-btn
                                 span  Дивитися  документ
+                          .documents-page-card-content-list-card.documents-page-card-content-list-card--two-links
+                              
+                              p Дозвіл на виконання будівельних робіт № ІУ 012240315871 від 19.03.2024 (2 черга)
+                              a(href="https://e-construction.gov.ua/document_detail/doc_id=3324346413097158631/optype=100" target="_blank").general-btn.olive-btn
+                                span  Сайт ДІАМ
+                              a(href="../assets/docs/Dozvil-2-cherha-Svidomi.pdf" target="_blank").general-btn
+                                span  Дивитися  документ
+                          .documents-page-card-content-list-card.documents-page-card-content-list-card--two-links
+                              
+                              p Дозвіл на виконання будівельних робіт № ІУ012240327818 від 01.04.2024 (4 черга)
+                              a(href="https://e-construction.gov.ua/document_detail/doc_id=3333030440339506211/optype=100" target="_blank").general-btn.olive-btn
+                                span  Сайт ДІАМ
+                              a(href="../assets/docs/Dozvil-4-cherha-Svidomi.pdf" target="_blank").general-btn
+                                span  Дивитися  документ
+                          .documents-page-card-content-list-card.documents-page-card-content-list-card--two-links
+                              
+                              p Дозвіл на виконання будівельних робіт № ІУ012240416181 від 23.04.2024 (5 черга)
+                              a(href="https://e-construction.gov.ua/document_detail/doc_id=3347510271127062098/optype=100" target="_blank").general-btn.olive-btn
+                                span  Сайт ДІАМ
+                              a(href="../assets/docs/Dozvil-5-cherha-Svidomi.pdf" target="_blank").general-btn
+                                span  Дивитися  документ
+                          .documents-page-card-content-list-card.documents-page-card-content-list-card--two-links
+                              
+                              p Дозвіл на виконання будівельних робіт № ІУ012240416699 від 23.04.2024 (6 черга)
+                              a(href="https://e-construction.gov.ua/document_detail/doc_id=3347514600395376543/optype=100" target="_blank").general-btn.olive-btn
+                                span  Сайт ДІАМ
+                              a(href="../assets/docs/Dozvil-6-cherha-Svidomi.pdf" target="_blank").general-btn
+                                span  Дивитися  документ
+                          .documents-page-card-content-list-card.documents-page-card-content-list-card--two-links
+                              
+                              p Дозвіл на виконання будівельних робіт № ІУ012240416308 від 23.04.2024 (7 черга)
+                              a(href="https://e-construction.gov.ua/document_detail/doc_id=3347517441398802324/optype=100" target="_blank").general-btn.olive-btn
+                                span  Сайт ДІАМ
+                              a(href="../assets/docs/Dozvil-7-cherha-Svidomi.pdf" target="_blank").general-btn
+                                span  Дивитися  документ
+                          
                           
                       .documents-page-card-content-list(data-id="2").gap-20px
                           .documents-page-card-content-list-card
-                              p.text-body.text-gray-text Рішення ВМР №465 від 11.10.2019
+                              p.text-body.text-gray-text 1 черга - Секція 1 - ___________________________________ ,
                           .documents-page-card-content-list-card
-                              p.text-body.text-gray-text Рішення ВМР №466 від 11.10.2019
+                              p.text-body.text-gray-text 2 черга - Секція 3 - 01.3039063.5038319.20240129.51.0000.01, Секція 4 - 01.3039081.5038300.20240208.18.0000.68
                           .documents-page-card-content-list-card
-                              p.text-body.text-gray-text Рішення ВМР  №467 від 11.10.2019
+                              p.text-body.text-gray-text 3 черга - Секція 5 - ___________________________________ , Секція 6 - ___________________________________ , Секція 7 - ___________________________________
                           .documents-page-card-content-list-card
-                              p.text-body.text-gray-text Рішення ВМР №468 від 11.10.2019
+                              p.text-body.text-gray-text 4 черга - Секція 8 - 01.3039196.5038331.20240129.86.0000.50, Секція 9 - 01.3039230.5038331.20240212.50.0000.28, Секція 10 - 01.3039250.5038316.20240212.01.0000.30
+                          .documents-page-card-content-list-card
+                              p.text-body.text-gray-text 5 черга - Секція 11 - 01.3039235.5038294.20240129.71.0000.32, Секція 12 - 01.3039221.5038271.20240213.99.0000.35, Секція 18 - 01.3039191.5038298.20240213.60.0000.90
+                          .documents-page-card-content-list-card
+                              p.text-body.text-gray-text 6 черга - Секція 13 - 01.3039241.5038255.20240129.78.0000.58, Секція 14 - 01.3039270.5038247.20240219.98.0000.69, Секція 15 - 01.3039297.5038243.20240219.53.0000.26
+                          .documents-page-card-content-list-card
+                              p.text-body.text-gray-text 7 черга - Секція 16 - 01.3039316.5038272.20240129.99.0000.99, Секція 17 - 01.3039333.5038298.20240221.56.0000.50
                       
       .documents-page-list.documents-list--homepage 
           .documents-page-card.active
@@ -126,21 +171,21 @@ block content
               .documents-page-card-content 
                   .documents-page-card-content-inner 
                       .documents-page-card-content-list.gap-20px
-                              p <span> Містце розташування об’єкту будівництва:</span> Львівська обл., Львівський район, Львівська територіальна громада, м. Винники (станом на 01.01.2021), вулиця Лісна;
+                              p <span> Містце розташування об’єкту будівництва:</span>  Київська обл., Бучанський район, Вишнева територіальна громада, с. Крюківщина
                           
-                              p <span> Замовник:</span>  ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ ‘ЛМБ-3’
+                              p <span> Замовник:</span>  ТОВ “Свідомі”, код ЄДРПОУ 46032295, Керівник - Директор Моргун Оксана Анатоліївна, без обмежень,  КБВ: Журжій Андрій Валерійович, Україна, 01033, місто Київ, вул.  Жилянська, будинок 48,50А, 7 поверх, офіс 10, тел. (044) 206-45-77, не перебуває у процесі припинення, проваджень у справі про банкрутство, санації
                           
-                              p <span>Генеральний підрядник:</span>  ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ ‘ДЕВЕЛОПМЕНТ-СІТІ’ (40038129);
+                              p <span>Генеральний підрядник:</span>  ТОВ “Інжур Буд”, код ЄДРПОУ 45846647, КБВ: Журжій Андрій Валерійович, Україна, 01033, місто Київ, вул. Жилянська, будинок 48, 50А, 7 поверх, офіс 13, тел. (044) 594-76-77
                           
-                              p <span> Технічний нагляд:</span>  Петрук Тимофій Федорович (АТ 001489);
+                              p <span> Технічний нагляд:</span>  Паньків Микола Степанович (АТ 009129, АТ 003512)
                           
-                              p <span> Авторський нагляд:</span>  Хома Володимир Ігоревич;
+                              p <span> Авторський нагляд:</span>  Субін Ігор Миколайович (АР 020958, АР 011462, АР 015268)
                           
-                              p <span> Відповідальний виконавець робіт:</span>  Баран Андрій Михайлович, наказ від 22.11.2021, головний інженер;
+                              p <span> Відповідальний виконавець робіт:</span>  Безкровний Володимир Володимирович
                           
-                              p <span> Проектна документація розроблена:</span>  ТОВ ‘АРХО ГРУП’ (41650441);
+                              //- p <span> Проектна документація розроблена:</span>  ТОВ ‘АРХО ГРУП’ (41650441);
                           
-                              p <span> Експертиза проекту будівництва проведена:</span>  ДП ‘Західний ЕТЦ’ (20774790), Зіньків Андрій Богданович (АР 010475, АЕ 005262).
+                              p <span> Завершення будівельних робіт 1-2 черг:</span>  1 кв. 2027 року
           .documents-page-card.active
               .documents-page-card-title-wrap
                 .documents-page-card-content-title.text-h5.text-pantone2 Інші документи 
@@ -154,19 +199,19 @@ block content
                       .documents-page-card-content-list
                           .documents-page-card-content-list-card 
                               p Проект договору купівлі-продажу
-                              a(href="").general-btn
+                              a(href="#" target="_blank").general-btn
                                 span  Дивитися  документ
                           .documents-page-card-content-list-card 
-                              p Попередній договір розтермінування
-                              a(href="").general-btn
+                              p Попередній договір розтермінування 
+                              a(href="#" target="_blank").general-btn
                                 span  Дивитися  документ
                           .documents-page-card-content-list-card 
-                              p Проект договору купівлі-продажу
-                              a(href="").general-btn
+                              p Основні технічні характеристики об’єкта 
+                              a(href="#" target="_blank").general-btn
                                 span  Дивитися  документ
                           .documents-page-card-content-list-card 
-                              p Попередній договір розтермінування
-                              a(href="").general-btn
+                              p Декларація про провадження господарської діяльності 
+                              a(href="../assets/docs/Deklaratsiia-na-provadzhennia-hospodarskoi-diialnosti-Kriukivshchyna.pdf" target="_blank").general-btn
                                 span  Дивитися  документ
 block footer
   include ../includes/footer.pug

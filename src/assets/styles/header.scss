@@ -89,6 +89,10 @@
     
     justify-content: space-between;
   }
+  @include desktop {
+    height: 150px;
+    justify-content: space-between;
+  }
 
   &.scroll-down {
     height: 60px;
@@ -244,8 +248,8 @@
     height: vw(78);
   }
   @include laptop-header {
-    width: 59px;
-    height: 78px;
+     width: vw(59);
+    height: vw(78);
   }
   svg {
     width: 16px;

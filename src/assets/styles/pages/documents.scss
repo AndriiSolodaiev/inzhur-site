@@ -237,7 +237,7 @@
 
   &-card-content-btn {
     @include general-text;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 140%;
     display: flex;
     align-items: center;
@@ -295,7 +295,7 @@
       }
 
       span {
-        font-weight: 700;
+        font-weight: 600;
         color: $dark-color;
       }
     }
@@ -325,7 +325,12 @@
     }
 
     @include laptop {
+      gap: 4px;
+      
+    }
+    @include laptop-header {
       gap: 40px;
+      
     }
 
     & > p {
@@ -338,16 +343,16 @@
       }
 
       span {
-        font-weight: 700;
+        font-weight: 600;
         color: $dark-color;
       }
     }
 
     & > .general-btn {
       &::before {
-        background-color: $olive-color;
+        background-color: $accent-color-2;
       }
-      background-color: $bc;
+      background-color: $accent-color;
       span {
         color: $accent-color;
 
