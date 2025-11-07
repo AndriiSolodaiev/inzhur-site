@@ -247,6 +247,10 @@
     top: 148px;
     gap: 4px;
   }
+  @include laptop-header {
+    top: 170px;
+    gap: 4px;
+  }
 }
 
 .hero-promo-item {
@@ -271,7 +275,11 @@
     gap: 40px;
     justify-content: space-between;
   }
-
+.ellipse-btn {
+      &::before {
+        background-color: $accent-color-2;
+      }
+    }
   &:hover {
     background-color: rgba(57, 48, 40, 0.4);
 
