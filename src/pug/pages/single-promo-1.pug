@@ -1,0 +1,169 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'single-promo'
+    var id_page = 'id-single-promo'
+    var class_page = 'class-page-single-promo'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+    
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/singlePromo.bundle.js')
+
+block content
+  section.container.single-news
+    <svg class="page-svg single-news__svg" xmlns="http://www.w3.org/2000/svg" width="265" height="219" viewBox="0 0 265 219" fill="none">
+      <path d="M339.534 -177.04C400.735 -155.157 382.439 -49.8358 298.67 58.2024C214.901 166.241 97.3804 236.084 36.1801 214.201C-25.0202 192.319 -6.72468 86.9974 77.0443 -21.0408C160.813 -129.079 278.334 -198.922 339.534 -177.04Z" fill="#B3BECD"/>
+    </svg>
+    .single-news__left-container 
+      include ../includes/breadcrumbs.pug
+      .single-news__back-btn 
+        a(href="") 
+          button.swiper-button-next.ellipse-btn 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+          span Назад
+      h2.single-news__title Акційні пропозиції
+    .news
+      .news__date 07.011.2025
+      .news__title 
+      .news__list-container
+        .news__list-title Пропонуємо вигідні умови на купівлю власного житла! 
+        ul.news__list
+          li.news__list-item 
+            span •
+            span Вартість квадратного метру — хххххх грн
+          li.news__list-item 
+            span • 
+            span Знижка 20% при повній оплаті
+          li.news__list-item 
+            span •
+            span Знижка на розтермінування під 0% від забудовника, терміном на 5 років
+
+              ul
+                li.news__list-item 
+                  span -
+                  span 10% при першому внеску 50%
+                li.news__list-item 
+                  span -
+                  span 5% при першому внеску 30%
+
+        .news__list-title Особливості ЖК Свідомі
+
+        ul.news__list
+          li.news__list-item 
+            span •
+            span Розташування в ближньому передмісті столиці
+          li.news__list-item 
+            span • 
+            span Закрита територія з картковою системою входу/виходу
+          li.news__list-item 
+            span •
+            span Надійне укриття обладнане відповідно до всіх норм
+          li.news__list-item 
+            span • 
+            span Концепція «двір без авто»
+          li.news__list-item 
+            span •
+            span Цілодобове відеоспостереження
+          li.news__list-item 
+            span • 
+            span Безбар&apos;єрність та інклюзивність
+          li.news__list-item 
+            span •
+            span Критий паркінг та зарядні станції для електромобілів
+          li.news__list-item 
+            span • 
+            span Власна внутрішня інфраструктура
+          li.news__list-item 
+            span •
+            span Монолітно-каркасна технологія будівництва
+          li.news__list-item 
+            span • 
+            span Газове опалення від двох власних газових котелень
+          li.news__list-item 
+            span •
+            span 2 генератори та власна свердловина глибиною 140 метрів 
+          li.news__list-item 
+            span • 
+            span Зони відпочинку — з альтанками, лавочками, гамаками
+          li.news__list-item 
+            span • 
+            span Велосипедні доріжки та прогулянкові зони по всій території ЖК
+          li.news__list-item 
+            span • 
+            span Дитячі та спортивні майданчики, футбольне та баскетбольне поле
+          li.news__list-item 
+            span • 
+            span Власна управляюча компанія
+
+        img(src="/assets/images/progress/progress1.jpg", alt="building photo")
+
+  section.container.more-news 
+    h2.more-news__title БІЛЬШЕ НОВИН
+    .more-news__list
+      a(href="#").progress-card
+        img(src="./assets/images/home/progress1.jpg", alt="progress")
+        .progress-card__bg
+        .progress-card__date-wrap 
+          p 06.08.2025
+        .progress-card__text-wrap
+          h3  Знижка 3% на розтермінування під 0% від забудовника
+          .ellipse-btn 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+      a(href="#").progress-card
+        img(src="./assets/images/home/progress2.jpg", alt="progress")
+        .progress-card__bg
+        .progress-card__date-wrap 
+          p 06.09.2025
+        .progress-card__text-wrap
+          h3  Квартира з розтермінуванням під 0% та знижкою 7%
+          .ellipse-btn  
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+      a(href="#").progress-card
+        img(src="./assets/images/home/progress3.jpg", alt="progress")
+        .progress-card__bg
+        .progress-card__date-wrap 
+          p 25.10.2025
+        .progress-card__text-wrap
+          h3  Знижка 7% на купівлю квартири при повній оплаті
+          .ellipse-btn 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M2 10.582H19.1757V13.4195H2V10.582Z" fill="#393028"/>
+              <path d="M14.8949 2.22646H10.9146L18.1774 12H22.0001L14.8949 2.22646Z" fill="#393028"/>
+              <path d="M14.8949 21.7735H10.9146L18.1774 12H22.0001L14.8949 21.7735Z" fill="#393028"/>
+            </svg>
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
