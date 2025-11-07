@@ -193,7 +193,6 @@ aboutTl
   )
   .fromTo('.about-project .about-project-img img', { scale: 1 }, { scale: 1.1, ease: 'none' }, '<');
 
-
 animateOnScroll('.about-project-text', { y: 20, duration: 0.6 });
 animateOnScroll('.about-project-video', { y: 20, duration: 0.6, delay: 0.2 });
 
