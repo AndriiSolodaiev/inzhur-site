@@ -123,17 +123,81 @@ export default class SexyInput {
     if (this.typeInput === 'phone') {
       /* eslint-disable */
       input.setAttribute('inputmode', 'tel');
-      input.intTelIput = intlTelInput(input, {
-        preferredCountries: ['ua', 'pl'],
-        autoPlaceholder: 'off',
-      });
+      // input.intTelIput = intlTelInput(input, {
+      //   preferredCountries: ['ua', 'pl'],
+      //   autoPlaceholder: 'off',
+      // });
+
+      console.log('Cleave');
       let cleave = new Cleave(input, {
-        /* eslint-enable */
         numericOnly: true,
         prefix: '+380',
         blocks: [4, 2, 3, 2, 2],
-        delimiters: [' ', ' ', ' ', ''],
+        delimiters: [' (', ') ', '-', '-'], // 🔸 без роздільників спочатку
+        uppercase: true,
+        // onValueChanged: e => {
+        //   const raw = e.target.rawValue;
+
+        //   // якщо користувач почав вводити номер після коду країни
+        //   if (raw.length > 4 && cleave.properties.delimiters.length === 0) {
+        //     const currentValue = input.value;
+
+        //     cleave.destroy(); // знищуємо старий інстанс
+
+        //     cleave = new Cleave(input, {
+        //       numericOnly: true,
+        //       prefix: '+380',
+        //       blocks: [4, 2, 3, 2, 2],
+        //       delimiters: [' (', ') ', '-', '-'], // 🔹 тепер з дужками
+        //       uppercase: true,
+        //     });
+
+        //     // зберігаємо вже введене значення
+        //     cleave.setRawValue(raw);
+
+        //     // ставимо курсор у кінець
+        //     input.setSelectionRange(input.value.length, input.value.length);
+        //   }
+        // },
       });
+      input.closest('form').addEventListener('reset', evt => {
+        console.log('reset form');
+        cleave.destroy();
+        input.value = '+380';
+        cleave = new Cleave(input, {
+          numericOnly: true,
+          prefix: '+380',
+          blocks: [4, 2, 3, 2, 2],
+          delimiters: [' (', ') ', '-', '-'], // 🔸 без роздільників спочатку
+          uppercase: true,
+          // onValueChanged: e => {
+          //   const raw = e.target.rawValue;
+          //   console.log('onValueChanged');
+          //   // якщо користувач почав вводити номер після коду країни
+          //   if (raw.length > 4 && cleave.properties.delimiters.length === 0) {
+          //     const currentValue = input.value;
+
+          //     cleave.destroy(); // знищуємо старий інстанс
+
+          //     cleave = new Cleave(input, {
+          //       numericOnly: true,
+          //       prefix: '+380',
+          //       blocks: [4, 2, 3, 2, 2],
+          //       delimiters: [' (', ') ', '-', '-'], // 🔹 тепер з дужками
+          //       uppercase: true,
+          //     });
+
+          //     // зберігаємо вже введене значення
+          //     cleave.setRawValue(raw);
+
+          //     // ставимо курсор у кінець
+          //     input.setSelectionRange(input.value.length, input.value.length);
+          //   }
+          // },
+        });
+      });
+
+      input.Cleave = cleave;
       input.addEventListener('countrychange', () => {
         const currentCountry = input.intTelIput.getSelectedCountryData();
         const { dialCode } = currentCountry;
@@ -170,10 +234,11 @@ export default class SexyInput {
         cleave = new Cleave(input, {
           numericOnly: true,
           delimiter: '-',
-          prefix: `+${dialCode}`,
+          prefix: `+380`,
           /* В код страны добавляется символ + */
           blocks: [dialCode.toString().length + 1, maskPartForUkraine, 3, 2, 2],
-          delimiters: [' ', ' ', ' ', ''],
+          delimiters: [' (', ') ', '-', '-'],
+          uppercase: true,
         });
       });
     }

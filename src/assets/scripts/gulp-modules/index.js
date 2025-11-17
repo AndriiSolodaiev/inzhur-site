@@ -191,7 +191,12 @@ aboutTl
     { scale: 1.05, yPercent: 5, ease: 'none' },
     '<',
   )
-  .fromTo('.about-project .about-project-img img', { scale: 1 }, { scale: 1.1, ease: 'none' }, '<');
+  .fromTo(
+    '.about-project .about-project-img img',
+    { scale: 1, yPercent: -10 },
+    { scale: 1.1, yPercent: 10, ease: 'none' },
+    '<',
+  );
 
 animateOnScroll('.about-project-text', { y: 20, duration: 0.6 });
 animateOnScroll('.about-project-video', { y: 20, duration: 0.6, delay: 0.2 });
@@ -266,7 +271,7 @@ fillerTl.fromTo(
   { scale: 1.05, yPercent: 10, ease: 'none' },
   '<',
 );
-animateOnScroll('.filler-3d__content ', { y: -20, duration: 0.8, scale: 1.1 });
+// animateOnScroll('.filler-3d__content ', { y: -20, duration: 0.8, scale: 1.1 });
 
 animateOnScroll('.filler-3d__content .terms-img-block', {
   y: 60,
@@ -287,40 +292,40 @@ document.addEventListener('DOMContentLoaded', function() {
   const videoBlocks = document.querySelectorAll('.video-wrapper');
 
   videoBlocks.forEach(block => {
-    const videoBtn = block.querySelector('.controls-wrap');
+    // const videoBtn = block.querySelector('.controls-wrap');
 
     const video = block.querySelector('video');
-    videoBtn.classList.add('hidden');
+    // videoBtn.classList.add('hidden');
     video.play();
     video.classList.add('playing');
 
     // Клік по кнопці
-    videoBtn.addEventListener('click', function() {
-      videoBtn.classList.add('hidden');
-      video.play();
-      video.classList.add('playing');
-    });
+    // videoBtn.addEventListener('click', function() {
+    //   // videoBtn.classList.add('hidden');
+    //   video.play();
+    //   video.classList.add('playing');
+    // });
 
     // Коли відео закінчиться — повернути кнопку й опис
     video.addEventListener('ended', function() {
-      videoBtn.classList.remove('hidden');
+      // videoBtn.classList.remove('hidden');
 
       video.classList.remove('playing');
     });
 
     // Якщо користувач натисне паузу до кінця — теж повернути кнопку
-    video.addEventListener('pause', function() {
-      if (video.currentTime < video.duration) {
-        videoBtn.classList.remove('hidden');
-      }
-    });
+    // video.addEventListener('pause', function() {
+    //   if (video.currentTime < video.duration) {
+    //     videoBtn.classList.remove('hidden');
+    //   }
+    // });
 
     //При перемотці по шкалі, приховувати кнопку після відтворення відео
-    video.addEventListener('seeked', function() {
-      if (!video.paused) {
-        videoBtn.classList.add('hidden');
-      }
-    });
+    // video.addEventListener('seeked', function() {
+    //   if (!video.paused) {
+    //     videoBtn.classList.add('hidden');
+    //   }
+    // });
   });
 });
 
@@ -347,7 +352,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // bigTitles();
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const videos = document.querySelectorAll('video');
 
@@ -357,24 +361,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ScrollTrigger.create({
       trigger: video,
-      start: "top 80%",  // коли верх відео входить у 80% висоти viewport
-      end: "bottom 20%", // коли ниж відео виходить
+      start: 'top 80%', // коли верх відео входить у 80% висоти viewport
+      end: 'bottom 20%', // коли ниж відео виходить
       onEnter: () => {
-        console.log("play")
+        console.log('play');
         video.play().catch(() => {});
       },
       onEnterBack: () => {
-        console.log("play")
+        console.log('play');
         video.play().catch(() => {});
       },
       onLeave: () => {
-        console.log("pause")
+        console.log('pause');
         video.pause();
       },
       onLeaveBack: () => {
-        console.log("pause")
+        console.log('pause');
         video.pause();
       },
     });
   });
 });
+
+function setCircleNumbers() {
+  const circleSymbols = ['➀', '➁', '➂', '➃', '➄', '➅', '➆', '➇', '➈', '➉'];
+
+  // шукаємо всі списки
+  document.querySelectorAll('.circle-list').forEach(list => {
+    // знаходимо всі <li> всередині поточного списку
+    list.querySelectorAll('li').forEach((li, index) => {
+      const numSpan = li.querySelector('.circle-num');
+      if (numSpan) {
+        // підставляємо символ або fallback на звичайну цифру
+        numSpan.textContent = circleSymbols[index] || index + 1;
+      }
+    });
+  });
+}
+
+// викликаємо після завантаження DOM
+document.addEventListener('DOMContentLoaded', setCircleNumbers);

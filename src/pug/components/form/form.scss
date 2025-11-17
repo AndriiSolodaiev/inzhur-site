@@ -232,18 +232,21 @@
   font-size: 18px;
   width: 100%;
   padding: 12px;
-  line-height: 1em;
+  // line-height: 1em;
   color: $accent-color;
   background-color: $wc;
   border-radius: 100px;
   // border-bottom: 1px solid rgba(236, 233, 226, 0.40);
   text-align: center;
-
+  font-weight: 500;
   @include tablet {
     padding: 22px;
     font-size: 18px;
   }
-
+  @include laptop{
+    padding: vw(22);
+    font-size: 18px;
+  }
 
 
   &[name="phone"] {
@@ -315,9 +318,9 @@
 
 }
 
-.iti__flag-container {
-  left: 22px !important;
-}
+// .iti__flag-container {
+//   left: 22px !important;
+// }
 
 
 

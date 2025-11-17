@@ -21,11 +21,14 @@
     }
 
     @include laptop {
+      padding: vw(40);
+      gap: vw(20);
+      min-height: vw(460);
       grid-template-columns:
         1fr
-        minmax(200px, 380px)
-        minmax(200px, 380px)
-        minmax(200px, 380px);
+        minmax(200px, vw(380))
+        minmax(200px, vw(380))
+        minmax(200px, vw(380));
     }
   }
 
@@ -41,8 +44,9 @@
     }
 
     @include laptop {
-      min-width: 250px;
-      max-width: 445px;
+      // min-width: 250px;
+      // max-width: 445px;
+      width: vw(445);
       margin-top: 40px;
     }
   }
@@ -83,7 +87,7 @@
     width: 100%;
 
     @include laptop {
-      flex: 1 0 559px;
+      width: vw(559)
     }
   }
 
@@ -96,7 +100,7 @@
     width: 100%;
     height: 100%;
     @include laptop {
-      max-width: calc(100% - 559px - 20px);
+      max-width: vw(1181)
     }
   }
 }
@@ -203,8 +207,8 @@
     @include laptop {
       grid-template-columns:
         1fr
-        minmax(200px, 580px)
-        minmax(200px, 580px);
+        minmax(200px, vw(580))
+        minmax(200px, vw(580));
     }
   }
 
@@ -216,7 +220,7 @@
     @include laptop {
       grid-row: span 2;
       min-width: 300px;
-      max-width: 380px;
+      max-width: vw(350);
       margin-bottom: 0;
     }
   }
@@ -241,6 +245,7 @@
   }
   @include laptop {
     border-radius: 16px;
+    padding: vw(40);
   }
 
   &__title {
@@ -258,6 +263,9 @@
     @include tablet {
       font-size: 36px;
     }
+    @include laptop {
+      font-size: vw(36);
+    }
   }
 
   &__subtitle {
@@ -268,6 +276,7 @@
     }
     @include laptop {
       margin-top: 12px;
+      font-size: vw(24);
     }
     color: $text-color;
   }
@@ -383,14 +392,18 @@
     }
 
     &__logo {
-      width: 100%;
-      height: 100%;
-      max-width: 465px;
-      max-height: 82px;
-
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      // height: 100%;
+      margin-top: 4px;
+      @include tablet {
+        
+        margin-bottom: 12px;
+      }
       @include laptop {
-        max-width: 747px;
-        max-height: 131px;
+        width: vw(547);
+        margin-bottom: 20px;
       }
     }
 
@@ -399,7 +412,9 @@
       @include block-title;
       color: $text-color-2;
       text-align: center;
-
+      @media screen and (max-width: 767px ) {
+        font-size: 24px;
+      }
       @include tablet {
         margin-top: 12px;
       }

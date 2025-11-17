@@ -85,20 +85,16 @@ header(class="header ")
   
   .menu-overlay.hidden(data-menu)
     .menu-container
-      .cycle-section.container.menu-section
-        .menu-section-decor
+      .cycle-section.menu-section
+        
         .cycle-section__house-wrapper
-          picture.cycle-section__house
-            source(media="(min-width: 1024px)" srcset="./assets/images/home/menu/menu-build.png")
-            source(media="(min-width: 768px)" srcset="./assets/images/home/menu/menu-build.png")
-            img(src="./assets/images/home/menu/menu-build.png" alt="")
+          img(src="./assets/images/menu-bg.jpg" alt="").cycle-section__house
 
-          picture.cycle-section__mask
-            source(media="(min-width: 1024px)" srcset="./assets/images/developer/desk-house-oval.svg")
-            source(media="(min-width: 768px)" srcset="./assets/images/developer/tab-house-oval.svg")
-            img(src="./assets/images/developer/mob-house-oval.svg" alt="")
+          <svg class="cycle-section__mask" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="375" height="440" viewBox="0 0 375 440" fill="none">
+            <path d="M375 440H0V0H375V440ZM355.773 19.2207C310.149 -30.3731 197.824 19.3151 104.89 130.202C11.9549 241.089 -26.3972 371.185 19.2275 420.779C64.8526 470.373 177.177 420.685 270.111 309.798C363.046 198.911 401.398 68.8147 355.773 19.2207Z" fill="#393028"/>
+          </svg>
 
-        .menu-nav-list 
+        .menu-nav-list.container 
           a(href="/").nav-link.menu-main-link
             span.real Головна
             span.fake Головна
@@ -118,29 +114,29 @@ header(class="header ")
           a(href="/contacts.html").nav-link.menu-main-link
             span.real КОНТАКТИ
             span.fake КОНТАКТИ
-        
-        .menu-subnav-list 
-          a(href="/developer.html").nav-link.menu-link
-            span.real Хто будує
-            span.fake Хто будує
-          a(href="/location.html").nav-link.menu-link
-            span.real Локація
-            span.fake Локація
-          a(href="/showroom.html").nav-link.menu-link
-            span.real 3D шоурум
-            span.fake 3D шоурум
-          a(href="/company.html").nav-link.menu-link
-            span.real Управляюча компанія
-            span.fake Управляюча компанія
-          a(href="/present.html").nav-link.menu-link
-            span.real Презентації
-            span.fake Презентації
-          a(href="/documents.html").nav-link.menu-link
-            span.real Документи
-            span.fake Документи
-          a(href="/progress.html").nav-link.menu-link
-            span.real Новини та хід робіт
-            span.fake Новини та хід робіт
+        .menu-section-decor
+          .menu-subnav-list.container
+            a(href="/developer.html").nav-link.menu-link
+              span.real Хто будує
+              span.fake Хто будує
+            a(href="/location.html").nav-link.menu-link
+              span.real Локація
+              span.fake Локація
+            a(href="/showroom.html").nav-link.menu-link
+              span.real 3D шоурум
+              span.fake 3D шоурум
+            a(href="/company.html").nav-link.menu-link
+              span.real Управляюча компанія
+              span.fake Управляюча компанія
+            a(href="/present.html").nav-link.menu-link
+              span.real Презентації
+              span.fake Презентації
+            a(href="/documents.html").nav-link.menu-link
+              span.real Документи
+              span.fake Документи
+            a(href="/progress.html").nav-link.menu-link
+              span.real Новини та хід робіт
+              span.fake Новини та хід робіт
     
       
   .overflow(data-mob-call__overflow).container.hidden

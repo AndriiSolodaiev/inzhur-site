@@ -1,6 +1,7 @@
 import Swiper, { Autoplay, EffectFade, Navigation } from 'swiper';
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 import { animateOnScroll } from '../modules/effects/animateOnsScroll';
+import { animateCards } from '../modules/effects/animateCards';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
 
@@ -139,23 +140,25 @@ gsap
     },
   );
 
-document.addEventListener('DOMContentLoaded', function() {
-  document
-    .querySelectorAll('.advantages-title, .features-title, .features-list__item, .advantages-item')
-    .forEach(block => {
-      gsap.fromTo(
-        block,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: block,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        },
-      );
-    });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   document
+//     .querySelectorAll('.advantages-title, .features-title, .features-list__item, .advantages-item')
+//     .forEach(block => {
+//       gsap.fromTo(
+//         block,
+//         { y: 100, opacity: 0 },
+//         {
+//           y: 0,
+//           opacity: 1,
+//           duration: 1,
+//           scrollTrigger: {
+//             trigger: block,
+//             start: 'top 80%',
+//             toggleActions: 'play none none none',
+//           },
+//         },
+//       );
+//     });
+// });
+
+animateCards(".advantages-item")

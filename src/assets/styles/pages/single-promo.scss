@@ -37,6 +37,7 @@
 
   .breadcrumbs {
     margin-bottom: 40px;
+
   }
 
   &__back-btn {
@@ -61,10 +62,12 @@
       // }
     }
 
-    &:hover {
-      .ellipse-btn {
-        &::before {
-          transform: translate3d(-100%, -30%, 0);
+    @media (hover: hover) {
+      &:hover {
+        .ellipse-btn {
+          &::before {
+            transform: translate3d(-100%, -30%, 0);
+          }
         }
       }
     }
@@ -79,7 +82,7 @@
     @include section-title;
 
     margin-top: 20px;
-    max-width: 755px;
+
     font-size: 36px;
 
     @include tablet {
@@ -90,6 +93,7 @@
     @include laptop {
       // position: sticky;
       // top: 128px;
+      max-width: vw(725);
       font-size: clamp(48px, calc(48px + (72 - 48) * ((100vw - 1024px) / (1920 - 1024))), 72px);
       margin-top: 12px;
       padding-bottom: vw(200);
@@ -108,7 +112,7 @@
 
     &__date {
       @include general-text;
-
+      margin-bottom: 40px;
       padding: 6px 12px;
       border-radius: 100px;
       background-color: $olive-color;
@@ -120,6 +124,10 @@
 
       @include tablet {
         margin-top: 40px;
+      }
+
+      @include laptop {
+        margin-top: 0;
       }
     }
 
@@ -141,23 +149,66 @@
     &__list-title {
       @include text-24;
       color: $text-color;
+      margin-bottom: 20px;
     }
 
-    &__list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    ul {
+      // display: flex;
+      // flex-direction: column;
+      // gap: 4px;
       margin-bottom: 20px;
+      list-style: inside;
+      list-style-type: disc;
+      // padding-left: 20px;
 
       @include tablet {
-        margin-bottom: 40px;
+        // margin-bottom: 40px;
       }
     }
 
-    &__list-item {
+    ul>li>ul {
+      list-style-type: circle;
+      padding-left: 20px;
+
+      li {
+        list-style-type: circle;
+      }
+    }
+
+    p {
       @include general-text;
-      display: flex;
-      gap: 12px;
+      color: $accent-color;
+      margin-bottom: 12px;
+    }
+
+
+    h2 {
+      @include block-title;
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 28px;
+      }
+    }
+
+    h3,
+    h4 {
+      @include text-24;
+      color: $accent-color;
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 28px;
+      }
+    }
+
+    li {
+      @include general-text;
+      // display: flex;
+      // gap: 12px;
+      list-style: inside;
+      list-style-type: disc;
+      margin-bottom: 4px;
     }
 
     &__text-first,
@@ -192,6 +243,11 @@
       overflow: hidden;
       border-radius: 24px;
       height: 100%;
+      aspect-ratio: 174 / 100;
+
+      @include laptop {
+        aspect-ratio: 171 / 100;
+      }
     }
 
     &__swiper-slide {
@@ -273,6 +329,7 @@
       aspect-ratio: 179 / 100;
       margin-top: 40px;
       border-radius: 24px;
+      width: 100%;
 
       @include laptop {
         aspect-ratio: 171 / 100;
@@ -328,6 +385,7 @@
   @include laptop {
     padding-top: 140px;
     padding-bottom: 140px;
+    gap: 20px;
   }
 
   &__title {
@@ -364,8 +422,9 @@
       }
 
       @include laptop {
-        flex: 1 1 100%;
+        // flex: 1 1 100%;
         aspect-ratio: 92 / 100;
+        width: calc((100% - 40px) / 3);
       }
     }
   }

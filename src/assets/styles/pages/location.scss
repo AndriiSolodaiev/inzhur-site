@@ -22,7 +22,7 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-image: url('/assets/images/location/filler/mob-oval.svg');
+    background-image: url('../images/location/filler/mob-oval.svg');
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
@@ -223,12 +223,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(57, 48, 40, 0) 0%,
-      rgba(57, 48, 40, 0.6) 40.38%,
-      rgba(57, 48, 40, 0.9) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(57, 48, 40, 0) 0%,
+        rgba(57, 48, 40, 0.6) 40.38%,
+        rgba(57, 48, 40, 0.9) 100%);
   }
 
   @include tablet {
@@ -356,7 +354,7 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
-    gap: 120px;
+    gap: vw(120);
   }
 }
 
@@ -367,6 +365,9 @@
   font-size: 42px;
   line-height: 100%;
   margin-bottom: 40px;
+  position: sticky;
+  top: 12px;
+  padding-bottom: 400px;
 
   @include tablet {
     font-size: 72px;
@@ -375,6 +376,7 @@
 
   @include laptop {
     font-size: vw(72);
+    flex: 1;
     margin-bottom: 0;
     position: sticky;
     top: 162px;
@@ -388,13 +390,19 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: -400px;
 
   @include tablet {
     gap: 60px;
   }
 
   @include laptop {
+    margin-top: 0;
     gap: vw(140);
+    flex: 2;
+    align-items: stretch;
+    height: 100%;
+
   }
 }
 
@@ -405,14 +413,17 @@
   background: #faf6ee;
   position: relative;
   overflow: hidden;
+  position: sticky;
+  top: calc(72px + 32px);
 
   &::before {
     @include general-text;
-
+    font-family: "Arial", sans-serif;
     content: counter(nearby);
     position: absolute;
     left: 20px;
     top: 20px;
+    z-index: 2;
     border-radius: 100px;
     background: $bg-color;
     width: 20px;
@@ -425,11 +436,24 @@
 
     @include tablet {
       font-size: 14px;
+
     }
+  }
+
+  @include tablet {
+
+    top: calc(108px + 60px);
   }
 
   @include laptop {
     display: flex;
+    position: sticky;
+    top: calc(vw(120) + 20px);
+    min-height: vw(600);
+  }
+
+  @include laptop-header {
+    top: calc(vw(150) + 20px);
   }
 }
 
@@ -460,6 +484,7 @@
 
   @include laptop {
     font-size: vw(36);
+    margin-bottom: vw(28);
   }
 }
 
@@ -472,6 +497,7 @@
 
   @include laptop {
     width: 50%;
+    padding: vw(40) vw(40) vw(60);
   }
 }
 
@@ -499,6 +525,10 @@
   @include tablet {
     margin-bottom: 40px;
   }
+
+  @include laptop {
+    margin-bottom: vw(40);
+  }
 }
 
 .nearby-table-title-item {
@@ -509,6 +539,11 @@
 
     @include tablet {
       gap: 20px;
+    }
+
+    @include laptop {
+      gap: vw(20);
+      min-width: 30%;
     }
   }
 }
@@ -535,6 +570,10 @@
   @include tablet {
     gap: 12px;
   }
+
+  @include laptop {
+    gap: vw(12);
+  }
 }
 
 .establishment-name-item {
@@ -558,7 +597,7 @@
   }
 
   @include laptop {
-    max-width: 320px;
+    max-width: 65%;
   }
 }
 
@@ -573,7 +612,7 @@
   }
 
   @include laptop {
-    width: 76px;
+    width: 30%;
   }
 
   @include desktop {
@@ -582,6 +621,7 @@
 }
 
 .time-by-car {
+  flex-shrink: 0;
   min-width: 64px;
 
   @include tablet {
@@ -640,19 +680,27 @@
 .harmony-logo {
   display: block;
   margin: 0 auto 13px;
+  width: 60%;
+  margin-bottom: 4px;
 
   @include tablet {
-    max-width: 478px;
-    margin-bottom: 20px;
+
+    //  margin-bottom: 12px;
+
   }
 
   @include laptop {
-    max-width: 770px;
+    width: vw(547);
+    margin-bottom: 20px;
   }
 }
 
 .harmony-title {
   @include block-title;
+
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+  }
 
   text-align: center;
   margin-bottom: 20px;
@@ -670,11 +718,9 @@
 .harmony-link {
   display: block;
   margin: 0 auto;
- 
 
-  @include tablet {
-    
-  }
+
+  @include tablet {}
 
   &.general-btn {
     background-color: $bc;
@@ -687,9 +733,11 @@
       color: $text-color;
     }
 
-    &:hover {
-      span {
-        color: $wc;
+    @media (hover: hover) {
+      &:hover {
+        span {
+          color: $wc;
+        }
       }
     }
   }

@@ -21,6 +21,14 @@
     @include tablet {
       padding: 40px;
     }
+    &--with-decor{
+      padding-bottom: 100px;
+      @include tablet {
+      padding-bottom: 40px;
+      padding-right: 160px;
+    }
+    }
+
   }
 
   &__decoration {
@@ -125,6 +133,7 @@
   }
 
   &__block-button {
+
     .payment__block & {
       margin-top: 40px;
 

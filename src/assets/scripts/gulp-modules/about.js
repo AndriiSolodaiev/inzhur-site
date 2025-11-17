@@ -1,6 +1,7 @@
 import { gsap, ScrollTrigger, CustomEase, CSSRulePlugin } from 'gsap/all';
 // import { animateOnScroll } from './index';
 import { animateOnScroll } from '../modules/effects/animateOnsScroll';
+import { animateCards } from '../modules/effects/animateCards';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, CSSRulePlugin);
 
@@ -71,25 +72,48 @@ harmonyTL.fromTo(
 
 animateOnScroll('.harmony-text-content-wrapper ', { y: 60, duration: 1.2, scale: 1.1 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  document
-    .querySelectorAll(
-      '.sticky-section__title, .sticky-section__block, .sticky-section__title, .sticky-section__block, .sticky-section__title, .sticky-section__block',
-    )
-    .forEach(block => {
-      gsap.fromTo(
-        block,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: block,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
-          },
-        },
-      );
+// document.addEventListener('DOMContentLoaded', function() {
+//   document
+//     .querySelectorAll(
+//       '.sticky-section__title, .sticky-section__block, .sticky-section__title, .sticky-section__block, .sticky-section__title, .sticky-section__block',
+//     )
+//     .forEach(block => {
+//       gsap.fromTo(
+//         block,
+//         { y: 100, opacity: 0 },
+//         {
+//           y: 0,
+//           opacity: 1,
+//           duration: 1,
+//           scrollTrigger: {
+//             trigger: block,
+//             start: 'top 80%',
+//             toggleActions: 'play none none none',
+//           },
+//         },
+//       );
+//     });
+// });
+
+
+animateCards(".sticky-section__block")
+
+function setCircleNumbers() {
+  const circleSymbols = ['➀', '➁', '➂', '➃', '➄', '➅', '➆', '➇', '➈', '➉'];
+
+  // шукаємо всі списки
+  document.querySelectorAll('.circle-list').forEach(list => {
+    // знаходимо всі <li> всередині поточного списку
+    list.querySelectorAll('li').forEach((li, index) => {
+      const numSpan = li.querySelector('.circle-num');
+      if (numSpan) {
+        // підставляємо символ або fallback на звичайну цифру
+        numSpan.textContent = circleSymbols[index] || (index + 1);
+      }
     });
-});
+  });
+}
+
+// викликаємо після завантаження DOM
+document.addEventListener('DOMContentLoaded', setCircleNumbers);
+

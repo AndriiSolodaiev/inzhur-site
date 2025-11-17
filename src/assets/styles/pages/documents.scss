@@ -111,11 +111,11 @@
       .documents-page-card-content {
         transition: all 0.3s ease;
         margin-top: 40px;
-        max-height: 120vh;
+        max-height: 2000px;
 
         /* Set based on the content size, adjust as needed */
         @include tablet {
-          max-height: 140vh;
+          max-height: 2000px;
         }
       }
 
@@ -144,7 +144,7 @@
 
   &-card-content-title {
     @include block-title;
-    font-size: 32px;
+    // font-size: 32px;
     color: $accent-color;
     cursor: pointer;
 
@@ -247,7 +247,7 @@
     background-color: $white-color-light;
     border: 1px solid $accent-color;
     width: 100%;
-
+    color: $accent-color;
     transition: background-color 0.4s ease-in-out;
 
     @media screen and (max-width: 768px) {
@@ -267,10 +267,10 @@
         border-left: none;
       }
     }
-
+    @media (hover: hover) {
     &:hover {
       background-color: $accent-color-2;
-    }
+    }}
 
     &.active {
       background-color: $accent-color;
@@ -427,12 +427,12 @@
           font-size: 14px;
         }
       }
-
+      @media (hover: hover) {
       &:hover {
         span {
           color: $white-color-light;
         }
-      }
+      }}
     }
   }
 

@@ -7,7 +7,7 @@ footer(class="footer " + footerCustomClass id="contacts")
                 img(src="./assets/images/footer-bg-mobile.jpg" alt="footer bg")
             .footer-form-section__blocks-wrap 
                 .footer-form-section__block
-                    h3  Телефонуйте нам просто зараз!
+                    h3  Телефонуйте нам <br> просто зараз!
                     a(href="tel: +380777077040").header-link
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path d="M10.0813 3.25488C7.88917 0.022462 2.29242 7.96314 2.5061 11.9473C2.82325 17.7098 6.3319 23.9343 11.1985 28.8008C16.065 33.6671 22.2894 37.176 28.052 37.4932C32.0294 37.7137 39.9773 32.1159 36.7444 29.917C36.7418 29.9153 36.7234 29.9029 36.717 29.8965L29.3411 25.3193C29.2432 25.2566 28.4103 24.8234 28.2932 24.8027C26.4046 24.4445 24.5917 26.3193 22.51 27.7393C22.2481 27.9185 21.814 28.0696 21.5383 27.9111C19.3257 26.6428 17.9677 25.4987 16.2307 23.7617C14.4936 22.0247 13.3487 20.6737 12.0803 18.4541C11.9219 18.1784 12.0809 17.7443 12.2532 17.4824C13.6731 15.3939 15.5479 13.5878 15.1897 11.6992C15.169 11.5889 14.7273 10.7479 14.6721 10.6514L10.1018 3.28223C10.0999 3.27932 10.0876 3.26121 10.0813 3.25488Z" fill="#ECE9E2"/>
@@ -16,12 +16,12 @@ footer(class="footer " + footerCustomClass id="contacts")
                     a(href="tel: +380777077040").general-btn
                         span Зателефонувати
                 .footer-form-section__block
-                    h3  Або залиште свій номер телефона
+                    h3  Або залиште свій номер телефону
                     .form-wrapper(data-form-wrapper)
                         form(data-form=attr autocomplete="off" contact-form-js).form
                             .inputs-wrapper
                                 .form-field.form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                                    input(type='text' name="phone" ).form-field__input
+                                    input(type='text' name="phone" placeholder="| (___) __-__-___"  ).form-field__input
                                     .input-message(data-input-message)
                             .form__button-wrapper
                                 button( type="submit" data-btn-submit="data-btn-submit").general-btn
@@ -76,7 +76,7 @@ footer(class="footer " + footerCustomClass id="contacts")
                         span +38 (077) 707 70 40
                 .footer-contacts-section__block
                     p.footer-contacts-section__label Графік роботи:
-                    p.footer-contacts-section__link пн.-пт.   09:00 -18:00
+                    p.footer-contacts-section__link пн.-пт.   09:00 - 18:00
             button(data-btn-up).btn-up 
                 span Вгору   
                 .ellipse-btn 

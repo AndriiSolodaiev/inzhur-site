@@ -125,6 +125,6 @@ fillerTl.fromTo(
   { scale: 1.05, yPercent: -10 },
   { scale: 1.05, yPercent: 10, ease: 'none' },
   '<',
-);
+).fromTo('.requirements__background-building  img', { scale: 1,yPercent: -10 }, { scale: 1.1,yPercent: 10, ease: 'none' }, '<');;
 
 animateOnScroll('.sp-plan ', { y: -20, duration: 0.8, scale: 1.1 });

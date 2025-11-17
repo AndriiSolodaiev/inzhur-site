@@ -82,11 +82,11 @@
     height: 108px;
   }
   @include laptop {
-    height: vw(150);
+    height: vw(120);
     justify-content: space-between;
   }
   @include laptop-header {
-    
+    height: vw(120);
     justify-content: space-between;
   }
   @include desktop {
@@ -176,10 +176,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.4s ease;
-    width: vw(207);
-    height: vw(63);
+    width: vw(165);
+    height: vw(79);
   }
-   @include laptop-header {
+   @include desktop {
     width: 207px;
     height: 63px;
   }
@@ -229,7 +229,8 @@
     background-color: $wc;
   }
 
-  &:hover {
+  @media (hover:hover) {
+    &:hover {
     &::before {
       transform: translate3d(100%, 30%, 0);
     }
@@ -238,12 +239,14 @@
     //   background: var(--green-light);
     // }
   }
+  }
 
   @include tablet {
     width: 59px;
     height: 78px;
   }
   @include laptop {
+    
     width: vw(59);
     height: vw(78);
   }
@@ -611,7 +614,7 @@
 .menu-overlay {
   position: fixed;
   z-index: -1;
-  height: 100vh;
+  height: 100svh;
   width: 100%;
   top: 0;
   left: 0;
@@ -636,12 +639,33 @@
 
 .menu-container {
   width: 100%;
-  height: 100svh; 
-
+  height: 100vh; 
+  position: relative;
+  // padding-bottom: calc(100vh - 100svh);
   
   // visibility: hidden;
   .cycle-section__house-wrapper {
     overflow: visible;
+     aspect-ratio: 375 / 440;
+     width: 100%;
+     margin: 0;
+     @include tablet {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include laptop {
+    width: 100%;
+    // max-width: 1920px;
+    height: auto;
+    aspect-ratio: 1920 / 1080;
+  }
+     .cycle-section__mask{
+      object-fit: cover;
+     }
+     @include laptop {
+
+     }
   }
 
   .cycle-section {
@@ -664,27 +688,31 @@
       .menu-section-decor {
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: calc(100vh - 100svh);
         z-index: 1;
-        background-image: url('/assets/images/menu/mob-oval.svg');
+        background-image: url('../images/menu/mob-oval.svg');
         background-repeat: no-repeat;
         background-position: right bottom;
         background-size: contain;
 
-        width: clamp(370px, 28vw, 795px);
+        width: calc(100vw - 20px);
         aspect-ratio: 355 / 255;
         height: auto;
+        padding: 40px 20px 40px 90px;
 
         @include tablet {
-          background-image: url('/assets/images/menu/tab-oval.svg');
-          width: clamp(400px, 100vw, 650px);
+          background-image: url('../images/menu/tab-oval.svg');
+          width: 65%;
           aspect-ratio: 499 / 351;
+          bottom: 0;
+          padding: 60px 20px 60px 125px;
         }
 
         @include laptop {
-          background-image: url('/assets/images/menu/desk-oval.svg');
-          width: clamp(500px, 40vw, 795px);
+          background-image: url('../images/menu/desk-oval.svg');
+          width: clamp(500px, 33vw, 795px);
           aspect-ratio: 640 / 480;
+          padding: vw(100) vw(40) vw(125) vw(155);
         }
       }
     }
@@ -697,6 +725,7 @@
     position: relative;
     z-index: 4;
     width: fit-content;
+    margin: 0;
     @include tablet {
       gap: 0;
     }
@@ -742,7 +771,7 @@
     flex-direction: column;
     position: absolute;
     z-index: 3;
-    bottom: 70px;
+    // bottom: calc(100vh - 100svh + 40px);
     // left: 30px;
 
     & .fake {
@@ -757,29 +786,30 @@
       }
     }
 
-    @media screen and (max-width: 480px) {
-      left: 40vw;
-    }
+    // @media screen and (max-width: 480px) {
+    //   left: 40vw;
+      
+    // }
 
-    @media screen and (min-width: 480px) {
-      left: 60vw;
-    }
+    // @media screen and (min-width: 480px) {
+    //   left: 60vw;
+    // }
 
     @include tablet {
-      bottom: 64px;
-      left: 50vw;
+      // bottom: 64px;
+      // left: 50vw;
       gap: 4px;
     }
 
     @include laptop {
-      bottom: vw(60);
-      left: vw(1435);
+      // bottom: vw(60);
+      // left: vw(1435);
       gap: 8px;
     }
 
-    @include laptop-header {
-      bottom: vw(130);
-    }
+    // @include laptop-header {
+    //   bottom: vw(130);
+    // }
   }
 
   .menu-link {

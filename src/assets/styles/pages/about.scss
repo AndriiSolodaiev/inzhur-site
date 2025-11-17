@@ -382,6 +382,7 @@
 
   &__list {
     display: flex;
+    margin-top: -400px;
     flex-direction: column;
     gap: 40px;
 
@@ -390,6 +391,7 @@
     }
 
     @include laptop {
+      margin-top: 0;
       gap: vw(120);
       align-items: stretch;
     }
@@ -410,10 +412,12 @@
     grid-template-rows: auto auto;
     border-radius: 24px;
     background: $bg-color;
-
+    position: sticky;
+      top: calc(72px + 32px);
     @include tablet {
       grid-template-rows: auto auto;
       // min-height: 560px;
+      top: calc(108px + 40px)
     }
 
     @include laptop {
@@ -425,7 +429,15 @@
       // height: 100%;
       flex: 1 1 auto;
       min-height: vw(560);
+       position: sticky;
+      top: calc(vw(120) + 20px)
     }
+     @include desktop {
+      
+      top: 170px;
+    }
+   
+    
   }
 
   &--reverse {
@@ -442,7 +454,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 335/ 184;
-
+    overflow: hidden;
     @include tablet {
       aspect-ratio: 728/ 400;
     }
@@ -450,6 +462,7 @@
     @include laptop {
       aspect-ratio: auto;
       flex: 3;
+      overflow: hidden;
     }
 
     img {
@@ -465,6 +478,7 @@
       left: 20px;
       font-size: 26px;
       color: $bg-color;
+      z-index: 2;
     }
   }
 
@@ -495,6 +509,7 @@
     }
 
     @include laptop {
+      padding: vw(40) vw(40) vw(60);
       flex: 2;
     }
   }
@@ -520,8 +535,8 @@
     margin-top: 20px;
 
     @include laptop {
-      gap: 40px;
-      margin-top: 40px;
+      gap: vw(40);
+      margin-top: vw(40);
     }
   }
 
@@ -533,16 +548,36 @@
     :first-child {
       @include general-text;
       font-size: 20px;
+      margin-top: 2px;
       flex-shrink: 0;
       display: block;
       line-height: 120%;
+      font-size: 18px ;
+      @include tablet {
+        font-size: 20px ;
+      }
+      @include laptop {
+        font-size: vw(22) ;
+      }
     }
   }
 
   &__title-container {
-    height: 100%;
+   
+      height: fit-content;
+    position: sticky;
+    top: 12px;
+    padding-bottom: 400px ;
+    
+    @include laptop {
+      top: vw(150);
+      padding-bottom: vw(200)
   }
-
+  @include desktop {
+      top: 170px;
+     
+  }
+  }
   &--reverse {
     .sticky-section__title-container {
       @include laptop {
@@ -556,7 +591,8 @@
     line-height: 100%;
     letter-spacing: -0.06em;
     text-transform: none;
-    position: sticky;
+    // position: sticky;
+    // top: 0;
 
     @include tablet {
       font-size: clamp(64px, calc(64px + (72 - 64) * ((100vw - 768px) / (1366 - 768))), 72px);

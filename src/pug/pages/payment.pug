@@ -13,8 +13,8 @@ block variable
         link: pagesLink[0].about
       }
     ]
-    var title = 'ЖК Свідомі: варіанти придбання'
-    var subtitle = ''
+    var title = 'ЖК Свідомі:'
+    var subtitle = 'Варіанти придбання'
     var descriptionStrong = ''
     var descriptionNormal = ''
     var bgImg = {
@@ -40,7 +40,7 @@ block scripts
 block content
   include ../includes/hero.pug
   section.payment.container(id="payment") 
-    div.payment__block
+    div.payment__block.payment__block--with-decor
       div.payment__decoration 
         <svg width="162" height="163" viewBox="0 0 162 163" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1444_9866)">
@@ -65,21 +65,21 @@ block content
         </clipPath>
         </defs>
         </svg>
-      h3.payment__block-title Знижка 7% на купівлю 
-      h5.payment__block-subtitle при повній оплаті
-      a(href="/single-payment.html").general-btn.payment__block-button 
-        span Детальніше
+      h3.payment__block-title Знижка 20% при повній оплаті
+      h5.payment__block-subtitle Ставайте власником квартири без додаткових зобов'язань
+      //- a(href="/single-payment.html").general-btn.payment__block-button 
+      //-   span Детальніше
     div.payment__block
-      h3.payment__block-title Знижка на розтермінування під 0% на 5 років
+      h3.payment__block-title Розтермінування під 0% від забудовника
       div.payment__subblock-wrapper
         div.payment__subblock
-          h4.payment__subblock-title 5%
-          h5.payment__block-subtitle з першим внеском 30%
+          h4.payment__subblock-title Знижка 10%
+          h5.payment__block-subtitle з першим внеском — 50%, терміном — 5 років   
           a(href="/single-payment.html").general-btn.payment__block-button 
             span Детальніше
         div.payment__subblock
-          h4.payment__subblock-title 10%
-          h5.payment__block-subtitle з першим внеском 50%
+          h4.payment__subblock-title Знижка 5%
+          h5.payment__block-subtitle з першим внеском — 30%, терміном — 5 років 
           a(href="/single-payment.html").general-btn.payment__block-button 
             span Детальніше
     div.payment__block

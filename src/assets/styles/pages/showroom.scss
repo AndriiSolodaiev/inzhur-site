@@ -39,6 +39,7 @@
 
     @include laptop {
       order: 0;
+      gap: vw(40);
     }
   }
 
@@ -64,6 +65,10 @@
 
   &__list-title {
     @include text-24;
+    @include laptop {
+      font-size: vw(24);
+      color: $accent-color
+    }
   }
 
   &__list-item {

@@ -92,6 +92,7 @@
 
     h3 {
       @include block-title;
+      font-weight: 500;
       color: $wc;
       padding-bottom: 20px;
       margin-bottom: 20px;
@@ -309,7 +310,7 @@
       transition: all 0.4s ease-in-out;
     }
   }
-
+@media (hover: hover) {
   &:hover {
     .ellipse-btn svg path {
       fill: $accent-color-2;
@@ -318,7 +319,7 @@
     .ellipse-btn::before {
       transform: translate3d(100%, 30%, 0);
     }
-  }
+  }}
 }
 
 .footer__bottom-block {
@@ -353,10 +354,10 @@
   .dev-logo-bg {
     transition: fill 0.4s ease;
   }
-
+  @media (hover: hover) {
   &:hover {
     .dev-logo-bg {
       fill: $olive-color;
     }
-  }
+  }}
 }
