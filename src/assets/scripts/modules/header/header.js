@@ -3,6 +3,7 @@ import device from 'current-device';
 import { animateOnScroll } from '../../modules/effects/animateOnsScroll';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
+import { contactFormHeader } from './contactFormHeader';
 
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
 
@@ -33,6 +34,16 @@ const menuTimeline = gsap.timeline({
   paused: true,
   defaults: { ease: 'power3.out', duration: 1 },
 });
+
+const contactFormsRef = document.querySelectorAll('.contact-form-header');
+
+console.log('contactFormsRef', contactFormsRef);
+
+setTimeout(() => {
+  contactFormsRef.forEach(el => {
+    contactFormHeader(el);
+  });
+}, 1000);
 
 const cycleSection = CSSRulePlugin.getRule('.menu-container .cycle-section::after');
 menuTimeline
