@@ -225,26 +225,29 @@ export default class FormMonster {
 
   submitForm() {
     return async e => {
-      /*  */
       e.preventDefault();
       this.changeInput()(e);
 
-      /*  */
       if (this.watchedState.error === false) {
         try {
           this.watchedState.status = 'loading';
           const formData = new FormData(this.elements.$form);
           formData.append('action', 'app');
 
-          /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);
 
-          // if (true) {
           if (error === 0) {
             this.watchedState.status = 'successSand';
+
+            setTimeout(() => {
+              this.resetForm();
+              this.resetFields();
+              this.init();
+            }, 1000);
+
             return true;
           }
-          /* eslint-disable-next-line */
+
           this.watchedState.serverError = code_error;
           this.watchedState.status = 'failed';
         } catch (err) {
@@ -255,6 +258,39 @@ export default class FormMonster {
       }
       return null;
     };
+  }
+
+  resetForm() {
+    this.elements.$form.reset();
+  }
+  resetFields() {
+    this.fieldsKey.forEach(key => {
+      const field = this.elements.fields[key];
+      const input = field.inputWrapper.input;
+
+      input.value = '';
+
+      if (input.Cleave) {
+        input.Cleave.destroy();
+        input.Cleave = new Cleave(input, {
+          numericOnly: true,
+          prefix: '+380',
+          blocks: [4, 2, 3, 2, 2],
+          delimiters: [' (', ') ', '-', '-'],
+          uppercase: true,
+        });
+        input.value = '+380';
+      }
+
+      if (field.inputWrapper.showDefaultStyle) {
+        field.inputWrapper.showDefaultStyle();
+      }
+
+      field.valid = true;
+      field.error = [];
+    });
+
+    this.watchedState.error = true;
   }
 
   listers() {

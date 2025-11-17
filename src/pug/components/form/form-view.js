@@ -30,6 +30,7 @@ const renderForm = (form, elements, toast) => {
       elementsParamFn.$btnSubmit.removeAttribute('disabled');
 
       fieldsKey.forEach(key => {
+        console.log('renderForm -> key', key);
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showSuccessStyle();
         field.inputWrapper.writeMessage('');
@@ -49,12 +50,12 @@ const renderForm = (form, elements, toast) => {
 
       break;
     case 'successSand':
+      elementsParamFn.$form.reset();
       fieldsKey.forEach(key => {
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showDefaultStyle();
         field.inputWrapper.removeSelectedStyle();
       });
-      elementsParamFn.$form.reset();
 
       elementsParamFn.$btnSubmit.setAttribute('disabled', false);
       // elementsParamFn.$btnSubmit.querySelector(
