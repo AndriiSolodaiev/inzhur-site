@@ -73,7 +73,7 @@ menuTimeline
     '<+=0.5',
   )
   .from(
-    ".menu-section-decor",
+    '.menu-section-decor',
     {
       yPercent: 50,
       opacity: 0,
@@ -112,6 +112,7 @@ document.body.addEventListener('click', function(evt) {
   const btnMenu = document.querySelector('[data-menu]');
   const menu = document.querySelector('[data-menu]');
   const menuItem = evt.target.closest('.menu-item');
+  const submitBtn = evt.target.closest('[data-btn-submit]');
   if (btnMenuTarget || menuItem) {
     const isHidden = menu.classList.contains('hidden');
 
@@ -144,7 +145,7 @@ document.body.addEventListener('click', function(evt) {
     }
     return;
   }
-  if (close) {
+  if (close || submitBtn) {
     window.dispatchEvent(new Event('start-scroll'));
     return overflow.classList.add('hidden');
   }
