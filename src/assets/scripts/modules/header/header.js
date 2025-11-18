@@ -37,8 +37,6 @@ const menuTimeline = gsap.timeline({
 
 const contactFormsRef = document.querySelectorAll('.contact-form-header');
 
-console.log('contactFormsRef', contactFormsRef);
-
 setTimeout(() => {
   contactFormsRef.forEach(el => {
     contactFormHeader(el);

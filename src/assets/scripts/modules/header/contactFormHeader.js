@@ -6,7 +6,7 @@ import { successPopup } from '../footer/successPopup';
 
 export const contactFormHeader = (formRef, onSuccess) => {
   const btnRef = formRef.querySelector('[data-btn-submit="data-btn-submit"]');
-  console.log('contactFormHeader -> formRef', formRef);
+
   new FormMonster({
     elements: {
       $form: formRef,

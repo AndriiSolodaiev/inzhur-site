@@ -81,14 +81,17 @@
   @include tablet {
     height: 108px;
   }
+
   @include laptop {
     height: vw(120);
     justify-content: space-between;
   }
+
   @include laptop-header {
     height: vw(120);
     justify-content: space-between;
   }
+
   @include desktop {
     height: 150px;
     justify-content: space-between;
@@ -179,7 +182,8 @@
     width: vw(165);
     height: vw(79);
   }
-   @include desktop {
+
+  @include desktop {
     width: 207px;
     height: 63px;
   }
@@ -231,29 +235,32 @@
 
   @media (hover:hover) {
     &:hover {
-    &::before {
-      transform: translate3d(100%, 30%, 0);
-    }
+      &::before {
+        transform: translate3d(100%, 30%, 0);
+      }
 
-    // &.button--white {
-    //   background: var(--green-light);
-    // }
-  }
+      // &.button--white {
+      //   background: var(--green-light);
+      // }
+    }
   }
 
   @include tablet {
     width: 59px;
     height: 78px;
   }
+
   @include laptop {
-    
+
     width: vw(59);
     height: vw(78);
   }
+
   @include laptop-header {
-     width: vw(59);
+    width: vw(59);
     height: vw(78);
   }
+
   svg {
     width: 16px;
     height: 16px;
@@ -265,10 +272,12 @@
       width: 24px;
       height: 24px;
     }
-    @include laptop{
-       width:vw(24);
+
+    @include laptop {
+      width: vw(24);
       height: vw(24);
     }
+
     @include laptop-header {
       width: 24px;
       height: 24px;
@@ -336,7 +345,7 @@
       }
     }
   }
-  
+
   @include laptop {
     display: flex;
     // align-items: baseline;
@@ -411,6 +420,7 @@
 }
 
 @-webkit-keyframes wobble {
+
   0%,
   100% {
     -webkit-transform: translateX(0);
@@ -446,6 +456,7 @@
 }
 
 @keyframes wobble {
+
   0%,
   100% {
     -webkit-transform: translateX(0);
@@ -544,9 +555,11 @@
   @include tablet {
     gap: 4px;
   }
-  @include laptop{
+
+  @include laptop {
     gap: 3px;
   }
+
   @include laptop-header {
     gap: 4px;
   }
@@ -565,14 +578,16 @@
       width: 24px;
       height: 3px;
     }
+
     @include laptop {
       width: 20px;
-     height: 2px;
+      height: 2px;
     }
+
     @include laptop-header {
       width: 24px;
       height: 3px;
-    
+
     }
   }
 }
@@ -587,9 +602,11 @@
       @include tablet {
         transform: rotate(45deg) translate(3px, 2px);
       }
+
       @include laptop {
         transform: rotate(45deg) translate(2px, 1.6px);
       }
+
       @include laptop-header {
         transform: rotate(45deg) translate(3px, 2px);
       }
@@ -601,11 +618,13 @@
       @include tablet {
         transform: rotate(-45deg) translate(4px, -2px);
       }
+
       @include laptop {
-       transform: rotate(-45deg) translate(2.5px, -1.5px);
+        transform: rotate(-45deg) translate(2.5px, -1.5px);
       }
+
       @include laptop-header {
-         transform: rotate(-45deg) translate(4px, -2px);
+        transform: rotate(-45deg) translate(4px, -2px);
       }
     }
   }
@@ -639,33 +658,34 @@
 
 .menu-container {
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   position: relative;
   // padding-bottom: calc(100vh - 100svh);
-  
+
   // visibility: hidden;
   .cycle-section__house-wrapper {
     overflow: visible;
-     aspect-ratio: 375 / 440;
-     width: 100%;
-     margin: 0;
-     @include tablet {
+    aspect-ratio: 375 / 440;
     width: 100%;
-    height: 100%;
-  }
+    margin: 0;
 
-  @include laptop {
-    width: 100%;
-    // max-width: 1920px;
-    height: auto;
-    aspect-ratio: 1920 / 1080;
-  }
-     .cycle-section__mask{
+    @include tablet {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include laptop {
+      width: 100%;
+      // max-width: 1920px;
+      height: auto;
+      aspect-ratio: 1920 / 1080;
+    }
+
+    .cycle-section__mask {
       object-fit: cover;
-     }
-     @include laptop {
+    }
 
-     }
+    @include laptop {}
   }
 
   .cycle-section {
@@ -682,9 +702,11 @@
 
     &.menu-section {
       position: relative;
+
       &::after {
-    content: none;
-  }
+        content: none;
+      }
+
       .menu-section-decor {
         position: absolute;
         right: 0;
@@ -698,7 +720,7 @@
         width: calc(100vw - 20px);
         aspect-ratio: 355 / 255;
         height: auto;
-        padding: 40px 20px 40px 90px;
+        padding: 60px 20px 40px 90px;
 
         @include tablet {
           background-image: url('../images/menu/tab-oval.svg');
@@ -726,6 +748,7 @@
     z-index: 4;
     width: fit-content;
     margin: 0;
+
     @include tablet {
       gap: 0;
     }
@@ -788,7 +811,7 @@
 
     // @media screen and (max-width: 480px) {
     //   left: 40vw;
-      
+
     // }
 
     // @media screen and (min-width: 480px) {

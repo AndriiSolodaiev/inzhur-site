@@ -4907,7 +4907,7 @@
   );
 });
 
-console.log($);
+
 
 function pagination(global, $) {
   if (typeof $ === 'undefined') {

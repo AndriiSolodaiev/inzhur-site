@@ -128,7 +128,6 @@ export default class SexyInput {
       //   autoPlaceholder: 'off',
       // });
 
-      console.log('Cleave');
       let cleave = new Cleave(input, {
         numericOnly: true,
         prefix: '+380',
@@ -160,42 +159,42 @@ export default class SexyInput {
         //   }
         // },
       });
-      input.closest('form').addEventListener('reset', evt => {
-        console.log('reset form');
-        cleave.destroy();
-        input.value = '+380';
-        cleave = new Cleave(input, {
-          numericOnly: true,
-          prefix: '+380',
-          blocks: [4, 2, 3, 2, 2],
-          delimiters: [' (', ') ', '-', '-'], // 🔸 без роздільників спочатку
-          uppercase: true,
-          // onValueChanged: e => {
-          //   const raw = e.target.rawValue;
-          //   console.log('onValueChanged');
-          //   // якщо користувач почав вводити номер після коду країни
-          //   if (raw.length > 4 && cleave.properties.delimiters.length === 0) {
-          //     const currentValue = input.value;
+      // input.closest('form').addEventListener('reset', evt => {
+      //   console.log('reset form');
+      //   cleave.destroy();
+      //   input.value = '+380';
+      //   cleave = new Cleave(input, {
+      //     numericOnly: true,
+      //     prefix: '+380',
+      //     blocks: [4, 2, 3, 2, 2],
+      //     delimiters: [' (', ') ', '-', '-'], // 🔸 без роздільників спочатку
+      //     uppercase: true,
+      //     // onValueChanged: e => {
+      //     //   const raw = e.target.rawValue;
+      //     //   console.log('onValueChanged');
+      //     //   // якщо користувач почав вводити номер після коду країни
+      //     //   if (raw.length > 4 && cleave.properties.delimiters.length === 0) {
+      //     //     const currentValue = input.value;
 
-          //     cleave.destroy(); // знищуємо старий інстанс
+      //     //     cleave.destroy(); // знищуємо старий інстанс
 
-          //     cleave = new Cleave(input, {
-          //       numericOnly: true,
-          //       prefix: '+380',
-          //       blocks: [4, 2, 3, 2, 2],
-          //       delimiters: [' (', ') ', '-', '-'], // 🔹 тепер з дужками
-          //       uppercase: true,
-          //     });
+      //     //     cleave = new Cleave(input, {
+      //     //       numericOnly: true,
+      //     //       prefix: '+380',
+      //     //       blocks: [4, 2, 3, 2, 2],
+      //     //       delimiters: [' (', ') ', '-', '-'], // 🔹 тепер з дужками
+      //     //       uppercase: true,
+      //     //     });
 
-          //     // зберігаємо вже введене значення
-          //     cleave.setRawValue(raw);
+      //     //     // зберігаємо вже введене значення
+      //     //     cleave.setRawValue(raw);
 
-          //     // ставимо курсор у кінець
-          //     input.setSelectionRange(input.value.length, input.value.length);
-          //   }
-          // },
-        });
-      });
+      //     //     // ставимо курсор у кінець
+      //     //     input.setSelectionRange(input.value.length, input.value.length);
+      //     //   }
+      //     // },
+      //   });
+      // });
 
       input.Cleave = cleave;
       input.addEventListener('countrychange', () => {

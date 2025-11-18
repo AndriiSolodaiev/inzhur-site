@@ -48,7 +48,6 @@ export function paginationInit(containerSelector, cardSelector) {
     if (!scrollBlock) {
       setTimeout(() => {
         const offsetTop = container.offsetTop - 100;
-        console.log(offsetTop);
 
         window.scrollTo({
           top: offsetTop, // щоб до початку списку, а не до верху сторінки

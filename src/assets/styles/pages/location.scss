@@ -616,7 +616,7 @@
   }
 
   @include desktop {
-    width: 128px;
+    width: 30%;
   }
 }
 
@@ -629,16 +629,20 @@
   }
 
   @include laptop {
-    min-width: 52px;
+    min-width: vw(85);
   }
 
   @include desktop {
-    min-width: 80px;
+    min-width: vw(80);
   }
 }
 
 .time-on-foot {
   min-width: 44px;
+
+  // @include laptop {
+  //   min-width: vw(80);
+  // }
 }
 
 // ======== Harmony section ========

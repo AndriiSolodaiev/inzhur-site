@@ -30,7 +30,6 @@ const renderForm = (form, elements, toast) => {
       elementsParamFn.$btnSubmit.removeAttribute('disabled');
 
       fieldsKey.forEach(key => {
-        console.log('renderForm -> key', key);
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showSuccessStyle();
         field.inputWrapper.writeMessage('');
