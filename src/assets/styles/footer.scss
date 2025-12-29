@@ -4,8 +4,7 @@
   overflow: hidden;
   max-width: 100vw;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   &.monotone {
     .footer-form-section {
@@ -34,7 +33,7 @@
     padding-right: vw(195);
   }
 
-  & > picture {
+  &>picture {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -98,6 +97,7 @@
       margin-bottom: 20px;
       border-bottom: 1px solid $olive-color;
       text-align: center;
+      width: 100%;
 
       @include tablet {
         font-size: 48px;
@@ -261,12 +261,10 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          120deg,
-          transparent 0%,
-          rgba(255, 255, 255, 0.3) 50%,
-          transparent 100%
-        );
+        background: linear-gradient(120deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
         transform: skewX(-20deg);
         transition: left 0.5s ease;
       }
@@ -310,16 +308,18 @@
       transition: all 0.4s ease-in-out;
     }
   }
-@media (hover: hover) {
-  &:hover {
-    .ellipse-btn svg path {
-      fill: $accent-color-2;
-    }
 
-    .ellipse-btn::before {
-      transform: translate3d(100%, 30%, 0);
+  @media (hover: hover) {
+    &:hover {
+      .ellipse-btn svg path {
+        fill: $accent-color-2;
+      }
+
+      .ellipse-btn::before {
+        transform: translate3d(100%, 30%, 0);
+      }
     }
-  }}
+  }
 }
 
 .footer__bottom-block {
@@ -354,10 +354,12 @@
   .dev-logo-bg {
     transition: fill 0.4s ease;
   }
+
   @media (hover: hover) {
-  &:hover {
-    .dev-logo-bg {
-      fill: $olive-color;
+    &:hover {
+      .dev-logo-bg {
+        fill: $olive-color;
+      }
     }
-  }}
+  }
 }

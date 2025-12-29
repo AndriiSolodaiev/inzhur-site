@@ -1,13 +1,13 @@
 const filterNav = document.querySelector('.map-navigation');
-document.body.addEventListener('click', (evt) => {    const target = evt.target.closest('#filter-button');
-    if (!target) return;
-   
-    evt.preventDefault();
-    evt.stopPropagation();           // ← ДОДАЙ
-    evt.stopImmediatePropagation();  // ← ДОДАЙ
-      filterNav.classList.toggle('oppened');
-    
-})
+document.body.addEventListener('click', evt => {
+  const target = evt.target.closest('#filter-button');
+  if (!target) return;
+
+  evt.preventDefault();
+  evt.stopPropagation(); // ← ДОДАЙ
+  evt.stopImmediatePropagation(); // ← ДОДАЙ
+  filterNav.classList.toggle('oppened');
+});
 
 export default function googleMap() {
   global.initMap = initMap;
@@ -15,7 +15,7 @@ export default function googleMap() {
 // Google map start
 async function func() {
   const script = document.createElement('script');
-  let key = '';
+  let key = 'AIzaSyB4Z54FM-b6-duw-UCMelNOKKAbl5Gjhk8';
   // if (window.location.href.match(/localhost/)) key = '';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&language=ua`;
   document.getElementsByTagName('head')[0].appendChild(script);
@@ -74,7 +74,6 @@ function initMap() {
   const filterMarkers = function(category, categoriesArray) {
     gmarkers1.forEach(el => {
       if (categoriesArray.has(el.category) || categoriesArray.size === 1) {
-        
         el.setMap(map);
         // el.setAnimation(google.maps.Animation.DROP);
       } else {
@@ -94,9 +93,10 @@ function initMap() {
       filterMarkers('main', choosedCategories);
     });
   });
-  const baseFolder = window.location.href.match(/localhost/) || window.location.href.match(/inzhur-bud-verstka/)
-    ? './assets/images/map/'
-    : '/wp-content/themes/3d/assets/images/map/';
+  const baseFolder =
+    window.location.href.match(/localhost/) || window.location.href.match(/inzhur-bud-verstka/)
+      ? './assets/images/map/'
+      : '/wp-content/themes/3d/assets/images/map/';
 
   var defaultMarkerSize = new google.maps.Size(56, 90);
   var buildLogoSize = new google.maps.Size(82, 82);
@@ -578,49 +578,49 @@ function initMap() {
 function getMapTheme() {
   return [
     {
-        "featureType": "administrative",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
+      featureType: 'administrative',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'on',
+        },
+      ],
     },
     {
-        "featureType": "poi",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+      featureType: 'poi',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'off',
+        },
+      ],
     },
     {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
+      featureType: 'road',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'on',
+        },
+      ],
     },
     {
-        "featureType": "transit",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
+      featureType: 'transit',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'on',
+        },
+      ],
     },
     {
-        "featureType": "transit.station",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    }
-];
+      featureType: 'transit.station',
+      elementType: 'labels',
+      stylers: [
+        {
+          visibility: 'on',
+        },
+      ],
+    },
+  ];
 }

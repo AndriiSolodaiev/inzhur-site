@@ -41,20 +41,24 @@
   overflow: hidden;
   height: fit-content;
   border: none;
-  outline:none;
+  outline: none;
+
   // border: none;
   @include tablet {
     padding: 22px 32px;
     height: 68px;
   }
+
   @include laptop {
     padding: vw(22) vw(32);
     height: fit-content;
   }
+
   @include laptop-header {
     padding: vw(22) vw(32);
     // height: 68px;
   }
+
   &::before {
     content: '';
     position: absolute;
@@ -63,9 +67,9 @@
     top: 0;
     left: -15%;
     transform: skew(30deg) scaleX(1);
-    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1) ;
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
     background-color: $accent-color;
-    
+
   }
 
   &.mobile-mode {
@@ -103,25 +107,27 @@
       display: block;
     }
   }
+
   @media (hover: hover) {
-  &:hover {
-    span {
-      color: $accent-color;
-    }
+    &:hover {
+      span {
+        color: $accent-color;
+      }
 
-    svg path {
-      fill: $accent-color;
-    }
+      svg path {
+        fill: $accent-color;
+      }
 
-    &::before {
-      transform: translate3d(100%, 0, 0);
-    }
+      &::before {
+        transform: translate3d(100%, 0, 0);
+      }
 
-    // &.button--white {
-    //   background: var(--green-light);
-    // }
+      // &.button--white {
+      //   background: var(--green-light);
+      // }
+    }
   }
-  }
+
   span {
     transition: color 0.5s linear;
     position: relative;
@@ -135,6 +141,7 @@
     @include laptop {
       font-size: 14px;
     }
+
     @include laptop-header {
       font-size: vw(18);
     }
@@ -179,19 +186,19 @@
     line-height: 90%;
     display: block;
 
-    & > span {
+    &>span {
       color: $text-color;
       padding-left: 40px;
     }
 
     @include tablet {
-      & > span {
+      &>span {
         padding-left: 60px;
       }
     }
 
     @include laptop {
-      & > span {
+      &>span {
         padding-left: 5.2vw;
       }
     }
@@ -260,19 +267,23 @@
     top: vw(140);
     gap: 4px;
   }
+
   @include laptop-header {
     top: vw(170);
     gap: 4px;
   }
 }
+
 @keyframes pulse-animation {
   0% {
     box-shadow: 0 0 0 0px rgba(216, 218, 219, 0.3);
   }
+
   100% {
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
 }
+
 .hero-promo-item {
   position: relative;
   max-width: 178px;
@@ -283,6 +294,7 @@
   transition: all 0.4s ease-in-out;
   cursor: pointer;
   animation: pulse-animation 2s infinite;
+
   @include tablet {
     max-width: 300px;
     padding: 20px;
@@ -294,30 +306,33 @@
     display: flex;
     gap: vw(40);
     justify-content: space-between;
-    
+
   }
-  
+
   @include laptop-header {
     max-width: 452px;
     padding: vw(48) vw(40);
     display: flex;
-    
-  }
-.ellipse-btn {
-      &::before {
-        background-color: $accent-color-2;
-      }
-    }
-    @media (hover: hover) {
-  &:hover {
-    background-color: rgba(57, 48, 40, 0.4);
 
-    
+  }
+
+  .ellipse-btn {
+    &::before {
+      background-color: $accent-color-2;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(57, 48, 40, 0.4);
+
+
       &::before {
         transform: translate3d(100%, 0, 0);
       }
-    
-  }}
+
+    }
+  }
 }
 
 .hero-promo-text {
@@ -453,7 +468,7 @@
     // padding: 40px;
   }
 
-  & > img {
+  &>img {
     @include laptop {
       width: 48vw;
     }
@@ -499,7 +514,7 @@
     background-color: rgba(57, 48, 40, 0.4);
   }
 
-  & > svg {
+  &>svg {
     display: none;
 
     @include tablet {
@@ -507,6 +522,7 @@
       width: 32px;
       height: 32px;
     }
+
     @include laptop {
       display: block;
       width: vw(32);
@@ -650,7 +666,7 @@
     z-index: 3;
     flex: 2;
 
-    & > svg {
+    &>svg {
       display: none;
 
       @include laptop {
@@ -671,8 +687,7 @@
       aspect-ratio: 1/0.6;
       position: relative;
 
-      @include laptop {
-      }
+      @include laptop {}
 
       video {
         width: 100%;
@@ -734,7 +749,7 @@
           height: 106px;
         }
 
-        & > svg {
+        &>svg {
           width: 46px;
           height: 46px;
         }
@@ -743,7 +758,7 @@
           max-width: 140px;
           max-height: 185px;
 
-          & > svg {
+          &>svg {
             width: 48px;
             height: 48px;
           }
@@ -854,8 +869,7 @@
   position: relative;
   // overflow: hidden;
 
-  @include tablet {
-  }
+  @include tablet {}
 
   @include laptop {
     height: 85vh;
@@ -970,16 +984,18 @@
     svg {
       transition: stroke 0.4s ease-in-out;
     }
-    @media (hover: hover) {
-    &:hover {
-      background-color: $olive-color;
-      color: $wc;
 
-      svg use {
-        stroke: $wc;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $olive-color;
+        color: $wc;
+
+        svg use {
+          stroke: $wc;
+        }
       }
     }
-  }
+
     &.active {
       background-color: $accent-color;
       color: $wc;
@@ -1129,9 +1145,10 @@
     }
 
     .advantages-card__content {
-      @include  laptop {
+      @include laptop {
         padding-top: vw(40)
       }
+
       h3 {
         @include block-title;
         color: $accent-color;
@@ -1148,10 +1165,12 @@
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
-        gap:12px;
+        gap: 12px;
+
         @include tablet {
           gap: 20px;
         }
+
         @include laptop {
           gap: vw(40);
         }
@@ -1180,13 +1199,15 @@
           display: flex;
           align-items: center;
           justify-content: center;
-           font-size: 18px ;
-      @include tablet {
-        font-size: 20px ;
-      }
-      @include laptop {
-        font-size: vw(22) ;
-      }
+          font-size: 18px;
+
+          @include tablet {
+            font-size: 20px;
+          }
+
+          @include laptop {
+            font-size: vw(22);
+          }
         }
       }
     }
@@ -1271,7 +1292,7 @@
   border-radius: 50%;
   border: 1px solid $accent-color-2;
 
-  & > svg {
+  &>svg {
     width: 69px;
     height: 12px;
   }
@@ -1695,7 +1716,7 @@
       width: 100%;
       height: 100%;
       opacity: 1;
-      
+
       background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0% 50%, #000 100%);
       transition: all 0.4s ease-in-out;
     }
@@ -1772,9 +1793,11 @@
   @include tablet {
     padding: 40px;
   }
+
   @include laptop {
     padding: vw(40);
   }
+
   h3 {
     @include subtitle-text;
     color: $accent-color;
@@ -1855,6 +1878,7 @@
   height: 100vh;
   background: linear-gradient(180deg, rgba(32, 27, 23, 0) 0%, #201b17 100%);
   overflow: hidden;
+  max-width: 100vw;
 
   &__bg {
     position: absolute;
@@ -1877,14 +1901,15 @@
     align-items: center;
     width: 100%;
     padding: 20px;
-    
-    & > img {
+
+    &>img {
       width: 60%;
       margin-left: auto;
       margin-right: auto;
       margin-top: 4px;
+
       @include tablet {
-        
+
         margin-bottom: 12px;
       }
 
@@ -1914,17 +1939,18 @@
     color: $wc;
     font-weight: 600;
     margin-bottom: 20px;
-    @media screen and (max-width: 767px ) {
-        font-size: 24px;
-      }
+
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+    }
+
     @include tablet {
       margin-bottom: 40px;
     }
   }
 }
 
-.swiper-progress {
-}
+.swiper-progress {}
 
 .progress-card {
   border-radius: 24px;
@@ -1953,7 +1979,7 @@
     // background-position: 0% 100%;
   }
 
-  & > img {
+  &>img {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -2007,7 +2033,7 @@
   }
 
   &:hover {
-    & > img {
+    &>img {
       transform: scale(1.1);
     }
 
@@ -2021,4 +2047,102 @@
       }
     }
   }
+}
+
+.map-info-wrap{
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 3;
+  .map-info-btn{
+        width: 33px;
+    height: 44px;
+    &::before {
+      background-color: $accent-color-2;
+    }
+    svg {
+      width: 24px;
+height: 24px;
+    }
+  }
+}
+
+.map-info-popup {
+  position: absolute;
+  top: calc(100% + 20px);
+  right:0px;
+  max-width: calc(100vw - 40px);
+  
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background-color: $bg-color;
+    padding:32px  ;
+    gap: 20px;
+
+    opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: 
+    opacity .3s ease-in-out,
+    transform .3s ease-in-out,
+    visibility .3s ease-in-out;
+  @include laptop {
+    width: 344px;
+    padding: vw(55) vw(40);
+    display: flex;
+    flex-direction: column;
+    gap: vw(48)
+  }
+//   &__close--mobile {
+//     position: absolute;
+//     top: 10px;
+//     right: 10px;
+//     width: 24px;
+// height: 24px;
+// svg {
+//   width: 100%;
+// height: 100%;
+// }
+// @include laptop {
+//   display: none;
+// }
+  // }
+  &__img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    
+  }
+  &__text-item{
+    h3 {
+      @include text-18;
+      color: $grey-color;
+      text-align: center;
+      margin-bottom: 4px;
+      line-height: 140%;
+      white-space: nowrap
+    }
+    p {
+      @include text-24;
+      color: $accent-color;
+      text-align: center;
+      font-weight: 600;
+      line-height: 120%;
+      white-space: nowrap
+    }
+  }
+
+}
+
+.map-info-btn:hover + .map-info-popup,
+.map-info-wrap:hover .map-info-popup {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
