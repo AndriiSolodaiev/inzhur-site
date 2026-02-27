@@ -25,7 +25,7 @@ export const contactFormFooter = (formRef, onSuccess) => {
           rule: yup
             .string()
             .required(i18next.t('required'))
-            .min(17, i18next.t('field_too_short', { cnt: 19 - 7 })),
+            .min(19, i18next.t('field_too_short', { cnt: 19 - 7 })),
 
           defaultMessage: i18next.t('phone'),
           valid: false,
