@@ -37,3 +37,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'e-Ukraine';
+  src: local('e-Ukraine Medium'), local('e-Ukraine-Medium'),
+    url('../fonts/e-Ukraine-Medium.otf') format('opentype');
+   
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: local('e-Ukraine Bold'), local('e-Ukraine-Bold'),
+    url('../fonts/e-Ukraine-Bold.otf') format('opentype');
+   
+  font-weight: 700;
+  font-style: normal;
+}

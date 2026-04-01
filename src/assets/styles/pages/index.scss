@@ -287,7 +287,7 @@
 .hero-promo-item {
   position: relative;
   max-width: 178px;
-  padding: 12px;
+  padding: 12px 20px;
   border-radius: 0 24px 24px 0;
   background-color: rgba(100, 104, 110, 0.6);
   backdrop-filter: blur(24px);
@@ -1699,7 +1699,78 @@
     height: auto;
     flex: 1;
   }
+  .hero-jeoselia-bunner {
+    border-radius: 1000px;
+    pointer-events: none;
+    top: 12px;
+    left: 12px;
+    right: auto;
+    padding: 6px 14px;
+    @include tablet {
+       
+    padding: 9px 21px;
+    }
+    @include laptop {
+      
+    padding: vw(12) vw(28);
+    }
 
+    .hero-jeoselia-item {
+      gap: 3.33px;
+
+    @include tablet {
+      gap: 5px;
+    }
+     @include laptop {
+      gap: 6.7px;
+    }
+    @include laptop {
+      gap: vw(6.7);
+    }
+    svg{
+      width: 21.177px;
+      height: 19.899px;
+      @include tablet {
+        width: 31.766px;
+        height: 29.849px;
+      }
+      @include laptop {
+        width: 42.461px;
+        height: 39.807px;
+      }
+       @include laptop {
+        width: vw(42.461);
+        height: vw(39.807);
+      }
+    } 
+
+    p {
+      font-size: 12.334px;
+      font-family: "e-Ukraine", sans-serif;
+      font-weight: 500;
+      line-height: 100%; /* 10.558px */
+      letter-spacing: -0.01em;
+      margin-left: 9.42px;
+      color: #07060F;
+
+      @include tablet {
+        margin-left: 9.27px;
+        font-size: 18.136px;
+
+      }
+      @include laptop {
+        margin-left: 12.98px;
+        font-size: 24.182px;
+
+      }
+      @include laptop {
+        margin-left: vw(12.98);
+        font-size: vw(24.182);
+
+      }
+    }
+  }
+  }
   &__wrap {
     position: absolute;
     top: 0;
@@ -1717,7 +1788,7 @@
       height: 100%;
       opacity: 1;
 
-      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0% 50%, #000 100%);
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0% 40%, #000 100%);
       transition: all 0.4s ease-in-out;
     }
 
@@ -2145,4 +2216,125 @@ height: 24px;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+
+
+
+.hero-jeoselia-bunner{
+  position: absolute;
+  z-index: 2;
+  top: 87px;
+  right: 20px;
+  background-color: $accent-color-2;
+  border-radius: 11.862px;
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.46px;
+  overflow: hidden;
+  &::after {
+     content: '';
+    position: absolute;
+    width: 130%;
+    height: 110%;
+    top: 0;
+    left: -15%;
+    transform: skew(30deg) scaleX(1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    background-color: $white-color-light;
+  }
+  @media (hover:hover) {
+    cursor: pointer;
+    &:hover {
+      &:after {
+                transform: translate3d(100%, 0, 0);
+      }
+    }
+  }
+   @include tablet {
+    top: 126px;
+    padding: 9px 15px;
+    border-radius: 18.207px;
+    gap: 5.41px;
+  }
+
+  @include laptop {
+    top: vw(140);
+    padding: 12px 20px;
+    border-radius: 24px;
+    gap: 7.13px;
+    right: vw(40);
+  }
+  @include laptop {
+    top: vw(140);
+    padding: vw(12) vw(20);
+    border-radius: vw(24);
+    gap: vw(7.13);
+  }
+
+  @include laptop-header {
+    top: vw(170);
+    
+  }
+  .hero-jeoselia-item {
+    display: flex;
+    align-items: center;
+    gap: 2.41px;
+    position: relative;
+    z-index: 2;
+    @include tablet {
+      gap: 3.29px;
+    }
+     @include laptop {
+      gap: 4.33px;
+    }
+    @include laptop {
+      gap: vw(4.33);
+    }
+    svg{
+      width: 13.31px;
+      height: 13.277px;
+      @include tablet {
+        width: 20.48px;
+        height: 20.384px;
+      }
+      @include laptop {
+        width: 26.93px;
+        height: 26.864px;
+      }
+       @include laptop {
+        width: vw(26.93);
+        height: vw(26.864);
+      }
+    } 
+
+    p {
+      font-size: 10.558px;
+      font-family: "e-Ukraine", sans-serif;
+      font-weight: 500;
+      line-height: 100%; /* 10.558px */
+      letter-spacing: -0.01em;
+      margin-left: 3.43px;
+      color: #07060F;
+
+      @include tablet {
+        margin-left: 5.62px;
+        font-size: 16.206px;
+
+      }
+      @include laptop {
+        margin-left: 6.41px;
+        font-size: 21.362px;
+
+      }
+      @include laptop {
+        margin-left: vw(6.41);
+        font-size: vw(21.362);
+
+      }
+    }
+
+   
+  }
 }

@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lineFill = document.querySelector('.loader__line-fill');
 
   let percent = 0;
-  const speed = 30;
+  const speed = 10;
 
   // Етап 1: Імітація завантаження
   const simulateLoading = setInterval(() => {
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         percentText.textContent = `${Math.floor(finalProgress)}%`;
         lineFill.style.width = `${finalProgress}%`;
       }
-    }, 30);
+    }, 20);
   });
 
   // Етап 3: Основна анімація виходу прелоадера

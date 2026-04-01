@@ -165,7 +165,12 @@
         // margin-bottom: 40px;
       }
     }
-
+    b, strong {
+      font-weight: 700;
+    }
+    i, em {
+      font-style: italic;
+    }
     ul>li>ul {
       list-style-type: circle;
       padding-left: 20px;
