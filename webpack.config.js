@@ -22,6 +22,7 @@ const config = {
     company: './src/assets/scripts/gulp-modules/company.js',
     showroom: './src/assets/scripts/gulp-modules/showroom.js',
     singlePromo: './src/assets/scripts/gulp-modules/single-promo.js',
+    oselia: './src/assets/scripts/gulp-modules/oselia.js',
   },
   output: {
     filename: '[name].bundle.js',

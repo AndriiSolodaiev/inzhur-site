@@ -1,0 +1,332 @@
+.hero-page {
+  img {
+    object-position: top;
+  }
+}
+
+.oselia {
+  
+  @include laptop {
+    overflow: visible;
+    max-width: 100vw;
+  }
+
+}
+
+.oselia-block {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 100%;
+
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include laptop {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: vw(140);
+    padding-bottom: vw(140);
+  }
+
+  &__title {
+    @include section-title;
+    color: $text-color;
+    margin-bottom: 40px;
+    text-transform: none;
+
+    @include laptop {
+      // flex: 1;
+      width: 35%;
+      position: sticky;
+      top: vw(150);
+      height: fit-content;
+    }
+
+  }
+
+  &__content {
+    @include laptop {
+      // flex: 1;
+      width: 50%;
+    }
+  }
+}
+
+.oselia-subblock {
+  margin-bottom: 52px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    @include block-title;
+    color: $text-color;
+    margin-bottom: 12px;
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    @include tablet {
+      gap: 20px;
+    }
+     @include laptop {
+      gap: 4px;
+    }
+    &--withtitles {
+      .oselia-subblock__content-item {
+        flex-direction: column;
+        gap: 0;
+        @include tablet {
+          flex-direction: row;
+
+          gap: 20px;
+        }
+        h4.title {
+          @include block-title;
+          color: $text-color;
+          margin-bottom: 12px;
+
+          @include tablet {
+            width: 30%;
+          }
+        }
+
+        p.text {
+          @include tablet {
+          width: 70%;}
+        }
+      }
+    }
+  }
+
+  &__content-item {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 24px;
+    background: $white-color-light;
+
+    @include tablet {
+      padding: 40px;
+      gap: 40px;
+    }
+
+    @include laptop {
+      padding: vw(40);
+      gap: vw(40);
+    }
+
+    .number {
+      font-size: 20px;
+      color: $text-color;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    p {
+      @include text-20;
+      color: $text-color;
+
+
+      @include tablet {
+        font-size: clamp(20px, calc(20px + (24 - 20) * ((100vw - 768px) / (1366 - 768))), 24px);
+      }
+
+      @include laptop {
+        font-size: clamp(20px, calc(20px + (24 - 20) * ((100vw - 1024px) / (1920 - 1024))), 24px);
+      }
+    }
+  }
+}
+
+.oselia-block--withbg {
+  background: $white-color-light;
+  border-radius: 24px;
+  padding: 20px;
+  
+
+  @include tablet {
+    padding: 40px;
+    
+  }
+
+  @include laptop {
+    padding: vw(40);
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .oselia-block__title {
+    @include article-title;
+    margin-bottom: 20px;
+    text-transform: none;
+
+    @include laptop {
+      @include section-title;
+      margin-bottom: 40px;
+      text-transform: none;
+    }
+  }
+
+  .oselia-subblock__content-list--withnumbers .oselia-subblock__content-item {
+    gap: 12px;
+    justify-content: flex-start;
+    flex-direction: row;
+    @include tablet {
+
+      gap: 40px;
+    }
+
+    @include laptop {
+
+      gap: vw(40);
+    }
+  }
+
+  .oselia-subblock__content-item {
+    background-color: $bg-color;
+    flex-direction: column;
+    gap: 0;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+    }
+  }
+
+  .content-item__title {
+    @include block-title;
+    color: $text-color;
+    margin-bottom: 12px;
+
+    @include tablet {
+      width: 45%;
+    }
+  }
+
+  .content-item__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include tablet {
+      gap: 40px;
+      width: 50%;
+    }
+
+    @include laptop {
+      gap: vw(20);
+
+    }
+  }
+  h4.title {
+          @include block-title;
+          color: $text-color;
+          margin-bottom: 12px;
+
+          @include tablet {
+            width: 30%;
+          }
+        }
+  .content-item__text-wrap {
+
+    h4 {
+      @include text-20;
+      color: $text-color;
+
+      @include tablet {
+        margin-bottom: 4px;
+        font-size: clamp(20px, calc(20px + (24 - 20) * ((100vw - 768px) / (1024 - 768))), 24px);
+      }
+
+      @include laptop {
+
+        font-size: clamp(20px, calc(20px + (24 - 20) * ((100vw - 1024px) / (1920 - 1024))), 24px);
+      }
+    }
+
+    p {
+      @include general-text;
+      color: $text-color;
+    }
+
+  }
+  .oselia-subblock__content-item--withtitle{
+  flex-direction: column !important;
+  gap: 12px !important;
+
+    h4.title {
+      width: 100%;
+    }
+  .inner-item-wrap{
+    display: flex;
+    gap: 12px;
+    @include tablet {
+      gap: 40px;
+    }
+      @include laptop {
+        gap: vw(40);
+      }
+      .text {
+        @include general-text;
+      }
+  }
+}
+
+&.oselia-block--steps .oselia-subblock__content-list--withnumbers .oselia-subblock__content-item {
+ @media screen and (max-width: 768px) {
+  flex-wrap: wrap;
+ }
+}
+@include laptop {
+  h4.title {
+    width: 25%;
+    flex-shrink: 0;
+  }
+ 
+}
+}
+
+.oselia .oselia-subblock__content-list--bank {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 12px;
+  @include tablet {
+    gap: 60px;
+  }
+  @include laptop {
+    gap: vw(60);
+  }
+  .bank-item {
+    width: calc(50% - 6px);
+      @include tablet {
+        width: calc((100% - 120px)/3);
+      }
+        @include laptop {
+          width: calc((100% - vw(60) * 2) / 3);
+  }
+  svg {
+    width: 100%;
+  }
+}}
+
+.margin-negative--mob {
+  @media screen and (max-width: 768px) {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  }
+   
+}
