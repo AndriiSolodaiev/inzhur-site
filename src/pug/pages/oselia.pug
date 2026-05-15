@@ -12,8 +12,8 @@ block variable
         link: pagesLink[0].about
       }
     ]
-    var title = 'ЄОСЕЛЯ — ПРОГРАМА ДОСТУПНОГО КРЕДИТУВАННЯ ЖИТЛА'
-    var subtitle = 'Купуйте житло в ЖК Свідомі за державною програмою доступного іпотечного кредитування'
+    var title = 'ЄОСЕЛЯ'
+    var subtitle = 'Купуйте житло за державною програмою іпотечного кредитування'
     var descriptionStrong = ''
     var descriptionNormal = ''
     var bgImg = {
@@ -95,14 +95,14 @@ block content
               h3.content-item__title Перший внесок
               .content-item__wrapper
                 .content-item__text-wrap
-                  h4 20% від вартості житла
+                  h4 Перший внесок — від 20%
                 .content-item__text-wrap
-                  h4 10% для молоді віком до 25 років
+                  h4 Для молоді до 25 років — від 10%
             .oselia-subblock__content-item 
               h3.content-item__title Термін
               .content-item__wrapper
                 .content-item__text-wrap
-                  h4 Кредитування надається до 20 років
+                  h4 Кредитування до 20 років
     .oselia-block
       h2.oselia-block__title Яке житло можна обрати
       .oselia-block__content
@@ -111,63 +111,68 @@ block content
           .oselia-subblock__content-list.oselia-subblock__content-list--withtitles
             .oselia-subblock__content-item 
               h4.title Площа: 
-              p.text До 52,5 м² на одного або двох, +21 м² на кожного наступного члена родини.
+              .subwrap
+                p.text До 52,5 м² на одного або двох
+                p.subtext +21 м² на кожного наступного члена родини
             .oselia-subblock__content-item 
               h4.title Допустиме перевищення: 
-              p.text +10% до нормативної площі (оплачується коштом першого внеску).
+              .subwrap
+                p.text +10% до нормативної площі 
+                p.subtext оплачується коштом першого внеску
             .oselia-subblock__content-item 
               h4.title Гранична ціна:
-              p.text Розраховується на основі опосередкованої вартості будівництва для Київська область із застосуванням коефіцієнта 2,0. Актуальне значення переглядається щоквартально відповідно до умов програми єОселя
-    
-    .oselia-block--withbg
-      h2.oselia-block__title Площею:
-      .oselia-block__content
-        .oselia-subblock
-          .oselia-subblock__content-list.oselia-subblock__content-list--withnumbers
-            .oselia-subblock__content-item 
-              p.number ➀
-              p.text Для квартир — до 52,5 м² загальної площі на одну особу та 21 м² додатково на кожного наступного члена сім’ї
-            .oselia-subblock__content-item 
-              p.number ➁
-              p.text з 9 лютого 2026 р: Для квартир до 52,5 м² загальної площі на 1 або 2 осіб, та 21 м² додатково на кожного наступного члена сім’ї
-            .oselia-subblock__content-item 
-              p.number ➂
-              p.text Для таунхаусів та приватних будинків — до 62,5 м² на одну особу та 21 м² додатково на кожного наступного члена сім’ї
-            .oselia-subblock__content-item.oselia-subblock__content-item--withtitle
-              h4.title Перевищення дозволене виключно для нерухомості віком до трьох років, але не більш як на 10%.
-              .inner-item-wrap
-                p.number ➀
-                p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
-              .inner-item-wrap
-                p.number ➁
-                p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
-              .inner-item-wrap
-                p.number ➂
-                p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
-            .oselia-subblock__content-item.oselia-subblock__content-item--withtitle
-              h4.title Понаднормову площу та вартість позичальник матиме покрити коштом першого внеску.
-              .inner-item-wrap
-                p.number ➀
-                p.text Для житла, “старшого” за 3 роки, перевищення нормативної площі не допускатиметься
-              .inner-item-wrap
-                p.number ➁
-                p.text Максимальна площа — 115,5 м² незалежно від кількості членів сім’ї
-              .inner-item-wrap
-                p.number ➂
-                p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
+              .subwrap
+                p.text Розраховується на основі опосередкованої вартості будівництва для Київська область із застосуванням коефіцієнта 2,0 
+                p.subtext Актуальне значення переглядається щоквартально відповідно до умов програми єОселя
+    //- .oselia-block--withbg
+    //-   h2.oselia-block__title Площею:
+    //-   .oselia-block__content
+    //-     .oselia-subblock
+    //-       .oselia-subblock__content-list.oselia-subblock__content-list--withnumbers
+    //-         .oselia-subblock__content-item 
+    //-           p.number ➀
+    //-           p.text Для квартир — до 52,5 м² загальної площі на одну особу та 21 м² додатково на кожного наступного члена сім’ї
+    //-         .oselia-subblock__content-item 
+    //-           p.number ➁
+    //-           p.text з 9 лютого 2026 р: Для квартир до 52,5 м² загальної площі на 1 або 2 осіб, та 21 м² додатково на кожного наступного члена сім’ї
+    //-         .oselia-subblock__content-item 
+    //-           p.number ➂
+    //-           p.text Для таунхаусів та приватних будинків — до 62,5 м² на одну особу та 21 м² додатково на кожного наступного члена сім’ї
+    //-         .oselia-subblock__content-item.oselia-subblock__content-item--withtitle
+    //-           h4.title Перевищення дозволене виключно для нерухомості віком до трьох років, але не більш як на 10%.
+    //-           .inner-item-wrap
+    //-             p.number ➀
+    //-             p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
+    //-           .inner-item-wrap
+    //-             p.number ➁
+    //-             p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
+    //-           .inner-item-wrap
+    //-             p.number ➂
+    //-             p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
+    //-         .oselia-subblock__content-item.oselia-subblock__content-item--withtitle
+    //-           h4.title Понаднормову площу та вартість позичальник матиме покрити коштом першого внеску.
+    //-           .inner-item-wrap
+    //-             p.number ➀
+    //-             p.text Для житла, “старшого” за 3 роки, перевищення нормативної площі не допускатиметься
+    //-           .inner-item-wrap
+    //-             p.number ➁
+    //-             p.text Максимальна площа — 115,5 м² незалежно від кількості членів сім’ї
+    //-           .inner-item-wrap
+    //-             p.number ➂
+    //-             p.text Для сім’ї з мами (або батька) і дитини, 52,5 м² + 10% = 57, 75 м²
 
 
-    .oselia-block
-      h2.oselia-block__title Приклади розрахунку площі
-      .oselia-block__content
-        .oselia-subblock
-          .oselia-subblock__content-list
-            .oselia-subblock__content-item 
-              p.text 1 особа або сім'я з 2-х людей: до 57,75 м² 
-            .oselia-subblock__content-item 
-              p.text Родина з 3-х людей: до 80,85 м²
-            .oselia-subblock__content-item 
-              p.text Максимальна площа за програмою: 115,5 м²
+    //- .oselia-block
+    //-   h2.oselia-block__title Приклади розрахунку площі
+    //-   .oselia-block__content
+    //-     .oselia-subblock
+    //-       .oselia-subblock__content-list
+    //-         .oselia-subblock__content-item 
+    //-           p.text 1 особа або сім'я з 2-х людей: до 57,75 м² 
+    //-         .oselia-subblock__content-item 
+    //-           p.text Родина з 3-х людей: до 80,85 м²
+    //-         .oselia-subblock__content-item 
+    //-           p.text Максимальна площа за програмою: 115,5 м²
                  
                 
               
@@ -175,7 +180,7 @@ block content
       h2.oselia-block__title 5 кроків до власної квартири
       .oselia-block__content
         .oselia-subblock
-          .oselia-subblock__content-list.oselia-subblock__content-list--withnumbers
+          .oselia-subblock__content-list.oselia-subblock__content-list--withnumbers.oselia-item-wrap
             .oselia-subblock__content-item 
               p.number ➀
               h4.title Заявка.
