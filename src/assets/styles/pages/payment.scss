@@ -21,6 +21,9 @@
     @include tablet {
       padding: 40px;
     }
+    @include desktop {
+      max-width: vw(1220);
+    }
     &--with-decor{
       padding-bottom: 100px;
       @include tablet {

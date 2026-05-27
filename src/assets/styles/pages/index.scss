@@ -58,7 +58,9 @@
     padding: vw(22) vw(32);
     // height: 68px;
   }
-
+  @include desktop {
+    padding: 22px 32px;
+  }
   &::before {
     content: '';
     position: absolute;
