@@ -163,6 +163,28 @@
   }
 }
 
+.payment__label {
+  &-wrap{
+  margin-top: 20px;
+  margin-left: auto ;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 8px;}
+  &-circ {
+    background-color: $accent-color-2;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+
+  }
+  &-text {
+    @include text-24;
+    color: $accent-color;
+    font-weight: 700;
+  }
+}
+
 .diya-home,
 .diya-repair {
   display: flex;
