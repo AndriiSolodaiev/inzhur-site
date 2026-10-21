@@ -213,120 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
 //   duration: 1,
 // });
 
-// if (window.location.pathname === '/') {
-//   document.querySelector('.loader-wrap').style.display = 'flex';
-// }
-document.addEventListener('DOMContentLoaded', () => {
-  const loader = document.querySelector('.loader-wrap');
-  const percentText = document.querySelector('.loader__percent');
-  const lineFill = document.querySelector('.loader__line-fill');
-
-  let percent = 0;
-  const speed = 10;
-
-  // Етап 1: Імітація завантаження
-  const simulateLoading = setInterval(() => {
-    percent += Math.random() * 5;
-    if (percent > 90) percent = 90;
-    percentText.textContent = `${Math.floor(percent)}%`;
-    lineFill.style.width = `${percent}%`;
-  }, speed);
-
-  // Етап 2: Коли сторінка реально завантажилась
-  window.addEventListener('load', () => {
-    clearInterval(simulateLoading);
-
-    let finalProgress = percent;
-
-    const increase = setInterval(() => {
-      finalProgress += 2;
-      if (finalProgress >= 100) {
-        finalProgress = 100;
-        clearInterval(increase);
-
-        percentText.textContent = `100%`;
-        lineFill.style.width = `100%`;
-
-        // невелика затримка перед стартом основної анімації
-        setTimeout(() => startExitAnimation(), 200);
-      } else {
-        percentText.textContent = `${Math.floor(finalProgress)}%`;
-        lineFill.style.width = `${finalProgress}%`;
-      }
-    }, 20);
-  });
-
-  // Етап 3: Основна анімація виходу прелоадера
-  function startExitAnimation() {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        loader.classList.add('loaded');
-      },
-    });
-
-    tl.to('.loader__percent', {
-      y: 40,
-      opacity: 0,
-      duration: 0.5,
-      ease: 'power2.out',
-    })
-      .to(
-        '.loader__line',
-        {
-          opacity: 0,
-          duration: 0.5,
-          ease: 'power2.out',
-        },
-        '<',
-      )
-      .to(
-        '.loader-svg-decor',
-        {
-          yPercent: -100,
-          // opacity: 0,
-          duration: 1,
-          ease: 'none',
-        },
-        '<',
-      )
-      .to(
-        '.loader-logo',
-        {
-          y: '-55vh',
-          // opacity: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'none',
-        },
-        '<',
-      )
-      .to(
-        '.loader-left-part',
-        {
-          xPercent: -100,
-          duration: 1.5,
-          ease: 'power4.out',
-        },
-        '<+=0.2',
-      )
-      .to(
-        '.loader-right-part',
-        {
-          xPercent: 100,
-          duration: 1.5,
-          ease: 'power4.out',
-        },
-        '<',
-      )
-      .call(
-        () => {
-          window.dispatchEvent(new Event('loaderLoaded'));
-          document.querySelector('.header').classList.add('visible');
-        },
-        null,
-        '-=1.2',
-      );
-  }
+// Подвійний rAF, щоб браузер встиг відмалювати початковий стан і спрацював transition
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => header.classList.add('visible'));
 });
 
 //Global-animations
@@ -347,36 +236,36 @@ animateOnScroll('.footer-contacts-section>* ', {
   stagger: 0.2,
 });
 
-// gsap.set('.page-title__wrap', { y: -150, opacity: 0 });
+// Початкова анімація заголовка сторінки.
+// fromTo, а не set + to: scroll-таймлайн нижче (DOMContentLoaded) одразу рендерить y: 0
+// для .page-title__wrap, і .to() підхопив би це значення як стартове.
 const pageTitle = document.querySelector('.page-title__wrap');
 if (pageTitle) {
-  gsap.set('.page-svg', { yPercent: -40, opacity: 0, rotate: -20 });
+  gsap
+    .timeline()
+    .fromTo(
+      '.page-title__wrap',
+      { y: -150, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+    )
+    .fromTo(
+      '.page-svg',
+      { yPercent: -40, opacity: 0, rotate: -20 },
+      {
+        yPercent: 0,
+        rotate: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power2.out',
+      },
+      '<+=0.4',
+    );
 }
-// Анімація запускається після завершення лоадера
-window.addEventListener('loaderLoaded', () => {
-  gsap.set('.page-title__wrap', { y: -150, opacity: 0 });
-  const pageTitle = document.querySelector('.page-title__wrap');
-  if (!pageTitle) return;
-
-  const tl = gsap.timeline();
-
-  tl.to('.page-title__wrap', {
-    y: 0,
-    opacity: 1,
-    duration: 0.8,
-    ease: 'power2.out',
-  }).to(
-    '.page-svg',
-    {
-      yPercent: 0,
-      rotate: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: 'power2.out',
-    },
-    '<+=0.4',
-  );
-});
 const heroTitle = document.querySelector('.hero-page ');
 if (heroTitle) {
   gsap.set('.breadcrumbs>*', { x: -150, opacity: 0, stagger: 0.2 });
@@ -422,11 +311,8 @@ export function animateTextByLetters(selector) {
     },
   );
 }
-// Анімація запускається після завершення лоадера
-window.addEventListener('loaderLoaded', () => {
-  const heroTitle = document.querySelector('.hero-page ');
-  if (!heroTitle) return;
-
+// Початкова анімація hero-блоку
+if (heroTitle) {
   const tl = gsap.timeline();
 
   tl.to('.breadcrumbs>*', {
@@ -511,7 +397,7 @@ window.addEventListener('loaderLoaded', () => {
       },
       '<',
     );
-});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const startPod = window.innerWidth > 768 ? '-100px top' : '0px top';

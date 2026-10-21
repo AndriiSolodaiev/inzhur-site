@@ -95,52 +95,8 @@ const swiperProgress = new Swiper('.swiper-progress', {
 //     '>-=0.3',
 //   );
 
-//hero animation
-gsap.set('.video-frame img', { scale: 1.2 });
-gsap.set('.hero-promo-wrap .hero-promo-item', { xPercent: -100 });
-gsap.set('.hero-bottom-items .hero-bottom-item', { yPercent: 100 });
-gsap.set('.hero-bottom-block img', { yPercent: 100 });
-
-window.addEventListener('loaderLoaded', () => {
-  gsap
-    .timeline()
-    .to(
-      '.video-frame img',
-      {
-        scale: 1,
-        duration: 1.2,
-      },
-      '<',
-    )
-    .to(
-      '.hero-bottom-items .hero-bottom-item',
-      {
-        yPercent: 0,
-        stagger: 0.2,
-        duration: 1,
-      },
-
-      '<',
-    )
-    .to(
-      '.hero-promo-wrap .hero-promo-item',
-      {
-        xPercent: 0,
-        stagger: 0.2,
-        duration: 1,
-      },
-      '<',
-    )
-    .to(
-      '.hero-bottom-block img',
-      {
-        yPercent: 0,
-
-        duration: 1,
-      },
-      '<',
-    );
-});
+// Анімації появи на першому екрані свідомо немає: контент hero має бути на місці з першого
+// кадру, інакше Google рахує, що сторінка ще вантажиться (гірший LCP)
 
 // 2. Hero піниться (але друга секція налізає)
 ScrollTrigger.create({

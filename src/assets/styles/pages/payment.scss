@@ -165,7 +165,11 @@
 
 .payment__label {
   &-wrap{
+    border-radius: 100px;
+    border: 2px solid $accent-color;
+    text-transform: lowercase;
   margin-top: 20px;
+  padding:4px 12px;
   margin-left: auto ;
   display: flex;
   align-items: center;
@@ -176,12 +180,12 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-
+    display: none;
   }
   &-text {
-    @include text-24;
+    @include text-18;
     color: $accent-color;
-    font-weight: 700;
+  
   }
 }
 

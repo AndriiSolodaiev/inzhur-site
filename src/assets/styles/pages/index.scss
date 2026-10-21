@@ -448,7 +448,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
   z-index: 1;
   padding-bottom: 20px;
 
@@ -458,10 +458,6 @@
     padding-bottom: 8px;
   }
 
-  @include tablet {
-    gap: 20px;
-  }
-
   @include laptop {
     flex-direction: row;
     justify-content: space-between;
@@ -469,10 +465,41 @@
     align-items: flex-end;
     // padding: 40px;
   }
+}
 
-  &>img {
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include tablet {
+    gap: 16px;
+  }
+
+  @include laptop {
+    width: vw(934);
+    gap: vw(24);
+  }
+
+  // Розміри з макету; при них підпис вміщується в ширину вектора в один рядок
+  &__text {
+    font-family: $default-font;
+    font-size: clamp(17px, 5.33vw, 36px);
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.06em;
+    white-space: nowrap;
+    color: $wc;
+    // 8px на мобільній → 12px на 1920
+    padding-left: clamp(8px, calc(8px + (12 - 8) * ((100vw - 375px) / (1920 - 375))), 12px);
+
+    @include tablet {
+      font-size: clamp(36px, calc(36px + (48 - 36) * ((100vw - 768px) / (1024 - 768))), 48px);
+      font-weight: 500;
+    }
+
     @include laptop {
-      width: 48vw;
+      font-size: vw(48);
     }
   }
 }
